@@ -1,7 +1,13 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRoute from './router';
 
 const App = () => {
-  return <div>My App</div>;
+  return (
+    <Router>
+      <AppRoute />
+    </Router>
+  );
 };
 
 export default App;
