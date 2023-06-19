@@ -1,8 +1,8 @@
-import React from "react";
-import "./navbar.css";
-import logo from "../../assets/logo.svg";
-import "../../components/font";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+import logo from '../../assets/logo.svg';
+import '../../configs/fontIcon';
+import './style.css';
 
 const Menu = () => (
   <>
@@ -39,7 +39,6 @@ const Navbar = () => {
         <div className="shoppe__navbar-links_logo">
           <img src={logo} alt="logo" />
         </div>
-
         <div className="shoppe__navbar-links_container">
           <Menu />
         </div>
