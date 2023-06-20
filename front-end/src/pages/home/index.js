@@ -1,15 +1,8 @@
-import React from 'react';
-import AppButton from '../../components/button';
-import './style.css';
+import React from "react";
+import "./style.css";
 
 const Home = () => {
-  return (
-    <div className="container">
-      <AppButton className="btn" isActive={true}>
-        Home
-      </AppButton>
-    </div>
-  );
+  return <div>Home</div>;
 };
 
 export default Home;

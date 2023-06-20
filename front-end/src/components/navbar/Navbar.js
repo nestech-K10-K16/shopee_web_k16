@@ -1,19 +1,23 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
-import logo from '../../assets/logo.svg';
-import '../../configs/fontIcon';
-import './style.css';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Routes, Route, Link } from "react-router-dom";
+import ShopPage from "../../pages/shop/Shop";
+import BlogPage from "../../pages/blog/Blog";
+import OurStoryPage from "../../pages/ourStory/OurStory";
+import logo from "../../assets/logo.svg";
+import "../../configs/fontIcon";
+import "./style.css";
 
 const Menu = () => (
   <>
     <p>
-      <a href="#Shop">Shop</a>
+      <Link to="/Shop">Shop</Link>
     </p>
     <p>
-      <a href="#Blog">Blog</a>
+      <Link to="/Blog">Blog</Link>
     </p>
     <p>
-      <a href="#OurStory">Our Story</a>
+      <Link to="/OurStory">Our Story</Link>
     </p>
   </>
 );
@@ -34,18 +38,27 @@ const Icon = () => (
 
 const Navbar = () => {
   return (
-    <div className="shoppe__navbar">
-      <div className="shoppe__navbar-links">
-        <div className="shoppe__navbar-links_logo">
+    <div className="shoppe__header">
+      <div className="shoppe__header-links">
+        <div className="shoppe__header-links_logo">
           <img src={logo} alt="logo" />
         </div>
-        <div className="shoppe__navbar-links_container">
-          <Menu />
-        </div>
-        <div className="shoppe__navbar-icons">
-          <Icon />
+
+        <div className="shoppe__navbar">
+          <div className="shoppe__navbar-links_container">
+            <Menu />
+          </div>
+          <div className="shoppe__navbar-icons">
+            <Icon />
+          </div>
         </div>
       </div>
+
+      <Routes>
+        <Route path="/Shop" element={<ShopPage />} />
+        <Route path="/Blog" element={<BlogPage />} />
+        <Route path="/OurStory" element={<OurStoryPage />} />
+      </Routes>
     </div>
   );
 };

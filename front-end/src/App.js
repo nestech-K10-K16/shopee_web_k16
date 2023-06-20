@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import { Contact, Footer, Navbar, Privacy } from './components';
-import Home from './pages/home';
+import { Footer, Navbar } from "./components";
+import { Home, Contact, Privacy } from "./pages";
 
 const App = () => {
   return (
