@@ -1,14 +1,13 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import Example from '../pages/example';
-import ExampleOther from '../pages/exampleOther';
+import { PATH_NAME } from '../constants/common';
+import MyAccount from '../pages/myAccount';
 
 const AppRoute = () => {
   return (
     <Routes>
-      <Route path="/example" element={<Example />} />
-      <Route path="/example-other" element={<ExampleOther />} />
+      <Route path={PATH_NAME.MY_ACCOUNT} element={<MyAccount />} />
     </Routes>
   );
 };
