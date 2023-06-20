@@ -38,7 +38,7 @@ const Icon = () => (
 
 const Navbar = () => {
   return (
-    <div className="shoppe__header">
+    <div>
       <div className="shoppe__header-links">
         <div className="shoppe__header-links_logo">
           <img src={logo} alt="logo" />
