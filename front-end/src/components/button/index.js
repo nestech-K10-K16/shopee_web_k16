@@ -1,7 +1,7 @@
-import React from "react";
-import "./style.css";
+import React from 'react';
+import './style.css';
 
-const AppButton = (props) => {
+const AppButton = () => {
   return <div>button</div>;
 };
 

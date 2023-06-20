@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import { Footer, Navbar } from "./components";
-import { Home, Contact, Privacy } from "./pages";
+import { Route, Routes } from 'react-router-dom';
+import { Footer, Navbar } from './components';
+import { Contact, Home, Privacy } from './pages';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <Navbar />
-      <Home />
-      <Privacy />
-      <Contact />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 };
