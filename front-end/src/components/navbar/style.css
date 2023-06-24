@@ -1,9 +1,15 @@
 .shoppe__header-links {
   flex: 1;
+<<<<<<< HEAD
   position: sticky;
   top: 0;
   left: 0;
   padding: 64px 96px;
+=======
+  top: 0;
+  left: 0;
+  padding: 2rem 6rem;
+>>>>>>> nguyengiahoanhao/front-end/my-account/create-ui-01
   display: flex;
   justify-content: space-between;
   align-items: center;

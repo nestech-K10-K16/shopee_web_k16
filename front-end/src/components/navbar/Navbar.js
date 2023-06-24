@@ -1,12 +1,12 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Routes, Route, Link } from "react-router-dom";
-import ShopPage from "../../pages/shop/Shop";
-import BlogPage from "../../pages/blog/Blog";
-import OurStoryPage from "../../pages/ourStory/OurStory";
-import logo from "../../assets/logo.svg";
-import "../../configs/fontIcon";
-import "./style.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
+import logo from '../../assets/logo.svg';
+import '../../configs/fontIcon';
+import BlogPage from '../../pages/blog/Blog';
+import OurStoryPage from '../../pages/ourStory/OurStory';
+import ShopPage from '../../pages/shop/Shop';
+import './style.css';
 
 const Menu = () => (
   <>
