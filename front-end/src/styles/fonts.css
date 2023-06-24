@@ -29,11 +29,6 @@
   --letter-spacing-10: 10px;
 }
 
-html,
-body {
-  font-family: var(--font-family-base);
-}
-
 .heading-01 {
   font-weight: var(--font-weight-500);
   font-size: var(--size-33);

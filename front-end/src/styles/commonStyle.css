@@ -1,0 +1,25 @@
+.d-flex-jus-cen-ali-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex-jus-space-between-align-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.d-flex-jus-space-around-align-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.width-50 {
+  width: 500%;
+}
