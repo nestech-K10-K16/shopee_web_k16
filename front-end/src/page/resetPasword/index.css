@@ -1,0 +1,40 @@
+/* reset password */
+#reset-password {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8vh 10vw;
+}
+
+/* reset password - content */
+.reset-password__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-password__content > div {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+}
+
+/* reset password - content - heading */
+.reset-password__content__heading {
+  margin-bottom: 3rem;
+}
+
+/* reset password - content - title */
+.reset-password__content__title {
+  margin-bottom: 4rem;
+}
+
+/* reset password - content - email */
+.reset-password__content__email {
+  margin-bottom: 4rem;
+}
+
+/* reset password - content - btn reset password */

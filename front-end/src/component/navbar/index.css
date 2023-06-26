@@ -1,0 +1,42 @@
+/* header */
+#header {
+  padding: 8vh 10vw;
+}
+
+/* header top */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* header top - right side */
+.header-top__right-side {
+  display: flex;
+}
+
+.header-top__right-side a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+/* header top - right side - menu */
+.header-top__right-side__menu {
+  display: flex;
+  list-style: none;
+}
+
+.header-top__right-side__menu li {
+  margin-left: 2rem;
+}
+
+/* header top - right side - line 2 */
+.header-top__right-side__line-2 {
+  margin-left: 2rem;
+}
+
+/* header top - right side - icon list */
+.header-top__right-side__icon-list a {
+  margin-left: 2rem;
+}

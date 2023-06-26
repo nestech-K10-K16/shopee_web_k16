@@ -1,0 +1,38 @@
+/* display */
+.display-flex {
+  display: flex;
+}
+
+/* line 2 */
+.border-0-5px-solid-black-rotate--180deg {
+  border: 1px solid var(--black);
+  rotate: -180deg;
+}
+
+.border-0-5px-solid-black {
+  border: 0.5px solid var(--black);
+}
+
+/* button */
+.background-color-black-color-white-text-decoration-none-padding-1rem-4rem-border-radius-6px {
+  background-color: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.6rem 4rem;
+  border-radius: 6px;
+}
+
+/* input type: text */
+.border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0 {
+  border: 0.5px solid var(--bright-gray);
+  outline: none;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  height: 3rem;
+}
+
+/* margin */
+.margin-right-2rem {
+  margin-right: 2rem;
+}
