@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   left: 0;
-  padding: 64px 96px;
+  padding: 64px 94px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;

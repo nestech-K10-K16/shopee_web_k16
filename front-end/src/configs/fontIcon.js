@@ -1,9 +1,10 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { library } from "@fortawesome/fontawesome-svg-core";
 
 import {
   faCartShopping,
   faMagnifyingGlass,
   faUser,
-} from '@fortawesome/free-solid-svg-icons';
+  faCircleArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faMagnifyingGlass, faCartShopping, faUser);
+library.add(faMagnifyingGlass, faCartShopping, faUser, faCircleArrowRight);

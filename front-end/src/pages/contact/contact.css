@@ -1,0 +1,25 @@
+.Shoppe__contact {
+  position: -webkit-sticky;
+  position: sticky;
+  padding: 90px 96px;
+}
+
+.Shoppe__contact-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Shoppe__contact-links-1 {
+  display: flex;
+  color: var(--color-footer);
+}
+
+.Shoppe__contact-links-1 h5 {
+  font-size: var(--size-16);
+  font-family: var(--font-family);
+  line-height: 27px;
+  margin-right: 41px;
+}
+
+.Shoppe__contact-links-2 h5 {
+}
