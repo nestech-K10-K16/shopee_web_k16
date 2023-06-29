@@ -22,4 +22,8 @@
 }
 
 .Shoppe__contact-links-2 h5 {
+  font-size: var(--size-16);
+  font-family: var(--font-family);
+  line-height: 27px;
+  color: var(--color-footer);
 }
