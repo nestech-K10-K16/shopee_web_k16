@@ -9,6 +9,7 @@
 .shoppe__home-title_jewelry-image img {
   width: 377px;
   height: 380px;
+  cursor: pointer;
 }
 
 .shoppe__home-title_jewelry-content {

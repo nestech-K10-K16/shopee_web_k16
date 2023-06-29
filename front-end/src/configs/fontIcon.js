@@ -4,7 +4,23 @@ import {
   faCartShopping,
   faMagnifyingGlass,
   faUser,
-  faCircleArrowRight,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faMagnifyingGlass, faCartShopping, faUser, faCircleArrowRight);
+import {
+  faFacebookF,
+  faInstagram,
+  faLinkedinIn,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+
+library.add(
+  faMagnifyingGlass,
+  faCartShopping,
+  faUser,
+  faArrowRight,
+  faFacebookF,
+  faInstagram,
+  faLinkedinIn,
+  faTwitter
+);
