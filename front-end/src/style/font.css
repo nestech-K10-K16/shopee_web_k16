@@ -31,6 +31,7 @@
   /* COLOR */
   --black: black;
   --white: white;
+  --red: rgb(248, 69, 69);
   --bright-gray: #EFEFEF;
 }
 
@@ -52,13 +53,13 @@ body {
 
 .heading-03 {
   font-weight: var(--font-weight-400);
-  font-size: var(--size-26);
-  line-height: var(--line-height-35);
+  font-size: var(--size-20);
+  line-height: var(--line-height-26);
 }
 
 .heading-04 {
   font-weight: var(--font-weight-400);
-  font-size: var(--size-26);
+  font-size: var(--size-20);
   line-height: var(--line-height-20);
 }
 
@@ -71,13 +72,11 @@ body {
 .body-large {
   font-weight: var(--font-weight-700);
   font-size: var(--size-16);
-  line-height: var(--line-height-20);
 }
 
 .body-medium {
   font-weight: var(--font-weight-400);
   font-size: var(--size-14);
-  line-height: var(--line-height-22);
 }
 
 .body-small {

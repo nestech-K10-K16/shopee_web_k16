@@ -1,5 +1,8 @@
 export const PATH_NAME = {
-  MY_ACCOUT: "/my-account",
+  HOME: "/home",
+  SHOP: "/shop",
+  MY_ACCOUT_LOGIN: "/my-account-login",
+  MY_ACCOUT_REGISTER: "/my-account-register",
   RESET_PASSWORD: "/reset-password",
   CONTACT: "/contact",
 };

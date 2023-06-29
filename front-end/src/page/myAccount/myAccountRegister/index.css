@@ -27,6 +27,7 @@
   border: 2px solid var(--bright-gray);
   background-color: var(--white);
   padding: 0.8rem 3.8rem;
+  text-decoration: none;
 }
 
 /* my account - switch register */
@@ -34,6 +35,7 @@
   background-color: var(--bright-gray);
   border: 2px solid var(--bright-gray);
   padding: 0.8rem 3.8rem;
+  text-decoration: none;
 }
 
 /* my account - user */
@@ -45,29 +47,14 @@
 /* my account - user account */
 .my-account__user-account {
   border: 0.5px solid var(--bright-gray);
-  outline: none;
   height: 3rem;
-  margin-bottom: 1rem;
 }
 
 /* my account - user password */
 .my-account__user-password {
   border: 0.5px solid var(--bright-gray);
-  outline: none;
   height: 3rem;
-  margin-bottom: 1rem;
 }
-
-/* my account - user remember me */
-.my-account__user-remember-me {
-  display: flex;
-  align-items: center;
-}
-
-.my-account__user-remember-me input{
-  margin-right: 0.8rem;
-}
-
 
 /* my account - user login */
 .my-account__user-login {
@@ -77,9 +64,7 @@
   justify-content: center;
   border-radius: 3px;
   padding: 8px;
-  margin-bottom: 1rem;
+  text-decoration: none;
 }
 
-.my-account__user-forgot-password {
-  color: var(--black);
-}
+

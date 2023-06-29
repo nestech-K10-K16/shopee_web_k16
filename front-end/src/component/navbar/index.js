@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="header-top__right-side">
           <ul className="header-top__right-side__menu">
             <li>
-              <a href="#">Shop</a>
+              <a href="/shop">Shop</a>
             </li>
 
             <li>
@@ -36,7 +36,7 @@ const Navbar = () => {
               <i class="fa-solid fa-cart-shopping"></i>
             </a>
 
-            <a href="#">
+            <a href="/my-account-login">
               <i class="fa-regular fa-user"></i>
             </a>
           </div>

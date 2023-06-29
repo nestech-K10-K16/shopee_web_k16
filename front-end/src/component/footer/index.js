@@ -9,7 +9,12 @@ const index = () => {
       <div className="footer-bottom">
         <div className="footer-bottom__left-side">
           <div className="display-flex">
-            <p className="heading-05 margin-right-2rem">CONTACT</p>
+            <a
+              className="heading-05 color-black-text-decoration-none margin-right-2rem"
+              href="/contact"
+            >
+              CONTACT
+            </a>
             <p className="heading-05 margin-right-2rem">TERMS OF SERVICES</p>
             <p className="heading-05 margin-right-2rem">SHIPPING AND RETURNS</p>
           </div>

@@ -1,0 +1,26 @@
+#home {
+  display: flex;
+  justify-content: center;
+  padding: 8vh 10vw;
+}
+
+/* home - content */
+
+/* home - content - product */
+
+/* home - content - product - heading */
+.home__content__product__heading{
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* home - content - product - row 1 */
+.home__content__product__row-1 {
+  justify-content: space-between;
+}
+
+/* home - content - product - row 2 */
+.home__content__product__row-2 {
+  justify-content: space-between;
+}
+

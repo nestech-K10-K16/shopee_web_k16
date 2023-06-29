@@ -1,11 +1,10 @@
-import React from "react";
 import "./index.css";
 import Navbar from "../../component/navbar";
 import Footer from "../../component/footer";
 
 const ResetPassword = () => {
   return (
-    <>
+    <div>
       <Navbar />
 
       <main>
@@ -13,7 +12,7 @@ const ResetPassword = () => {
           <div className="reset-password__content">
             <p
               className="reset-password__content__heading
-                        heading-01"
+                         heading-01"
             >
               Have you Forgotten Your Password ?
             </p>
@@ -48,7 +47,7 @@ const ResetPassword = () => {
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 };
 
