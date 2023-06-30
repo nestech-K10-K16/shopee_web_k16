@@ -8,8 +8,8 @@ const App = () => {
       <Navbar />
       <Home />
       <Privacy />
-      <Footer />
       <Contact />
+      <Footer />\
     </div>
   );
 };

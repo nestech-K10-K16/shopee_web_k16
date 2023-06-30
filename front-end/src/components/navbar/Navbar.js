@@ -1,11 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import logo from "../../assets/logo.svg";
 import "../../configs/fontIcon";
-import BlogPage from "../../pages/blog/Blog";
-import OurStoryPage from "../../pages/ourStory/OurStory";
-import ShopPage from "../../pages/shop/Shop";
+
 import "./style.css";
 
 const Menu = () => (
@@ -53,12 +52,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-      <Routes>
-        <Route path="/Shop" element={<ShopPage />} />
-        <Route path="/Blog" element={<BlogPage />} />
-        <Route path="/OurStory" element={<OurStoryPage />} />
-      </Routes>
     </div>
   );
 };
