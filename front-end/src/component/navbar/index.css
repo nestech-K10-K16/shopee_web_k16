@@ -26,17 +26,3 @@
   display: flex;
   list-style: none;
 }
-
-.header-top__right-side__menu li {
-  margin-left: 2rem;
-}
-
-/* header top - right side - line 2 */
-.header-top__right-side__line-2 {
-  margin-left: 2rem;
-}
-
-/* header top - right side - icon list */
-.header-top__right-side__icon-list a {
-  margin-left: 2rem;
-}

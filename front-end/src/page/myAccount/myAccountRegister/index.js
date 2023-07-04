@@ -1,6 +1,4 @@
 import "./index.css";
-import Navbar from "../../../component/navbar";
-import Footer from "../../../component/footer";
 import { useState } from "react";
 
 const MyAccoutRegister = () => {
@@ -114,32 +112,45 @@ const MyAccoutRegister = () => {
 
   return (
     <main>
-      <Navbar />
-
       <section id="my-account">
         <div>
           <div>
-            <p className="heading-01">My account</p>
+            <p className="heading-01 margin-bottom-4rem">My account</p>
           </div>
 
-          <div className="my-account__switch">
-            <a className="my-account__switch-sign-in" href="/my-account-login">
+          <div
+            className="my-account__switch
+                       background-color-bright-gray-border-radius-10px
+                       display-flex
+                       margin-bottom-5rem"
+          >
+            <a
+              className="my-account__switch-sign-in
+                         border-5px-solid-bright-gray-background-color-bright-gray-padding-0-8rem-3-8rem-border-radius-6px
+                         color-black-text-decoration-none"
+              href="/my-account-login"
+            >
               <p className="heading-03">Sign in</p>
             </a>
 
             <a
-              className="my-account__switch-register"
+              className="my-account__switch-register
+                         border-5px-solid-bright-gray-background-color-white-padding-0-8rem-3-8rem-border-radius-6px
+                         color-black-text-decoration-none"
               href="/my-account-register"
             >
               <p className="heading-03">Register</p>
             </a>
           </div>
 
-          <form className="my-account__user">
+          <form
+            className="my-account__user
+                           display-flex-flex-direction-column"
+          >
             <p className="color-red">{message}</p>
 
             <input
-              className="border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0
+              className="border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem
                          margin-bottom-0-5rem"
               type="text"
               placeholder="Full name"
@@ -148,7 +159,7 @@ const MyAccoutRegister = () => {
             ></input>
 
             <input
-              className="border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0 
+              className="border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem
                          margin-bottom-0-5rem"
               type="text"
               placeholder="Email"
@@ -157,7 +168,7 @@ const MyAccoutRegister = () => {
             ></input>
 
             <input
-              className="border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0
+              className="border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem
                          margin-bottom-0-5rem"
               type="password"
               placeholder="Password"
@@ -166,7 +177,7 @@ const MyAccoutRegister = () => {
             ></input>
 
             <input
-              className="border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0
+              className="border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem
                          margin-bottom-2rem"
               type="password"
               placeholder="Enter the password"
@@ -175,17 +186,15 @@ const MyAccoutRegister = () => {
             ></input>
 
             <a
-              className="my-account__user-login text-decoration-none"
+              className="background-color-black-color-white-text-decoration-none-padding-1rem-4rem-border-radius-6px"
               href={homePage}
               onClick={onClickButton}
             >
-              <p>SIGN IN</p>
+              <p>SIGN UP</p>
             </a>
           </form>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 };

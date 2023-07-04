@@ -14,9 +14,6 @@
 }
 
 /* footer bottom - left side */
-.footer-bottom__left-side > div {
-  margin-bottom: 3.5rem;
-}
 
 /* footer bottom - right side */
 
@@ -26,21 +23,9 @@
   align-items: center;
 }
 
-.footer-bottom__right-side__title p {
-  margin-right: 5rem;
-}
-
-/* footer bottom - right side - contact list */
-.footer-bottom__right-side__line-2 {
-  margin: 1.5rem 0 3rem;
-}
-
 /* footer bottom - right side - contact list */
 .footer-bottom__right-side__contact-list {
   display: flex;
   justify-content: right;
 }
 
-.footer-bottom__right-side__contact-list a {
-  margin-left: 2rem;
-}

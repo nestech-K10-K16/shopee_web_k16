@@ -1,0 +1,31 @@
+#shop {
+  padding: 8vh 10vw;
+}
+
+/* shop - content - left side bar */
+.shop__content__left-side-bar {
+  width: 22rem;
+}
+
+/* shop - content - left side bar - on sale */
+.shop__content__left-side-bar__on-sale {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* shop - content - left side bar - in stock */
+.shop__content__left-side-bar__in-stock {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* home - content - product - row 1 */
+.home__content__product__row-1 {
+  justify-content: space-between;
+}
+
+/* home - content - product - row 2 */
+.home__content__product__row-2 {
+  justify-content: space-between;
+}
+

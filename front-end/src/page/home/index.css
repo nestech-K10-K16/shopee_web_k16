@@ -1,7 +1,7 @@
 #home {
   display: flex;
   justify-content: center;
-  padding: 8vh 10vw;
+  padding: 0 10vw 8vh;
 }
 
 /* home - content */
@@ -9,9 +9,9 @@
 /* home - content - product */
 
 /* home - content - product - heading */
-.home__content__product__heading{
-    align-items: center;
-    justify-content: space-between;
+.home__content__product__heading {
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* home - content - product - row 1 */
@@ -23,4 +23,3 @@
 .home__content__product__row-2 {
   justify-content: space-between;
 }
-

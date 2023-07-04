@@ -31,8 +31,10 @@
   /* COLOR */
   --black: black;
   --white: white;
+  --white-smoke: whitesmoke;
   --red: rgb(248, 69, 69);
-  --bright-gray: #EFEFEF;
+  --bright-gray: #efefef;
+  --dark-silver: #707070;
 }
 
 html,

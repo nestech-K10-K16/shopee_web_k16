@@ -1,0 +1,43 @@
+#product {
+  padding: 8vh 10vw;
+}
+
+/* product - content - top - prodcut type list */
+.product__content__top__product-type-list {
+  width: 24rem;
+}
+
+/* product - content - top - prodcut */
+.product__content__top__product img {
+  width: 105rem;
+}
+
+/* product - content - top - prodcut information - amount */
+.product__content__top__product-infomation__amount input {
+  background-color: var(--bright-gray);
+  text-align: center;
+  border: none;
+  outline: none;
+  width: 3rem;
+  padding: 0.8rem;
+}
+
+.product__content__top__product-infomation__amount button {
+  border: none;
+  width: 3rem;
+  padding: 0.8rem;
+}
+
+.product__content__top__product-infomation__amount button:active {
+  background-color: var(--white-smoke);
+}
+
+.product__content__top__product-infomation__amount
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* product - content - top - prodcut information - add to cart */
+.product__content__top__product-infomation__add-to-cart:active {
+  background-color: var(--white-smoke);
+}
