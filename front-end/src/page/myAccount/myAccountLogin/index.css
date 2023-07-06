@@ -1,0 +1,13 @@
+#my-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 8vh 10vw;
+}
+
+/* my account - content - user remember me */
+.my-account__user-remember-me {
+  align-items: center;
+}

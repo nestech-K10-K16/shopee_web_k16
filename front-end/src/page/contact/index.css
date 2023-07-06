@@ -1,0 +1,46 @@
+#contact {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 8vh 10vw;
+}
+
+/* contact - content */
+.contact__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* contact - content - heading */
+.contact__content__heading {
+  width: 40rem;
+}
+
+.contact__content__heading > p:nth-child(1) {
+  margin-bottom: 2rem;
+}
+
+.contact__content__heading > p:nth-child(2) {
+  margin-bottom: 4rem;
+}
+
+/* contact - content - info customer */
+.contact__content__info-customer {
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
+}
+
+.contact__content__info-customer > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact__content__info-customer div input {
+  width: 21rem;
+}
+
+.contact__content__info-customer input {
+  margin-bottom: 4rem;
+}
