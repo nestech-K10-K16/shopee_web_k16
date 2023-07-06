@@ -102,7 +102,7 @@ const MyAccoutRegister = () => {
       return;
     }
 
-    if (!rePassword.match(/[^a-zA-Z\d]/)) {
+    if (!rePassword.test()) {
       setMessage("yêu cầu nhập lại password của bạn phải có kí tự đặc biệt");
       return;
     }
@@ -130,7 +130,7 @@ const MyAccoutRegister = () => {
                          color-black-text-decoration-none"
               href="/my-account-login"
             >
-              <p className="heading-03">Sign in</p>
+              <p className="heading-03 mb-0">Sign in</p>
             </a>
 
             <a
@@ -139,7 +139,7 @@ const MyAccoutRegister = () => {
                          color-black-text-decoration-none"
               href="/my-account-register"
             >
-              <p className="heading-03">Register</p>
+              <p className="heading-03 mb-0">Register</p>
             </a>
           </div>
 
@@ -190,7 +190,7 @@ const MyAccoutRegister = () => {
               href={homePage}
               onClick={onClickButton}
             >
-              <p>SIGN UP</p>
+              <p className="mb-0">SIGN UP</p>
             </a>
           </form>
         </div>

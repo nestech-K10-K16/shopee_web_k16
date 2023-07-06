@@ -1,3 +1,4 @@
+import { PATH_NAME } from "../../../constants/common";
 import "./index.css";
 import { useState } from "react";
 
@@ -44,37 +45,33 @@ const MyAccoutLogin = () => {
       return;
     }
 
-    if (!password.match(/[A-Z]/)) {
+    if (!password.test()) {
       setMessage("yêu cầu password của bạn phải có chữ viết hoa");
       return;
     }
 
-    if (!password.match(/\d/)) {
+    if (!password.test(password)) {
       setMessage("yêu cầu password của bạn phải có số");
       return;
     }
 
-    if (!password.match(/[^a-zA-Z\d]/)) {
+    if (!password.test()) {
       setMessage("yêu cầu password của bạn phải có kí tự đặc biệt");
       return;
     }
 
-    setHomePage("/home");
+    setHomePage(PATH_NAME.HOME);
   };
 
   return (
     <main>
       <section id="my-account">
         <div className="my-account__content">
-          <p
-            className="heading-01 margin-bottom-4rem"
-          >
-            My account
-          </p>
+          <p className="heading-01 margin-bottom-4rem">My account</p>
 
           <div
             className="my-account__content__switch
-                       display-flex
+                       d-flex
                        background-color-bright-gray-border-radius-10px
                        margin-bottom-5rem"
           >
@@ -84,7 +81,7 @@ const MyAccoutLogin = () => {
                          color-black-text-decoration-none"
               href="/my-account-login"
             >
-              <p className="heading-03">Sign in</p>
+              <p className="heading-03 mb-0">Sign in</p>
             </a>
 
             <a
@@ -93,7 +90,7 @@ const MyAccoutLogin = () => {
                          color-black-text-decoration-none"
               href="/my-account-register"
             >
-              <p className="heading-03">Register</p>
+              <p className="heading-03 mb-0">Register</p>
             </a>
           </div>
 
@@ -105,8 +102,8 @@ const MyAccoutLogin = () => {
 
             <input
               className="my-account__content__user-account 
-                         border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem
-                         margin-bottom-0-5rem"
+                         border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem 
+                         margin-bottom-0-5rem" 
               type="text"
               placeholder="Email"
               value={email}
@@ -129,7 +126,7 @@ const MyAccoutLogin = () => {
                          margin-bottom-3rem"
             >
               <input className="margin-right-0-5rem" type="checkbox" />
-              <p>Remember me</p>
+              <p className="mb-0">Remember me</p>
             </div>
 
             <a
@@ -140,7 +137,7 @@ const MyAccoutLogin = () => {
               href={homePage}
               onClick={onClickButton}
             >
-              <p>SIGN IN</p>
+              <p className="mb-0">SIGN IN</p>
             </a>
 
             <a
