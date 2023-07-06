@@ -1,4 +1,6 @@
 #product {
+  display: flex;
+  justify-content: center;
   padding: 8vh 10vw;
 }
 
@@ -40,4 +42,9 @@
 /* product - content - top - prodcut information - add to cart */
 .product__content__top__product-infomation__add-to-cart:active {
   background-color: var(--white-smoke);
+}
+
+/* product - content - similar items list - item */
+.product__content__similar-items-list__item {
+  justify-content: space-between;
 }

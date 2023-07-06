@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { PATH_NAME } from "../constants/common";
 
-import Navbar from "../component/navbar";
+import Header from "../component/header";
 import Footer from "../component/footer";
 
 import ResetPassword from "../page/resetPasword";
@@ -17,7 +17,7 @@ import MyAccoutRegister from "../page/myAccount/myAccountRegister";
 const AppRoute = () => {
   return (
     <div>
-      <Navbar />
+      <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />

@@ -18,7 +18,7 @@ const ResetPassword = () => {
                            heading-03"
             >
               If you've forgotten your password, enter your e-mail address and
-              we'll send you an e-mail{" "}
+              we'll send you an e-mail
             </p>
 
             <input
