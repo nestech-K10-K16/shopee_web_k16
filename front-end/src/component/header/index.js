@@ -9,7 +9,7 @@ const Header = () => {
       <section id="header">
         <div className="header-top d-flex justify-content-between align-items-center margin-bottom-2rem">
           <div className="header-top__left-sider">
-            <a className="header-top__left-sider__logo" href="/home">
+            <a className="header-top__left-sider__logo" href="/">
               <img src={IMG_LogoShopee} alt="" />
             </a>
           </div>
