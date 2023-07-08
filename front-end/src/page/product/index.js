@@ -2,8 +2,15 @@ import { useState } from "react";
 import { IMG_02, IMG_03, IMG_04, IMG_06 } from "../../assets";
 import "./index.css";
 
-import { Rating } from "react-simple-star-rating";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Rating from "@mui/material/Rating";
+
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
 
 const Product = () => {
   const [number, setNumber] = useState(1);
@@ -20,6 +27,13 @@ const Product = () => {
 
   const onClickHeart = () => {
     setHeart(!heart);
+  };
+
+  //Tabs
+  const [value, setValue] = useState("1");
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
   };
 
   return (
@@ -46,11 +60,7 @@ const Product = () => {
 
               <p className="heading-04 margin-bottom-3rem">$ 20,00</p>
 
-              <Rating
-                className="margin-bottom-1rem"
-                size={25}
-                emptyColor="black"
-              />
+              <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
 
               <p className="heading-05 margin-bottom-3rem">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
@@ -61,20 +71,21 @@ const Product = () => {
 
               <div className="d-flex margin-bottom-3rem">
                 <div
-                  className="product__content__top__product-infomation__amount
+                  className="product__content__top__product-infomation__amount-product
                              d-flex 
                              margin-right-1rem"
                 >
-                  <button onClick={onClickIncrease} value="+">
+                  <Button color="inherit" onClick={onClickIncrease} value="+">
                     +
-                  </button>
-                  <input value={number} type="number" readOnly />
-                  <button onClick={onClickreduce} value="-">
+                  </Button>
+
+                  <TextField value={number} />
+                  <Button color="inherit" onClick={onClickreduce} value="-">
                     -
-                  </button>
+                  </Button>
                 </div>
 
-                <button className="product__content__top__product-infomation__add-to-cart body-large background-color-white-border-0-5px-solid width-100">
+                <button className="product__content__top__product-infomation__add-to-cart body-large background-color-white-border-0-5px-solid w-100">
                   ADD TO CART
                 </button>
               </div>
@@ -91,19 +102,19 @@ const Product = () => {
                 <div className="border-0-5px-solid-bright-gray-rotate--180deg margin-right-2rem"></div>
 
                 <div>
-                  <a className="color-black margin-right-2rem" href="#">
+                  <a className="text-black margin-right-2rem" href="#">
                     <i class="fa-regular fa-envelope fa-xl"></i>
                   </a>
 
-                  <a className="color-black margin-right-2rem" href="#">
+                  <a className="text-black margin-right-2rem" href="#">
                     <i class="fa-brands fa-facebook-f fa-xl "></i>
                   </a>
 
-                  <a className="color-black margin-right-2rem" href="#">
+                  <a className="text-black margin-right-2rem" href="#">
                     <i class="fa-brands fa-instagram fa-xl "></i>
                   </a>
 
-                  <a className="color-black margin-right-2rem" href="#">
+                  <a className="text-black margin-right-2rem" href="#">
                     <i class="fa-brands fa-twitter fa-xl "></i>
                   </a>
                 </div>
@@ -125,50 +136,74 @@ const Product = () => {
             </div>
           </div>
 
-          <Tabs className="product__content__describe margin-bottom-5rem">
-            <TabList className="product__content__describe-list d-flex list-unstyled mb-0">
-              <Tab className="border-top-0-border-lef-0-border-right-0-border-bottom-0-5px-solid-black-focus margin-right-2rem padding-bottom-2rem">
-                <p className="heading-03 mb-0">Description</p>
-              </Tab>
-              <Tab className="border-top-0-border-lef-0-border-right-0-border-bottom-0-5px-solid-black-focus margin-right-2rem padding-bottom-2rem">
-                <p className="heading-03 mb-0">Aditional information</p>
-              </Tab>
-              <Tab className="border-top-0-border-lef-0-border-right-0-border-bottom-0-5px-solid-black-focus margin-right-2rem padding-bottom-2rem">
-                <p className="heading-03 mb-0">Reviews</p>
-              </Tab>
-            </TabList>
-
-            <div className="border-0-5px-solid-bright-gray margin-bottom-2rem"></div>
-
-            <TabPanel>
-              <p className="heading-05">
+          <Box
+            className="margin-bottom-4rem"
+            sx={{ width: "100%", typography: "body1" }}
+          >
+            <TabContext value={value}>
+              <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                <TabList onChange={handleChange}>
+                  <Tab className="text-black" label="Description" value="1" />
+                  <Tab
+                    className="text-black"
+                    label="Aditional information"
+                    value="2"
+                  />
+                  <Tab className="text-black" label="Reviews" value="3" />
+                </TabList>
+              </Box>
+              <TabPanel className="heading-05" value="1">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
                 placerat, augue a volutpat hendrerit, sapien tortor faucibus
                 augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu
                 facilisis consequat sed eu felis. Nunc sed porta augue. Morbi
                 porta tempor odio, in molestie diam bibendum sed.
-              </p>
-            </TabPanel>
-            <TabPanel>
-              <ul className="list-unstyled">
-                <li>
-                  <p className="heading-05">Weight: 0.3 kg</p>
-                </li>
+              </TabPanel>
+              <TabPanel className="heading-05" value="2">
+                <p> Weight: 0.3 kg</p>
+                <p>Dimentions: 15 x 10 x 1 cm</p>
+                <p>Colours: Black, Browns, White</p>
+                <p>Material: Metal</p>
+              </TabPanel>
+              <TabPanel className="heading-05 d-flex flex-column" value="3">
+                <p className="heading-03">Add a Review</p>
 
-                <li>
-                  <p className="heading-05">Dimentions: 15 x 10 x 1 cm </p>
-                </li>
+                <p>
+                  Your email address will not be published. Required fields are
+                  marked *
+                </p>
 
-                <li>
-                  <p className="heading-05">Colours: Black, Browns, White</p>
-                </li>
+                <input
+                  className="body-medium border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem"
+                  placeholder="Your Review*"
+                ></input>
 
-                <li>
-                  <p className="heading-05">Material: Metal</p>
-                </li>
-              </ul>
-            </TabPanel>
-          </Tabs>
+                <input
+                  className="body-medium border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem"
+                  placeholder="Enter your name*"
+                ></input>
+
+                <input
+                  className="body-medium border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem"
+                  placeholder="Enter your Email*"
+                ></input>
+
+                <div className="d-flex">
+                  <input className="margin-right-0-5rem" type="checkbox" />
+                  Save my name, email, and website in this browser for the next
+                  time I comment
+                </div>
+
+                <p>Your Rating*</p>
+
+                <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+
+                <button className="background-color-black-color-white-text-decoration-none-padding-1rem-4rem-border-radius-10px">
+                  Submit
+                </button>
+              </TabPanel>
+            </TabContext>
+          </Box>
 
           <div className="product__content__similar-items-list">
             <p className="heading-02 margin-bottom-2rem">Similar Items</p>

@@ -11,8 +11,7 @@ import Contact from "../page/contact";
 import Home from "../page/home";
 import Shop from "../page/shop";
 import Product from "../page/product";
-import MyAccoutLogin from "../page/myAccount/myAccountLogin";
-import MyAccoutRegister from "../page/myAccount/myAccountRegister";
+import MyAccount from "../page/myAccount";
 
 const AppRoute = () => {
   return (
@@ -24,13 +23,7 @@ const AppRoute = () => {
         <Route path={PATH_NAME.HOME} element={<Home />} />
         <Route path={PATH_NAME.SHOP} element={<Shop />} />
         <Route path={PATH_NAME.PRODUCT} element={<Product />} />
-
-        <Route path={PATH_NAME.MY_ACCOUT_LOGIN} element={<MyAccoutLogin />} />
-        <Route
-          path={PATH_NAME.MY_ACCOUT_REGISTER}
-          element={<MyAccoutRegister />}
-        />
-
+        <Route path={PATH_NAME.MY_ACCOUNT} element={<MyAccount />} />
         <Route path={PATH_NAME.RESET_PASSWORD} element={<ResetPassword />} />
         <Route path={PATH_NAME.CONTACT} element={<Contact />} />
       </Routes>

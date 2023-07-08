@@ -1,31 +1,33 @@
 import "./index.css";
 import { IMG_02, IMG_03, IMG_04, IMG_05, IMG_06, IMG_07 } from "../../assets";
 
+import { PATH_NAME } from "../../constants/common";
+
 import ReactSlider from "react-slider";
 
 const Shop = () => {
   return (
     <main>
       <section id="shop">
-        <div className="shop__content display-flex">
+        <div className="shop__content d-flex">
           <div className="shop__content__left-side-bar margin-right-4rem">
             <p className="heading-01 margin-bottom-1rem">Shop The Latest</p>
 
             <input
-              className="border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem width-100 margin-bottom-2rem"
+              className="border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem w-100 margin-bottom-2rem"
               type="text"
               placeholder="search..."
             ></input>
 
-            <select className="border-1px-bright-gray-padding-10px-border-radius-6px width-100 margin-bottom-1rem">
+            <select className="border-1px-bright-gray-padding-10px-border-radius-6px w-100 margin-bottom-1rem">
               <option>Shop By</option>
             </select>
 
-            <select className="border-1px-bright-gray-padding-10px-border-radius-6px width-100 margin-bottom-2rem">
+            <select className="border-1px-bright-gray-padding-10px-border-radius-6px w-100 margin-bottom-2rem">
               <option>Sort By</option>
             </select>
 
-            <div className="margin-top-1rem margin-bottom-2rem">
+            <div className="margin-top-1rem margin-bottom-3rem">
               <ReactSlider
                 className="horizontal-slider"
                 thumbClassName="example-thumb"
@@ -41,8 +43,8 @@ const Shop = () => {
               />
             </div>
 
-            <div className="shop__content__left-side-bar__on-sale display-flex margin-bottom-2rem">
-              <p className="heading-05">On sale</p>
+            <div className="shop__content__left-side-bar__on-sale d-flex justify-content-between align-items-center margin-bottom-1rem">
+              <p className="heading-05 mb-0">On sale</p>
 
               <label class="switch">
                 <input type="checkbox"></input>
@@ -50,8 +52,8 @@ const Shop = () => {
               </label>
             </div>
 
-            <div className="shop__content__left-side-bar__in-stock display-flex margin-bottom-2rem">
-              <p className="heading-05">In stock</p>
+            <div className="shop__content__left-side-bar__in-stock d-flex justify-content-between align-items-center">
+              <p className="heading-05 mb-0">In stock</p>
 
               <label class="switch">
                 <input type="checkbox"></input>
@@ -61,52 +63,55 @@ const Shop = () => {
           </div>
 
           <div className="shop__content__product">
-            <div className="home__content__product__row-1 display-flex margin-bottom-4rem">
-              <div className="margin-right-2rem">
+            <div className="home__content__product__row-1 row">
+              <a
+                className="col text-black text-decoration-none"
+                href={PATH_NAME.PRODUCT}
+              >
                 <img src={IMG_02} alt="" />
                 <p className="heading-03 margin-bottom-0-5rem">Lira Earrings</p>
                 <p className="heading-04">$ 20,00</p>
-              </div>
+              </a>
 
-              <div className="margin-right-2rem">
+              <a className="col text-black text-decoration-none" href="/">
                 <img src={IMG_03} alt="" />
                 <p className="heading-03 margin-bottom-0-5rem">Hal Earrings</p>
                 <p className="heading-04">$ 25,00</p>
-              </div>
+              </a>
 
-              <div>
+              <a className="col text-black text-decoration-none" href="/">
                 <img src={IMG_04} alt="" />
                 <p className="heading-03 margin-bottom-0-5rem">
                   Kaede Hair Pin Set Of 3{" "}
                 </p>
                 <p className="heading-04">$ 30,00</p>
-              </div>
+              </a>
             </div>
 
-            <div className="home__content__product__row-2 display-flex">
-              <div className="margin-right-2rem">
+            <div className="home__content__product__row-2 row">
+              <a className="col text-black text-decoration-none" href="/">
                 <img src={IMG_05} alt="" />
                 <p className="heading-03 margin-bottom-0-5rem">
                   Hair Pin Set of 3
                 </p>
                 <p className="heading-04">$ 30,00</p>
-              </div>
+              </a>
 
-              <div className="margin-right-2rem">
+              <a className="col text-black text-decoration-none" href="/">
                 <img src={IMG_06} alt="" />
                 <p className="heading-03 margin-bottom-0-5rem">
                   Plaine Necklace
                 </p>
                 <p className="heading-04">$ 19,00</p>
-              </div>
+              </a>
 
-              <div>
+              <a className="col text-black text-decoration-none" href="/">
                 <img src={IMG_07} alt="" />
                 <p className="heading-03 margin-bottom-0-5rem">
                   Yuki Hair Pin Set of 3
                 </p>
                 <p className="heading-04">$ 29,00</p>
-              </div>
+              </a>
             </div>
           </div>
         </div>

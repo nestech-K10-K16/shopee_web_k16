@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
 import { IMG_LogoShopee } from "../../assets";
+import { PATH_NAME } from "../../constants/common";
 
 const Header = () => {
   return (
@@ -18,7 +19,7 @@ const Header = () => {
               <li>
                 <a
                   className="heading-05 text-black text-decoration-none margin-left-2rem"
-                  href="/shop"
+                  href={PATH_NAME.SHOP}
                 >
                   Shop
                 </a>
@@ -60,7 +61,7 @@ const Header = () => {
                 <li>
                   <a
                     className="text-black margin-left-2rem"
-                    href="/my-account-login"
+                    href={PATH_NAME.MY_ACCOUNT}
                   >
                     <i class="fa-regular fa-user"></i>
                   </a>
