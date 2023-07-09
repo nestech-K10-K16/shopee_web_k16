@@ -20,7 +20,6 @@ const AppRoute = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path={PATH_NAME.HOME} element={<Home />} />
         <Route path={PATH_NAME.SHOP} element={<Shop />} />
         <Route path={PATH_NAME.PRODUCT} element={<Product />} />
         <Route path={PATH_NAME.MY_ACCOUNT} element={<MyAccount />} />

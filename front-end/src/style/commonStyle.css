@@ -32,9 +32,10 @@
 }
 
 /* button */
-.background-color-white-border-0-5px-solid {
+.background-color-white-border-0-5px-solid-border-radius-10px {
   background-color: var(--white);
   border: 0.5px solid;
+  border-radius: 10px;
 }
 
 .border-5px-solid-bright-gray-background-color-white-padding-0-8rem-3-8rem-border-radius-10px {
