@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter&family=Poppins:ital,wght@0,100;0,300;1,800;1,900&family=Roboto:wght@300&display=swap");
+
+:root {
+  --font-family: "DM Sans", sans-serif;
+  /* FONT WEIGHT*/
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-900: 900;
+
+  /* LINE HEIGHT */
+  --line-height-20: 20px;
+  --line-height-26: 26px;
+  --line-height-27: 27px;
+  --line-height-35: 27px;
+
+  /* SIZE - FONT SIZE */
+  --size-12: 12px;
+  --size-14: 14px;
+  --size-16: 16px;
+  --size-20: 20px;
+  --size-26: 26px;
+  --size-33: 33px;
+
+  /* LETTER-SPACING */
+  --letter-spacing-10: 10px;
+}
+
+html,
+body {
+  font-family: var(--font-family-base);
+}
+
+.heading-01 {
+  font-weight: var(--font-weight-500);
+  font-size: var(--size-33);
+}
+
+.heading-02 {
+  font-weight: var(--font-weight-400);
+  font-size: var(--size-26);
+  line-height: var(--line-height-35);
+}
+
+.heading-03 {
+  font-weight: var(--font-weight-400);
+  font-size: var(--size-26);
+  line-height: var(--line-height-35);
+}
+
+.heading-04 {
+  font-weight: var(--font-weight-400);
+  font-size: var(--size-26);
+  line-height: var(--line-height-20);
+}
+
+.heading-05 {
+  font-weight: var(--font-weight-400);
+  font-size: var(--size-16);
+  line-height: var(--line-height-27);
+  letter-spacing: var(--letter-spacing-10);
+}
+
+.body-large {
+  font-weight: var(--font-weight-700);
+  font-size: var(--size-16);
+  line-height: var(--line-height-20);
+}
+
+.body-medium {
+  font-weight: var(--font-weight-400);
+  font-size: var(--size-14);
+  line-height: var(--line-height-22);
+}
+
+.body-small {
+  font-weight: var(--font-weight-400);
+  font-size: var(--size-12);
+  line-height: var(--line-height-20);
+  letter-spacing: var(--letter-spacing-10);
+}

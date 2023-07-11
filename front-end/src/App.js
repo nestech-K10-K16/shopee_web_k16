@@ -1,12 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import AppRoute from './router';
+import React from "react";
+import { Footer, Navbar } from "./components";
+import { Home, Contact, Privacy } from "./pages";
 
 const App = () => {
   return (
-    <Router>
-      <AppRoute />
-    </Router>
+    <div>
+      <Navbar />
+      <Home />
+      <Privacy />
+      <Contact />
+      <Footer />\
+    </div>
   );
 };
 
