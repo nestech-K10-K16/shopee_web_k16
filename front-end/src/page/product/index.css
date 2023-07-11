@@ -14,13 +14,32 @@
   width: 105rem;
 }
 
-/* product - content - top - prodcut information - amount */
-.product__content__top__product-infomation__amount-product input {
-  background-color: var(--bright-gray);
-  text-align: center;
+/* product - content - top - prodcut information - amount product */
+.product__content__top__product-infomation__amount-product {
+  width: 12rem;
+  height: 4rem;
 }
 
-.product__content__top__product-infomation__amount-product button {
+.product__content__top__product-infomation__amount-product input {
+  background-color: var(--bright-gray);
+  outline: 0;
+}
+
+/* product - content - top - prodcut information - amount product - increase */
+.product__content__top__product-infomation__amount-product__increase:hover {
+  background-color: var(--anti-flash-white);
+}
+
+.product__content__top__product-infomation__amount-product__increase:active {
+  background-color: var(--bright-gray);
+}
+
+/* product - content - top - prodcut information - amount product - reduce */
+.product__content__top__product-infomation__amount-product__reduce:hover {
+  background-color: var(--anti-flash-white);
+}
+
+.product__content__top__product-infomation__amount-product__reduce:active {
   background-color: var(--bright-gray);
 }
 
@@ -29,7 +48,7 @@
   background-color: var(--white-smoke);
 }
 
-/* product - content - similar items list - item */
-.product__content__similar-items-list__item {
-  justify-content: space-between;
+/* product - content - btn submit */
+.product__content__review__btn-submit {
+  width: fit-content;
 }

@@ -1,0 +1,17 @@
+#blog {
+  padding: 8vh 10vw;
+}
+
+/* blog - content - left side bar */
+.blog__content__left-side-bar {
+  width: 30rem;
+}
+
+/* blog - content - left side bar - search */
+.blog__content__left-side-bar__search input {
+  padding-right: 1.5rem;
+}
+
+.blog__content__left-side-bar__search button {
+  margin-left: -1.2rem;
+}

@@ -2,8 +2,6 @@ import { useState } from "react";
 import { IMG_02, IMG_03, IMG_04, IMG_06 } from "../../assets";
 import "./index.css";
 
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
 import Rating from "@mui/material/Rating";
 
 import Box from "@mui/material/Box";
@@ -75,14 +73,25 @@ const Product = () => {
                              d-flex 
                              margin-right-1rem"
                 >
-                  <Button color="inherit" onClick={onClickIncrease} value="+">
+                  <button
+                    className="product__content__top__product-infomation__amount-product__increase rounded-start border-0 w-100"
+                    onClick={onClickIncrease}
+                    value="+"
+                  >
                     +
-                  </Button>
+                  </button>
 
-                  <TextField value={number} />
-                  <Button color="inherit" onClick={onClickreduce} value="-">
+                  <input
+                    className="text-center border-0 w-100"
+                    value={number}
+                  />
+                  <button
+                    className="product__content__top__product-infomation__amount-product__reduce rounded-end border-0 w-100"
+                    onClick={onClickreduce}
+                    value="-"
+                  >
                     -
-                  </Button>
+                  </button>
                 </div>
 
                 <button className="product__content__top__product-infomation__add-to-cart body-large background-color-white-border-0-5px-solid w-100">
@@ -153,11 +162,14 @@ const Product = () => {
                 </TabList>
               </Box>
               <TabPanel className="heading-05" value="1">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                placerat, augue a volutpat hendrerit, sapien tortor faucibus
-                augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu
-                facilisis consequat sed eu felis. Nunc sed porta augue. Morbi
-                porta tempor odio, in molestie diam bibendum sed.
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Aliquam placerat, augue a volutpat hendrerit, sapien tortor
+                  faucibus augue, a maximus elit ex vitae libero. Sed quis
+                  mauris eget arcu facilisis consequat sed eu felis. Nunc sed
+                  porta augue. Morbi porta tempor odio, in molestie diam
+                  bibendum sed.
+                </p>
               </TabPanel>
               <TabPanel className="heading-05" value="2">
                 <p> Weight: 0.3 kg</p>
@@ -165,42 +177,50 @@ const Product = () => {
                 <p>Colours: Black, Browns, White</p>
                 <p>Material: Metal</p>
               </TabPanel>
-              <TabPanel className="heading-05 d-flex flex-column" value="3">
-                <p className="heading-03">Add a Review</p>
+              <TabPanel className="product__content__review d-flex justify-content-between" value="3">
+                <div></div>
 
-                <p>
-                  Your email address will not be published. Required fields are
-                  marked *
-                </p>
+                <div className="d-flex flex-column">
+                  <p className="heading-03 margin-bottom-1rem">Add a Review</p>
 
-                <input
-                  className="body-medium border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem"
-                  placeholder="Your Review*"
-                ></input>
+                  <p className="margin-bottom-3rem">
+                    Your email address will not be published. Required fields
+                    are marked *
+                  </p>
 
-                <input
-                  className="body-medium border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem"
-                  placeholder="Enter your name*"
-                ></input>
+                  <input
+                    className="body-medium border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem margin-bottom-1rem"
+                    placeholder="Your Review*"
+                  ></input>
 
-                <input
-                  className="body-medium border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem"
-                  placeholder="Enter your Email*"
-                ></input>
+                  <input
+                    className="body-medium border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem margin-bottom-1rem"
+                    placeholder="Enter your name*"
+                  ></input>
 
-                <div className="d-flex">
-                  <input className="margin-right-0-5rem" type="checkbox" />
-                  Save my name, email, and website in this browser for the next
-                  time I comment
+                  <input
+                    className="body-medium border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem margin-bottom-1rem"
+                    placeholder="Enter your Email*"
+                  ></input>
+
+                  <div className="d-flex margin-bottom-3rem">
+                    <input className="margin-right-0-5rem" type="checkbox" />
+                    Save my name, email, and website in this browser for the
+                    next time I comment
+                  </div>
+
+                  <p>Your Rating*</p>
+
+                  <Rating className="margin-bottom-2rem"
+                    name="half-rating"
+                    defaultValue={2.5}
+                    precision={0.5}
+                  />
+
+                  <button className="product__content__review__btn-submit background-color-black-color-white-text-decoration-none-padding-1rem-4rem-border-radius-10px">
+                    Submit
+                  </button>
                 </div>
-
-                <p>Your Rating*</p>
-
-                <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
-
-                <button className="background-color-black-color-white-text-decoration-none-padding-1rem-4rem-border-radius-10px">
-                  Submit
-                </button>
               </TabPanel>
             </TabContext>
           </Box>

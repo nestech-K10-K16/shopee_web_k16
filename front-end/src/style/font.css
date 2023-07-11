@@ -33,12 +33,22 @@
   --white: white;
   --white-smoke: whitesmoke;
   --bright-gray: #efefef;
+  --anti-flash-white: #f2f2f2;
   --dark-silver: #707070;
+  --beaver: #a18a68;
 }
 
 html,
 body {
   font-family: var(--font-family-base);
+}
+
+.text-dark-silver {
+  color: var(--dark-silver);
+}
+
+.text-beaver {
+  color: var(--beaver);
 }
 
 .heading-01 {
