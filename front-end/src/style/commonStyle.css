@@ -27,7 +27,7 @@
   background-color: var(--black);
   color: var(--white);
   text-decoration: none;
-  padding: 0.6rem 4rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 10px;
 }
 
@@ -193,3 +193,5 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+
