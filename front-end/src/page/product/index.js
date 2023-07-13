@@ -64,7 +64,7 @@ const Product = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
                 placerat, augue a volutpat hendrerit, sapien tortor faucibus
                 augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu
-                facilisis consequat sed eu felis.{" "}
+                facilisis consequat sed eu felis.
               </p>
 
               <div className="d-flex margin-bottom-3rem">
@@ -111,19 +111,19 @@ const Product = () => {
                 <div className="border-0-5px-solid-bright-gray-rotate--180deg margin-right-2rem"></div>
 
                 <div>
-                  <a className="text-black margin-right-2rem" href="#">
+                  <a className="text-black margin-right-2rem" href="/">
                     <i class="fa-regular fa-envelope fa-xl"></i>
                   </a>
 
-                  <a className="text-black margin-right-2rem" href="#">
+                  <a className="text-black margin-right-2rem" href="/">
                     <i class="fa-brands fa-facebook-f fa-xl "></i>
                   </a>
 
-                  <a className="text-black margin-right-2rem" href="#">
+                  <a className="text-black margin-right-2rem" href="/">
                     <i class="fa-brands fa-instagram fa-xl "></i>
                   </a>
 
-                  <a className="text-black margin-right-2rem" href="#">
+                  <a className="text-black margin-right-2rem" href="/">
                     <i class="fa-brands fa-twitter fa-xl "></i>
                   </a>
                 </div>
@@ -246,7 +246,7 @@ const Product = () => {
               <div>
                 <img src={IMG_04} alt="" />
                 <p className="heading-03 margin-bottom-0-5rem">
-                  Kaede Hair Pin Set Of 3{" "}
+                  Kaede Hair Pin Set Of 3
                 </p>
                 <p className="heading-04">$ 30,00</p>
               </div>

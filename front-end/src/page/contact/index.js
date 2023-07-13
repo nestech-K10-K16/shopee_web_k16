@@ -51,7 +51,7 @@ const Contact = () => {
 
             <a
               className="background-color-black-color-white-text-decoration-none-padding-1rem-4rem-border-radius-6px"
-              href="#"
+              href="/"
             >
               SEND
             </a>
