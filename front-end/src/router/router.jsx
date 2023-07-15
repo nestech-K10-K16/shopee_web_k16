@@ -1,9 +1,9 @@
 import ShopPage from "../pages/shop/ShopPage";
 import BlogPage from "../pages/blog/BlogPage";
 import OurStoryPage from "../pages/ourStory/OurStoryPage";
-import SearchPage from "../components/search/SearchPage";
-import CartPage from "../components/cart/CartPage";
-import MyAccount from "../components/myaccount/MyAccount";
+import SearchPage from "../pages/search/SearchPage";
+import CartPage from "../pages/cart/CartPage";
+import MyAccount from "../pages/myaccount/MyAccount";
 
 export const ROUTE_ID = {
   SHOP: "ShopRoute",
@@ -77,7 +77,7 @@ export const appRoute = [
   ShopRoute,
   BlogRoute,
   Our_StoryRoute,
-  SearchPage,
-  CartPage,
-  MyAccount,
+  SearchRoute,
+  CartRoute,
+  UserRoute,
 ];

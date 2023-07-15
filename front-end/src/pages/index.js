@@ -4,3 +4,6 @@ export { default as Privacy } from "./privacy/Privacy";
 export { default as ShopPage } from "./shop/ShopPage";
 export { default as BlogPage } from "./blog/BlogPage";
 export { default as Home } from "./home/index";
+export { default as Search } from "./search/SearchPage";
+export { default as Cart } from "./cart/CartPage";
+export { default as MyAccount } from "./myaccount/MyAccount";

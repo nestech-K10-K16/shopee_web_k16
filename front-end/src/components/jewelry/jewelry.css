@@ -25,6 +25,7 @@
   font-size: var(--size-20);
   font-family: var(--font-family);
   line-height: 26px;
+  font-weight: 400;
   color: var(--color-text-black);
   margin-bottom: 16px;
   cursor: pointer;

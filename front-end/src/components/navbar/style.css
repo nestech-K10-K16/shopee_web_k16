@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   left: 0;
-  padding: 64px 94px 16px;
+  padding: 64px 94px 17 px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +26,6 @@
   display: flex;
   flex-direction: row;
   margin-right: 5px;
-  border-right: 1px solid #707070;
 }
 
 .shoppe__navbar-icons {
@@ -48,6 +47,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  border-left: 1px solid #707070;
 }
 
 .shoppe__navbar-icons a {
