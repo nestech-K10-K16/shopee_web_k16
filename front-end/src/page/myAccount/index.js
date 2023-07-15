@@ -1,5 +1,6 @@
 import { PATH_NAME } from "../../constants/common";
 import "./index.css";
+import $ from "jquery";
 
 import { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -10,6 +11,7 @@ const MyAccount = () => {
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
   const [message, setMessage] = useState("");
+
   const [homePage, setHomePage] = useState("");
 
   const onChangeFullName = (e) => {
@@ -171,21 +173,17 @@ const MyAccount = () => {
                          d-flex list-unstyled margin-bottom-4rem
                          background-color-bright-gray-border-radius-10px"
             >
-              <Tab className="ok"> 
-                <button
-                  className="my-account__content__switch-login heading-03
-                             border-5px-solid-bright-gray-background-color-bright-gray-padding-0-8rem-3-8rem-border-radius-10px"
-                >
-                  Login
-                </button>
+              <Tab
+                className="my-account__content__switch-login heading-03 
+                           border-5px-solid-bright-gray-background-color-bright-gray-padding-0-8rem-3-8rem-border-radius-10px"
+              >
+                Login
               </Tab>
-              <Tab className="my-account__content__switch-register">
-                <button
-                  className="heading-03 
-                             border-5px-solid-bright-gray-background-color-bright-gray-padding-0-8rem-3-8rem-border-radius-10px"
-                >
-                  Register
-                </button>
+              <Tab
+                className="my-account__content__switch-register heading-03 
+                           border-5px-solid-bright-gray-background-color-bright-gray-padding-0-8rem-3-8rem-border-radius-10px"
+              >
+                Register
               </Tab>
             </TabList>
 

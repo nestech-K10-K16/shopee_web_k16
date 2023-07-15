@@ -7,7 +7,14 @@
   padding: 8vh 10vw;
 }
 
-.ok:focus .my-account__content__switch-login {
+.my-account__content__switch-login:focus {
+  border: 5px solid var(--bright-gray);
+  background-color: var(--white);
+  padding: 0.8rem 3.8rem;
+  border-radius: 10px;
+}
+
+.my-account__content__switch-register:focus {
   border: 5px solid var(--bright-gray);
   background-color: var(--white);
   padding: 0.8rem 3.8rem;

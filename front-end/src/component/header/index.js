@@ -37,7 +37,7 @@ const Header = () => {
               <li>
                 <a
                   className="heading-05 text-black text-decoration-none margin-left-2rem"
-                  href="/"
+                  href={PATH_NAME.OUR_STORY}
                 >
                   Our story
                 </a>

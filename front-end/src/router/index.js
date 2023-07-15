@@ -10,13 +10,14 @@ import Home from "../page/home";
 import Shop from "../page/shop";
 import Product from "../page/product";
 import Blog from "../page/blog";
+import OurStory from "../page/ourStory";
 import MyAccount from "../page/myAccount";
 import ResetPassword from "../page/resetPasword";
 import Contact from "../page/contact";
 
 const AppRoute = () => {
   return (
-    <div>
+    <>
       <Header />
 
       <Routes>
@@ -24,13 +25,14 @@ const AppRoute = () => {
         <Route path={PATH_NAME.SHOP} element={<Shop />} />
         <Route path={PATH_NAME.PRODUCT} element={<Product />} />
         <Route path={PATH_NAME.BLOG} element={<Blog />} />
+        <Route path={PATH_NAME.OUR_STORY} element={<OurStory />} />
         <Route path={PATH_NAME.MY_ACCOUNT} element={<MyAccount />} />
         <Route path={PATH_NAME.RESET_PASSWORD} element={<ResetPassword />} />
         <Route path={PATH_NAME.CONTACT} element={<Contact />} />
       </Routes>
 
       <Footer />
-    </div>
+    </>
   );
 };
 
