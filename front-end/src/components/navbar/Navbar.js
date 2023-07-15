@@ -1,10 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
-
 import logo from "../../assets/logo.svg";
 import "../../configs/fontIcon";
-
 import "./style.css";
 
 const Menu = () => (
@@ -23,15 +21,15 @@ const Menu = () => (
 
 const Icon = () => (
   <>
-    <a href="#glass">
+    <Link to="/Search">
       <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-    </a>
-    <a href="#cart">
+    </Link>
+    <Link to="/Cart">
       <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
-    </a>
-    <a href="#user">
+    </Link>
+    <Link to="/User">
       <FontAwesomeIcon icon="fa-solid fa-user" />
-    </a>
+    </Link>
   </>
 );
 
