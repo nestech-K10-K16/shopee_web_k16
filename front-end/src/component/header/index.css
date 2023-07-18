@@ -2,3 +2,12 @@
 #header {
   padding: 8vh 10vw;
 }
+
+.header-top__right-side__menu li a:hover {
+  color: black;
+}
+
+.header-top__right-side__menu li a:active {
+  border-bottom: 2px solid var(--black);
+  padding-bottom: 2rem;
+}

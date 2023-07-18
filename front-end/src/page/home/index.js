@@ -8,6 +8,7 @@ import {
   IMG_PRODUCT_06,
   IMG_PRODUCT_07,
 } from "../../assets";
+import { PATH_NAME } from "../../constants/common";
 
 const Home = () => {
   return (
@@ -30,61 +31,96 @@ const Home = () => {
               </a>
             </div>
 
-            <div className="home__content__product__row-1 row">
-              <a
-                className="col text-black text-decoration-none"
-                href="/product"
-              >
-                <img src={IMG_PRODUCT_02} alt="" />
-
+            <div className="home__content__product__row row margin-bottom-2rem">
+              <div className="col text-black text-decoration-none">
+                <div className="position-relative margin-bottom-0-5rem">
+                  <a href={PATH_NAME.PRODUCT}>
+                    <img className="w-100" src={IMG_PRODUCT_02} alt="" />
+                  </a>
+                  <button className="home__content__product__row__add-to-cart body-large w-100">
+                    Add to cart
+                  </button>
+                </div>
                 <p className="heading-03 margin-bottom-0-5rem">Lira Earrings</p>
+                <p className="heading-04 text-beaver">
+                  $ 20,00
+                </p>
+              </div>
 
-                <p className="heading-04">$ 20,00</p>
-              </a>
-
-              <a className="col text-black text-decoration-none" href="/">
-                <img src={IMG_PRODUCT_03} alt="" />
-
+              <div className="col text-black text-decoration-none">
+                <div className="position-relative margin-bottom-0-5rem">
+                  <a href={PATH_NAME.PRODUCT}>
+                    <img className="w-100" src={IMG_PRODUCT_03} alt="" />
+                  </a>
+                  <button className="home__content__product__row__add-to-cart body-large w-100">
+                    Add to cart
+                  </button>
+                </div>
                 <p className="heading-03 margin-bottom-0-5rem">Hal Earrings</p>
+                <p className="heading-04 text-beaver">$ 25,00</p>
+              </div>
 
-                <p className="heading-04">$ 25,00</p>
-              </a>
-
-              <a className="col text-black text-decoration-none" href="/">
-                <img src={IMG_PRODUCT_04} alt="" />
-
+              <div className="col text-black text-decoration-none">
+                <div className="position-relative margin-bottom-0-5rem">
+                  <a href={PATH_NAME.PRODUCT}>
+                    <img className="w-100" src={IMG_PRODUCT_04} alt="" />
+                  </a>
+                  <button className="home__content__product__row__add-to-cart body-large w-100">
+                    Add to cart
+                  </button>
+                </div>
                 <p className="heading-03 margin-bottom-0-5rem">
                   Kaede Hair Pin Set Of 3
                 </p>
-
-                <p className="heading-04">$ 30,00</p>
-              </a>
+                <p className="heading-04 text-beaver">$ 30,00</p>
+              </div>
             </div>
 
-            <div className="home__content__product__row-2 row">
-              <a className="col text-black text-decoration-none" href="/">
-                <img src={IMG_PRODUCT_05} alt="" />
+            <div className="home__content__product__row row">
+              <div className="col text-black text-decoration-none">
+                <div className="position-relative margin-bottom-0-5rem">
+                  <a href={PATH_NAME.PRODUCT}>
+                    <img className="w-100" src={IMG_PRODUCT_05} alt="" />
+                  </a>
+                  <button className="home__content__product__row__add-to-cart body-large w-100">
+                    Add to cart
+                  </button>
+                </div>
                 <p className="heading-03 margin-bottom-0-5rem">
                   Hair Pin Set of 3
                 </p>
-                <p className="heading-04">$ 30,00</p>
-              </a>
+                <p className="heading-04 text-beaver">$ 30,00</p>
+              </div>
 
-              <a className="col text-black text-decoration-none" href="/">
-                <img src={IMG_PRODUCT_06} alt="" />
+              <div className="col text-black text-decoration-none">
+                <div className="position-relative margin-bottom-0-5rem">
+                  <a href={PATH_NAME.PRODUCT}>
+                    <img className="w-100" src={IMG_PRODUCT_06} alt="" />
+                  </a>
+                  <button className="home__content__product__row__add-to-cart body-large w-100">
+                    Add to cart
+                  </button>
+                </div>
                 <p className="heading-03 margin-bottom-0-5rem">
                   Plaine Necklace
                 </p>
-                <p className="heading-04">$ 19,00</p>
-              </a>
+                <p className="heading-04 text-beaver">$ 19,00</p>
+              </div>
 
-              <a className="col text-black text-decoration-none" href="/">
-                <img src={IMG_PRODUCT_07} alt="" />
+              <div className="col text-black text-decoration-none">
+                <div className="position-relative margin-bottom-0-5rem">
+                  <a href={PATH_NAME.PRODUCT}>
+                    <img className="w-100" src={IMG_PRODUCT_07} alt="" />
+                  </a>
+                  <button className="home__content__product__row__add-to-cart body-large w-100">
+                    Add to cart
+                  </button>
+                </div>
                 <p className="heading-03 margin-bottom-0-5rem">
                   Yuki Hair Pin Set of 3
                 </p>
-                <p className="heading-04">$ 29,00</p>
-              </a>
+                <p className="heading-04 text-beaver">$ 29,00</p>
+              </div>
             </div>
           </div>
         </div>

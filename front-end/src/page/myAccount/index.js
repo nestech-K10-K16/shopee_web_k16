@@ -1,6 +1,5 @@
 import { PATH_NAME } from "../../constants/common";
 import "./index.css";
-import $ from "jquery";
 
 import { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -13,6 +12,8 @@ const MyAccount = () => {
   const [message, setMessage] = useState("");
 
   const [homePage, setHomePage] = useState("");
+
+  const [tabIndex, setTabIndex] = useState(0);
 
   const onChangeFullName = (e) => {
     setFullName(e.target.value);
@@ -161,26 +162,37 @@ const MyAccount = () => {
     setHomePage(PATH_NAME.HOME);
   };
 
+  const ok = (e) => {
+    setTabIndex(e);
+
+    setTabIndex(
+      document
+        .getElementById("ok")
+        .classList.add("my-account__content__switch-login")
+    );
+  };
+
   return (
     <main>
       <section id="my-account">
         <div className="my-account__content">
           <p className="heading-01 margin-bottom-4rem">My account</p>
 
-          <Tabs>
+          <Tabs selectedIndex={tabIndex} onSelect={(e) => ok(e)}>
             <TabList
               className="my-account__content__switch 
                          d-flex list-unstyled margin-bottom-4rem
                          background-color-bright-gray-border-radius-10px"
             >
               <Tab
-                className="my-account__content__switch-login heading-03 
+                id="ok"
+                className=" heading-03 
                            border-5px-solid-bright-gray-background-color-bright-gray-padding-0-8rem-3-8rem-border-radius-10px"
               >
                 Login
               </Tab>
               <Tab
-                className="my-account__content__switch-register heading-03 
+                className=" heading-03
                            border-5px-solid-bright-gray-background-color-bright-gray-padding-0-8rem-3-8rem-border-radius-10px"
               >
                 Register
