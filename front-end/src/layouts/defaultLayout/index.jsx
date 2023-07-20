@@ -1,12 +1,11 @@
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
-import Home from "../../pages/home/index";
 
-export default function DefaultLayout() {
+export default function DefaultLayout({ children }) {
   return (
     <div>
       <Navbar />
-      <Home />
+      {children}
       <Footer />
     </div>
   );

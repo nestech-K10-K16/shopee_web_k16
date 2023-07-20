@@ -13,7 +13,10 @@ const Footer = () => {
           <h5>SHIPPING AND RETURNS</h5>
         </div>
         <div className="Shoppe__contact-links-2">
-          <h5>Give an email, get the newsletter.</h5>
+          <input
+            type="email"
+            placeholder="Give an email, get the newsletter."
+          />
           <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
         </div>
       </div>

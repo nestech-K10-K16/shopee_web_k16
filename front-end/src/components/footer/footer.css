@@ -28,13 +28,14 @@
   border-bottom: 1px solid var(--color-text-black);
 }
 
-.Shoppe__contact-links-2 h5 {
+.Shoppe__contact-links-2 input {
+  width: 243px;
   font-size: var(--size-16);
   font-family: var(--font-family);
   line-height: 27px;
   font-weight: 400;
   margin-right: 128px;
-  cursor: pointer;
+  border: none;
 
   margin-bottom: 13px;
 }

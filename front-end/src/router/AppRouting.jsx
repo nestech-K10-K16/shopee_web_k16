@@ -1,14 +1,13 @@
-import { Fragment } from "react";
 import { Route, Routes } from "react-router-dom";
 import DefaultLayout from "../layouts/defaultLayout";
-import { appRoute, DEFAULT_PATHNAME } from "./router";
+import { appRoute } from "./router";
 
 const AppRouting = () => {
   return (
     <Routes>
       {appRoute.map((route) => {
         const Component = route.component;
-        const Layout = route.layout === null ? Fragment : DefaultLayout;
+        const Layout = DefaultLayout;
         return (
           <Route
             key={route.id}
@@ -21,14 +20,6 @@ const AppRouting = () => {
           />
         );
       })}
-      <Route
-        path={DEFAULT_PATHNAME}
-        element={
-          <DefaultLayout>
-            <DefaultLayout />
-          </DefaultLayout>
-        }
-      />
     </Routes>
   );
 };

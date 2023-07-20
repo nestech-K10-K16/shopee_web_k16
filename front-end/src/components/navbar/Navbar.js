@@ -8,26 +8,26 @@ import "./style.css";
 const Menu = () => (
   <>
     <p>
-      <Link to="/Shop">Shop</Link>
+      <Link to="/shop">Shop</Link>
     </p>
     <p>
-      <Link to="/Blog">Blog</Link>
+      <Link to="/blog">Blog</Link>
     </p>
     <p>
-      <Link to="/OurStory">Our Story</Link>
+      <Link to="/our-story">Our Story</Link>
     </p>
   </>
 );
 
 const Icon = () => (
   <>
-    <Link to="/Search">
+    <Link to="/search">
       <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
     </Link>
-    <Link to="/Cart">
+    <Link to="/cart">
       <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
     </Link>
-    <Link to="/User">
+    <Link to="/user">
       <FontAwesomeIcon icon="fa-solid fa-user" />
     </Link>
   </>

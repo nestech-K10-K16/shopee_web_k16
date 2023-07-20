@@ -3,9 +3,14 @@ import BlogPage from "../pages/blog/BlogPage";
 import OurStoryPage from "../pages/ourStory/OurStoryPage";
 import SearchPage from "../pages/search/SearchPage";
 import CartPage from "../pages/cart/CartPage";
-import MyAccount from "../pages/myaccount/MyAccount";
+import User from "../pages/user/User";
+import ResetPassword from "../pages/resetPassword/ResetPassword";
+import Home from "../pages/home/Home";
 
 export const ROUTE_ID = {
+  RESET_PASSWORD: "ResetPasswordRoute",
+  DEFAULT_LAYOUT: "DefaultLayoutRoute",
+  HOME: "HomeRoute",
   SHOP: "ShopRoute",
   BLOG: "BlogRoute",
   OUR_STORY: "Our_StoryRoute",
@@ -15,12 +20,15 @@ export const ROUTE_ID = {
 };
 
 export const PATHNAME_LIST = {
-  SHOP: "/Shop",
-  BLOG: "/Blog",
-  OUR_STORY: "/OurStory",
-  SEARCH: "/Search",
-  CART: "/Cart",
-  USER: "/User",
+  RESET_PASSWORD: "/reset-password",
+  DEFAULT_LAYOUT: "/default-layout",
+  HOME: "/home",
+  SHOP: "/shop",
+  BLOG: "/blog",
+  OUR_STORY: "/our-story",
+  SEARCH: "/search",
+  CART: "/cart",
+  USER: "/user",
 };
 
 export const NAME_LAYOUT = {
@@ -28,13 +36,26 @@ export const NAME_LAYOUT = {
   MAIN_LAYOUT: "MainLayout",
 };
 
-export const DEFAULT_PATHNAME = "/";
+export const DEFAULT_PATHNAME = PATHNAME_LIST.HOME;
 
 // Define routes
+export const HomeRoute = {
+  id: ROUTE_ID.HOME,
+  path: DEFAULT_PATHNAME,
+  component: Home,
+};
+
+export const ResetPasswordRoute = {
+  id: ROUTE_ID.RESET_PASSWORD,
+  path: PATHNAME_LIST.RESET_PASSWORD,
+  component: ResetPassword,
+  layout: null,
+};
+
 export const UserRoute = {
   id: ROUTE_ID.USER,
   path: PATHNAME_LIST.USER,
-  component: MyAccount,
+  component: User,
   layout: null,
 };
 
@@ -74,6 +95,7 @@ export const Our_StoryRoute = {
 };
 
 export const appRoute = [
+  ResetPasswordRoute,
   ShopRoute,
   BlogRoute,
   Our_StoryRoute,
