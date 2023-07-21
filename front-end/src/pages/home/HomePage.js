@@ -2,7 +2,6 @@ import React from "react";
 import "./style.css";
 import { Jewelry } from "../../components";
 import introduce from "../../assets/img__home-introduce.jpg";
-
 import { home01, home02, home03, home04, home05, home06 } from "./import";
 
 const Home = () => {
@@ -10,16 +9,16 @@ const Home = () => {
     <div className="shoppe__home ">
       <div className="shoppe__home-img">
         <img src={introduce} alt="introduce" />
-        <div class="shoppe__home-slider">
-          <div class="ellipse-10"></div>
+        <div className="shoppe__home-slider">
+          <div className="ellipse-10"></div>
 
-          <div class="ellipse-11"></div>
+          <div className="ellipse-11"></div>
 
-          <div class="ellipse-12"></div>
+          <div className="ellipse-12"></div>
 
-          <div class="ellipse-13"></div>
+          <div className="ellipse-13"></div>
 
-          <div class="ellipse-14"></div>
+          <div className="ellipse-14"></div>
         </div>
         <div className="shoppe__home-content">
           <h1>Gold big hoops</h1>

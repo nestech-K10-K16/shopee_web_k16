@@ -3,4 +3,7 @@ export { default as OurStoryPage } from "./ourStory/OurStoryPage";
 export { default as Privacy } from "./privacy/Privacy";
 export { default as ShopPage } from "./shop/ShopPage";
 export { default as BlogPage } from "./blog/BlogPage";
-export { default as Home } from "./home/index";
+export { default as HomePage } from "./home/HomePage";
+export { default as UserPage } from "./home/HomePage";
+export { default as CartPage } from "./cart/CartPage";
+export { default as SearchPage } from "./search/SearchPage";
