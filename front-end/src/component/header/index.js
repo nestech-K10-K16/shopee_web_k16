@@ -15,10 +15,10 @@ const Header = () => {
           </div>
 
           <div className="header-top__right-side ">
-            <ul className="header-top__right-side__menu d-flex list-unstyled m-0">
+            <ul className="header-top__right-side__menu d-flex list-unstyled mb-0">
               <li>
                 <a
-                  className="heading-05 text-black text-decoration-none margin-left-2rem"
+                  className="heading-05 text-dark-silver text-decoration-none margin-left-2rem"
                   href={PATH_NAME.SHOP}
                 >
                   Shop
@@ -27,7 +27,7 @@ const Header = () => {
 
               <li>
                 <a
-                  className="heading-05 text-black text-decoration-none margin-left-2rem"
+                  className="heading-05 text-dark-silver text-decoration-none margin-left-2rem"
                   href={PATH_NAME.BLOG}
                 >
                   Blog
@@ -36,8 +36,8 @@ const Header = () => {
 
               <li>
                 <a
-                  className="heading-05 text-black text-decoration-none margin-left-2rem"
-                  href="/"
+                  className="heading-05 text-dark-silver text-decoration-none margin-left-2rem"
+                  href={PATH_NAME.OUR_STORY}
                 >
                   Our story
                 </a>
@@ -47,20 +47,20 @@ const Header = () => {
 
               <div className="d-flex align-items-center">
                 <li>
-                  <a className="text-black margin-left-2rem" href="/">
+                  <a className="text-dark-silver margin-left-2rem" href="/">
                     <i class="fa-solid fa-magnifying-glass"></i>
                   </a>
                 </li>
 
                 <li>
-                  <a className="text-black margin-left-2rem" href="/">
+                  <a className="text-dark-silver margin-left-2rem" href="/">
                     <i class="fa-solid fa-cart-shopping"></i>
                   </a>
                 </li>
 
                 <li>
                   <a
-                    className="text-black margin-left-2rem"
+                    className="text-dark-silver margin-left-2rem"
                     href={PATH_NAME.MY_ACCOUNT}
                   >
                     <i class="fa-regular fa-user"></i>

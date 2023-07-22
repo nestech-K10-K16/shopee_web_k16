@@ -28,34 +28,34 @@ const Blog = () => {
           <ul className="blog__content__left-side-bar__categories list-unstyled">
             <li className="heading-04 margin-bottom-1rem">Categories</li>
             <li className="heading-05 margin-bottom-0-5rem">
-              <a className="text-black text-decoration-none" href="#">
+              <a className="text-black text-decoration-none" href="/">
                 Fashion
               </a>
             </li>
 
             <li className="heading-05 margin-bottom-0-5rem">
-              <a className="text-black text-decoration-none" href="#">
+              <a className="text-black text-decoration-none" href="/">
                 Style
               </a>
             </li>
 
             <li className="heading-05 margin-bottom-0-5rem">
-              <a className="text-black text-decoration-none" href="#">
+              <a className="text-black text-decoration-none" href="/">
                 Accessories
               </a>
             </li>
 
             <li className="heading-05 margin-bottom-0-5rem">
-              <a className="text-black text-decoration-none" href="#">
+              <a className="text-black text-decoration-none" href="/">
                 Season
               </a>
             </li>
           </ul>
         </div>
 
-        <div className="blog__content__blog-post pt-5 ms-5">
+        <div className="blog__content__blog-post ms-5">
           <div className="row mb-5">
-            <a className="text-black text-decoration-none col " href="#">
+            <a className="text-black text-decoration-none col " href="/">
               <img src={IMG_POST_01} alt="" />
 
               <p className="body-medium text-dark-silver">
@@ -72,7 +72,7 @@ const Blog = () => {
               <p className="body-large text-beaver">Read More</p>
             </a>
 
-            <a className="text-black text-decoration-none col" href="#">
+            <a className="text-black text-decoration-none col" href="/">
               <img src={IMG_POST_02} alt="" />
 
               <p className="body-medium text-dark-silver">
@@ -83,7 +83,7 @@ const Blog = () => {
 
               <p className="heading-05 text-dark-silver">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                faucibus augue, a maximus elit ex vitae libero...{" "}
+                faucibus augue, a maximus elit ex vitae libero...
               </p>
 
               <p className="body-large text-beaver">Read More</p>
@@ -91,7 +91,7 @@ const Blog = () => {
           </div>
 
           <div className="row">
-            <a className="text-black text-decoration-none col" href="#">
+            <a className="text-black text-decoration-none col" href="/">
               <img src={IMG_POST_03} alt="" />
 
               <p className="body-medium text-dark-silver">
@@ -108,7 +108,7 @@ const Blog = () => {
               <p className="body-large text-beaver">Read More</p>
             </a>
 
-            <a className="text-black text-decoration-none col" href="#">
+            <a className="text-black text-decoration-none col" href="/">
               <img src={IMG_POST_04} alt="" />
 
               <p className="body-medium text-dark-silver">
@@ -119,7 +119,7 @@ const Blog = () => {
 
               <p className="heading-05 text-dark-silver">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                faucibus augue, a maximus elit ex vitae libero...{" "}
+                faucibus augue, a maximus elit ex vitae libero...
               </p>
 
               <p className="body-large text-beaver">Read More</p>

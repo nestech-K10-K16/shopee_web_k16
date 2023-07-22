@@ -1,3 +1,15 @@
 #footer {
   padding: 8vh 10vw;
 }
+
+.footer-bottom__right-side {
+  width: 20rem;
+}
+
+.footer-bottom__right-side__give-email input {
+  padding: 1rem;
+}
+
+.footer-bottom__right-side__give-email a {
+  margin-left: -1rem;
+}

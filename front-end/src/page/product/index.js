@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { IMG_02, IMG_03, IMG_04, IMG_06 } from "../../assets";
+import {
+  IMG_PRODUCT_02,
+  IMG_PRODUCT_03,
+  IMG_PRODUCT_04,
+  IMG_PRODUCT_06,
+} from "../../assets";
 import "./index.css";
 
 import Rating from "@mui/material/Rating";
@@ -43,14 +48,14 @@ const Product = () => {
               className="product__content__top__product-type-list
                          margin-right-2rem"
             >
-              <img className="margin-bottom-1rem" src={IMG_02} alt="" />
-              <img className="margin-bottom-1rem" src={IMG_02} alt="" />
-              <img className="margin-bottom-1rem" src={IMG_02} alt="" />
-              <img className="margin-bottom-1rem" src={IMG_02} alt="" />
+              <img className="margin-bottom-1rem" src={IMG_PRODUCT_02} alt="" />
+              <img className="margin-bottom-1rem" src={IMG_PRODUCT_02} alt="" />
+              <img className="margin-bottom-1rem" src={IMG_PRODUCT_02} alt="" />
+              <img className="margin-bottom-1rem" src={IMG_PRODUCT_02} alt="" />
             </div>
 
             <div className="product__content__top__product margin-right-3rem">
-              <img src={IMG_02} alt="" />
+              <img src={IMG_PRODUCT_02} alt="" />
             </div>
 
             <div className="product__content__top__product-infomation">
@@ -64,7 +69,7 @@ const Product = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
                 placerat, augue a volutpat hendrerit, sapien tortor faucibus
                 augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu
-                facilisis consequat sed eu felis.{" "}
+                facilisis consequat sed eu felis.
               </p>
 
               <div className="d-flex margin-bottom-3rem">
@@ -111,19 +116,19 @@ const Product = () => {
                 <div className="border-0-5px-solid-bright-gray-rotate--180deg margin-right-2rem"></div>
 
                 <div>
-                  <a className="text-black margin-right-2rem" href="#">
+                  <a className="text-black margin-right-2rem" href="/">
                     <i class="fa-regular fa-envelope fa-xl"></i>
                   </a>
 
-                  <a className="text-black margin-right-2rem" href="#">
+                  <a className="text-black margin-right-2rem" href="/">
                     <i class="fa-brands fa-facebook-f fa-xl "></i>
                   </a>
 
-                  <a className="text-black margin-right-2rem" href="#">
+                  <a className="text-black margin-right-2rem" href="/">
                     <i class="fa-brands fa-instagram fa-xl "></i>
                   </a>
 
-                  <a className="text-black margin-right-2rem" href="#">
+                  <a className="text-black margin-right-2rem" href="/">
                     <i class="fa-brands fa-twitter fa-xl "></i>
                   </a>
                 </div>
@@ -177,7 +182,10 @@ const Product = () => {
                 <p>Colours: Black, Browns, White</p>
                 <p>Material: Metal</p>
               </TabPanel>
-              <TabPanel className="product__content__review d-flex justify-content-between" value="3">
+              <TabPanel
+                className="product__content__review d-flex justify-content-between"
+                value="3"
+              >
                 <div></div>
 
                 <div className="d-flex flex-column">
@@ -211,7 +219,8 @@ const Product = () => {
 
                   <p>Your Rating*</p>
 
-                  <Rating className="margin-bottom-2rem"
+                  <Rating
+                    className="margin-bottom-2rem"
                     name="half-rating"
                     defaultValue={2.5}
                     precision={0.5}
@@ -230,13 +239,13 @@ const Product = () => {
 
             <div className="product__content__similar-items-list__item d-flex">
               <div className="margin-right-2rem">
-                <img src={IMG_03} alt="" />
+                <img src={IMG_PRODUCT_03} alt="" />
                 <p className="heading-03 margin-bottom-0-5rem">Hal Earrings</p>
                 <p className="heading-04">$ 25,00</p>
               </div>
 
               <div className="margin-right-2rem">
-                <img src={IMG_06} alt="" />
+                <img src={IMG_PRODUCT_06} alt="" />
                 <p className="heading-03 margin-bottom-0-5rem">
                   Plaine Necklace
                 </p>
@@ -244,9 +253,9 @@ const Product = () => {
               </div>
 
               <div>
-                <img src={IMG_04} alt="" />
+                <img src={IMG_PRODUCT_04} alt="" />
                 <p className="heading-03 margin-bottom-0-5rem">
-                  Kaede Hair Pin Set Of 3{" "}
+                  Kaede Hair Pin Set Of 3
                 </p>
                 <p className="heading-04">$ 30,00</p>
               </div>

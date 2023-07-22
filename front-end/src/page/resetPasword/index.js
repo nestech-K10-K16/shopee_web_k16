@@ -32,7 +32,7 @@ const ResetPassword = () => {
               className="reset-password_content__btn-reset-password
                            body-large
                            background-color-black-color-white-text-decoration-none-padding-1rem-4rem-border-radius-6px"
-              href="#"
+              href="/"
             >
               <p>RESET PASSSWORD</p>
             </a>

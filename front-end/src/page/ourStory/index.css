@@ -1,0 +1,9 @@
+#our-story {
+  display: flex;
+  justify-content: center;
+  padding: 8vh 10vw;
+}
+
+.our-story__content {
+  width: 41rem;
+}
