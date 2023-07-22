@@ -15,7 +15,7 @@ const Home = () => {
       <section id="home">
         <div className="home__content">
           <div className="home__content__slider margin-bottom-4rem">
-            <img src={IMG_01} alt="" />
+            <img src={IMG_01} alt="" className="img-fluid" />
           </div>
 
           <div className="home__content__product">
