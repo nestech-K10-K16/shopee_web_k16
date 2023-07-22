@@ -1,0 +1,168 @@
+.Shoppe__myAccount {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid #d8d8d8;
+  width: 1330px;
+  height: 900px;
+  margin-left: 96px;
+}
+
+form {
+  margin-top: 50px;
+}
+
+form h1 {
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: var(--size-33);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 43px;
+
+  color: var(--color-text-black);
+  margin-bottom: 64px;
+}
+
+.Shoppe__myAccount-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+
+  width: 500px;
+  height: 60px;
+  border-radius: 8px;
+  background: var(--color-light-gray);
+  margin-bottom: 126px;
+}
+
+.Shoppe__myAccount-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 236px;
+  height: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+  background: var(--color-text-white);
+}
+
+.Shoppe__myAccount-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  padding: 16px 84px;
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.fill-username input {
+  border: none;
+  width: 500px;
+  height: 30px;
+
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+  border-bottom: 1px solid var(--color-gray);
+  margin-bottom: 46px;
+}
+
+.fill-email input {
+  border: none;
+  width: 500px;
+  height: 30px;
+
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+  border-bottom: 1px solid var(--color-gray);
+  margin-bottom: 46px;
+}
+
+.fill-password input {
+  border: none;
+  width: 500px;
+  height: 30px;
+
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+  border-bottom: 1px solid var(--color-gray);
+  margin-bottom: 15px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  width: 16px;
+  height: 17.174px;
+  border: 1px solid var(--color-footer);
+  border-radius: 2px;
+  margin-bottom: 71.83px;
+}
+
+label {
+  color: var(--color-text-black);
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  margin: 0px 5px 69px;
+}
+
+.btn {
+  width: 500px;
+  height: 53px;
+  border-radius: 4px;
+  border: 1px solid var(--color-text-white);
+  background: var(--color-text-black);
+  margin-bottom: 13px;
+  cursor: pointer;
+
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--color-text-white);
+  transition: 0.5s ease;
+}
+
+.btn:hover {
+  background: var(--color-footer);
+  color: var(--color-text-black);
+}
+
+h5 {
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  cursor: pointer;
+  margin-bottom: 247px;
+}
+
+.tabIndex {
+  background: var(--color-text-white) !important;
+}

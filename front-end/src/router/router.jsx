@@ -34,13 +34,14 @@ export const NAME_LAYOUT = {
   MAIN_LAYOUT: "MainLayout",
 };
 
-export const DEFAULT_PATHNAME = PATHNAME_LIST.HOME;
+export const DEFAULT_PATHNAME = "/";
 
 // Define routes
 export const HomeRoute = {
   id: ROUTE_ID.HOME,
-  path: DEFAULT_PATHNAME.HOME,
+  path: PATHNAME_LIST.HOME,
   component: HomePage,
+  layout: null,
 };
 
 export const ResetPasswordRoute = {

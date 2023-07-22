@@ -1,6 +1,10 @@
 .Shoppe__contact {
   position: sticky;
-  padding: 90px 96px;
+  width: 1340px;
+  border-top: 1px solid var(--color-gray);
+  margin-left: 90px;
+
+  margin-bottom: 90px;
 }
 
 .Shoppe__contact-content {
@@ -11,9 +15,10 @@
 .Shoppe__contact-links-1 {
   display: flex;
   color: var(--color-footer);
+  margin-top: 55px;
 }
 
-.Shoppe__contact-links-1 h5 {
+.Shoppe__contact-links-1 h4 {
   font-size: var(--size-16);
   font-family: var(--font-family);
   line-height: 27px;
@@ -28,15 +33,21 @@
   border-bottom: 1px solid var(--color-text-black);
 }
 
-.Shoppe__contact-links-2 h5 {
+.Shoppe__contact-links-2 input {
   font-size: var(--size-16);
   font-family: var(--font-family);
   line-height: 27px;
   font-weight: 400;
-  margin-right: 128px;
-  cursor: pointer;
+  width: 244px;
+  height: 18px;
 
-  margin-bottom: 13px;
+  margin-top: 48px;
+  margin-right: 128px;
+  border: none;
+}
+
+.Shoppe__contact-links-2 .icon {
+  margin-top: 50px;
 }
 
 .Shoppe__contact-lastPage {

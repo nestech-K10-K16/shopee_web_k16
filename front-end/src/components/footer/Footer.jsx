@@ -8,13 +8,16 @@ const Footer = () => {
     <div className="Shoppe__contact">
       <div className="Shoppe__contact-content">
         <div className="Shoppe__contact-links-1">
-          <h5>CONTACT</h5>
-          <h5>TERMS OF SERVICES</h5>
-          <h5>SHIPPING AND RETURNS</h5>
+          <h4>CONTACT</h4>
+          <h4>TERMS OF SERVICES</h4>
+          <h4>SHIPPING AND RETURNS</h4>
         </div>
         <div className="Shoppe__contact-links-2">
-          <h5>Give an email, get the newsletter.</h5>
-          <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
+          <input
+            type="email"
+            placeholder="Give an email, get the newsletter."
+          ></input>
+          <FontAwesomeIcon className="icon" icon="fa-solid fa-arrow-right" />
         </div>
       </div>
       <div className="Shoppe__contact-lastPage">

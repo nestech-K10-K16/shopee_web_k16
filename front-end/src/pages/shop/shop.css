@@ -1,0 +1,45 @@
+.Shoppe__shopPage {
+  border-top: 1px solid #d8d8d8;
+  width: 1315px;
+  height: 1200px;
+  margin-left: 96px;
+  margin-bottom: 240px;
+}
+
+.Shoppe__shopPage-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Shoppe__shopPage h1 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 96px;
+  font-family: var(--font-family);
+  font-size: var(--size-33);
+  font-weight: 500;
+  line-height: 43px;
+}
+
+.Shoppe__shopPage-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.Shoppe__shopPage-search {
+  margin-top: 41px;
+  margin-right: 36px;
+}
+
+.Shoppe__shopPage_home-container {
+  margin-top: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Shoppe__shopPage_home-container_group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 57px;
+}
