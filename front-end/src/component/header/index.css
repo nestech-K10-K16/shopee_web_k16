@@ -9,5 +9,5 @@
 
 .header-top__right-side__menu li a:active {
   border-bottom: 2px solid var(--black);
-  padding-bottom: 2rem;
+  padding-bottom: 1.7rem;
 }

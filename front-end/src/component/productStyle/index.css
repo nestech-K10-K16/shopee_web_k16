@@ -1,0 +1,32 @@
+#product-style {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+#product-style img {
+  width: 100%;
+}
+
+#product-style button {
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  height: 1.3rem;
+  left: 50%;
+  bottom: -11px;
+  width: 100%;
+  border: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: 0.6s;
+}
+
+#product-style button:hover {
+  background-color: azure;
+}
+
+#product-style:hover button {
+  opacity: 1;
+  bottom: -24px;
+  height: 3rem;
+}

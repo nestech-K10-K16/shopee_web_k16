@@ -15,6 +15,8 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 
+import ProductStyle from "../../component/productStyle";
+
 const Product = () => {
   const [number, setNumber] = useState(1);
   const [heart, setHeart] = useState(false);
@@ -44,17 +46,14 @@ const Product = () => {
       <section id="product">
         <div className="product__content">
           <div className="product__content__top d-flex margin-bottom-5rem">
-            <div
-              className="product__content__top__product-type-list
-                         margin-right-2rem"
-            >
-              <img className="margin-bottom-1rem" src={IMG_PRODUCT_02} alt="" />
-              <img className="margin-bottom-1rem" src={IMG_PRODUCT_02} alt="" />
-              <img className="margin-bottom-1rem" src={IMG_PRODUCT_02} alt="" />
-              <img className="margin-bottom-1rem" src={IMG_PRODUCT_02} alt="" />
+            <div className="product__content__top__product-type-list me-4">
+              <img className="mb-2" src={IMG_PRODUCT_02} alt="" />
+              <img className="mb-2" src={IMG_PRODUCT_02} alt="" />
+              <img className="mb-2" src={IMG_PRODUCT_02} alt="" />
+              <img src={IMG_PRODUCT_02} alt="" />
             </div>
 
-            <div className="product__content__top__product margin-right-3rem">
+            <div className="product__content__top__product me-4">
               <img src={IMG_PRODUCT_02} alt="" />
             </div>
 
@@ -237,23 +236,32 @@ const Product = () => {
           <div className="product__content__similar-items-list">
             <p className="heading-02 margin-bottom-2rem">Similar Items</p>
 
-            <div className="product__content__similar-items-list__item d-flex">
-              <div className="margin-right-2rem">
-                <img src={IMG_PRODUCT_03} alt="" />
+            <div className="product__content__similar-items-list__item row">
+              <div className="col">
+                <ProductStyle
+                  className="body-large"
+                  src={IMG_PRODUCT_03}
+                ></ProductStyle>
                 <p className="heading-03 margin-bottom-0-5rem">Hal Earrings</p>
                 <p className="heading-04">$ 25,00</p>
               </div>
 
-              <div className="margin-right-2rem">
-                <img src={IMG_PRODUCT_06} alt="" />
+              <div className="col">
+                <ProductStyle
+                  className="body-large"
+                  src={IMG_PRODUCT_06}
+                ></ProductStyle>
                 <p className="heading-03 margin-bottom-0-5rem">
                   Plaine Necklace
                 </p>
                 <p className="heading-04">$ 19,00</p>
               </div>
 
-              <div>
-                <img src={IMG_PRODUCT_04} alt="" />
+              <div className="col">
+                <ProductStyle
+                  className="body-large"
+                  src={IMG_PRODUCT_04}
+                ></ProductStyle>
                 <p className="heading-03 margin-bottom-0-5rem">
                   Kaede Hair Pin Set Of 3
                 </p>

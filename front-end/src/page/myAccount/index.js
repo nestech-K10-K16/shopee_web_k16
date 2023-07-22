@@ -1,3 +1,5 @@
+import Button from "../../component/button";
+import Input from "../../component/input";
 import { PATH_NAME } from "../../constants/common";
 import "./index.css";
 
@@ -162,39 +164,24 @@ const MyAccount = () => {
     setHomePage(PATH_NAME.HOME);
   };
 
-  const ok = (e) => {
-    setTabIndex(e);
-
-    setTabIndex(
-      document
-        .getElementById("ok")
-        .classList.add("my-account__content__switch-login")
-    );
-  };
+  const onSelectSwitch = () => {};
 
   return (
     <main>
       <section id="my-account">
         <div className="my-account__content">
-          <p className="heading-01 margin-bottom-4rem">My account</p>
+          <p className="heading-01 mb-5">My account</p>
 
-          <Tabs selectedIndex={tabIndex} onSelect={(e) => ok(e)}>
+          <Tabs selectedIndex={tabIndex} onSelect={(e) => setTabIndex(e)}>
             <TabList
               className="my-account__content__switch 
-                         d-flex list-unstyled margin-bottom-4rem
-                         background-color-bright-gray-border-radius-10px"
+                         d-flex list-unstyled mb-5"
+              onSelect={onSelectSwitch}
             >
-              <Tab
-                id="ok"
-                className=" heading-03 
-                           border-5px-solid-bright-gray-background-color-bright-gray-padding-0-8rem-3-8rem-border-radius-10px"
-              >
+              <Tab className="my-account__content__switch-login heading-03">
                 Login
               </Tab>
-              <Tab
-                className=" heading-03
-                           border-5px-solid-bright-gray-background-color-bright-gray-padding-0-8rem-3-8rem-border-radius-10px"
-              >
+              <Tab className="my-account__content__switch-register heading-03">
                 Register
               </Tab>
             </TabList>
@@ -203,51 +190,43 @@ const MyAccount = () => {
               <form className="d-flex flex-column">
                 <p className="text-danger">{message}</p>
 
-                <input
-                  className="my-account__content__sign-in__account 
-                             heading-05 margin-bottom-1rem
-                             border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem "
-                  type="text"
+                <Input
+                  className="heading-05 mb-2"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => onChangeEmail(e)}
-                ></input>
+                ></Input>
 
-                <input
-                  className="my-account__content__sign-in__password 
-                             heading-05 margin-bottom-1rem
-                             border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem"
+                <Input
+                  className="heading-05 mb-3"
                   type="password"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => onChangePassword(e)}
-                ></input>
+                ></Input>
 
                 <div
                   className="my-account__content__sign-in__remember-me
-                             d-flex align-items-center margin-bottom-2rem"
+                             d-flex align-items-center mb-4"
                 >
                   <input
-                    className="heading-05 margin-right-0-5rem"
+                    className="heading-05 me-3"
                     type="checkbox"
                   />
                   Remember me
                 </div>
 
-                <a
-                  className="my-account__content__user-login
-                             body-large margin-bottom-1rem
-                             background-color-black-color-white-text-decoration-none-padding-1rem-4rem-border-radius-10px"
+                <Button
+                  className="body-large mb-3"
+                  text="SIGN IN"
                   href={homePage}
                   onClick={onClickButtonLogin}
-                >
-                  SIGN IN
-                </a>
+                ></Button>
 
                 <a
                   className="my-account__content__sign-in__forgot-password
                              heading-05 text-black text-decoration-none"
-                  href="/reset-password"
+                  href={PATH_NAME.RESET_PASSWORD}
                 >
                   <p>Have you forgotten your password</p>
                 </a>
@@ -255,55 +234,45 @@ const MyAccount = () => {
             </TabPanel>
 
             <TabPanel className="my-account__content__register">
-              <form
-                className="my-account__user
-                           d-flex flex-column"
-              >
+              <form className="my-account__user d-flex flex-column">
                 <p className="text-danger">{message}</p>
 
-                <input
-                  className="heading-05 margin-bottom-0-5rem
-                            border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem"
-                  type="text"
+                <Input
+                  className="heading-05 mb-2"
                   placeholder="Full name"
                   value={fullName}
                   onChange={(e) => onChangeFullName(e)}
-                ></input>
+                ></Input>
 
-                <input
-                  className="heading-05 margin-bottom-0-5rem
-                            border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem"
-                  type="text"
+                <Input
+                  className="heading-05 mb-2"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => onChangeEmail(e)}
-                ></input>
+                ></Input>
 
-                <input
-                  className="heading-05 margin-bottom-0-5rem
-                            border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem"
+                <Input
+                  className="heading-05 mb-2"
                   type="password"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => onChangePassword(e)}
-                ></input>
+                ></Input>
 
-                <input
-                  className="heading-05 margin-bottom-2rem
-                            border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem"
+                <Input
+                  className="heading-05 mb-4"
                   type="password"
                   placeholder="Enter the password"
+                  value={rePassword}
                   onChange={(e) => onChangeRePassword(e)}
-                ></input>
+                ></Input>
 
-                <a
-                  className="body-large 
-                            background-color-black-color-white-text-decoration-none-padding-1rem-4rem-border-radius-10px"
+                <Button
+                  className="body-large"
+                  text="SIGN UP"
                   href={homePage}
                   onClick={onClickButtonRegister}
-                >
-                  SIGN UP
-                </a>
+                ></Button>
               </form>
             </TabPanel>
           </Tabs>

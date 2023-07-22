@@ -5,13 +5,13 @@ const OurStory = () => {
   return (
     <section id="our-story">
       <div className="our-story__content">
-        <div className="our-story__content__heading text-center margin-bottom-3rem">
+        <div className="our-story__content__heading text-center mb-5">
           <p className="heading-01">About</p>
 
           <p className="heading-03">Who we are and why we do what we do!</p>
         </div>
 
-        <p className="heading-05 margin-bottom-3rem">
+        <p className="heading-05 mb-5">
           Duis rutrum dictum libero quis rutrum. Etiam sed neque aliquam,
           sollicitudin ante a, gravida arcu. Nam fringilla molestie velit, eget
           pellentesque risus scelerisque a. Nam ac urna maximus, tempor magna
@@ -21,7 +21,7 @@ const OurStory = () => {
 
         <p className="heading-02">Top trends</p>
 
-        <img className="margin-bottom-3rem" src={IMG_OUR_STORY_01} alt="" />
+        <img className="mb-5" src={IMG_OUR_STORY_01} alt="" />
 
         <p className="heading-05">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
@@ -30,7 +30,7 @@ const OurStory = () => {
           consequat sed eu felis.
         </p>
 
-        <ul className="margin-bottom-3rem">
+        <ul className="mb-5">
           <li>
             <p className="heading-05">consectetur adipiscing elit. Aliquam placerat</p>
           </li>
@@ -42,7 +42,7 @@ const OurStory = () => {
 
         <p className="heading-02">Produced with care</p>
 
-        <img className="margin-bottom-3rem" src={IMG_OUR_STORY_02} alt="" />
+        <img className="mb-5" src={IMG_OUR_STORY_02} alt="" />
 
         <p className="heading-05">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam

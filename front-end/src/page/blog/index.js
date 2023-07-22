@@ -7,18 +7,17 @@ import {
   IMG_POST_04,
 } from "../../assets";
 
+import Input from "../../component/input";
+
 const Blog = () => {
   return (
     <section id="blog">
       <div className="blog__content d-flex">
-        <div className="blog__content__left-side-bar">
-          <p className="heading-01 margin-bottom-2rem">Blog</p>
+        <div className="blog__content__left-side-bar me-5">
+          <p className="heading-01">Blog</p>
 
-          <div className="blog__content__left-side-bar__search">
-            <input
-              className="heading-05 border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem w-100 margin-bottom-4rem"
-              placeholder="Search..."
-            ></input>
+          <div className="blog__content__left-side-bar__search mb-5">
+            <Input className="heading-05 w-100" placeholder="Search..." />
 
             <button className="bg-body border-0">
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -26,26 +25,26 @@ const Blog = () => {
           </div>
 
           <ul className="blog__content__left-side-bar__categories list-unstyled">
-            <li className="heading-04 margin-bottom-1rem">Categories</li>
-            <li className="heading-05 margin-bottom-0-5rem">
+            <li className="heading-04 mb-3">Categories</li>
+            <li className="heading-05 mb-2">
               <a className="text-black text-decoration-none" href="/">
                 Fashion
               </a>
             </li>
 
-            <li className="heading-05 margin-bottom-0-5rem">
+            <li className="heading-05 mb-2">
               <a className="text-black text-decoration-none" href="/">
                 Style
               </a>
             </li>
 
-            <li className="heading-05 margin-bottom-0-5rem">
+            <li className="heading-05 mb-2">
               <a className="text-black text-decoration-none" href="/">
                 Accessories
               </a>
             </li>
 
-            <li className="heading-05 margin-bottom-0-5rem">
+            <li className="heading-05 mb-2">
               <a className="text-black text-decoration-none" href="/">
                 Season
               </a>
@@ -53,9 +52,9 @@ const Blog = () => {
           </ul>
         </div>
 
-        <div className="blog__content__blog-post ms-5">
+        <div className="blog__content__blog-post">
           <div className="row mb-5">
-            <a className="text-black text-decoration-none col " href="/">
+            <div className="text-black col ">
               <img src={IMG_POST_01} alt="" />
 
               <p className="body-medium text-dark-silver">
@@ -69,10 +68,15 @@ const Blog = () => {
                 faucibus augue, a maximus elit ex vitae libero...{" "}
               </p>
 
-              <p className="body-large text-beaver">Read More</p>
-            </a>
+              <a
+                className="body-large text-beaver text-decoration-none"
+                href="/"
+              >
+                Read More
+              </a>
+            </div>
 
-            <a className="text-black text-decoration-none col" href="/">
+            <div className="text-black col">
               <img src={IMG_POST_02} alt="" />
 
               <p className="body-medium text-dark-silver">
@@ -86,12 +90,17 @@ const Blog = () => {
                 faucibus augue, a maximus elit ex vitae libero...
               </p>
 
-              <p className="body-large text-beaver">Read More</p>
-            </a>
+              <a
+                className="body-large text-beaver text-decoration-none"
+                href="/"
+              >
+                Read More
+              </a>
+            </div>
           </div>
 
           <div className="row">
-            <a className="text-black text-decoration-none col" href="/">
+            <div className="text-black col">
               <img src={IMG_POST_03} alt="" />
 
               <p className="body-medium text-dark-silver">
@@ -105,10 +114,15 @@ const Blog = () => {
                 faucibus augue, a maximus elit ex vitae libero...{" "}
               </p>
 
-              <p className="body-large text-beaver">Read More</p>
-            </a>
+              <a
+                className="body-large text-beaver text-decoration-none"
+                href="/"
+              >
+                Read More
+              </a>
+            </div>
 
-            <a className="text-black text-decoration-none col" href="/">
+            <div className="text-black col">
               <img src={IMG_POST_04} alt="" />
 
               <p className="body-medium text-dark-silver">
@@ -122,8 +136,13 @@ const Blog = () => {
                 faucibus augue, a maximus elit ex vitae libero...
               </p>
 
-              <p className="body-large text-beaver">Read More</p>
-            </a>
+              <a
+                className="body-large text-beaver text-decoration-none"
+                href="/"
+              >
+                Read More
+              </a>
+            </div>
           </div>
         </div>
       </div>
