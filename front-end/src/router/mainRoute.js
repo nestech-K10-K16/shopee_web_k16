@@ -1,11 +1,11 @@
 import { PATH_NAME } from "../constants/common";
 import HomePage from "pages/home";
-import BlogPage from "../pages/blog";
-import ContactPage from "../pages/contact";
-import MyAccountPage from "../pages/myAccount";
-import ProductPage from "../pages/product";
-import ResetPasswordPage from "../pages/resetPassword";
-import ShopPage from "../pages/shop";
+import BlogPage from "pages/blog";
+import ContactPage from "pages/contact";
+import MyAccountPage from "pages/myAccount";
+import ProductPage from "pages/product";
+import ResetPasswordPage from "pages/resetPassword";
+import ShopPage from "pages/shop";
 
 const ROUTE_ID = {
   HOME: "Home",

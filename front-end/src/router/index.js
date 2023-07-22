@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { APP_ROUTE } from "./mainRoute";
-import { DefaultLayout } from "../component/utils";
+import { DefaultLayout } from "../components/utils";
 
 const AppRoute = () => {
   return (

@@ -1,3 +1,4 @@
+import { validateEmail } from "utils";
 import { PATH_NAME } from "../../constants/common";
 import "./index.css";
 
@@ -90,17 +91,8 @@ const MyAccount = () => {
     }
 
     //email
-    if (!email) {
-      setMessage("yêu cầu nhập email");
-      return;
-    }
-
-    if (!email.includes("@")) {
-      setMessage("email phải có kí tự @");
-      return;
-    }
-    if (email.length > 50) {
-      setMessage("email của bạn không được quá 50 kí tự");
+    if (!validateEmail(email)) {
+      setMessage("Email không hợp lệ");
       return;
     }
 
@@ -171,7 +163,7 @@ const MyAccount = () => {
                          d-flex list-unstyled margin-bottom-4rem
                          background-color-bright-gray-border-radius-10px"
             >
-              <Tab className="ok"> 
+              <Tab className="ok">
                 <button
                   className="my-account__content__switch-login heading-03
                              border-5px-solid-bright-gray-background-color-bright-gray-padding-0-8rem-3-8rem-border-radius-10px"
