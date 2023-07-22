@@ -1,5 +1,5 @@
 export const PATH_NAME = {
-  HOME: "/home",
+  HOME: "/",
   SHOP: "/shop",
   PRODUCT: "/product",
   BLOG: "/blog",
