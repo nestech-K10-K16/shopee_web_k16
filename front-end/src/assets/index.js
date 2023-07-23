@@ -13,5 +13,5 @@ export { default as IMG_POST_02 } from "./image/img_post-02.svg";
 export { default as IMG_POST_03 } from "./image/img_post-03.svg";
 export { default as IMG_POST_04 } from "./image/img_post-04.svg";
 
-export { default as IMG_OUR_STORY_01 } from "./image/img_our-story-01.svg";
-export { default as IMG_OUR_STORY_02 } from "./image/img_our-story-02.svg";
+export { default as IMG_OUR_STORY_01 } from "./image/img_our-story-01.jsx";
+export { default as IMG_OUR_STORY_02 } from "./image/img_our-story-02.jsx";

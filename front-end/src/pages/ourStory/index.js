@@ -32,11 +32,15 @@ const OurStory = () => {
 
         <ul className="mb-5">
           <li>
-            <p className="heading-05">consectetur adipiscing elit. Aliquam placerat</p>
+            <p className="heading-05">
+              consectetur adipiscing elit. Aliquam placerat
+            </p>
           </li>
 
           <li>
-            <p className="heading-05">Lorem ipsum dolor sit amet consectetur </p>
+            <p className="heading-05">
+              Lorem ipsum dolor sit amet consectetur{" "}
+            </p>
           </li>
         </ul>
 

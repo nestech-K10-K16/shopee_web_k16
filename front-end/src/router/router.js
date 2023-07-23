@@ -1,14 +1,14 @@
-import MyAccount from "../page/myAccount";
-import ResetPassword from "../page/resetPasword";
+import MyAccount from "../pages/myAccount";
+import ResetPassword from "../pages/resetPasword";
 
-import Home from "../page/home";
-import Shop from "../page/shop";
-import Product from "../page/product";
+import Home from "../pages/home";
+import Shop from "../pages/shop";
+import Product from "../pages/product";
 
-import Blog from "../page/blog";
-import OurStory from "../page/ourStory";
+import Blog from "../pages/blog";
+import OurStory from "../pages/ourStory";
 
-import Contact from "../page/contact";
+import Contact from "../pages/contact";
 
 export const ROUTE_ID = {
   HOME: "HomeRoute",
