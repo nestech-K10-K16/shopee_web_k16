@@ -6,7 +6,6 @@ import {
   IMG_POST_03,
   IMG_POST_04,
 } from "../../assets";
-
 import Input from "../../component/input";
 
 const Blog = () => {
@@ -31,19 +30,16 @@ const Blog = () => {
                 Fashion
               </a>
             </li>
-
             <li className="heading-05 mb-2">
               <a className="text-black text-decoration-none" href="/">
                 Style
               </a>
             </li>
-
             <li className="heading-05 mb-2">
               <a className="text-black text-decoration-none" href="/">
                 Accessories
               </a>
             </li>
-
             <li className="heading-05 mb-2">
               <a className="text-black text-decoration-none" href="/">
                 Season
@@ -54,20 +50,16 @@ const Blog = () => {
 
         <div className="blog__content__blog-post">
           <div className="row mb-5">
-            <div className="text-black col ">
-              <img src={IMG_POST_01} alt="" />
-
+            <div className="col">
+              <IMG_POST_01 />
               <p className="body-medium text-dark-silver">
                 Fashion - October 8, 2020
               </p>
-
               <p className="heading-03">Top Trends From Spring</p>
-
               <p className="heading-05 text-dark-silver">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                faucibus augue, a maximus elit ex vitae libero...{" "}
+                faucibus augue, a maximus elit ex vitae libero...
               </p>
-
               <a
                 className="body-large text-beaver text-decoration-none"
                 href="/"
@@ -76,20 +68,16 @@ const Blog = () => {
               </a>
             </div>
 
-            <div className="text-black col">
-              <img src={IMG_POST_02} alt="" />
-
+            <div className="col">
+              <IMG_POST_02 />
               <p className="body-medium text-dark-silver">
                 Fashion - October 8, 2020
               </p>
-
               <p className="heading-03">Top Trends From Spring</p>
-
               <p className="heading-05 text-dark-silver">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 faucibus augue, a maximus elit ex vitae libero...
               </p>
-
               <a
                 className="body-large text-beaver text-decoration-none"
                 href="/"
@@ -100,20 +88,16 @@ const Blog = () => {
           </div>
 
           <div className="row">
-            <div className="text-black col">
-              <img src={IMG_POST_03} alt="" />
-
+            <div className="col">
+              <IMG_POST_03 />
               <p className="body-medium text-dark-silver">
                 Fashion - October 8, 2020
               </p>
-
               <p className="heading-03">Top Trends From Spring</p>
-
               <p className="heading-05 text-dark-silver">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                faucibus augue, a maximus elit ex vitae libero...{" "}
+                faucibus augue, a maximus elit ex vitae libero...
               </p>
-
               <a
                 className="body-large text-beaver text-decoration-none"
                 href="/"
@@ -122,20 +106,16 @@ const Blog = () => {
               </a>
             </div>
 
-            <div className="text-black col">
-              <img src={IMG_POST_04} alt="" />
-
+            <div className="col">
+              <IMG_POST_04 />
               <p className="body-medium text-dark-silver">
                 Fashion - October 8, 2020
               </p>
-
               <p className="heading-03">Top Trends From Spring</p>
-
               <p className="heading-05 text-dark-silver">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 faucibus augue, a maximus elit ex vitae libero...
               </p>
-
               <a
                 className="body-large text-beaver text-decoration-none"
                 href="/"

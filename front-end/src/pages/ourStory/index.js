@@ -21,7 +21,9 @@ const OurStory = () => {
 
         <p className="heading-02">Top trends</p>
 
-        <img className="mb-5" src={IMG_OUR_STORY_01} alt="" />
+        <div className="mb-5">
+          <IMG_OUR_STORY_01 />
+        </div>
 
         <p className="heading-05">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
@@ -46,7 +48,9 @@ const OurStory = () => {
 
         <p className="heading-02">Produced with care</p>
 
-        <img className="mb-5" src={IMG_OUR_STORY_02} alt="" />
+        <div className="mb-5">
+          <IMG_OUR_STORY_02 />
+        </div>
 
         <p className="heading-05">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam

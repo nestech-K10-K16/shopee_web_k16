@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import { IMG_LogoShopee } from "../../assets";
+import { IMG_LOGO_SHOPEE } from "../../assets";
 import { PATH_NAME } from "../../constants/common";
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
         <div className="header-top d-flex justify-content-between align-items-center pb-4">
           <div className="header-top__left-sider">
             <a className="header-top__left-sider__logo" href="/">
-              <img src={IMG_LogoShopee} alt="" />
+              <IMG_LOGO_SHOPEE />
             </a>
           </div>
 
