@@ -40,6 +40,7 @@ const MyAccount = () => {
 
     if (!validatePassword(password)) {
       setMessage("password không hợp lệ");
+      return;
     }
   };
 

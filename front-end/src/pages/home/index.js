@@ -21,7 +21,7 @@ const Home = () => {
         </div>
 
         <div className="home__content__product">
-          <div className="home__content__product__heading d-flex justify-content-between align-items-center mb-3">
+          <div className="home__content__product__heading d-flex justify-content-between align-items-center mb-md-3">
             <p className="heading-01 m-0">Shop The Latest</p>
 
             <a

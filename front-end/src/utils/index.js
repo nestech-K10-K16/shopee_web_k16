@@ -4,9 +4,7 @@ export const validateEmail = (email) => {
 
 export const validatePassword = (password) => {
   return (
-    password &&
-    password.length > 6 &&
-    password.length < 20 &&
+
     /[A-Z]/.test(password) &&
     /[0-9]/.test(password) &&
     /[^a-zA-Z\d]/.test(password)
