@@ -30,6 +30,9 @@ const ShopPage = () => {
               <option value="canada">I don't no</option>
               <option value="usa">I don't no</option>
             </select>
+            <div className="dashed">
+              <div className="solid"></div>
+            </div>
             <div className="Shoppe__shopPage-price">
               <p>Price: $40 - $180</p>
               <p>Filter</p>
