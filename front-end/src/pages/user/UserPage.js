@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import {
   emailValidator,
   passwordValidator,
-} from "../../components/regex/regexValidator";
+} from "components/regex/regexValidator";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import "./index.css";
-import DefaultLayout from "../../layouts/defaultLayout";
+import { DefaultLayout } from "components";
 
 const UserPage = () => {
   const [tabIndex, setTabIndex] = useState(0);

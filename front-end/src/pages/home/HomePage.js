@@ -1,8 +1,7 @@
 import React from "react";
-import { Jewelry } from "../../components";
+import { DefaultLayout, Jewelry } from "../../components";
 import introduce from "../../assets/img__home-introduce.jpg";
 import { home01, home02, home03, home04, home05, home06 } from "./import";
-import DefaultLayout from "../../layouts/defaultLayout";
 import "./style.css";
 
 const Home = () => {

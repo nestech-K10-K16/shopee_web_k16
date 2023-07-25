@@ -1,24 +1,38 @@
 import React from "react";
-import { Jewelry } from "../../components";
+import { Jewelry } from "components";
 import { home01, home02, home03, home04, home05, home06 } from "../home/import";
 import "../../configs/fontIcon";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./shop.css";
-import DefaultLayout from "../../layouts/defaultLayout";
+import DefaultLayout from "../../components/utils/defaultLayout/index";
 
 const ShopPage = () => {
   return (
     <>
       <DefaultLayout>
         <div className="Shoppe__shopPage">
-          <div className="Shoppe__shopPage-container">
+          <div className="Shoppe__shopPage-text">
             <h1>Shop The Latest</h1>
             <div className="Shoppe__shopPage-search">
-              <input type="text" placeholder="Search" />
+              <input type="search" placeholder="Search" />
               <Link to="/search">
                 <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
               </Link>
+            </div>
+            <select id="country" name="Shop By">
+              <option value="australia">Shop By</option>
+              <option value="canada">I don't no</option>
+              <option value="usa">I don't no</option>
+            </select>
+            <select id="country" name="Sort By">
+              <option value="australia">Sort By</option>
+              <option value="canada">I don't no</option>
+              <option value="usa">I don't no</option>
+            </select>
+            <div className="Shoppe__shopPage-price">
+              <p>Price: $40 - $180</p>
+              <p>Filter</p>
             </div>
           </div>
           <div className="Shoppe__shopPage_home-container">

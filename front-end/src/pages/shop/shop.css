@@ -1,4 +1,6 @@
 .Shoppe__shopPage {
+  display: flex;
+  justify-content: space-between;
   border-top: 1px solid #d8d8d8;
   width: 1315px;
   height: 1200px;
@@ -6,36 +8,72 @@
   margin-bottom: 240px;
 }
 
-.Shoppe__shopPage-container {
-  display: flex;
-  justify-content: space-between;
+.Shoppe__shopPage-text {
+  margin-right: 36px;
+  margin-top: 96px;
 }
 
-.Shoppe__shopPage h1 {
+.Shoppe__shopPage-text h1 {
   display: flex;
   flex-direction: row;
-  margin-top: 96px;
+
   font-family: var(--font-family);
   font-size: var(--size-33);
   font-weight: 500;
   line-height: 43px;
 }
 
-.Shoppe__shopPage-text {
-  display: flex;
-  flex-direction: column;
-}
-
 .Shoppe__shopPage-search {
   margin-top: 41px;
-  margin-right: 36px;
+  margin-bottom: 39px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-gray);
+}
+
+.Shoppe__shopPage-search input {
+  border: none;
+  margin-bottom: 11px;
+}
+
+select {
+  width: 261px;
+  height: 53px;
+
+  font-family: var(--font-family);
+  font-size: var(--size-14);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+
+  border: 1px solid var(--color-gray);
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.Shoppe__shopPage-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Shoppe__shopPage-price p {
+  color: var(--color-footer);
+  font-family: var(--font-family);
+  font-size: var(--size-14);
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.Shoppe__shopPage-price p:last-child {
+  color: var(--color-light);
 }
 
 .Shoppe__shopPage_home-container {
-  margin-top: 39px;
+  margin-top: 178px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-right: 96px;
 }
 
 .Shoppe__shopPage_home-container_group {

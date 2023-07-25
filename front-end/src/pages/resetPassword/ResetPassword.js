@@ -1,6 +1,6 @@
 import React from "react";
-import DefaultLayout from "../../layouts/defaultLayout";
 import "./index.css";
+import { DefaultLayout } from "components";
 
 const ResetPassword = () => {
   return (
