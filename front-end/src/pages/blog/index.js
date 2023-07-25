@@ -6,7 +6,7 @@ import {
   IMG_POST_03,
   IMG_POST_04,
 } from "../../assets";
-import Input from "../../component/input";
+import Input from "../../component/common/input";
 
 const Blog = () => {
   return (

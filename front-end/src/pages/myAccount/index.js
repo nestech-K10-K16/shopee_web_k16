@@ -1,5 +1,5 @@
-import Button from "../../component/button";
-import Input from "../../component/input";
+import Button from "../../component/common/button";
+import Input from "../../component/common/input";
 import { PATH_NAME } from "../../constants/common";
 import "./index.css";
 
@@ -209,10 +209,7 @@ const MyAccount = () => {
                   className="my-account__content__sign-in__remember-me
                              d-flex align-items-center mb-4"
                 >
-                  <input
-                    className="heading-05 me-3"
-                    type="checkbox"
-                  />
+                  <input className="heading-05 me-3" type="checkbox" />
                   Remember me
                 </div>
 

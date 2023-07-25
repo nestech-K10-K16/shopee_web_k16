@@ -10,10 +10,10 @@ import {
 
 import { PATHNAME_LIST } from "../../router/router";
 
-import Input from "../../component/input";
-import Select from "../../component/select";
-import ToggleButton from "../../component/toggleButton";
-import ProductStyle from "../../component/productStyle";
+import Input from "../../component/common/input";
+import Select from "../../component/common/select";
+import ToggleButton from "../../component/common/toggleButton";
+import ProductStyle from "../../component/common/productStyle";
 
 const Shop = () => {
   return (

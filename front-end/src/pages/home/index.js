@@ -10,7 +10,7 @@ import {
 } from "../../assets";
 
 import { PATHNAME_LIST } from "../../router/router";
-import ProductStyle from "../../component/productStyle";
+import ProductStyle from "../../component/common/productStyle";
 
 const Home = () => {
   return (

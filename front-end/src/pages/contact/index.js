@@ -1,6 +1,6 @@
 import "./index.css";
-import Input from "../../component/input";
-import Button from "../../component/button";
+import Input from "../../component/common/input";
+import Button from "../../component/common/button";
 
 const Contact = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
-import { IMG_LOGO_SHOPEE } from "../../assets";
-import { PATH_NAME } from "../../constants/common";
+import { IMG_LOGO_SHOPEE } from "../../../assets";
+import { PATH_NAME } from "../../../constants/common";
 
 const Header = () => {
   return (
