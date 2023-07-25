@@ -2,6 +2,10 @@ import React from "react";
 import "./index.css";
 import { IMG_LOGO_SHOPEE } from "../../../../assets";
 import { PATHNAME_LIST } from "../../../../router/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faCartShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 const Header = () => {
   return (
@@ -48,13 +52,13 @@ const Header = () => {
               <div className="d-flex align-items-center">
                 <li>
                   <a className="text-dark-silver ms-4" href="/">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <FontAwesomeIcon icon={faSearch} />
                   </a>
                 </li>
 
                 <li>
                   <a className="text-dark-silver ms-4" href="/">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                    <FontAwesomeIcon icon={faCartShopping} />
                   </a>
                 </li>
 
@@ -63,7 +67,7 @@ const Header = () => {
                     className="text-dark-silver ms-4"
                     href={PATHNAME_LIST.MY_ACCOUNT}
                   >
-                    <i class="fa-regular fa-user"></i>
+                    <FontAwesomeIcon icon={faUser} />
                   </a>
                 </li>
               </div>

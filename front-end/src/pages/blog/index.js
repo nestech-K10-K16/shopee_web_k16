@@ -6,6 +6,10 @@ import {
   IMG_POST_03,
   IMG_POST_04,
 } from "../../assets";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 import Input from "../../component/common/input";
 
 const Blog = () => {
@@ -17,9 +21,8 @@ const Blog = () => {
 
           <div className="blog__content__left-side-bar__search mb-5">
             <Input className="heading-05 w-100" placeholder="Search..." />
-
             <button className="bg-body border-0">
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <FontAwesomeIcon icon={faSearch} />
             </button>
           </div>
 

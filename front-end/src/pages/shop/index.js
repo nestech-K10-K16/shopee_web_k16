@@ -8,6 +8,9 @@ import {
   IMG_PRODUCT_07,
 } from "../../assets";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 import { PATHNAME_LIST } from "../../router/router";
 
 import Input from "../../component/common/input";
@@ -21,23 +24,24 @@ const Shop = () => {
       <section id="shop">
         <div className="shop__content d-flex">
           <div className="shop__content__left-side-bar me-5">
-            <p className="heading-01 margin-bottom-1rem">Shop The Latest</p>
-
-            <Input className="w-100 mb-4" placeholder="search..."></Input>
+            <p className="heading-01">Shop The Latest</p>
+            <div className="shop__content__left-side-bar__search d-flex mb-4">
+              <Input className="w-100" placeholder="search..." />
+              <button className="bg-body border-0 border-bottom">
+                <FontAwesomeIcon icon={faSearch} />
+              </button>
+            </div>
 
             <Select className="w-100 mb-2" text="Shop By"></Select>
-
             <Select className="w-100 mb-4" text="Sort By"></Select>
 
             <div className="shop__content__left-side-bar__on-sale d-flex justify-content-between align-items-center mb-2">
               <p className="heading-05 mb-0">On sale</p>
-
               <ToggleButton />
             </div>
 
             <div className="shop__content__left-side-bar__in-stock d-flex justify-content-between align-items-center">
               <p className="heading-05 mb-0">In stock</p>
-
               <ToggleButton />
             </div>
           </div>

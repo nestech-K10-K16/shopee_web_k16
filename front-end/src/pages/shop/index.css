@@ -2,8 +2,14 @@
   padding: 8vh 10vw;
 }
 
-/* shop - content - left side bar */
 .shop__content__left-side-bar {
   width: 22rem;
 }
 
+.shop__content__left-side-bar__search input {
+  padding-right: 1.5rem;
+}
+
+.shop__content__left-side-bar__search button {
+  margin-left: -1.2rem;
+}

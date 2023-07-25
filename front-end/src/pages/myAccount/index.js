@@ -1,6 +1,6 @@
 import Button from "../../component/common/button";
 import Input from "../../component/common/input";
-import { PATH_NAME } from "../../constants/common";
+import { validateEmail, validatePassword } from "../../utils";
 import "./index.css";
 
 import { useState } from "react";
@@ -34,50 +34,13 @@ const MyAccount = () => {
   };
 
   const onClickButtonLogin = () => {
-    setHomePage("#");
-
-    //email
-    if (!email) {
-      setMessage("yêu cầu nhập email");
-      return;
+    if (!validateEmail(email)) {
+      setMessage("email không hợp lệ");
     }
 
-    if (!email.includes("@")) {
-      setMessage("email phải có kí tự @");
-      return;
+    if (!validatePassword(password)) {
+      setMessage("password không hợp lệ");
     }
-    if (email.length > 50) {
-      setMessage("email của bạn không được quá 50 kí tự");
-      return;
-    }
-
-    //password
-    if (!password) {
-      setMessage("yêu cầu nhập password");
-      return;
-    }
-
-    if (email.length > 6 && email.length < 20) {
-      setMessage("password của bạn phải hơn 6 kí tự và nhỏ hơn 20 kí tự");
-      return;
-    }
-
-    if (!/[A-Z]/.test(password)) {
-      setMessage("yêu cầu password của bạn phải có chữ viết hoa");
-      return;
-    }
-
-    if (!/[0-9]/.test(password)) {
-      setMessage("yêu cầu password của bạn phải có số");
-      return;
-    }
-
-    if (!/[^a-zA-Z\d]/.test(password)) {
-      setMessage("yêu cầu password của bạn phải có kí tự đặc biệt");
-      return;
-    }
-
-    setHomePage(PATH_NAME.HOME);
   };
 
   const onClickButtonRegister = () => {
@@ -160,8 +123,6 @@ const MyAccount = () => {
       setMessage("yêu cầu nhập lại password của bạn phải có kí tự đặc biệt");
       return;
     }
-
-    setHomePage(PATH_NAME.HOME);
   };
 
   const onSelectSwitch = () => {};
@@ -194,7 +155,7 @@ const MyAccount = () => {
                   className="heading-05 mb-2"
                   placeholder="Email"
                   value={email}
-                  onChange={(e) => onChangeEmail(e)}
+                  onChange={(e) => setEmail(e.target.value)}
                 ></Input>
 
                 <Input
@@ -202,7 +163,7 @@ const MyAccount = () => {
                   type="password"
                   placeholder="Password"
                   value={password}
-                  onChange={(e) => onChangePassword(e)}
+                  onChange={(e) => setPassword(e.target.value)}
                 ></Input>
 
                 <div
@@ -223,7 +184,7 @@ const MyAccount = () => {
                 <a
                   className="my-account__content__sign-in__forgot-password
                              heading-05 text-black text-decoration-none"
-                  href={PATH_NAME.RESET_PASSWORD}
+                  href="/"
                 >
                   <p>Have you forgotten your password</p>
                 </a>

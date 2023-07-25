@@ -1,5 +1,13 @@
 import "./index.css";
 import Input from "../../../common/input";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebookF,
+  faInstagram,
+  faLinkedinIn,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -48,25 +56,25 @@ const Footer = () => {
               ></Input>
 
               <a className="text-dark-silver" href="/">
-                <i class="fa-solid fa-arrow-right-long"></i>
+                <FontAwesomeIcon icon={faArrowRight} />
               </a>
             </div>
 
             <div className="footer-bottom__right-side__contact d-flex justify-content-end">
               <a className="text-dark-silver" href="/">
-                <i class="fa-brands fa-linkedin-in"></i>
+                <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
               </a>
 
-              <a className="text-dark-silver ms-5" href="/">
-                <i class="fa-brands fa-facebook-f"></i>
+              <a className="text-dark-silver ms-4" href="/">
+                <FontAwesomeIcon icon={faFacebookF} size="lg" />
               </a>
 
-              <a className="text-dark-silver ms-5" href="/">
-                <i class="fa-brands fa-instagram"></i>
+              <a className="text-dark-silver ms-4" href="/">
+                <FontAwesomeIcon icon={faInstagram} size="lg" />
               </a>
 
-              <a className="text-dark-silver ms-5" href="/">
-                <i class="fa-brands fa-twitter"></i>
+              <a className="text-dark-silver ms-4" href="/">
+                <FontAwesomeIcon icon={faTwitter} size="lg" />
               </a>
             </div>
           </div>
