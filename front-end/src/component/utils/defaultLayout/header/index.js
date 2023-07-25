@@ -13,9 +13,8 @@ const Header = () => {
       <section id="header">
         <div className="header-top d-flex justify-content-between align-items-center pb-4">
           <div className="header-top__left-sider">
-            <a className="header-top__left-sider__logo" href="/">
-              <IMG_LOGO_SHOPEE />
-            </a>
+           
+            <IMG_LOGO_SHOPEE />
           </div>
 
           <div className="header-top__right-side ">
