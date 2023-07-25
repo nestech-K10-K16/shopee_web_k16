@@ -40,12 +40,28 @@
 }
 
 .shoppe__navbar-links_container p {
+  position: relative;
   padding: 0rem 1rem;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--size-16);
   line-height: 27px;
   color: black;
+  transition: 0.5s ease;
+}
+
+.shoppe__navbar-links_container p.active::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  bottom: -26px;
+  width: 53%;
+  height: 0.1rem;
+  background: var(--color-text-black);
+}
+
+.shoppe__navbar-links_container p:hover {
+  color: var(--color-footer);
 }
 
 .shoppe__navbar-icons {

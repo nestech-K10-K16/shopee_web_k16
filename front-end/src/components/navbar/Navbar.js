@@ -7,7 +7,7 @@ import "./style.css";
 
 const Menu = () => (
   <>
-    <p>
+    <p className="active">
       <Link to="/shop">Shop</Link>
     </p>
     <p>

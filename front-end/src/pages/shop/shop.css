@@ -48,7 +48,48 @@ select {
 
   border: 1px solid var(--color-gray);
   border-radius: 4px;
-  margin-bottom: 16px;
+  margin-bottom: 44px;
+}
+
+.solid-gray {
+  width: 261.002px;
+  height: 2px;
+  background: var(--color-gray);
+  margin-bottom: 12px;
+}
+
+.solid-black {
+  width: 213px;
+  height: 2px;
+  background: var(--color-text-black);
+  margin-left: 47px;
+}
+
+.solid-black_right {
+  width: 2px;
+  height: 16px;
+}
+
+.solid-black_left {
+  width: 2px;
+  height: 16px;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  margin: 42px 0px;
+
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.toggle .off {
+  cursor: pointer;
+  font-size: 30px;
+  color: var(--color-footer);
 }
 
 .Shoppe__shopPage-price {
@@ -69,7 +110,7 @@ select {
 }
 
 .Shoppe__shopPage_home-container {
-  margin-top: 178px;
+  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,4 +121,10 @@ select {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 57px;
+}
+
+.update img {
+  width: 325px;
+  height: 300px;
+  margin-right: -30px;
 }
