@@ -1,8 +1,17 @@
 import React from "react";
 import { DefaultLayout, Jewelry } from "../../components";
-import introduce from "../../assets/img__home-introduce.jpg";
 import { home01, home02, home03, home04, home05, home06 } from "./import";
+import { Zoom } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 import "./style.css";
+
+const images = [
+  "assets/img__home-introduce.jpg",
+  "assets/img__home-introduce.jpg",
+  "assets/img__home-introduce.jpg",
+  "assets/img__home-introduce.jpg",
+  "assets/img__home-introduce.jpg",
+];
 
 const Home = () => {
   return (
@@ -10,7 +19,16 @@ const Home = () => {
       <DefaultLayout>
         <div className="shoppe__home ">
           <div className="shoppe__home-img">
-            <img src={introduce} alt="introduce" />
+            <Zoom scale={0.4}>
+              {images.map((each, index) => (
+                <img
+                  key={index}
+                  style={{ width: "100%", height: "100%" }}
+                  src={each}
+                  alt="introduce"
+                />
+              ))}
+            </Zoom>
             <div className="shoppe__home-slider">
               <div className="ellipse-10"></div>
 

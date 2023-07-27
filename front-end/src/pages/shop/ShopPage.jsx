@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Jewelry } from "components";
 import { home01, home02, home03, home04, home05, home06 } from "../home/import";
 import "../../configs/fontIcon";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./shop.css";
 import DefaultLayout from "components/utils/defaultLayout/index";
+import Slider from "react-slider";
+import "./shop.css";
+
+const Min = 0;
+const Max = 180;
 
 const ShopPage = () => {
+  const [sliderValue, setSliderValue] = useState([40, Max]);
+
   return (
     <>
       <DefaultLayout>
@@ -30,14 +36,19 @@ const ShopPage = () => {
               <option value="canada">I don't no</option>
               <option value="usa">I don't no</option>
             </select>
-            <div className="solid-gray">
-              <div className="solid-black">
-                <div className="solid-black_right"></div>
-                <div className="solid-black_left"></div>
-              </div>
-            </div>
-            <div className="Shoppe__shopPage-price">
-              <p>Price: $40 - $180</p>
+            <Slider
+              className={"slider"}
+              onChange={setSliderValue}
+              value={sliderValue}
+              min={Min}
+              max={Max}
+            />
+            <div className="Shoppe__shopPage-price_display">
+              <p>
+                <div className={"value"}>
+                  ${sliderValue[0]} - ${sliderValue[1]}
+                </div>
+              </p>
               <p>Filter</p>
             </div>
             <div className="toggle">

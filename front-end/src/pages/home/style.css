@@ -3,16 +3,6 @@
   margin-bottom: 250px;
 }
 
-.shoppe__home-img {
-  position: relative;
-}
-
-.shoppe__home-img img {
-  width: 1320px;
-  height: 646px;
-  border-radius: 8px;
-}
-
 .shoppe__home-content {
   position: absolute;
   top: 226px;

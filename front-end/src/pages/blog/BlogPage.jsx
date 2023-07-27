@@ -1,8 +1,13 @@
 import React from "react";
 import "./blog.css";
+import { DefaultLayout } from "components";
 
 const BlogPage = () => {
-  return <div>BlogPage</div>;
+  return (
+    <>
+      <DefaultLayout></DefaultLayout>
+    </>
+  );
 };
 
 export default BlogPage;
