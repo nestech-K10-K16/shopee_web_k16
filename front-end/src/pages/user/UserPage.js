@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import {
   emailValidator,
   passwordValidator,
-} from "components/regex/regexValidator";
+} from "components/common/regex/regexValidator";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import "./index.css";
 import { DefaultLayout } from "components";
