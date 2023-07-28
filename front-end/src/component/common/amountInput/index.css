@@ -1,0 +1,36 @@
+#amount-input {
+  display: flex;
+  height: 4rem;
+  width: 12rem;
+}
+
+#amount-input input {
+  background-color: var(--bright-gray);
+  text-align: center;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+#amount-input button {
+  border: 0;
+  width: 100%;
+}
+
+#amount-input button:hover {
+  background-color: aliceblue;
+}
+
+#amount-input button:active {
+  background-color: var(--bright-gray);
+}
+
+#amount-input button:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#amount-input button:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}

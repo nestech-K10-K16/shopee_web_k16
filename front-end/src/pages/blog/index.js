@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
 import {
   IMG_POST_01,
@@ -11,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import Input from "../../component/common/input";
+import { PATHNAME_LIST } from "../../router/router";
 
 const Blog = () => {
   return (
@@ -29,24 +31,24 @@ const Blog = () => {
           <ul className="blog__content__left-side-bar__categories list-unstyled">
             <li className="heading-04 mb-3">Categories</li>
             <li className="heading-05 mb-2">
-              <a className="text-black text-decoration-none" href="/">
+              <Link className="text-dark-silver text-decoration-none">
                 Fashion
-              </a>
+              </Link>
             </li>
             <li className="heading-05 mb-2">
-              <a className="text-black text-decoration-none" href="/">
+              <Link className="text-dark-silver text-decoration-none">
                 Style
-              </a>
+              </Link>
             </li>
             <li className="heading-05 mb-2">
-              <a className="text-black text-decoration-none" href="/">
+              <Link className="text-dark-silver text-decoration-none">
                 Accessories
-              </a>
+              </Link>
             </li>
             <li className="heading-05 mb-2">
-              <a className="text-black text-decoration-none" href="/">
+              <Link className="text-dark-silver text-decoration-none">
                 Season
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -63,12 +65,12 @@ const Blog = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 faucibus augue, a maximus elit ex vitae libero...
               </p>
-              <a
+              <Link
                 className="body-large text-beaver text-decoration-none"
-                href="/"
+                to={PATHNAME_LIST.BLOG_SINGLE}
               >
                 Read More
-              </a>
+              </Link>
             </div>
 
             <div className="col">
@@ -81,12 +83,12 @@ const Blog = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 faucibus augue, a maximus elit ex vitae libero...
               </p>
-              <a
+              <Link
                 className="body-large text-beaver text-decoration-none"
-                href="/"
+                to={PATHNAME_LIST.BLOG_SINGLE}
               >
                 Read More
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -101,12 +103,12 @@ const Blog = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 faucibus augue, a maximus elit ex vitae libero...
               </p>
-              <a
+              <Link
                 className="body-large text-beaver text-decoration-none"
-                href="/"
+                to={PATHNAME_LIST.BLOG_SINGLE}
               >
                 Read More
-              </a>
+              </Link>
             </div>
 
             <div className="col">
@@ -119,12 +121,12 @@ const Blog = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 faucibus augue, a maximus elit ex vitae libero...
               </p>
-              <a
+              <Link
                 className="body-large text-beaver text-decoration-none"
-                href="/"
+                to={PATHNAME_LIST.BLOG_SINGLE}
               >
                 Read More
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   IMG_PRODUCT_02,
   IMG_PRODUCT_03,
@@ -15,20 +16,21 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebookF,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+
+import Input from "../../component/common/input";
+import Button from "../../component/common/button";
 import ProductStyle from "../../component/common/productStyle";
+import AmountInput from "../../component/common/amountInput";
 
 const Product = () => {
-  const [number, setNumber] = useState(1);
   const [heart, setHeart] = useState(false);
-
-  const onClickIncrease = () => {
-    setNumber(number + 1);
-  };
-
-  const onClickreduce = () => {
-    if (number === 1) return;
-    setNumber(number - 1);
-  };
 
   const onClickHeart = () => {
     setHeart(!heart);
@@ -45,7 +47,7 @@ const Product = () => {
     <main>
       <section id="product">
         <div className="product__content">
-          <div className="product__content__top d-flex margin-bottom-5rem">
+          <div className="product__content__top d-flex mb-5">
             <div className="product__content__top__product-type-list me-4">
               <img className="mb-2" src={IMG_PRODUCT_02} alt="" />
               <img className="mb-2" src={IMG_PRODUCT_02} alt="" />
@@ -71,80 +73,51 @@ const Product = () => {
                 facilisis consequat sed eu felis.
               </p>
 
-              <div className="d-flex margin-bottom-3rem">
-                <div
-                  className="product__content__top__product-infomation__amount-product
-                             d-flex 
-                             margin-right-1rem"
-                >
-                  <button
-                    className="product__content__top__product-infomation__amount-product__increase rounded-start border-0 w-100"
-                    onClick={onClickIncrease}
-                    value="+"
-                  >
-                    +
-                  </button>
+              <div className="d-flex mb-5">
+                <AmountInput className="me-3" />
 
-                  <input
-                    className="text-center border-0 w-100"
-                    value={number}
-                  />
-                  <button
-                    className="product__content__top__product-infomation__amount-product__reduce rounded-end border-0 w-100"
-                    onClick={onClickreduce}
-                    value="-"
-                  >
-                    -
-                  </button>
-                </div>
-
-                <button className="product__content__top__product-infomation__add-to-cart body-large background-color-white-border-0-5px-solid w-100">
-                  ADD TO CART
-                </button>
+                <Button className="w-100" type="white"></Button>
               </div>
 
-              <div className="product__content__top__product-infomation__contact d-flex margin-bottom-2rem">
-                <div>
-                  <i
-                    class="fa-solid fa-heart fa-xl margin-right-2rem"
+              <div className="d-flex mb-5">
+                <div className="me-4">
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    size="xl"
                     style={{ color: heart ? "red" : "black" }}
                     onClick={onClickHeart}
-                  ></i>
+                  />
                 </div>
 
-                <div className="border-0-5px-solid-bright-gray-rotate--180deg margin-right-2rem"></div>
+                <div className="border-0-5px-solid-bright-gray-rotate--180deg me-4"></div>
 
                 <div>
-                  <a className="text-black margin-right-2rem" href="/">
-                    <i class="fa-regular fa-envelope fa-xl"></i>
-                  </a>
+                  <Link className="text-dark-silver me-4">
+                    <FontAwesomeIcon icon={faEnvelope} size="xl" />
+                  </Link>
 
-                  <a className="text-black margin-right-2rem" href="/">
-                    <i class="fa-brands fa-facebook-f fa-xl "></i>
-                  </a>
+                  <Link className="text-dark-silver me-4">
+                    <FontAwesomeIcon icon={faFacebookF} size="xl" />
+                  </Link>
 
-                  <a className="text-black margin-right-2rem" href="/">
-                    <i class="fa-brands fa-instagram fa-xl "></i>
-                  </a>
+                  <Link className="text-dark-silver me-4">
+                    <FontAwesomeIcon icon={faInstagram} size="xl" />
+                  </Link>
 
-                  <a className="text-black margin-right-2rem" href="/">
-                    <i class="fa-brands fa-twitter fa-xl "></i>
-                  </a>
+                  <Link className="text-dark-silver">
+                    <FontAwesomeIcon icon={faTwitter} size="xl" />
+                  </Link>
                 </div>
               </div>
 
               <div className="product__content__top__product-infomation__title d-flex margin-bottom-1rem">
-                <p className="heading-05 mb-0 margin-right-0-5rem">SKU:</p>
-                <p className="heading-05 mb-0 color-dark-silver">12</p>
+                <p className="heading-05">SKU:</p>
+                <p className="heading-05 color-dark-silver">12</p>
               </div>
 
               <div className="product__content__top__product-infomation__title d-flex">
-                <p className="heading-05 mb-0 margin-right-0-5rem">
-                  Categories:
-                </p>
-                <p className="heading-05 mb-0 color-dark-silver">
-                  Fashion, Style
-                </p>
+                <p className="heading-05">Categories:</p>
+                <p className="heading-05 color-dark-silver">Fashion, Style</p>
               </div>
             </div>
           </div>
@@ -185,49 +158,51 @@ const Product = () => {
                 className="product__content__review d-flex justify-content-between"
                 value="3"
               >
-                <div></div>
+                <div>
+                  <p className="heading-03">0 Reviews for lira earings</p>
+                </div>
 
                 <div className="d-flex flex-column">
-                  <p className="heading-03 margin-bottom-1rem">Add a Review</p>
-
-                  <p className="margin-bottom-3rem">
+                  <p className="heading-03 ">Add a Review</p>
+                  <p>
                     Your email address will not be published. Required fields
                     are marked *
-                  </p>
+                  </p>         
 
-                  <input
-                    className="body-medium border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem margin-bottom-1rem"
+                  <Input
+                    className="mb-3"
+                    style={{ height: "6rem" }}
                     placeholder="Your Review*"
-                  ></input>
+                  />
+                  <Input className="mb-3" placeholder="Enter your name*" />
+                  <Input className="mb-3" placeholder="Enter your Email*" />
 
-                  <input
-                    className="body-medium border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem margin-bottom-1rem"
-                    placeholder="Enter your name*"
-                  ></input>
-
-                  <input
-                    className="body-medium border-0-5px-solid-bright-gray-outline-none-border-top-0-border-left-0-border-right-0-height-3rem margin-bottom-1rem"
-                    placeholder="Enter your Email*"
-                  ></input>
-
-                  <div className="d-flex margin-bottom-3rem">
-                    <input className="margin-right-0-5rem" type="checkbox" />
+                  <div className="d-flex mb-4">
+                    <input className="me-3" type="checkbox" />
                     Save my name, email, and website in this browser for the
                     next time I comment
                   </div>
 
-                  <p>Your Rating*</p>
+                  <div className="mb-4">
+                    <p className="mb-0">Your Rating*</p>
+                    <Rating
+                      className="margin-bottom-2rem"
+                      name="half-rating"
+                      defaultValue={2.5}
+                      precision={0.5}
+                    />
+                  </div>
 
-                  <Rating
-                    className="margin-bottom-2rem"
-                    name="half-rating"
-                    defaultValue={2.5}
-                    precision={0.5}
-                  />
-
-                  <button className="product__content__review__btn-submit background-color-black-color-white-text-decoration-none-padding-1rem-4rem-border-radius-10px">
-                    Submit
-                  </button>
+                  <div className="start-0">
+                    <Button
+                      style={{
+                        borderRadius: "4px",
+                        padding: "12px 24px",
+                      }}
+                      className="body-large"
+                      text="submit"
+                    />
+                  </div>
                 </div>
               </TabPanel>
             </TabContext>

@@ -14,18 +14,3 @@
   width: 100rem;
 }
 
-/* product - content - top - prodcut information - amount product */
-.product__content__top__product-infomation__amount-product {
-  width: 12rem;
-  height: 4rem;
-}
-
-.product__content__top__product-infomation__amount-product input {
-  background-color: var(--bright-gray);
-  outline: 0;
-}
-
-/* product - content - btn submit */
-.product__content__review__btn-submit {
-  width: fit-content;
-}

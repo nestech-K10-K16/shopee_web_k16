@@ -25,9 +25,9 @@ const Shop = () => {
         <div className="shop__content d-flex">
           <div className="shop__content__left-side-bar me-5">
             <p className="heading-01">Shop The Latest</p>
-            <div className="shop__content__left-side-bar__search d-flex mb-4">
+            <div className="shop__content__left-side-bar__search d-flex align-items-center mb-4">
               <Input className="w-100" placeholder="search..." />
-              <button className="bg-body border-0 border-bottom">
+              <button className="bg-body border-0">
                 <FontAwesomeIcon icon={faSearch} />
               </button>
             </div>
@@ -51,7 +51,7 @@ const Shop = () => {
               <div className="col">
                 <ProductStyle
                   className="body-large"
-                  href={PATHNAME_LIST.PRODUCT}
+                  link={PATHNAME_LIST.PRODUCT}
                   src={IMG_PRODUCT_02}
                 />
                 <p className="heading-03 mb-1">Lira Earrings</p>
@@ -61,7 +61,7 @@ const Shop = () => {
               <div className="col">
                 <ProductStyle
                   className="body-large"
-                  href={PATHNAME_LIST.PRODUCT}
+                  link={PATHNAME_LIST.PRODUCT}
                   src={IMG_PRODUCT_03}
                 />
                 <p className="heading-03 mb-1">Hal Earrings</p>
@@ -71,7 +71,7 @@ const Shop = () => {
               <div className="col">
                 <ProductStyle
                   className="body-large"
-                  href={PATHNAME_LIST.PRODUCT}
+                  link={PATHNAME_LIST.PRODUCT}
                   src={IMG_PRODUCT_04}
                 />
                 <p className="heading-03 margin-bottom-0-5rem">
@@ -85,7 +85,7 @@ const Shop = () => {
               <div className="col">
                 <ProductStyle
                   className="body-large"
-                  href={PATHNAME_LIST.PRODUCT}
+                  link={PATHNAME_LIST.PRODUCT}
                   src={IMG_PRODUCT_05}
                 />
                 <p className="heading-03 margin-bottom-0-5rem">
@@ -97,7 +97,7 @@ const Shop = () => {
               <div className="col">
                 <ProductStyle
                   className="body-large"
-                  href={PATHNAME_LIST.PRODUCT}
+                  link={PATHNAME_LIST.PRODUCT}
                   src={IMG_PRODUCT_06}
                 />
                 <p className="heading-03 margin-bottom-0-5rem">
@@ -109,7 +109,7 @@ const Shop = () => {
               <div className="col">
                 <ProductStyle
                   className="body-large"
-                  href={PATHNAME_LIST.PRODUCT}
+                  link={PATHNAME_LIST.PRODUCT}
                   src={IMG_PRODUCT_07}
                 />
                 <p className="heading-03 margin-bottom-0-5rem">

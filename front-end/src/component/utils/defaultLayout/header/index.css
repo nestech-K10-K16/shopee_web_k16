@@ -3,11 +3,31 @@
   padding: 8vh 10vw;
 }
 
-.header-top__right-side__menu li a:hover {
+.header__content {
+  border-bottom: 2px solid var(--bright-gray);
+}
+
+.header__content__right-side__menu li a {
+  display: block;
+  position: relative;
+}
+
+.header__content__right-side__menu li a:hover {
   color: black;
 }
 
-.header-top__right-side__menu li a:active {
-  border-bottom: 2px solid var(--black);
-  padding-bottom: 1.7rem;
+.header__content__right-side__menu li a::after {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: -26px;
+  transition: 0.6s;
+}
+
+.header__content__right-side__menu li:active a::after,
+.header__content__right-side__menu li.tab-active a::after {
+  background-color: black;
 }

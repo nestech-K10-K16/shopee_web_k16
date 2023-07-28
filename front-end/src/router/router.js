@@ -6,6 +6,7 @@ import Shop from "../pages/shop";
 import Product from "../pages/product";
 
 import Blog from "../pages/blog";
+import BlogSingle from "../pages/blogSingle";
 import OurStory from "../pages/ourStory";
 
 import Contact from "../pages/contact";
@@ -19,6 +20,7 @@ export const ROUTE_ID = {
   RESET_PASSWORD: "ResetPasswordRoute",
 
   BLOG: "BlogRoute",
+  BLOG_SINGLE: "BlogSingleRoute",
   OUR_STORY: "OurStoryRoute",
 
   CONTACT: "ContactRoute",
@@ -33,6 +35,7 @@ export const PATHNAME_LIST = {
   RESET_PASSWORD: "/reset-password",
 
   BLOG: "/blog",
+  BLOG_SINGLE: "/blog-single",
   OUR_STORY: "/our-story",
 
   CONTACT: "/contact",
@@ -77,6 +80,12 @@ export const BlogRoute = {
   component: Blog,
 };
 
+export const BlogSingleRoute = {
+  id: ROUTE_ID.BLOG_SINGLE,
+  path: PATHNAME_LIST.BLOG_SINGLE,
+  component: BlogSingle,
+};
+
 export const OurStoryRoute = {
   id: ROUTE_ID.OUR_STORY,
   path: PATHNAME_LIST.OUR_STORY,
@@ -96,6 +105,7 @@ export const appRoute = [
   MyAccountRoute,
   ResetPasswordRoute,
   BlogRoute,
+  BlogSingleRoute,
   OurStoryRoute,
   ContactRoute,
 ];

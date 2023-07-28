@@ -1,11 +1,19 @@
 import React from "react";
 import "./index.css";
+import { Link } from "react-router-dom";
 
 const Button = (props) => {
   return (
-    <a id="button" className={props.className} href={props.href} onClick={props.onClick}>
+    <Link
+      id="button"
+      className={props.className}
+      type={props.type ? "black" : "white"}
+      style={props.style}
+      href={props.href}
+      onClick={props.onClick}
+    >
       {props.text}
-    </a>
+    </Link>
   );
 };
 

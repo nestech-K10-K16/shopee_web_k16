@@ -3,6 +3,17 @@
   rotate: -180deg;
 }
 
-.border-0-5px-solid-bright-gray {
+.border-0-5px-solid-bright-gray-rotate--180deg {
   border: 0.5px solid var(--bright-gray);
+  rotate: -180deg;
+}
+
+.border-0-5px-solid-bright-gray {
+  border-top: 1px solid var(--bright-gray);
+}
+
+.border-1px-solid-black-width-64px-height-0 {
+  border-top: 1px solid var(--black);
+  width: 64px;
+  height: 0;
 }

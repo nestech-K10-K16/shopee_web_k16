@@ -1,8 +1,9 @@
 {
-    "compilerOptions": {
-      "baseUrl": "src",
-      "module": "CommonJS",
-      "target": "ES6"
-    },
-    "include": ["src/**/*"]
-  }
+  "compilerOptions": {
+    "baseUrl": "src",
+    "module": "CommonJS",
+    "target": "ES6",
+    "paths": { "@component/*": ["src/component/common/*"] }
+  },
+  "include": ["src/**/*"]
+}
