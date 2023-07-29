@@ -6,10 +6,12 @@ import CartPage from "../pages/cart/CartPage";
 import UserPage from "../pages/user/UserPage";
 import ResetPassword from "../pages/resetPassword/ResetPassword";
 import HomePage from "../pages/home/HomePage";
+import { Product } from "components";
 
 export const ROUTE_ID = {
-  RESET_PASSWORD: "ResetPasswordRoute",
   HOME: "HomeRoute",
+  PRODUCT: "ProductRoute",
+  RESET_PASSWORD: "ResetPasswordRoute",
   SHOP: "ShopRoute",
   BLOG: "BlogRoute",
   OUR_STORY: "Our_StoryRoute",
@@ -20,6 +22,7 @@ export const ROUTE_ID = {
 
 export const PATHNAME_LIST = {
   HOME: "/",
+  PRODUCT: "/product",
   RESET_PASSWORD: "/reset-password",
   SHOP: "/shop",
   BLOG: "/blog",
@@ -41,6 +44,13 @@ export const HomeRoute = {
   id: ROUTE_ID.HOME,
   path: PATHNAME_LIST.HOME,
   component: HomePage,
+  layout: null,
+};
+
+export const ProductRoute = {
+  id: ROUTE_ID.PRODUCT,
+  path: PATHNAME_LIST.PRODUCT,
+  component: Product,
   layout: null,
 };
 
@@ -95,6 +105,7 @@ export const SearchRoute = {
 
 export const appRoute = [
   HomeRoute,
+  ProductRoute,
   ResetPasswordRoute,
   ShopRoute,
   BlogRoute,

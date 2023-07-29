@@ -3,10 +3,16 @@
   margin-bottom: 250px;
 }
 
+.shoppe__home-img img {
+  width: 1315px;
+  height: 650px;
+  border-radius: 16px;
+}
+
 .shoppe__home-content {
   position: absolute;
-  top: 226px;
-  left: 39px;
+  top: 240px;
+  left: 150px;
   z-index: 1;
   color: var(--color-text-white);
   font-family: var(--font-family);
@@ -119,5 +125,10 @@
 .Shoppe__home-container_group {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: center;
   grid-gap: 57px;
+}
+
+.Shoppe__home-container_box img {
+  width: 100%;
 }

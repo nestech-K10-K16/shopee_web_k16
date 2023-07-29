@@ -36,13 +36,15 @@ const ShopPage = () => {
               <option value="canada">I don't no</option>
               <option value="usa">I don't no</option>
             </select>
-            <Slider
-              className={"slider"}
-              onChange={setSliderValue}
-              value={sliderValue}
-              min={Min}
-              max={Max}
-            />
+            <div className="slider-container">
+              <Slider
+                className={"slider"}
+                onChange={setSliderValue}
+                value={sliderValue}
+                min={Min}
+                max={Max}
+              />
+            </div>
             <div className="Shoppe__shopPage-price_display">
               <p>
                 <div className={"value"}>
@@ -67,11 +69,13 @@ const ShopPage = () => {
           <div className="Shoppe__shopPage_home-container">
             <div className="Shoppe__shopPage_home-container_group">
               <div className="update">
-                <Jewelry
-                  imgUrl={home01}
-                  text="Lira Earrings"
-                  dollar="$ 20,00"
-                />
+                <Link to="/product">
+                  <Jewelry
+                    imgUrl={home01}
+                    text="Lira Earrings"
+                    dollar="$ 20,00"
+                  />
+                </Link>
               </div>
               <div className="update">
                 <Jewelry imgUrl={home02} text="Hal Earrings" dollar="$ 25,00" />
