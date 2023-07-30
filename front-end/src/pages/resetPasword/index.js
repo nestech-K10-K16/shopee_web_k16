@@ -1,6 +1,6 @@
+import React from "react";
 import "./index.css";
-import Button from "../../component/common/button";
-import Input from "../../component/common/input";
+import { Button, Input } from "component/common";
 
 const ResetPassword = () => {
   return (

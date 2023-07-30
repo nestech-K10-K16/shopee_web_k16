@@ -1,5 +1,6 @@
+import React from "react";
 import "./index.css";
-import { IMG_OUR_STORY_01, IMG_OUR_STORY_02 } from "../../assets";
+import { IMG_OUR_STORY_01, IMG_OUR_STORY_02 } from "assets";
 
 const OurStory = () => {
   return (

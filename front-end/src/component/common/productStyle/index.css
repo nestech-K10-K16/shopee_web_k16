@@ -8,6 +8,7 @@
 }
 
 #product-style button {
+  background-color: transparent;
   position: absolute;
   opacity: 0;
   transform: translate(-50%, -50%);
@@ -22,7 +23,7 @@
 }
 
 #product-style button:hover {
-  background-color: azure;
+  background-color: var(--bright-gray);
 }
 
 #product-style:hover button {

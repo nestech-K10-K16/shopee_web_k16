@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
 import {
   IMG_PRODUCT_01,
@@ -8,10 +10,8 @@ import {
   IMG_PRODUCT_06,
   IMG_PRODUCT_07,
 } from "../../assets";
-
-import { PATHNAME_LIST } from "../../router/router";
-import ProductStyle from "../../component/common/productStyle";
-import { Link } from "react-router-dom";
+import { PATHNAME_LIST } from "router/router";
+import { ProductStyle } from "component/common";
 
 const Home = () => {
   return (

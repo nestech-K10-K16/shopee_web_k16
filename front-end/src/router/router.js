@@ -1,15 +1,16 @@
-import MyAccount from "../pages/myAccount";
-import ResetPassword from "../pages/resetPasword";
+import MyAccount from "pages/myAccount";
+import ResetPassword from "pages/resetPasword";
 
-import Home from "../pages/home";
-import Shop from "../pages/shop";
-import Product from "../pages/product";
+import Home from "pages/home";
+import Shop from "pages/shop";
+import Product from "pages/product";
 
-import Blog from "../pages/blog";
-import BlogSingle from "../pages/blogSingle";
-import OurStory from "../pages/ourStory";
+import Blog from "pages/blog";
+import BlogSingle from "pages/blogSingle";
+import OurStory from "pages/ourStory";
 
-import Contact from "../pages/contact";
+import Contact from "pages/contact";
+import Privacy from "pages/privacy";
 
 export const ROUTE_ID = {
   HOME: "HomeRoute",
@@ -24,6 +25,7 @@ export const ROUTE_ID = {
   OUR_STORY: "OurStoryRoute",
 
   CONTACT: "ContactRoute",
+  PRIVACY: "PrivacyRoute",
 };
 
 export const PATHNAME_LIST = {
@@ -39,6 +41,7 @@ export const PATHNAME_LIST = {
   OUR_STORY: "/our-story",
 
   CONTACT: "/contact",
+  PRIVACY: "/Privacy",
 };
 
 export const DEFAULT_PATHNAME = PATHNAME_LIST.HOME;
@@ -98,6 +101,12 @@ export const ContactRoute = {
   component: Contact,
 };
 
+export const PrivacyRoute = {
+  id: ROUTE_ID.PRIVACY,
+  path: PATHNAME_LIST.PRIVACY,
+  component: Privacy,
+};
+
 export const appRoute = [
   HomeRoute,
   ShopRoute,
@@ -108,4 +117,5 @@ export const appRoute = [
   BlogSingleRoute,
   OurStoryRoute,
   ContactRoute,
+  PrivacyRoute,
 ];

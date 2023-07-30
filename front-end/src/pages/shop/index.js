@@ -1,3 +1,4 @@
+import React from "react";
 import "./index.css";
 import {
   IMG_PRODUCT_02,
@@ -6,17 +7,11 @@ import {
   IMG_PRODUCT_05,
   IMG_PRODUCT_06,
   IMG_PRODUCT_07,
-} from "../../assets";
-
+} from "assets";
+import { PATHNAME_LIST } from "router/router";
+import { Input, Select, ToggleButton, ProductStyle } from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
-import { PATHNAME_LIST } from "../../router/router";
-
-import Input from "../../component/common/input";
-import Select from "../../component/common/select";
-import ToggleButton from "../../component/common/toggleButton";
-import ProductStyle from "../../component/common/productStyle";
 
 const Shop = () => {
   return (

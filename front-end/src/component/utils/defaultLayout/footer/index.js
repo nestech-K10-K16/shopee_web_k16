@@ -1,5 +1,8 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
-import Input from "../../../common/input";
+import { Input } from "component/common";
+import { PATHNAME_LIST } from "router/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -18,34 +21,28 @@ const Footer = () => {
         <div className="footer-bottom d-flex justify-content-between">
           <div className="footer-bottom__left-side">
             <div className="d-flex mb-5">
-              <a
+              <Link
                 className="heading-05 text-dark-silver text-decoration-none me-3"
-                href="/contact"
+                to={PATHNAME_LIST.CONTACT}
               >
                 CONTACT
-              </a>
+              </Link>
 
-              <a
-                className="heading-05 text-dark-silver text-decoration-none me-3"
-                href="/"
-              >
+              <Link className="heading-05 text-dark-silver text-decoration-none me-3">
                 TERMS OF SERVICES
-              </a>
+              </Link>
 
-              <a
-                className="heading-05 text-dark-silver text-decoration-none"
-                href="/"
-              >
+              <Link className="heading-05 text-dark-silver text-decoration-none">
                 SHIPPING AND RETURNS
-              </a>
+              </Link>
             </div>
 
-            <a
+            <Link
               className="heading-05 text-dark-silver text-decoration-none"
-              href="/"
+              to={PATHNAME_LIST.PRIVACY}
             >
               © 2021 Shelly. Terms of use and privacy policy.
-            </a>
+            </Link>
           </div>
 
           <div className="footer-bottom__right-side">
@@ -61,21 +58,21 @@ const Footer = () => {
             </div>
 
             <div className="footer-bottom__right-side__contact d-flex justify-content-end">
-              <a className="text-dark-silver" href="/">
+              <Link className="text-dark-silver">
                 <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-              </a>
+              </Link>
 
-              <a className="text-dark-silver ms-4" href="/">
+              <Link className="text-dark-silver ms-4">
                 <FontAwesomeIcon icon={faFacebookF} size="lg" />
-              </a>
+              </Link>
 
-              <a className="text-dark-silver ms-4" href="/">
+              <Link className="text-dark-silver ms-4">
                 <FontAwesomeIcon icon={faInstagram} size="lg" />
-              </a>
+              </Link>
 
-              <a className="text-dark-silver ms-4" href="/">
+              <Link className="text-dark-silver ms-4">
                 <FontAwesomeIcon icon={faTwitter} size="lg" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -7,12 +7,10 @@ import {
   IMG_POST_03,
   IMG_POST_04,
 } from "../../assets";
-
+import { PATHNAME_LIST } from "router/router";
+import { Input } from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
-import Input from "../../component/common/input";
-import { PATHNAME_LIST } from "../../router/router";
 
 const Blog = () => {
   return (

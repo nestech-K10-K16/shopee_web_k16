@@ -12,7 +12,7 @@ const Button = (props) => {
       href={props.href}
       onClick={props.onClick}
     >
-      {props.text}
+      {props.children}
     </Link>
   );
 };

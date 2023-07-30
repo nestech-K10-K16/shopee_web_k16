@@ -1,9 +1,7 @@
-import Button from "../../component/common/button";
-import Input from "../../component/common/input";
-import { validateEmail, validatePassword } from "../../utils";
+import { React, useState } from "react";
 import "./index.css";
-
-import { useState } from "react";
+import { Button, Input } from "component/common";
+import { validateEmail, validatePassword } from "utils";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 const MyAccount = () => {
@@ -129,115 +127,115 @@ const MyAccount = () => {
   const onSelectSwitch = () => {};
 
   return (
-    <main>
-      <section id="my-account">
-        <div className="my-account__content">
-          <p className="heading-01 mb-5">My account</p>
+    <section id="my-account">
+      <div className="my-account__content">
+        <p className="heading-01 mb-5">My account</p>
 
-          <Tabs selectedIndex={tabIndex} onSelect={(e) => setTabIndex(e)}>
-            <TabList
-              className="my-account__content__switch 
+        <Tabs selectedIndex={tabIndex} onSelect={(e) => setTabIndex(e)}>
+          <TabList
+            className="my-account__content__switch 
                          d-flex list-unstyled mb-5"
-              onSelect={onSelectSwitch}
-            >
-              <Tab className="my-account__content__switch-login heading-03">
-                Login
-              </Tab>
-              <Tab className="my-account__content__switch-register heading-03">
-                Register
-              </Tab>
-            </TabList>
+            onSelect={onSelectSwitch}
+          >
+            <Tab className="my-account__content__switch-login heading-03">
+              Login
+            </Tab>
+            <Tab className="my-account__content__switch-register heading-03">
+              Register
+            </Tab>
+          </TabList>
 
-            <TabPanel className="my-account__content__login">
-              <form className="d-flex flex-column">
-                <p className="text-danger">{message}</p>
+          <TabPanel className="my-account__content__login">
+            <form className="d-flex flex-column">
+              <p className="text-danger">{message}</p>
 
-                <Input
-                  className="heading-05 mb-2"
-                  placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                ></Input>
+              <Input
+                className="heading-05 mb-2"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></Input>
 
-                <Input
-                  className="heading-05 mb-3"
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                ></Input>
+              <Input
+                className="heading-05 mb-3"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              ></Input>
 
-                <div
-                  className="my-account__content__sign-in__remember-me
+              <div
+                className="my-account__content__sign-in__remember-me
                              d-flex align-items-center mb-4"
-                >
-                  <input className="heading-05 me-3" type="checkbox" />
-                  Remember me
-                </div>
+              >
+                <input className="heading-05 me-3" type="checkbox" />
+                Remember me
+              </div>
 
-                <Button
-                  className="body-large mb-3"
-                  text="SIGN IN"
-                  href={homePage}
-                  onClick={onClickButtonLogin}
-                ></Button>
+              <Button
+                className="body-large mb-3"
+                href={homePage}
+                onClick={onClickButtonLogin}
+              >
+                SIGN IN
+              </Button>
 
-                <a
-                  className="my-account__content__sign-in__forgot-password
+              <a
+                className="my-account__content__sign-in__forgot-password
                              heading-05 text-black text-decoration-none"
-                  href="/"
-                >
-                  <p>Have you forgotten your password</p>
-                </a>
-              </form>
-            </TabPanel>
+                href="/"
+              >
+                <p>Have you forgotten your password</p>
+              </a>
+            </form>
+          </TabPanel>
 
-            <TabPanel className="my-account__content__register">
-              <form className="my-account__user d-flex flex-column">
-                <p className="text-danger">{message}</p>
+          <TabPanel className="my-account__content__register">
+            <form className="my-account__user d-flex flex-column">
+              <p className="text-danger">{message}</p>
 
-                <Input
-                  className="heading-05 mb-2"
-                  placeholder="Full name"
-                  value={fullName}
-                  onChange={(e) => onChangeFullName(e)}
-                ></Input>
+              <Input
+                className="heading-05 mb-2"
+                placeholder="Full name"
+                value={fullName}
+                onChange={(e) => onChangeFullName(e)}
+              ></Input>
 
-                <Input
-                  className="heading-05 mb-2"
-                  placeholder="Email"
-                  value={email}
-                  onChange={(e) => onChangeEmail(e)}
-                ></Input>
+              <Input
+                className="heading-05 mb-2"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => onChangeEmail(e)}
+              ></Input>
 
-                <Input
-                  className="heading-05 mb-2"
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => onChangePassword(e)}
-                ></Input>
+              <Input
+                className="heading-05 mb-2"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => onChangePassword(e)}
+              ></Input>
 
-                <Input
-                  className="heading-05 mb-4"
-                  type="password"
-                  placeholder="Enter the password"
-                  value={rePassword}
-                  onChange={(e) => onChangeRePassword(e)}
-                ></Input>
+              <Input
+                className="heading-05 mb-4"
+                type="password"
+                placeholder="Enter the password"
+                value={rePassword}
+                onChange={(e) => onChangeRePassword(e)}
+              ></Input>
 
-                <Button
-                  className="body-large"
-                  text="SIGN UP"
-                  href={homePage}
-                  onClick={onClickButtonRegister}
-                ></Button>
-              </form>
-            </TabPanel>
-          </Tabs>
-        </div>
-      </section>
-    </main>
+              <Button
+                className="body-large"
+                href={homePage}
+                onClick={onClickButtonRegister}
+              >
+                SIGN UP
+              </Button>
+            </form>
+          </TabPanel>
+        </Tabs>
+      </div>
+    </section>
   );
 };
 

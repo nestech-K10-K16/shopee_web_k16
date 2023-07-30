@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { React, useState } from "react";
+import "./index.css";
 import { Link } from "react-router-dom";
 import {
   IMG_PRODUCT_02,
@@ -6,16 +7,13 @@ import {
   IMG_PRODUCT_04,
   IMG_PRODUCT_06,
 } from "../../assets";
-import "./index.css";
-
+import { Input, Button, ProductStyle, AmountInput } from "component/common";
 import Rating from "@mui/material/Rating";
-
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faHeart } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -23,11 +21,6 @@ import {
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-
-import Input from "../../component/common/input";
-import Button from "../../component/common/button";
-import ProductStyle from "../../component/common/productStyle";
-import AmountInput from "../../component/common/amountInput";
 
 const Product = () => {
   const [heart, setHeart] = useState(false);
@@ -122,10 +115,7 @@ const Product = () => {
             </div>
           </div>
 
-          <Box
-            className="margin-bottom-4rem"
-            sx={{ width: "100%", typography: "body1" }}
-          >
+          <Box sx={{ width: "100%", typography: "body1" }}>
             <TabContext value={value}>
               <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
                 <TabList onChange={handleChange}>
@@ -167,7 +157,7 @@ const Product = () => {
                   <p>
                     Your email address will not be published. Required fields
                     are marked *
-                  </p>         
+                  </p>
 
                   <Input
                     className="mb-3"
