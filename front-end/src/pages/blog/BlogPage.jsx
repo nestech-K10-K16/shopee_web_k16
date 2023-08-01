@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BrandStuff from "components/common/brandStuff/BrandStuff";
 import "configs/fontIcon";
 import { Link } from "react-router-dom";
-import { Blog_01 } from "assets";
+import { Blog01, Blog02, Blog03, Blog04 } from "assets";
 import "./blog.css";
 
 const BlogPage = () => {
@@ -28,13 +28,54 @@ const BlogPage = () => {
               <h4>Season</h4>
             </div>
             <div className="Shoppe__blogPage-content">
-              <BrandStuff
-                imgUrl={Blog_01}
-                text_01="Fashion - October 8, 2020"
-                text_02="Top Trends From Spring"
-                text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
-                read="Read More"
-              />
+              <div className="Shoppe__blogPage-text">
+                <div className="update">
+                  <Blog01 />
+                </div>
+
+                <BrandStuff
+                  text_01="Fashion - October 8, 2020"
+                  text_02="Top Trends From Spring"
+                  text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
+                  text_04="Read More"
+                />
+              </div>
+              <div className="Shoppe__blogPage-text">
+                <div className="update">
+                  <Blog02 />
+                </div>
+
+                <BrandStuff
+                  text_01="Fashion - October 8, 2020"
+                  text_02="Top Trends From Spring"
+                  text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
+                  text_04="Read More"
+                />
+              </div>
+              <div className="Shoppe__blogPage-text">
+                <div className="update">
+                  <Blog03 />
+                </div>
+
+                <BrandStuff
+                  text_01="Fashion - October 8, 2020"
+                  text_02="Top Trends From Spring"
+                  text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
+                  text_04="Read More"
+                />
+              </div>
+              <div className="Shoppe__blogPage-text">
+                <div className="update">
+                  <Blog04 />
+                </div>
+
+                <BrandStuff
+                  text_01="Fashion - October 8, 2020"
+                  text_02="Top Trends From Spring"
+                  text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
+                  text_04="Read More"
+                />
+              </div>
             </div>
           </div>
         </DefaultLayout>

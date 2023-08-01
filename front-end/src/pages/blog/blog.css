@@ -78,7 +78,18 @@ h4 {
 
 .Shoppe__blogPage-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   grid-gap: 25px;
+  margin-left: 39px;
+}
+
+.Shoppe__blogPage-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.Shoppe__blogPage-text .update {
+  width: 600px;
+  height: 300px;
 }
