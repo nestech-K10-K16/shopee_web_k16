@@ -1,19 +1,10 @@
 import React from "react";
 import { DefaultLayout, Jewelry } from "../../components";
 import { home01, home02, home03, home04, home05, home06 } from "./import";
-// import { Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { Link } from "react-router-dom";
 import { Banner } from "components";
 import "./style.css";
-
-// const images = [
-//   "assets/img__home-introduce.jpg",
-//   "assets/img__home-introduce.jpg",
-//   "assets/img__home-introduce.jpg",
-//   "assets/img__home-introduce.jpg",
-//   "assets/img__home-introduce.jpg",
-// ];
 
 const Home = () => {
   return (
