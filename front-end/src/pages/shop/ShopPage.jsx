@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Jewelry } from "components";
 import { home01, home02, home03, home04, home05, home06 } from "../home/import";
-import "../../configs/fontIcon";
+import "configs/fontIcon";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DefaultLayout from "components/utils/defaultLayout/index";

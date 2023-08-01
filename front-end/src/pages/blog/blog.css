@@ -1,0 +1,77 @@
+.Shoppe__blogPage p {
+  position: relative;
+  padding: 0rem 1rem;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: var(--size-16);
+  line-height: 27px;
+  color: black;
+  transition: 0.5s ease;
+}
+
+.Shoppe__blogPage p:hover {
+  color: var(--color-footer);
+}
+
+.Shoppe__blogPage p.active_navbar::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  bottom: -26px;
+  width: 53%;
+  height: 0.1rem;
+  background: var(--color-text-black);
+}
+
+.Shoppe__blogPage-container {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #d8d8d8;
+  width: 1315px;
+  height: 1200px;
+  margin-left: 96px;
+  margin-bottom: 240px;
+}
+
+.Shoppe__blogPage-text {
+  margin-top: 96px;
+}
+
+.Shoppe__blogPage-search {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-footer);
+  margin-bottom: 62px;
+}
+
+.Shoppe__blogPage-search input {
+  border: none;
+  margin-bottom: 8px;
+}
+
+.Shoppe__blogPage-search a {
+  width: 19px;
+  height: 19px;
+}
+
+h3 {
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 500;
+  line-height: 26px;
+  text-transform: capitalize;
+  margin-bottom: 22px;
+}
+
+h4 {
+  cursor: pointer;
+  color: var(--color-footer);
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+  margin-bottom: 10px;
+}
