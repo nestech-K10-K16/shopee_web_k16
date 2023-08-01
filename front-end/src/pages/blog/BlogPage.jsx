@@ -5,7 +5,13 @@ import { DefaultLayout } from "components";
 const BlogPage = () => {
   return (
     <>
-      <DefaultLayout></DefaultLayout>
+      <div className="Shoppe__blog">
+        <DefaultLayout>
+          <div className="Shoppe__blog-container">
+            <div></div>
+          </div>
+        </DefaultLayout>
+      </div>
     </>
   );
 };

@@ -1,0 +1,73 @@
+.Shoppe__banner-content {
+  position: absolute;
+  top: 240px;
+  left: 150px;
+  z-index: 1;
+  color: var(--color-text-white);
+  font-family: var(--font-family);
+}
+
+.shoppe__banner-content h1 {
+  font-size: var(--size-33);
+  margin-bottom: 5px;
+}
+
+.Shoppe__banner-content h2 {
+  font-size: var(--size-26);
+  margin-bottom: 40px;
+}
+
+.Shoppe__banner-content button {
+  cursor: pointer;
+  background: transparent;
+  width: 193px;
+  height: 53px;
+  font-size: var(--size-20);
+  color: var(--color-text-white);
+
+  border-radius: 6px;
+  border: 2px solid var(--color-bg);
+  transition: 0.5s ease;
+}
+
+.Shoppe__banner-content button:hover {
+  box-shadow: 2px 2.5px 3px 3px #565555;
+}
+
+.Shoppe__banner-slider {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 97%;
+  left: 50%;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2.5px;
+  background-color: var(--color-text-white);
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: var(--color-footer);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

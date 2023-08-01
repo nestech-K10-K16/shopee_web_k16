@@ -1,12 +1,12 @@
-import ShopPage from "../pages/shop/ShopPage";
-import BlogPage from "../pages/blog/BlogPage";
-import OurStoryPage from "../pages/ourStory/OurStoryPage";
-import SearchPage from "../pages/search/SearchPage";
-import CartPage from "../pages/cart/CartPage";
-import UserPage from "../pages/user/UserPage";
-import ResetPassword from "../pages/resetPassword/ResetPassword";
-import HomePage from "../pages/home/HomePage";
-import { Product } from "components";
+import ShopPage from "pages/shop/ShopPage";
+import BlogPage from "pages/blog/BlogPage";
+import OurStoryPage from "pages/ourStory/OurStoryPage";
+import SearchPage from "pages/search/SearchPage";
+import CartPage from "pages/cart/CartPage";
+import UserPage from "pages/user/UserPage";
+import ResetPassword from "pages/resetPassword/ResetPassword";
+import HomePage from "pages/home/HomePage";
+import Product from "pages/product/Product";
 
 export const ROUTE_ID = {
   HOME: "HomeRoute",

@@ -50,16 +50,6 @@
   transition: 0.5s ease;
 }
 
-.shoppe__navbar-links_container p.active::before {
-  content: "";
-  position: absolute;
-  left: 16px;
-  bottom: -26px;
-  width: 53%;
-  height: 0.1rem;
-  background: var(--color-text-black);
-}
-
 .shoppe__navbar-links_container p:hover {
   color: var(--color-footer);
 }

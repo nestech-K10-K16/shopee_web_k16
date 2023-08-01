@@ -1,10 +1,10 @@
 import React from "react";
 import { DefaultLayout, Jewelry } from "../../components";
 import { home01, home02, home03, home04, home05, home06 } from "./import";
-import introduce from "../../assets/img__home-introduce.jpg";
 // import { Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { Link } from "react-router-dom";
+import { Banner } from "components";
 import "./style.css";
 
 // const images = [
@@ -21,24 +21,7 @@ const Home = () => {
       <DefaultLayout>
         <div className="shoppe__home ">
           <div className="shoppe__home-img">
-            <img src={introduce} alt="introduce" />
-
-            <div className="shoppe__home-slider">
-              <div className="ellipse-10"></div>
-
-              <div className="ellipse-11"></div>
-
-              <div className="ellipse-12"></div>
-
-              <div className="ellipse-13"></div>
-
-              <div className="ellipse-14"></div>
-            </div>
-            <div className="shoppe__home-content">
-              <h1>Gold big hoops</h1>
-              <h2>$ 68,00</h2>
-              <button>View Product</button>
-            </div>
+            <Banner />
           </div>
 
           <div className="Shoppe__home-title">
@@ -48,7 +31,7 @@ const Home = () => {
           <div className="Shoppe__home-container">
             <div className="Shoppe__home-container_group">
               <div className="Shoppe__home-container_box">
-                <Link>
+                <Link to="/product">
                   <Jewelry
                     imgUrl={home01}
                     text="Lira Earrings"
