@@ -1,0 +1,11 @@
+#view-order {
+  padding: 8vh 10vw;
+}
+
+.view-order__content__left-side__order-details {
+  width: 30rem;
+}
+
+.view-order__content__left-side__order-details div:last-child{
+  width: 9.5rem;
+}

@@ -1,0 +1,39 @@
+#account {
+  padding: 8vh 10vw;
+}
+
+.account__content__tab-list {
+  border-bottom: 2px solid var(--bright-gray);
+}
+
+.account__content__tab-list li a {
+  color: var(--dark-silver);
+  display: block;
+  position: relative;
+  text-decoration: none;
+  margin-right: 2rem;
+}
+
+.account__content__tab-list li a:hover {
+  color: var(--black);
+}
+
+.account__content__tab-list li a::after {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: -18px;
+}
+
+.account__content__tab-list li.tab-active a {
+  color: var(--black);
+}
+
+.account__content__tab-list li.tab-active a::after {
+  background-color: var(--black);
+}
+
+

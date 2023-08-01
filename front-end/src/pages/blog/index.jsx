@@ -52,8 +52,8 @@ const Blog = () => {
         </div>
 
         <div className="blog__content__blog-post">
-          <div className="row mb-5">
-            <div className="col">
+          <div className="row row-cols-1 row-cols-md-2 row-gap-5 row-gap-md-3">
+            <div>
               <img src={IMG_POST_01} alt="" />
               <p className="body-medium text-dark-silver">
                 Fashion - October 8, 2020
@@ -71,7 +71,7 @@ const Blog = () => {
               </Link>
             </div>
 
-            <div className="col">
+            <div>
               <img src={IMG_POST_02} alt="" />
               <p className="body-medium text-dark-silver">
                 Fashion - October 8, 2020
@@ -88,10 +88,8 @@ const Blog = () => {
                 Read More
               </Link>
             </div>
-          </div>
 
-          <div className="row">
-            <div className="col">
+            <div>
               <img src={IMG_POST_03} alt="" />
               <p className="body-medium text-dark-silver">
                 Fashion - October 8, 2020
@@ -109,7 +107,7 @@ const Blog = () => {
               </Link>
             </div>
 
-            <div className="col">
+            <div>
               <img src={IMG_POST_04} alt="" />
               <p className="body-medium text-dark-silver">
                 Fashion - October 8, 2020

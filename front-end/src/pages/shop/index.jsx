@@ -42,8 +42,8 @@ const Shop = () => {
           </div>
 
           <div className="shop__content__product">
-            <div className="home__content__product__row row">
-              <div className="col">
+            <div className="row row-cols-2 row-cols-md-3">
+              <div>
                 <ProductStyle
                   className="body-large"
                   link={PATHNAME_LIST.PRODUCT}
@@ -53,7 +53,7 @@ const Shop = () => {
                 <p className="heading-04">$ 20,00</p>
               </div>
 
-              <div className="col">
+              <div>
                 <ProductStyle
                   className="body-large"
                   link={PATHNAME_LIST.PRODUCT}
@@ -63,7 +63,7 @@ const Shop = () => {
                 <p className="heading-04">$ 25,00</p>
               </div>
 
-              <div className="col">
+              <div>
                 <ProductStyle
                   className="body-large"
                   link={PATHNAME_LIST.PRODUCT}
@@ -74,10 +74,8 @@ const Shop = () => {
                 </p>
                 <p className="heading-04">$ 30,00</p>
               </div>
-            </div>
 
-            <div className="home__content__product__row row">
-              <div className="col">
+              <div>
                 <ProductStyle
                   className="body-large"
                   link={PATHNAME_LIST.PRODUCT}
@@ -89,7 +87,7 @@ const Shop = () => {
                 <p className="heading-04">$ 30,00</p>
               </div>
 
-              <div className="col">
+              <div>
                 <ProductStyle
                   className="body-large"
                   link={PATHNAME_LIST.PRODUCT}
@@ -101,7 +99,7 @@ const Shop = () => {
                 <p className="heading-04">$ 19,00</p>
               </div>
 
-              <div className="col">
+              <div>
                 <ProductStyle
                   className="body-large"
                   link={PATHNAME_LIST.PRODUCT}

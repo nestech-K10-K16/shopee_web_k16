@@ -32,8 +32,8 @@ const Home = () => {
             </Link>
           </div>
 
-          <div className="row mb-3">
-            <div className="col text-black text-decoration-none">
+          <div className="row row-cols-2 row-cols-md-3">
+            <div className="text-black text-decoration-none">
               <ProductStyle
                 className="body-large"
                 link={PATHNAME_LIST.PRODUCT}
@@ -43,7 +43,7 @@ const Home = () => {
               <p className="heading-04 text-beaver">$ 20,00</p>
             </div>
 
-            <div className="col text-black text-decoration-none">
+            <div className="text-black text-decoration-none">
               <ProductStyle
                 className="body-large"
                 link={PATHNAME_LIST.PRODUCT}
@@ -53,7 +53,7 @@ const Home = () => {
               <p className="heading-04 text-beaver">$ 25,00</p>
             </div>
 
-            <div className="col text-black text-decoration-none">
+            <div className="text-black text-decoration-none">
               <ProductStyle
                 className="body-large"
                 link={PATHNAME_LIST.PRODUCT}
@@ -62,10 +62,8 @@ const Home = () => {
               <p className="heading-03 mb-2">Kaede Hair Pin Set Of 3</p>
               <p className="heading-04 text-beaver">$ 30,00</p>
             </div>
-          </div>
 
-          <div className="row">
-            <div className="col text-black text-decoration-none">
+            <div className="text-black text-decoration-none">
               <ProductStyle
                 className="body-large"
                 link={PATHNAME_LIST.PRODUCT}
@@ -75,7 +73,7 @@ const Home = () => {
               <p className="heading-04 text-beaver">$ 30,00</p>
             </div>
 
-            <div className="col text-black text-decoration-none">
+            <div className="text-black text-decoration-none">
               <ProductStyle
                 className="body-large"
                 link={PATHNAME_LIST.PRODUCT}
@@ -85,7 +83,7 @@ const Home = () => {
               <p className="heading-04 text-beaver">$ 19,00</p>
             </div>
 
-            <div className="col text-black text-decoration-none">
+            <div className="text-black text-decoration-none">
               <ProductStyle
                 className="body-large"
                 link={PATHNAME_LIST.PRODUCT}

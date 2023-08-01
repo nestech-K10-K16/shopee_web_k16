@@ -9,6 +9,9 @@ import Blog from "pages/blog";
 import BlogSingle from "pages/blogSingle";
 import OurStory from "pages/ourStory";
 
+import Account from "pages/account";
+import ViewOrder from "pages/viewOrder";
+
 import Contact from "pages/contact";
 import Privacy from "pages/privacy";
 
@@ -23,6 +26,9 @@ export const ROUTE_ID = {
   BLOG: "BlogRoute",
   BLOG_SINGLE: "BlogSingleRoute",
   OUR_STORY: "OurStoryRoute",
+
+  ACCOUNT: "AccountRoute",
+  VIEW_ORDER: "ViewOrderRoute",
 
   CONTACT: "ContactRoute",
   PRIVACY: "PrivacyRoute",
@@ -39,6 +45,9 @@ export const PATHNAME_LIST = {
   BLOG: "/blog",
   BLOG_SINGLE: "/blog-single",
   OUR_STORY: "/our-story",
+
+  ACCOUNT: "/account",
+  VIEW_ORDER: "/view-order",
 
   CONTACT: "/contact",
   PRIVACY: "/Privacy",
@@ -95,6 +104,18 @@ export const OurStoryRoute = {
   component: OurStory,
 };
 
+export const AccountRoute = {
+  id: ROUTE_ID.ACCOUNT,
+  path: PATHNAME_LIST.ACCOUNT,
+  component: Account,
+};
+
+export const ViewOrderRoute = {
+  id: ROUTE_ID.VIEW_ORDER,
+  path: PATHNAME_LIST.VIEW_ORDER,
+  component: ViewOrder,
+};
+
 export const ContactRoute = {
   id: ROUTE_ID.CONTACT,
   path: PATHNAME_LIST.CONTACT,
@@ -116,6 +137,8 @@ export const appRoute = [
   BlogRoute,
   BlogSingleRoute,
   OurStoryRoute,
+  AccountRoute,
+  ViewOrderRoute,
   ContactRoute,
   PrivacyRoute,
 ];

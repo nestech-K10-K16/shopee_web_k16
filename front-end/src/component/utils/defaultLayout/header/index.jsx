@@ -1,9 +1,9 @@
 import React from "react";
 import "./index.css";
-import { PATHNAME_LIST } from "../../../../router/router";
-import { Link } from "react-router-dom";
-import { IMG_LOGO_SHOPEE } from "../../../../assets";
 import $ from "jquery";
+import { Link } from "react-router-dom";
+import { PATHNAME_LIST } from "router/router";
+import { IMG_LOGO_SHOPEE } from "assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
@@ -84,7 +84,7 @@ const Header = () => {
                 <li>
                   <Link
                     className="text-dark-silver ms-4"
-                    to={PATHNAME_LIST.MY_ACCOUNT}
+                    to={PATHNAME_LIST.ACCOUNT}
                   >
                     <FontAwesomeIcon icon={faUser} />
                   </Link>

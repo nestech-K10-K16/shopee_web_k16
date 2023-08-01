@@ -7,7 +7,6 @@ const Button = (props) => {
     <Link
       id="button"
       className={props.className}
-      type={props.type ? "black" : "white"}
       style={props.style}
       href={props.href}
       onClick={props.onClick}

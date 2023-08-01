@@ -3,6 +3,7 @@ import "./index.css";
 import { Button, Input } from "component/common";
 import { validateEmail, validatePassword } from "utils";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Link } from "react-router-dom";
 
 const MyAccount = () => {
   const [fullName, setFullName] = useState("");
@@ -14,22 +15,6 @@ const MyAccount = () => {
   const [homePage, setHomePage] = useState("");
 
   const [tabIndex, setTabIndex] = useState(0);
-
-  const onChangeFullName = (e) => {
-    setFullName(e.target.value);
-  };
-
-  const onChangeEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const onChangePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const onChangeRePassword = (e) => {
-    setRePassword(e.target.value);
-  };
 
   const onClickButtonLogin = () => {
     if (!validateEmail(email)) {
@@ -124,24 +109,18 @@ const MyAccount = () => {
     }
   };
 
-  const onSelectSwitch = () => {};
-
   return (
     <section id="my-account">
       <div className="my-account__content">
         <p className="heading-01 mb-5">My account</p>
 
         <Tabs selectedIndex={tabIndex} onSelect={(e) => setTabIndex(e)}>
-          <TabList
-            className="my-account__content__switch 
-                         d-flex list-unstyled mb-5"
-            onSelect={onSelectSwitch}
-          >
-            <Tab className="my-account__content__switch-login heading-03">
-              Login
+          <TabList className="my-account__content__switch heading-03 d-flex list-unstyled mb-5">
+            <Tab className={tabIndex === 0 ? "tab-active" : ""}>
+              <Link className="text-black text-decoration-none">Login</Link>
             </Tab>
-            <Tab className="my-account__content__switch-register heading-03">
-              Register
+            <Tab className={tabIndex === 1 ? "tab-active" : ""}>
+              <Link className="text-black text-decoration-none">Register</Link>
             </Tab>
           </TabList>
 
@@ -198,14 +177,14 @@ const MyAccount = () => {
                 className="heading-05 mb-2"
                 placeholder="Full name"
                 value={fullName}
-                onChange={(e) => onChangeFullName(e)}
+                onChange={(e) => setFullName(e.target.value)}
               ></Input>
 
               <Input
                 className="heading-05 mb-2"
                 placeholder="Email"
                 value={email}
-                onChange={(e) => onChangeEmail(e)}
+                onChange={(e) => setEmail(e.target.value)}
               ></Input>
 
               <Input
@@ -213,7 +192,7 @@ const MyAccount = () => {
                 type="password"
                 placeholder="Password"
                 value={password}
-                onChange={(e) => onChangePassword(e)}
+                onChange={(e) => setPassword(e.target.value)}
               ></Input>
 
               <Input
@@ -221,7 +200,7 @@ const MyAccount = () => {
                 type="password"
                 placeholder="Enter the password"
                 value={rePassword}
-                onChange={(e) => onChangeRePassword(e)}
+                onChange={(e) => setRePassword(e.target.value)}
               ></Input>
 
               <Button
