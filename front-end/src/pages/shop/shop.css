@@ -13,7 +13,7 @@
   color: var(--color-footer);
 }
 
-.Shoppe__shopPage p.active_navbar::before {
+.Shoppe__shopPage p.active__navbar-shop::before {
   content: "";
   position: absolute;
   left: 16px;

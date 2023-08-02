@@ -7,13 +7,13 @@ import "./style.css";
 
 const Menu = () => (
   <>
-    <p className="active_navbar">
+    <p className="active__navbar-shop">
       <Link to="/shop">Shop</Link>
     </p>
-    <p>
+    <p className="active__navbar-blog">
       <Link to="/blog">Blog</Link>
     </p>
-    <p>
+    <p className="active__navbar-ourStory">
       <Link to="/our-story">Our Story</Link>
     </p>
   </>
@@ -27,7 +27,7 @@ const Icon = () => (
     <Link to="/cart">
       <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
     </Link>
-    <Link to="/user">
+    <Link to="/user" className="active__navbar-user">
       <FontAwesomeIcon icon="fa-solid fa-user" />
     </Link>
   </>
