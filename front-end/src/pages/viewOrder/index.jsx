@@ -4,8 +4,8 @@ import "./index.css";
 const ViewOrder = () => {
   return (
     <section id="view-order">
-      <div className="view-order__content d-flex ">
-        <div className="view-order__content__left-side me-5">
+      <div className="view-order__content d-flex justify-content-between">
+        <div className="view-order__content__left-side">
           <p className="heading-02 mb-5">Order Details</p>
 
           <div className="view-order__content__left-side__order-details d-flex justify-content-between">
@@ -55,46 +55,27 @@ const ViewOrder = () => {
         <div className="view-order__content__right-side">
           <p className="heading-02">ORDER Summary</p>
 
-          <table className="table ">
-            <thead>
-              <tr>
-                <th className="heading-05">PRODUCT</th>
-                <th className="heading-05">TOTAL</th>
-              </tr>
-            </thead>
+          <div className="view-order__content__right-side__order-summary d-flex justify-content-between bg-bright-gray p-5">
+            <div>
+              <p>PRODUCT</p>
+              <p>Lira Earrings </p>
+              <p>Ollie Earrings</p>
+              <p>Kaede Hair Pin</p>
+              <p>SUBTOTAL</p>
+              <p>SHIPPING</p>
+              <p>TOTAL</p>
+            </div>
 
-            <tbody>
-              <tr>
-                <td>Lira Earrings</td>
-                <td>$64 </td>
-              </tr>
-
-              <tr>
-                <td>Ollie Earrings</td>
-                <td>$10 </td>
-              </tr>
-
-              <tr>
-                <td>Lira Earrings</td>
-                <td>$10 </td>
-              </tr>
-
-              <tr>
-                <td>SUBTOTAL</td>
-                <td>$85</td>
-              </tr>
-
-              <tr>
-                <td>SHIPPING</td>
-                <td>Free shipping</td>
-              </tr>
-
-              <tr>
-                <td>TOTAL</td>
-                <td>$85</td>
-              </tr>
-            </tbody>
-          </table>
+            <div>
+              <p>TOTAL</p>
+              <p>$64</p>
+              <p>$10</p>
+              <p>$10</p>
+              <p>$85</p>
+              <p>Free shipping</p>
+              <p>$85</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

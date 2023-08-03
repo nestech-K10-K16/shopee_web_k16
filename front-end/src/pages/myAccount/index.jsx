@@ -152,20 +152,16 @@ const MyAccount = () => {
               </div>
 
               <Button
-                className="body-large mb-3"
+                className="style-01 body-large mb-3"
                 href={homePage}
                 onClick={onClickButtonLogin}
               >
                 SIGN IN
               </Button>
 
-              <a
-                className="my-account__content__sign-in__forgot-password
-                             heading-05 text-black text-decoration-none"
-                href="/"
-              >
-                <p>Have you forgotten your password</p>
-              </a>
+              <Link className="my-account__content__sign-in__forgot-password heading-05 text-black text-decoration-none">
+                Have you forgotten your password
+              </Link>
             </form>
           </TabPanel>
 

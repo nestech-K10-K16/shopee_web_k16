@@ -6,6 +6,10 @@
   width: 30rem;
 }
 
-.view-order__content__left-side__order-details div:last-child{
+.view-order__content__left-side__order-details div:last-child {
   width: 9.5rem;
+}
+
+.view-order__content__right-side__order-summary {
+  width: 30rem;
 }

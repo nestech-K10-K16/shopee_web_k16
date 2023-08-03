@@ -1,0 +1,11 @@
+#shopping-bag {
+  background-color: var(--white);
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8vh 2vw ;
+}
+
+.shopping-bag__content__product img{
+width: 12rem;
+}
