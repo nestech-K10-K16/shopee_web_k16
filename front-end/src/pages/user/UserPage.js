@@ -106,10 +106,7 @@ const UserPage = () => {
                     </Link>
                   </h5>
                 </TabPanel>
-                <TabPanel
-                  value={2}
-                  className={tabIndex === 2 ? "tabIndex" : ""}
-                >
+                <TabPanel value={2}>
                   <div className="fill-username">
                     <input
                       type="text"

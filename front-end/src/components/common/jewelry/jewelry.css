@@ -79,7 +79,6 @@
   font-weight: 400;
   color: var(--color-text-black);
   margin-bottom: 16px;
-  cursor: pointer;
 }
 
 .shoppe__home-title_jewelry-content h4 {
@@ -88,7 +87,6 @@
   font-weight: 500;
   line-height: 26px;
   text-transform: capitalize;
-  cursor: pointer;
   color: var(--color-light);
 }
 

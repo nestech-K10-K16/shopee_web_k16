@@ -2,6 +2,11 @@
   margin-top: 22px;
 }
 
+.Shoppe__brandStuff-text img {
+  width: 450px;
+  height: 300px;
+}
+
 .Shoppe__brandStuff-text h3 {
   color: var(--color-footer);
   font-family: var(--font-family);
@@ -31,9 +36,11 @@
 }
 
 .Shoppe__brandStuff-text_1 h4 {
+  width: 84px;
   font-family: var(--font-family);
   font-size: 16px;
   font-weight: 700;
   line-height: normal;
   color: var(--color-light);
+  cursor: pointer;
 }
