@@ -10,49 +10,25 @@ import "./blog.css";
 
 const BlogPage = () => {
   const [tabIndex, setTabIndex] = useState(0);
+
+  const [activeTabs, setActiveTabs] = useState([
+    true,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
   const handleChange = (index) => {
     setTabIndex(index);
   };
 
-  const [whiteActive, setWhiteActive] = useState(true);
-  const [blackActive, setBlackActive] = useState(false);
-  const [blackActive02, setBlackActive02] = useState(false);
-  const [blackActive03, setBlackActive03] = useState(false);
-  const [blackActive04, setBlackActive04] = useState(false);
-
   const userChange = (index) => {
     setTabIndex(index);
-    if (index === 0) {
-      setWhiteActive(true);
-      setBlackActive(false);
-      setBlackActive02(false);
-      setBlackActive03(false);
-      setBlackActive04(false);
-    } else if (index === 1) {
-      setWhiteActive(false);
-      setBlackActive(true);
-      setBlackActive02(false);
-      setBlackActive03(false);
-      setBlackActive04(false);
-    } else if (index === 2) {
-      setWhiteActive(false);
-      setBlackActive(false);
-      setBlackActive02(true);
-      setBlackActive03(false);
-      setBlackActive04(false);
-    } else if (index === 3) {
-      setWhiteActive(false);
-      setBlackActive(false);
-      setBlackActive02(false);
-      setBlackActive03(true);
-      setBlackActive04(false);
-    } else if (index === 4) {
-      setWhiteActive(false);
-      setBlackActive(false);
-      setBlackActive02(false);
-      setBlackActive03(false);
-      setBlackActive04(true);
-    }
+
+    // Set the active state for each tab based on the index
+    const newActiveTabs = activeTabs.map((_, i) => (i === index ? 1 : 0));
+    setActiveTabs(newActiveTabs);
   };
 
   return (
@@ -76,7 +52,7 @@ const BlogPage = () => {
                   <div className="Shoppe__blogPage-convert">
                     <Tab
                       className={`Shoppe__blogPage-white ${
-                        whiteActive ? "active-tab" : ""
+                        activeTabs[0] ? "active-tab" : ""
                       }`}
                       onClick={() => userChange(0)}
                     >
@@ -84,7 +60,7 @@ const BlogPage = () => {
                     </Tab>
                     <Tab
                       className={`Shoppe__blogPage-black ${
-                        blackActive ? "active-tab" : ""
+                        activeTabs[1] ? "active-tab" : ""
                       }`}
                       onClick={() => userChange(1)}
                     >
@@ -92,7 +68,7 @@ const BlogPage = () => {
                     </Tab>
                     <Tab
                       className={`Shoppe__blogPage-black_02 ${
-                        blackActive02 ? "active-tab" : ""
+                        activeTabs[2] ? "active-tab" : ""
                       }`}
                       onClick={() => userChange(2)}
                     >
@@ -100,7 +76,7 @@ const BlogPage = () => {
                     </Tab>
                     <Tab
                       className={`Shoppe__blogPage-black_03 ${
-                        blackActive03 ? "active-tab" : ""
+                        activeTabs[3] ? "active-tab" : ""
                       }`}
                       onClick={() => userChange(3)}
                     >
@@ -108,7 +84,7 @@ const BlogPage = () => {
                     </Tab>
                     <Tab
                       className={`Shoppe__blogPage-black_04 ${
-                        blackActive04 ? "active-tab" : ""
+                        activeTabs[4] ? "active-tab" : ""
                       }`}
                       onClick={() => userChange(4)}
                     >

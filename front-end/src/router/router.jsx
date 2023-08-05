@@ -7,10 +7,12 @@ import UserPage from "pages/user/UserPage";
 import ResetPassword from "pages/resetPassword/ResetPassword";
 import HomePage from "pages/home/HomePage";
 import Product from "pages/product/Product";
+import BlogSingle from "components/common/blogSingle/BlogSingle";
 
 export const ROUTE_ID = {
   HOME: "HomeRoute",
   PRODUCT: "ProductRoute",
+  BLOG_SINGLE: "BlogSingleRoute",
   RESET_PASSWORD: "ResetPasswordRoute",
   SHOP: "ShopRoute",
   BLOG: "BlogRoute",
@@ -22,6 +24,7 @@ export const ROUTE_ID = {
 
 export const PATHNAME_LIST = {
   HOME: "/",
+  BLOG_SINGLE: "/blog-single",
   PRODUCT: "/product",
   RESET_PASSWORD: "/reset-password",
   SHOP: "/shop",
@@ -40,6 +43,13 @@ export const NAME_LAYOUT = {
 export const DEFAULT_PATHNAME = "/";
 
 // Define routes
+export const BlogSingleRoute = {
+  id: ROUTE_ID.BLOG_SINGLE,
+  path: PATHNAME_LIST.BLOG_SINGLE,
+  component: BlogSingle,
+  layout: null,
+};
+
 export const HomeRoute = {
   id: ROUTE_ID.HOME,
   path: PATHNAME_LIST.HOME,
@@ -105,6 +115,7 @@ export const SearchRoute = {
 
 export const appRoute = [
   HomeRoute,
+  BlogSingleRoute,
   ProductRoute,
   ResetPasswordRoute,
   ShopRoute,

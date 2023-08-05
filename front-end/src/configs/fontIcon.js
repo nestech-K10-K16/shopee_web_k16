@@ -6,6 +6,7 @@ import {
   faUser,
   faArrowRight,
   faToggleOff,
+  faReply,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -16,6 +17,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
+  faReply,
   faToggleOff,
   faMagnifyingGlass,
   faCartShopping,

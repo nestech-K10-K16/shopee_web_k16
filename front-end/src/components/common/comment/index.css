@@ -1,0 +1,65 @@
+.Shoppe__comment {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Shoppe__comment img {
+  width: 70px;
+  height: 70px;
+}
+
+.Shoppe__comment-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+}
+
+.Shoppe__comment-text h6 {
+  color: var(--color-footer);
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+  margin-top: 5px;
+}
+
+.head_icon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.head_icon h3 {
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.head_icon h3::after {
+  content: "6 May, 2020";
+  margin-left: 12px;
+  font-family: var(--font-family);
+  font-size: var(--size-14);
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.head_icon .icon {
+  margin-top: 45px;
+  margin-right: 30px;
+  color: var(--color-footer);
+}
+
+.head_icon .icon::after {
+  content: "Reply";
+  cursor: pointer;
+  margin-left: 8px;
+  font-family: var(--font-family);
+  font-size: var(--size-13);
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.Shoppe__comment:last-child {
+  margin-left: 90px;
+}
