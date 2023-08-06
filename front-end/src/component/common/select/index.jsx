@@ -1,4 +1,5 @@
-import "./index.css";
+import React from "react";
+import "./index.scss";
 
 const Select = (props) => {
   return (

@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import "./index.css";
+import "./index.scss";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
 import { Button, Input } from "component/common";
@@ -14,7 +14,7 @@ const Account = () => {
         <p className="heading-01 text-center">My Account</p>
 
         <Tabs selectedIndex={tabIndex} onSelect={(e) => setTabIndex(e)}>
-          <TabList className="account__content__tab-list heading-03 d-flex list-unstyled pb-3">
+          <TabList className="account__content__tab-list heading-03 flex pb-4 mb-3">
             <Tab className={tabIndex === 0 ? "tab-active" : ""}>
               <Link>Dashboard</Link>
             </Tab>
@@ -36,7 +36,17 @@ const Account = () => {
           </TabList>
 
           <TabPanel className="heading-05" value={0}>
-            <p>Hello Vitatheme (not Vitatheme? Log out)</p>
+            <div className="flex mb-2">
+              <p className="heading-05 mr-1">
+                Hello Vitatheme (not Vitatheme?{" "}
+              </p>
+              <Link
+                className="heading-05 text-beaver hover:text-black"
+                to={PATHNAME_LIST.MY_ACCOUNT}
+              >
+                Log out)
+              </Link>
+            </div>
             <p>
               From your account dashboard you can view your recent orders,
               manage your shipping and billing addresses, and edit your password
@@ -44,8 +54,8 @@ const Account = () => {
             </p>
           </TabPanel>
           <TabPanel value={1}>
-            <table className="table">
-              <thead>
+            <table className="table w-full">
+              <thead className="border-b-2 border-solid border-black items-center">
                 <tr className="heading-05">
                   <th>ORDER NUMBER</th>
                   <th>DATE</th>
@@ -55,40 +65,38 @@ const Account = () => {
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody className="border-b-2 border-solid border-bright_gray ">
                 <tr>
                   <td>7643980998990</td>
                   <td>October 8,2021</td>
                   <td>Delivered</td>
                   <td>$ 105</td>
                   <td>
-                    <Link className="text-beaver text-decoration-none">
-                      View Order
-                    </Link>
+                    <Link className="text-beaver">View Order</Link>
                   </td>
                 </tr>
+              </tbody>
 
+              <tbody className="border-b-2 border-solid border-bright_gray ">
                 <tr>
                   <td>943980998990</td>
                   <td>October 8,2021</td>
                   <td>Processing</td>
                   <td>$ 100</td>
                   <td>
-                    <Link className="text-beaver text-decoration-none">
-                      View Order
-                    </Link>
+                    <Link className="text-beaver">View Order</Link>
                   </td>
                 </tr>
+              </tbody>
 
+              <tbody>
                 <tr>
                   <td>879980998990</td>
                   <td>October 8,2021</td>
                   <td>Delivered</td>
                   <td>$ 65</td>
                   <td>
-                    <Link className="text-beaver text-decoration-none">
-                      View Order
-                    </Link>
+                    <Link className="text-beaver">View Order</Link>
                   </td>
                 </tr>
               </tbody>

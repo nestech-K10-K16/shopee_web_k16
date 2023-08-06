@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./index.css";
+import "./index.scss";
 
 const AmountInput = (props) => {
   const [number, setNumber] = useState(1);

@@ -1,0 +1,14 @@
+@import "styles/custom/variable";
+
+#shopping-bag {
+  background-color: $white;
+  border-left: 3px solid $bright-gray;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5vh 2vw;
+}
+
+.shopping-bag__content__product img {
+  width: 12rem;
+}

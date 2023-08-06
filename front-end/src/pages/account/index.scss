@@ -1,13 +1,15 @@
+@import "styles/custom/variable";
+
 #account {
   padding: 8vh 10vw;
 }
 
 .account__content__tab-list {
-  border-bottom: 2px solid var(--bright-gray);
+  border-bottom: 2px solid $bright-gray;
 }
 
 .account__content__tab-list li a {
-  color: var(--dark-silver);
+  color: $dark-silver;
   display: block;
   position: relative;
   text-decoration: none;
@@ -15,7 +17,7 @@
 }
 
 .account__content__tab-list li a:hover {
-  color: var(--black);
+  color: $black;
 }
 
 .account__content__tab-list li a::after {
@@ -29,11 +31,9 @@
 }
 
 .account__content__tab-list li.tab-active a {
-  color: var(--black);
+  color: $black;
 }
 
 .account__content__tab-list li.tab-active a::after {
-  background-color: var(--black);
+  background-color: $black;
 }
-
-

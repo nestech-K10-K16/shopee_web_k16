@@ -1,19 +1,17 @@
-/* header */
+@import "styles/custom/variable";
+
 #header {
   padding: 8vh 10vw;
 }
 
-.header__content {
-  border-bottom: 2px solid var(--bright-gray);
-}
-
 .header__content__right-side__menu li a {
+  color: $dark-silver;
   display: block;
   position: relative;
 }
 
 .header__content__right-side__menu li a:hover {
-  color: black;
+  color: $black;
 }
 
 .header__content__right-side__menu li a::after {
@@ -26,10 +24,10 @@
   bottom: -26px;
 }
 
-.header__content__right-side__menu li.tab-active a{
-  color: var(--black);
+.header__content__right-side__menu li.tab-active a {
+  color: $black;
 }
 
 .header__content__right-side__menu li.tab-active a::after {
-  background-color: var(--black);
+  background-color: $black;
 }

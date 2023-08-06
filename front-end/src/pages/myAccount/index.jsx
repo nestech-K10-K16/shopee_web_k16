@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import "./index.css";
+import "./index.scss";
 import { Button, Input } from "component/common";
 import { validateEmail, validatePassword } from "utils";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -115,7 +115,7 @@ const MyAccount = () => {
         <p className="heading-01 mb-5">My account</p>
 
         <Tabs selectedIndex={tabIndex} onSelect={(e) => setTabIndex(e)}>
-          <TabList className="my-account__content__switch heading-03 d-flex list-unstyled mb-5">
+          <TabList className="my-account__content__switch heading-03 flex mb-8">
             <Tab className={tabIndex === 0 ? "tab-active" : ""}>
               <Link className="text-black text-decoration-none">Login</Link>
             </Tab>
@@ -124,12 +124,12 @@ const MyAccount = () => {
             </Tab>
           </TabList>
 
-          <TabPanel className="my-account__content__login">
-            <form className="d-flex flex-column">
+          <TabPanel className="my-account__content__login ">
+            <form className="flex flex-col ">
               <p className="text-danger">{message}</p>
 
               <Input
-                className="heading-05 mb-2"
+                className="heading-05 mb-3"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -144,16 +144,15 @@ const MyAccount = () => {
               ></Input>
 
               <div
-                className="my-account__content__sign-in__remember-me
-                             d-flex align-items-center mb-4"
+                className="flex items-center mb-8"
               >
                 <input className="heading-05 me-3" type="checkbox" />
                 Remember me
               </div>
 
               <Button
-                className="style-01 body-large mb-3"
-                href={homePage}
+                className="body-large mb-3"
+                to={homePage}
                 onClick={onClickButtonLogin}
               >
                 SIGN IN
@@ -166,7 +165,7 @@ const MyAccount = () => {
           </TabPanel>
 
           <TabPanel className="my-account__content__register">
-            <form className="my-account__user d-flex flex-column">
+            <form className="my-account__user flex flex-col">
               <p className="text-danger">{message}</p>
 
               <Input
@@ -192,7 +191,7 @@ const MyAccount = () => {
               ></Input>
 
               <Input
-                className="heading-05 mb-4"
+                className="heading-05 mb-8"
                 type="password"
                 placeholder="Enter the password"
                 value={rePassword}
@@ -201,7 +200,7 @@ const MyAccount = () => {
 
               <Button
                 className="body-large"
-                href={homePage}
+                to={homePage}
                 onClick={onClickButtonRegister}
               >
                 SIGN UP

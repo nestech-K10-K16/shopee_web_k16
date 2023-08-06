@@ -4,5 +4,5 @@
     "module": "CommonJS",
     "target": "ES6"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "src/tailwind", "tailwind.config.js"]
 }

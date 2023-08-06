@@ -1,5 +1,5 @@
-import React from "react";
-import "./index.css";
+import { React } from "react";
+import "./index.scss";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 import { PATHNAME_LIST } from "router/router";
@@ -7,6 +7,7 @@ import { IMG_LOGO_SHOPEE } from "assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { useState } from "react";
 
 const Header = () => {
   $(function () {
@@ -22,10 +23,16 @@ const Header = () => {
     });
   });
 
+  const [show, setShow] = useState(false);
+
+  const onclickShowShoppingBag = () => {
+    setShow(!show);
+  };
+
   return (
     <header>
       <section id="header">
-        <div className="header__content d-flex justify-content-between pb-4">
+        <div className="header__content flex justify-between pb-6">
           <div className="header__content__left-sider">
             <Link
               className="header__content__left-sider__logo"
@@ -36,63 +43,49 @@ const Header = () => {
           </div>
 
           <div className="header__content__right-side">
-            <ul className="header__content__right-side__menu d-flex list-unstyled mb-0">
-              <div className="d-flex align-items-center">
-                <li>
-                  <Link
-                    className="heading-05 text-dark-silver text-decoration-none "
-                    to={PATHNAME_LIST.SHOP}
-                  >
-                    Shop
-                  </Link>
-                </li>
+            <ul className="header__content__right-side__menu flex list-none mb-0 space-x-8">
+              <li>
+                <Link className="heading-05" to={PATHNAME_LIST.SHOP}>
+                  Shop
+                </Link>
+              </li>
 
-                <li>
-                  <Link
-                    className="heading-05 text-dark-silver text-decoration-none ms-4"
-                    to={PATHNAME_LIST.BLOG}
-                  >
-                    Blog
-                  </Link>
-                </li>
+              <li>
+                <Link className="heading-05" to={PATHNAME_LIST.BLOG}>
+                  Blog
+                </Link>
+              </li>
 
-                <li>
-                  <Link
-                    className="heading-05 text-dark-silver text-decoration-none ms-4"
-                    to={PATHNAME_LIST.OUR_STORY}
-                  >
-                    Our story
-                  </Link>
-                </li>
-              </div>
+              <li>
+                <Link className="heading-05" to={PATHNAME_LIST.OUR_STORY}>
+                  Our story
+                </Link>
+              </li>
 
-              <div className="border-0-5px-solid-dark-silver-rotate--180deg ms-4"></div>
+              <div className="border border-dark_silver -rotate-180"></div>
 
-              <div className="d-flex align-items-center">
-                <li>
-                  <Link className="text-dark-silver ms-4">
-                    <FontAwesomeIcon icon={faSearch} />
-                  </Link>
-                </li>
+              <li>
+                <Link>
+                  <FontAwesomeIcon icon={faSearch} />
+                </Link>
+              </li>
 
-                <li>
-                  <Link className="text-dark-silver ms-4">
-                    <FontAwesomeIcon icon={faCartShopping} />
-                  </Link>
-                </li>
+              <li>
+                <Link onClick={onclickShowShoppingBag}>
+                  <FontAwesomeIcon icon={faCartShopping} />
+                </Link>
+              </li>
 
-                <li>
-                  <Link
-                    className="text-dark-silver ms-4"
-                    to={PATHNAME_LIST.ACCOUNT}
-                  >
-                    <FontAwesomeIcon icon={faUser} />
-                  </Link>
-                </li>
-              </div>
+              <li>
+                <Link to={PATHNAME_LIST.ACCOUNT}>
+                  <FontAwesomeIcon icon={faUser} />
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
+
+        <div className="border border-solid border-bright_gray"></div>
       </section>
     </header>
   );

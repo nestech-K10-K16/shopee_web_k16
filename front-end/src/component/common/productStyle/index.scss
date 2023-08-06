@@ -1,3 +1,5 @@
+@import "styles/custom/variable";
+
 #product-style {
   position: relative;
   margin-bottom: 0.5rem;
@@ -23,7 +25,7 @@
 }
 
 #product-style button:hover {
-  background-color: var(--bright-gray);
+  background-color: $bright-gray;
 }
 
 #product-style:hover button {

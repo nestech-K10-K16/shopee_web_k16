@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import "./index.scss";
 import {
   IMG_PRODUCT_02,
   IMG_PRODUCT_03,
@@ -17,32 +17,32 @@ const Shop = () => {
   return (
     <main>
       <section id="shop">
-        <div className="shop__content d-flex">
-          <div className="shop__content__left-side-bar me-5">
+        <div className="shop__content flex">
+          <div className="shop__content__left-side-bar w-80 mr-8">
             <p className="heading-01">Shop The Latest</p>
-            <div className="shop__content__left-side-bar__search d-flex align-items-center mb-4">
-              <Input className="w-100" placeholder="search..." />
-              <button className="bg-body border-0">
+            <div className="flex items-center mb-4">
+              <Input className="w-full pr-4" placeholder="search..." />
+              <button className="bg-none border-0 -ml-4">
                 <FontAwesomeIcon icon={faSearch} />
               </button>
             </div>
 
-            <Select className="w-100 mb-2" text="Shop By"></Select>
-            <Select className="w-100 mb-4" text="Sort By"></Select>
+            <Select className="w-full mb-2" text="Shop By"></Select>
+            <Select className="w-full mb-4" text="Sort By"></Select>
 
-            <div className="shop__content__left-side-bar__on-sale d-flex justify-content-between align-items-center mb-2">
+            <div className="flex justify-between items-center mb-2">
               <p className="heading-05 mb-0">On sale</p>
               <ToggleButton />
             </div>
 
-            <div className="shop__content__left-side-bar__in-stock d-flex justify-content-between align-items-center">
+            <div className="flex justify-between items-center">
               <p className="heading-05 mb-0">In stock</p>
               <ToggleButton />
             </div>
           </div>
 
           <div className="shop__content__product">
-            <div className="row row-cols-2 row-cols-md-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
               <div>
                 <ProductStyle
                   className="body-large"
@@ -50,7 +50,7 @@ const Shop = () => {
                   src={IMG_PRODUCT_02}
                 />
                 <p className="heading-03 mb-1">Lira Earrings</p>
-                <p className="heading-04">$ 20,00</p>
+                <p className="heading-04 text-beaver">$ 20,00</p>
               </div>
 
               <div>
@@ -60,7 +60,7 @@ const Shop = () => {
                   src={IMG_PRODUCT_03}
                 />
                 <p className="heading-03 mb-1">Hal Earrings</p>
-                <p className="heading-04">$ 25,00</p>
+                <p className="heading-04 text-beaver">$ 25,00</p>
               </div>
 
               <div>
@@ -69,10 +69,8 @@ const Shop = () => {
                   link={PATHNAME_LIST.PRODUCT}
                   src={IMG_PRODUCT_04}
                 />
-                <p className="heading-03 margin-bottom-0-5rem">
-                  Kaede Hair Pin Set Of 3
-                </p>
-                <p className="heading-04">$ 30,00</p>
+                <p className="heading-03 mb-1">Kaede Hair Pin Set Of 3</p>
+                <p className="heading-04 text-beaver">$ 30,00</p>
               </div>
 
               <div>
@@ -81,10 +79,8 @@ const Shop = () => {
                   link={PATHNAME_LIST.PRODUCT}
                   src={IMG_PRODUCT_05}
                 />
-                <p className="heading-03 margin-bottom-0-5rem">
-                  Hair Pin Set of 3
-                </p>
-                <p className="heading-04">$ 30,00</p>
+                <p className="heading-03 mb-1">Hair Pin Set of 3</p>
+                <p className="heading-04 text-beaver">$ 30,00</p>
               </div>
 
               <div>
@@ -93,10 +89,8 @@ const Shop = () => {
                   link={PATHNAME_LIST.PRODUCT}
                   src={IMG_PRODUCT_06}
                 />
-                <p className="heading-03 margin-bottom-0-5rem">
-                  Plaine Necklace
-                </p>
-                <p className="heading-04">$ 19,00</p>
+                <p className="heading-03 mb-1">Plaine Necklace</p>
+                <p className="heading-04 text-beaver">$ 19,00</p>
               </div>
 
               <div>
@@ -105,10 +99,8 @@ const Shop = () => {
                   link={PATHNAME_LIST.PRODUCT}
                   src={IMG_PRODUCT_07}
                 />
-                <p className="heading-03 margin-bottom-0-5rem">
-                  Yuki Hair Pin Set of 3
-                </p>
-                <p className="heading-04">$ 29,00</p>
+                <p className="heading-03 mb-1">Yuki Hair Pin Set of 3</p>
+                <p className="heading-04 text-beaver">$ 29,00</p>
               </div>
             </div>
           </div>

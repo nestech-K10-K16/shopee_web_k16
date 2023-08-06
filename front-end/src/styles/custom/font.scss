@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import "./variable.scss";
+
+html,
+body {
+  font-family: var(--font-family-base);
+}
+
+.heading-01 {
+  font-weight: $font-weight-500;
+  font-size: $size-33;
+}
+
+.heading-02 {
+  font-weight: $font-weight-400;
+  font-size: $size-26;
+  line-height: $line-height-35;
+}
+
+.heading-03 {
+  font-weight: $font-weight-400;
+  font-size: $size-20;
+  line-height: $line-height-26;
+}
+
+.heading-04 {
+  font-weight: $font-weight-500;
+  font-size: $size-20;
+  line-height: $line-height-20;
+}
+
+.heading-05 {
+  font-weight: $font-weight-400;
+  font-size: $size-16;
+  line-height: $line-height-27;
+}
+
+.body-large {
+  font-weight: $font-weight-700;
+  font-size: $size-16;
+}
+
+.body-medium {
+  font-weight: $font-weight-400;
+  font-size: $size-14;
+}
+
+.body-small {
+  font-weight: $font-weight-400;
+  font-size: $size-12;
+  line-height: $line-height-20;
+}
