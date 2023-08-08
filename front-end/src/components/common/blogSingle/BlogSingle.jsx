@@ -3,7 +3,7 @@ import { DefaultLayout } from "components";
 import { BlogSingle01, BlogSingle02 } from "./import";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "configs/fontIcon";
-import Comment from "../comment/Comment";
+import Comments from "../comment/Comments";
 import "./index.css";
 
 const BlogSingle = () => {
@@ -93,7 +93,7 @@ const BlogSingle = () => {
                 <h2>Your Comment*</h2>
                 <button className="btn">POST COMMENT</button>
                 <h6>Comments(3)</h6>
-                <Comment />
+                <Comments />
               </div>
             </div>
           </div>
