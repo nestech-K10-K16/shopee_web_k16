@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../../configs/fontIcon";
+import { Link } from "react-router-dom";
 import "./footer.css";
 
 const Footer = () => {
@@ -8,7 +9,9 @@ const Footer = () => {
     <div className="Shoppe__contact">
       <div className="Shoppe__contact-content">
         <div className="Shoppe__contact-links-1">
-          <h4>CONTACT</h4>
+          <Link to="/contact">
+            <h4>CONTACT</h4>
+          </Link>
           <h4>TERMS OF SERVICES</h4>
           <h4>SHIPPING AND RETURNS</h4>
         </div>

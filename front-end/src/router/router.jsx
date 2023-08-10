@@ -8,9 +8,13 @@ import ResetPassword from "pages/resetPassword/ResetPassword";
 import HomePage from "pages/home/HomePage";
 import Product from "pages/product/Product";
 import BlogSingle from "components/common/blogSingle/BlogSingle";
+import Account from "pages/account/Account";
+import { Contact } from "pages";
 
 export const ROUTE_ID = {
   HOME: "HomeRoute",
+  CONTACT: "ContactRoute",
+  ACCOUNT: "AccountRoute",
   PRODUCT: "ProductRoute",
   BLOG_SINGLE: "BlogSingleRoute",
   RESET_PASSWORD: "ResetPasswordRoute",
@@ -24,6 +28,8 @@ export const ROUTE_ID = {
 
 export const PATHNAME_LIST = {
   HOME: "/",
+  CONTACT: "/contact",
+  ACCOUNT: "/accounts",
   BLOG_SINGLE: "/blog-single",
   PRODUCT: "/product",
   RESET_PASSWORD: "/reset-password",
@@ -43,6 +49,20 @@ export const NAME_LAYOUT = {
 export const DEFAULT_PATHNAME = "/";
 
 // Define routes
+export const ContactRoute = {
+  id: ROUTE_ID.CONTACT,
+  path: PATHNAME_LIST.CONTACT,
+  component: Contact,
+  layout: null,
+};
+
+export const AccountRoute = {
+  id: ROUTE_ID.ACCOUNT,
+  path: PATHNAME_LIST.ACCOUNT,
+  component: Account,
+  layout: null,
+};
+
 export const BlogSingleRoute = {
   id: ROUTE_ID.BLOG_SINGLE,
   path: PATHNAME_LIST.BLOG_SINGLE,
@@ -115,6 +135,8 @@ export const SearchRoute = {
 
 export const appRoute = [
   HomeRoute,
+  ContactRoute,
+  AccountRoute,
   BlogSingleRoute,
   ProductRoute,
   ResetPasswordRoute,

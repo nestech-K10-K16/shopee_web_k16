@@ -91,7 +91,7 @@ const BlogSingle = () => {
                   </label>
                 </div>
                 <h2>Your Comment*</h2>
-                <button className="btn">POST COMMENT</button>
+                <button className="hover">POST COMMENT</button>
                 <h6>Comments(3)</h6>
                 <Comments />
               </div>

@@ -1,0 +1,519 @@
+.Shoppe__product-navbar p {
+  position: relative;
+}
+
+.Shoppe__product-navbar p.active__navbar-shop::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  bottom: -26px;
+  width: 53%;
+  height: 0.1rem;
+  background: var(--color-text-black);
+}
+
+.Shoppe__product {
+  border-top: 1px solid #d8d8d8;
+  width: 1315px;
+  height: 2276px;
+  margin-left: 96px;
+  margin-bottom: 240px;
+}
+
+.Shoppe__product-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 128px;
+  margin-bottom: 99px;
+}
+
+.Shoppe__product-image {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Shoppe__product-image .small {
+  display: flex;
+  flex-direction: column;
+  margin-right: 39px;
+}
+
+.small img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.big img {
+  width: 540px;
+  height: 600px;
+  border-radius: 8px;
+}
+
+.big .slider-gray {
+  width: 540px;
+  height: 2px;
+  background: var(--color-gray);
+  margin-top: 24px;
+}
+
+.big .slider-black {
+  width: 206.766px;
+  height: 2px;
+  background: var(--color-footer);
+  margin-top: -1px;
+}
+
+.Shoppe__product-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 64px;
+}
+
+.Shoppe__product-text h2 {
+  font-family: var(--font-family);
+  font-size: var(--size-26);
+  font-weight: 400;
+  line-height: 35px;
+  margin-bottom: 23px;
+}
+
+.Shoppe__product-text h4 {
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 500;
+  line-height: 26px;
+  color: var(--color-light);
+  margin-bottom: 70px;
+}
+
+.Shoppe__product-star {
+  display: flex;
+  flex-direction: row;
+}
+
+.Shoppe__product-star img {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+.Shoppe__product-star h6 {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+  color: var(--color-footer);
+  margin-top: -5px;
+  margin-left: 24px;
+}
+
+.Shoppe__product-text p {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+  color: var(--color-footer);
+}
+
+.Shoppe__product-button {
+  display: flex;
+  flex-direction: row;
+}
+
+.count {
+  display: flex;
+  flex-direction: row;
+  width: 102px;
+  height: 53px;
+  background: var(--color-light-gray);
+  padding: 14px 16px;
+  border-radius: 4px;
+  margin-right: 23px;
+  margin-top: 48px;
+}
+
+.count p {
+  margin-right: 24px;
+}
+
+.count p:first-child {
+  cursor: pointer;
+}
+
+.count p:last-child {
+  cursor: pointer;
+}
+
+.Shoppe__product-button button {
+  width: 360px;
+  height: 53px;
+  padding: 16px 127px;
+  border-radius: 4px;
+  font-family: var(--font-family);
+  font-size: var(--size-14);
+  font-weight: 700;
+  margin-top: 48px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.Shoppe__product-button button:hover {
+  background: var(--color-text-black);
+  color: var(--color-footer);
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  margin-top: 80px;
+}
+
+.icon .heart {
+  margin-right: 70px;
+}
+
+.heart .gray {
+  color: var(--color-footer);
+  margin-right: 10px;
+}
+
+.heart .red {
+  color: red;
+}
+
+.social .gray {
+  margin-right: 20px;
+  color: var(--color-footer);
+}
+
+.Shoppe__product-text h1 {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+  margin-bottom: 6px;
+}
+
+.Shoppe__product-text h1::after {
+  content: "12";
+  color: var(--color-footer);
+  margin-left: 16px;
+}
+
+.Shoppe__product-text h3 {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.Shoppe__product-text h3::after {
+  content: "Fashion, Style";
+  color: var(--color-footer);
+  margin-left: 16px;
+}
+
+.Shoppe__product-tabs {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  border-bottom: 1px solid var(--color-gray);
+  padding-bottom: 34px;
+}
+
+.Shoppe__product-white {
+  display: flex;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--color-gray);
+  margin-right: 96px;
+}
+
+.Shoppe__product-black {
+  width: 196px;
+  display: flex;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--color-gray);
+  margin-right: 96px;
+}
+
+.Shoppe__product-black_02 {
+  width: 38px;
+  display: flex;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 27px;
+  color: var(--color-gray);
+}
+
+.Shoppe__product-white.active-tab::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 8%;
+  height: 1px;
+  background: var(--color-text-black);
+}
+
+.Shoppe__product-white.active-tab {
+  color: var(--color-text-black);
+}
+
+.Shoppe__product-black.active-tab::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 15%;
+  height: 1px;
+  background: var(--color-text-black);
+}
+
+.Shoppe__product-black.active-tab {
+  color: var(--color-text-black);
+}
+
+.Shoppe__product-black_02.active-tab::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 7.8%;
+  height: 1px;
+  background: var(--color-text-black);
+}
+
+.Shoppe__product-black_02.active-tab {
+  color: var(--color-text-black);
+}
+
+.description {
+  width: 1248px;
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+  color: var(--color-footer);
+  margin-top: 39px;
+}
+
+.information {
+  margin-top: 39px;
+}
+
+.information h2 {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.information h2::after {
+  content: "0.3 kg";
+  color: var(--color-footer);
+  margin-left: 12px;
+}
+
+.information h3 {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.information h3::after {
+  content: "15 x 10 x 1";
+  color: var(--color-footer);
+  margin-left: 12px;
+}
+
+.information h4 {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.information h4::after {
+  content: "Black, Browns, White";
+  color: var(--color-footer);
+  margin-left: 12px;
+}
+
+.information p {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.information p::after {
+  content: "Metal";
+  color: var(--color-footer);
+  margin-left: 12px;
+}
+
+.Shoppe__product h1 {
+  font-family: var(--font-family);
+  font-size: var(--size-26);
+  font-weight: 400;
+  line-height: 35px;
+  margin-top: 66px;
+}
+
+.Shoppe__product-similar_item {
+  display: flex;
+  flex-direction: row;
+  margin-top: 47px;
+}
+
+.image img {
+  width: 390px;
+  height: 390px;
+  margin-right: 47px;
+}
+
+.image h3 {
+  margin-top: 24px;
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.image h4 {
+  margin-top: 16px;
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 500;
+  line-height: 26px;
+  color: var(--color-light);
+}
+
+.review {
+  display: flex;
+  flex-direction: row;
+  margin-top: 42px;
+}
+
+.review-1 {
+  margin-right: 88px;
+}
+
+.evaluate h3 {
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+  margin-bottom: 76px;
+}
+
+.evaluate h4 {
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.evaluate h4::after {
+  content: "6 May, 2020";
+  color: var(--color-footer);
+  margin-left: 16px;
+}
+
+.review-star img {
+  margin-right: 10px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.evaluate p {
+  width: 580px;
+  height: 57px;
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+  color: var(--color-footer);
+  margin-bottom: 39px;
+}
+
+.evaluate:first-child {
+  width: 580px;
+  border-bottom: 1px solid var(--color-footer);
+  margin-bottom: 27px;
+}
+
+.review-2 h3 {
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--color-footer);
+  margin-bottom: 11px;
+}
+
+.review-2 h2 {
+  font-family: var(--font-family);
+  font-size: var(--size-13);
+  font-weight: 400;
+  line-height: 30px;
+  color: var(--color-footer);
+  margin-bottom: 46px;
+}
+
+.review-2 h4 {
+  font-family: var(--font-family);
+  font-size: var(--size-14);
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 61px;
+  color: var(--color-footer);
+}
+
+.review-2 .slider {
+  width: 580px;
+  border-bottom: 1px solid var(--color-footer);
+  margin-bottom: 46px;
+}
+
+.review-2 .input {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-2 p {
+  margin-top: -96px;
+  font-family: var(--font-family);
+  font-size: var(--size-14);
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--color-footer);
+}
+
+.img img {
+  margin-top: 13px;
+  margin-right: 10px;
+}
+
+.review-2 button {
+  margin-top: 20px;
+  cursor: pointer;
+  width: 123px;
+  height: 53px;
+  border-radius: 4px;
+  background: var(--color-text-black);
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 700;
+  color: var(--color-text-white);
+}

@@ -35,7 +35,7 @@ const useAuthForm = () => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("auth")) history.push("/");
+    if (localStorage.getItem("auth")) history.push("/accounts");
   });
 
   const formSubmitter = (e) => {
@@ -51,7 +51,7 @@ const useAuthForm = () => {
     if (email !== "perfect@123.com" || password !== "Perfect123")
       return setErrorMsg("Invalid email or password");
 
-    history("/");
+    history("/accounts");
   };
 
   return {

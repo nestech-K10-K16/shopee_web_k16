@@ -210,7 +210,7 @@
   cursor: pointer;
 }
 
-button {
+.Shoppe__blogSingle-reply button {
   margin-top: 64px;
 }
 
@@ -229,7 +229,7 @@ button {
   padding: 0 330px;
 }
 
-.btn {
+.hover {
   cursor: pointer;
   color: var(--color-text-white);
   font-family: var(--font-family);
@@ -243,7 +243,7 @@ button {
   transition: 0.5s ease;
 }
 
-.btn:hover {
+.hover:hover {
   color: var(--color-text-black);
   background: var(--color-footer);
 }

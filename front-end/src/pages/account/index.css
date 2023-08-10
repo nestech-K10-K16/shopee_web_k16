@@ -1,0 +1,227 @@
+.account__navbar a {
+  position: relative;
+}
+
+.account__navbar a.active__navbar-user::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  bottom: -22px;
+  width: 50%;
+  height: 1px;
+  background: var(--color-text-black);
+}
+
+.Shoppe__account {
+  border-top: 1px solid #d8d8d8;
+  width: 1315px;
+  height: 1000px;
+  margin-left: 96px;
+  margin-bottom: 240px;
+}
+
+.Shoppe__account-container {
+  margin-top: 96px;
+}
+.Shoppe__account-container h1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+  font-family: var(--font-family);
+  font-size: var(--size-33);
+  font-weight: 500;
+  line-height: 43px;
+}
+
+.Shoppe__account-tabs {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  border-bottom: 1px solid var(--color-gray);
+  padding-bottom: 34px;
+}
+
+.Shoppe__account-tab {
+  display: flex;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--color-gray);
+  margin-right: 64px;
+}
+
+.Shoppe__account-tab:nth-child(1).active-tab::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 8%;
+  height: 1px;
+  background: var(--color-text-black);
+}
+
+.Shoppe__account-tab:nth-child(2).active-tab::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 5%;
+  height: 1px;
+  background: var(--color-text-black);
+}
+
+.Shoppe__account-tab:nth-child(3).active-tab::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 7.6%;
+  height: 1px;
+  background: var(--color-text-black);
+}
+
+.Shoppe__account-tab:nth-child(4).active-tab::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 7.6%;
+  height: 1px;
+  background: var(--color-text-black);
+}
+
+.Shoppe__account-tab:nth-child(5).active-tab::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 10.9%;
+  height: 1px;
+  background: var(--color-text-black);
+}
+
+.Shoppe__account-tab:nth-child(6).active-tab::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 5%;
+  height: 1px;
+  background: var(--color-text-black);
+}
+
+.Shoppe__account-tab.active-tab {
+  color: var(--color-text-black);
+}
+
+.dashboard {
+  margin-top: 39px;
+}
+
+.dashboard h3 {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.dashboard span {
+  color: var(--color-light);
+}
+
+.orders {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 39px;
+  width: 1248px;
+  height: 68px;
+  border: 1px solid var(--color-text-black);
+  background: var(--color-light-gray);
+}
+
+.orders h4 {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+  padding: 19px 40px;
+}
+
+.orders span {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 700;
+  color: var(--color-light);
+  padding: 23px 40px;
+}
+
+.address {
+  margin-top: 36px;
+}
+
+.address h2 {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.add {
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+}
+
+.bill {
+  margin-top: 45px;
+}
+
+.bill h3 {
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+  margin-bottom: 24px;
+}
+
+.bill p {
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 700;
+  color: var(--color-light);
+}
+
+.bill h6 {
+  font-family: var(--font-family);
+  font-size: var(--size-14);
+  font-weight: 400;
+  line-height: 22px;
+  margin-top: 14px;
+}
+
+.details {
+  padding: 0 420px;
+}
+
+.details h1 {
+  margin-top: 39px;
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: var(--size-33);
+  font-weight: 500;
+  line-height: 43px;
+}
+
+.details h3 {
+  margin-top: 48px;
+  margin-bottom: 41px;
+}
+
+.details .button {
+  cursor: pointer;
+  width: 500px;
+  height: 53px;
+  border-radius: 4px;
+  background: var(--color-text-black);
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 700;
+  color: var(--color-text-white);
+}

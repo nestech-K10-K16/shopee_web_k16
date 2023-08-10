@@ -16,7 +16,11 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
+import { faEnvelope, faHeart } from "@fortawesome/free-regular-svg-icons";
+
 library.add(
+  faHeart,
+  faEnvelope,
   faReply,
   faToggleOff,
   faMagnifyingGlass,
