@@ -6,3 +6,6 @@ export { default as Button } from "./button";
 export { default as ToggleButton } from "./toggleButton";
 export { default as ProductStyle } from "./productStyle";
 export { default as AmountInput } from "./amountInput";
+export { default as SlideShowImage } from "./slideShowImage";
+
+export { default as ListProductToDo } from "./listProductToDo";

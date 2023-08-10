@@ -1,45 +1,42 @@
 import React from "react";
 import "./index.scss";
-import {
-  IMG_PRODUCT_02,
-  IMG_PRODUCT_03,
-  IMG_PRODUCT_04,
-  IMG_PRODUCT_05,
-} from "assets";
+import { IMG_PRODUCT_02 } from "assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faClose } from "@fortawesome/free-solid-svg-icons";
 
-const Items = (props) => {
-  return (
-    <div className="d-flex mb-3">
-      <img className="me-3" src={props.src} alt="" />
+const ShoppingBag = ({ visible }) => {
+  if (!visible) return null;
 
-      <div className="me-5 d-flex flex-column justify-content-between">
-        <div>{props.children}</div>
+  const onClickShoppingBagVisibility = () => {
+    document.getElementById("shopping-bag").style.display = "none";
+  };
+
+  const Items = (props) => {
+    return (
+      <div className="flex">
+        <img className="mr-3" src={props.src} alt="" />
+
+        <div className="mr-5">
+          <div>{props.children}</div>
+
+          <div>
+            <p className="mb-0">QTY: - 1 +</p>
+          </div>
+        </div>
 
         <div>
-          <p className="mb-0">QTY: - 1 +</p>
+          <button className="bg-body border-0">
+            <FontAwesomeIcon icon={faClose} />
+          </button>
         </div>
       </div>
+    );
+  };
 
-      <div>
-        <button className="bg-body border-0">
-          <FontAwesomeIcon icon={faClose} />
-        </button>
-      </div>
-    </div>
-  );
-};
-
-const onClickShoppingBagVisibility = () => {
-  document.getElementById("shopping-bag").style.visibility = "collapse";
-};
-
-const ShoppingBag = () => {
   return (
     <div id="shopping-bag">
       <div className="shopping-bag__content">
-        <div className="d-flex justify-content-end">
+        <div className="flex justify-end">
           <button
             className="bg-body border-0"
             onClick={onClickShoppingBagVisibility}
@@ -48,29 +45,11 @@ const ShoppingBag = () => {
           </button>
         </div>
 
-        <p className="heading-05">Shopping bag</p>
-        <p className="heading-05">4 Items</p>
+        <p className="heading-05 mb-4">Shopping bag</p>
+        <p className="heading-05 mb-4">4 Items</p>
 
         <div className="shopping-bag__content__product">
           <Items src={IMG_PRODUCT_02}>
-            <p>Lira Earrings</p>
-            <p>Black / Medium</p>
-            <p>$ 20,00</p>
-          </Items>
-
-          <Items src={IMG_PRODUCT_03}>
-            <p>Lira Earrings</p>
-            <p>Black / Medium</p>
-            <p>$ 20,00</p>
-          </Items>
-
-          <Items src={IMG_PRODUCT_04}>
-            <p>Lira Earrings</p>
-            <p>Black / Medium</p>
-            <p>$ 20,00</p>
-          </Items>
-
-          <Items src={IMG_PRODUCT_05}>
             <p>Lira Earrings</p>
             <p>Black / Medium</p>
             <p>$ 20,00</p>

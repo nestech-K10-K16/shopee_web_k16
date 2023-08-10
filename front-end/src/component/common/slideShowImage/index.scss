@@ -1,0 +1,34 @@
+@import "styles/custom/variable";
+
+.slider-main {
+  position: relative;
+  margin-bottom: 0.6rem;
+}
+
+.slider-main button {
+  position: absolute;
+}
+
+.slider-main__image-main {
+  width: 1221px;
+  height: 632.02px;
+}
+
+.slider-main__prev {
+  top: 50%;
+  left: 0;
+}
+
+.slider-main__next {
+  top: 50%;
+  right: 0;
+}
+
+.slider-image-list {
+  height: 8rem;
+  cursor: pointer;
+}
+
+.slider-image-list img.active {
+  border: 2px solid $black;
+}

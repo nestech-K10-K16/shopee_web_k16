@@ -1,15 +1,6 @@
 import React from "react";
 import "./index.scss";
-import {
-  IMG_PRODUCT_02,
-  IMG_PRODUCT_03,
-  IMG_PRODUCT_04,
-  IMG_PRODUCT_05,
-  IMG_PRODUCT_06,
-  IMG_PRODUCT_07,
-} from "assets";
-import { PATHNAME_LIST } from "router/router";
-import { Input, Select, ToggleButton, ProductStyle } from "component/common";
+import { Input, Select, ToggleButton, ListProductToDo } from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
@@ -42,67 +33,7 @@ const Shop = () => {
           </div>
 
           <div className="shop__content__product">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
-              <div>
-                <ProductStyle
-                  className="body-large"
-                  link={PATHNAME_LIST.PRODUCT}
-                  src={IMG_PRODUCT_02}
-                />
-                <p className="heading-03 mb-1">Lira Earrings</p>
-                <p className="heading-04 text-beaver">$ 20,00</p>
-              </div>
-
-              <div>
-                <ProductStyle
-                  className="body-large"
-                  link={PATHNAME_LIST.PRODUCT}
-                  src={IMG_PRODUCT_03}
-                />
-                <p className="heading-03 mb-1">Hal Earrings</p>
-                <p className="heading-04 text-beaver">$ 25,00</p>
-              </div>
-
-              <div>
-                <ProductStyle
-                  className="body-large"
-                  link={PATHNAME_LIST.PRODUCT}
-                  src={IMG_PRODUCT_04}
-                />
-                <p className="heading-03 mb-1">Kaede Hair Pin Set Of 3</p>
-                <p className="heading-04 text-beaver">$ 30,00</p>
-              </div>
-
-              <div>
-                <ProductStyle
-                  className="body-large"
-                  link={PATHNAME_LIST.PRODUCT}
-                  src={IMG_PRODUCT_05}
-                />
-                <p className="heading-03 mb-1">Hair Pin Set of 3</p>
-                <p className="heading-04 text-beaver">$ 30,00</p>
-              </div>
-
-              <div>
-                <ProductStyle
-                  className="body-large"
-                  link={PATHNAME_LIST.PRODUCT}
-                  src={IMG_PRODUCT_06}
-                />
-                <p className="heading-03 mb-1">Plaine Necklace</p>
-                <p className="heading-04 text-beaver">$ 19,00</p>
-              </div>
-
-              <div>
-                <ProductStyle
-                  className="body-large"
-                  link={PATHNAME_LIST.PRODUCT}
-                  src={IMG_PRODUCT_07}
-                />
-                <p className="heading-03 mb-1">Yuki Hair Pin Set of 3</p>
-                <p className="heading-04 text-beaver">$ 29,00</p>
-              </div>
-            </div>
+            <ListProductToDo />
           </div>
         </div>
       </section>

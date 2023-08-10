@@ -7,9 +7,8 @@ import { IMG_LOGO_SHOPEE } from "assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { useState } from "react";
 
-const Header = () => {
+const Header = ({ onClick }) => {
   $(function () {
     $(".header__content__left-sider").click(function () {
       $(".header__content__right-side__menu li").removeClass("tab-active");
@@ -22,12 +21,6 @@ const Header = () => {
       $(this).addClass("tab-active");
     });
   });
-
-  const [show, setShow] = useState(false);
-
-  const onclickShowShoppingBag = () => {
-    setShow(!show);
-  };
 
   return (
     <header>
@@ -71,7 +64,7 @@ const Header = () => {
               </li>
 
               <li>
-                <Link onClick={onclickShowShoppingBag}>
+                <Link onClick={onClick}>
                   <FontAwesomeIcon icon={faCartShopping} />
                 </Link>
               </li>

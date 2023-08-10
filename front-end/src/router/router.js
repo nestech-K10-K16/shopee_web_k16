@@ -15,6 +15,8 @@ import ViewOrder from "pages/viewOrder";
 import Contact from "pages/contact";
 import Privacy from "pages/privacy";
 
+import Test from "pages/test";
+
 export const ROUTE_ID = {
   HOME: "HomeRoute",
   SHOP: "ShopRoute",
@@ -32,6 +34,8 @@ export const ROUTE_ID = {
 
   CONTACT: "ContactRoute",
   PRIVACY: "PrivacyRoute",
+
+  TEST: "TestRoute",
 };
 
 export const PATHNAME_LIST = {
@@ -50,7 +54,9 @@ export const PATHNAME_LIST = {
   VIEW_ORDER: "/view-order",
 
   CONTACT: "/contact",
-  PRIVACY: "/Privacy",
+  PRIVACY: "/privacy",
+
+  TEST: "/test",
 };
 
 export const DEFAULT_PATHNAME = PATHNAME_LIST.HOME;
@@ -128,6 +134,12 @@ export const PrivacyRoute = {
   component: Privacy,
 };
 
+export const TestRoute = {
+  id: ROUTE_ID.TEST,
+  path: PATHNAME_LIST.TEST,
+  component: Test,
+};
+
 export const appRoute = [
   HomeRoute,
   ShopRoute,
@@ -141,4 +153,5 @@ export const appRoute = [
   ViewOrderRoute,
   ContactRoute,
   PrivacyRoute,
+  TestRoute,
 ];
