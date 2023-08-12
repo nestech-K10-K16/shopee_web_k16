@@ -3,12 +3,10 @@
 #shopping-bag {
   background-color: $white;
   border-left: 3px solid $bright-gray;
-  position: absolute;
+  position: fixed;
+  overflow-y: scroll;
   right: 0;
   top: 0;
-  padding: 5vh 2vw;
-}
-
-.shopping-bag__content__product img {
-  width: 12rem;
+  height: 100%;
+  translate: 5s;
 }

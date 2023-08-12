@@ -1,5 +1,7 @@
+@import "styles/custom/variable";
+
 #text-area {
-  border: 1px solid var(--bright-gray);
+  border: 1px solid $bright-gray;
   border-top: 0;
   border-left: 0;
   border-right: 0;

@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 
-const Header = ({ onClick }) => {
+const Header = (props) => {
   $(function () {
     $(".header__content__left-sider").click(function () {
       $(".header__content__right-side__menu li").removeClass("tab-active");
@@ -64,7 +64,7 @@ const Header = ({ onClick }) => {
               </li>
 
               <li>
-                <Link onClick={onClick}>
+                <Link className={props.className} onClick={props.onClick}>
                   <FontAwesomeIcon icon={faCartShopping} />
                 </Link>
               </li>

@@ -3,9 +3,7 @@ import "./index.scss";
 
 const Select = (props) => {
   return (
-    <select id="select" className={props.className}>
-      <option>{props.text}</option>
-    </select>
+    <select className={`select ${props.className}`} required>{props.children}</select>
   );
 };
 

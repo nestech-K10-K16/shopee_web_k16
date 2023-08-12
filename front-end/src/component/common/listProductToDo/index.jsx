@@ -55,8 +55,8 @@ class ListProductToDo extends React.Component {
         {listProductToDos &&
           listProductToDos.map((item) => {
             return (
-              <div>
-                <div id="product-style" key={item.id}>
+              <div key={item.id}>
+                <div id="product-style">
                   <div>
                     <Link to={item.link}>
                       <img src={item.url} alt="" />

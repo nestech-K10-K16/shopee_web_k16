@@ -1,11 +1,11 @@
 import React from "react";
-import "./index.css";
+import "./index.scss";
 
 const TextArea = (props) => {
   return (
     <textarea
       id="text-area"
-      className={props?.className}
+      className={props.className}
       placeholder={props.placeholder}
     ></textarea>
   );

@@ -1,7 +1,18 @@
 @import "styles/custom/variable";
 
-#select {
+.select {
+  outline: none;
   border: 1px solid $bright-gray;
   border-radius: 6px;
-  padding: 8px;
+  padding: 8px 0;
+
+  &:required:invalid {
+    color: $dark-silver;
+  }
+
+  &-secondary {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
 }

@@ -4,6 +4,8 @@ import ResetPassword from "pages/resetPasword";
 import Home from "pages/home";
 import Shop from "pages/shop";
 import Product from "pages/product";
+import Cart from "pages/cart";
+import CheckOut from "pages/checkOut";
 
 import Blog from "pages/blog";
 import BlogSingle from "pages/blogSingle";
@@ -21,6 +23,8 @@ export const ROUTE_ID = {
   HOME: "HomeRoute",
   SHOP: "ShopRoute",
   PRODUCT: "ProductRoute",
+  CART: "CartRoute",
+  CHECK_OUT: "CheckOutRoute",
 
   MY_ACCOUNT: "MyAccountRoute",
   RESET_PASSWORD: "ResetPasswordRoute",
@@ -42,6 +46,8 @@ export const PATHNAME_LIST = {
   HOME: "/",
   SHOP: "/shop",
   PRODUCT: "/product",
+  CART: "/cart",
+  CHECK_OUT: "/check-out",
 
   MY_ACCOUNT: "/my-account",
   RESET_PASSWORD: "/reset-password",
@@ -78,6 +84,18 @@ export const ProductRoute = {
   id: ROUTE_ID.PRODUCT,
   path: PATHNAME_LIST.PRODUCT,
   component: Product,
+};
+
+export const CartRoute = {
+  id: ROUTE_ID.CART,
+  path: PATHNAME_LIST.CART,
+  component: Cart,
+};
+
+export const CheckOutRoute = {
+  id: ROUTE_ID.CHECK_OUT,
+  path: PATHNAME_LIST.CHECK_OUT,
+  component: CheckOut,
 };
 
 export const MyAccountRoute = {
@@ -144,6 +162,8 @@ export const appRoute = [
   HomeRoute,
   ShopRoute,
   ProductRoute,
+  CartRoute,
+  CheckOutRoute,
   MyAccountRoute,
   ResetPasswordRoute,
   BlogRoute,
