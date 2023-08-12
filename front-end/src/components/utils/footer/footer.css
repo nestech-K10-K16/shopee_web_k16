@@ -1,4 +1,4 @@
-.Shoppe__contact {
+.Shoppe__footer {
   position: sticky;
   width: 1340px;
   border-top: 1px solid var(--color-gray);
@@ -7,18 +7,18 @@
   margin-bottom: 90px;
 }
 
-.Shoppe__contact-content {
+.Shoppe__footer-content {
   display: flex;
   justify-content: space-between;
 }
 
-.Shoppe__contact-links-1 {
+.Shoppe__footer-links-1 {
   display: flex;
   color: var(--color-footer);
   margin-top: 55px;
 }
 
-.Shoppe__contact-links-1 h4 {
+.Shoppe__footer-links-1 h4 {
   font-size: var(--size-16);
   font-family: var(--font-family);
   line-height: 27px;
@@ -27,13 +27,13 @@
   cursor: pointer;
 }
 
-.Shoppe__contact-links-2 {
+.Shoppe__footer-links-2 {
   display: flex;
   color: var(--color-footer);
   border-bottom: 1px solid var(--color-text-black);
 }
 
-.Shoppe__contact-links-2 input {
+.Shoppe__footer-links-2 input {
   font-size: var(--size-16);
   font-family: var(--font-family);
   line-height: 27px;
@@ -46,11 +46,11 @@
   border: none;
 }
 
-.Shoppe__contact-links-2 .icon {
+.Shoppe__footer-links-2 .icon {
   margin-top: 50px;
 }
 
-.Shoppe__contact-lastPage {
+.Shoppe__footer-lastPage {
   display: flex;
   justify-content: space-between;
   color: var(--color-footer);
@@ -58,26 +58,26 @@
   margin-top: 48px;
 }
 
-.Shoppe__contact-copyright span {
+.Shoppe__footer-copyright span {
   color: var(--color-text-black);
 }
 
-.Shoppe__contact-icon .fa-linkedin-in {
+.Shoppe__footer-icon .fa-linkedin-in {
   cursor: pointer;
   margin-right: 20px;
 }
 
-.Shoppe__contact-icon .fa-facebook-f {
+.Shoppe__footer-icon .fa-facebook-f {
   margin-right: 20px;
   cursor: pointer;
 }
 
-.Shoppe__contact-icon .fa-instagram {
+.Shoppe__footer-icon .fa-instagram {
   margin-right: 20px;
   cursor: pointer;
 }
 
-.Shoppe__contact-icon .fa-twitter {
+.Shoppe__footer-icon .fa-twitter {
   margin-right: 20px;
   cursor: pointer;
 }

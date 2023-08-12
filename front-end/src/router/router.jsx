@@ -10,9 +10,15 @@ import Product from "pages/product/Product";
 import BlogSingle from "components/common/blogSingle/BlogSingle";
 import Account from "pages/account/Account";
 import { Contact } from "pages";
+import { Privacy } from "pages";
+import Checkout from "pages/checkout/Checkout";
+import OrderPage from "pages/order/OrderPage";
 
 export const ROUTE_ID = {
   HOME: "HomeRoute",
+  ORDER: "OrderRoute",
+  CHECKOUT: "CheckoutRoute",
+  PRiVACY: "PrivacyRoute",
   CONTACT: "ContactRoute",
   ACCOUNT: "AccountRoute",
   PRODUCT: "ProductRoute",
@@ -28,6 +34,9 @@ export const ROUTE_ID = {
 
 export const PATHNAME_LIST = {
   HOME: "/",
+  ORDER: "/order",
+  CHECKOUT: "/checkout",
+  PRiVACY: "/privacy",
   CONTACT: "/contact",
   ACCOUNT: "/accounts",
   BLOG_SINGLE: "/blog-single",
@@ -49,6 +58,27 @@ export const NAME_LAYOUT = {
 export const DEFAULT_PATHNAME = "/";
 
 // Define routes
+export const OrderRoute = {
+  id: ROUTE_ID.ORDER,
+  path: PATHNAME_LIST.ORDER,
+  component: OrderPage,
+  layout: null,
+};
+
+export const CheckoutRoute = {
+  id: ROUTE_ID.CHECKOUT,
+  path: PATHNAME_LIST.CHECKOUT,
+  component: Checkout,
+  layout: null,
+};
+
+export const PrivacyRoute = {
+  id: ROUTE_ID.PRiVACY,
+  path: PATHNAME_LIST.PRiVACY,
+  component: Privacy,
+  layout: null,
+};
+
 export const ContactRoute = {
   id: ROUTE_ID.CONTACT,
   path: PATHNAME_LIST.CONTACT,
@@ -134,7 +164,10 @@ export const SearchRoute = {
 };
 
 export const appRoute = [
+  CheckoutRoute,
+  OrderRoute,
   HomeRoute,
+  PrivacyRoute,
   ContactRoute,
   AccountRoute,
   BlogSingleRoute,

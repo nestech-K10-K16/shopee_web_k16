@@ -24,7 +24,7 @@ const Icon = () => (
     <Link to="/search">
       <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
     </Link>
-    <Link to="/cart">
+    <Link to="/cart" className="active__navbar-cart">
       <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
     </Link>
     <Link to="/user" className="active__navbar-user">

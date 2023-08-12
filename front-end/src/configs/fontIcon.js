@@ -7,6 +7,9 @@ import {
   faArrowRight,
   faToggleOff,
   faReply,
+  faX,
+  faChevronUp,
+  faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -16,10 +19,18 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faEnvelope, faHeart } from "@fortawesome/free-regular-svg-icons";
+import {
+  faEnvelope,
+  faHeart,
+  faCircleCheck,
+} from "@fortawesome/free-regular-svg-icons";
 
 library.add(
   faHeart,
+  faCircleCheck,
+  faChevronUp,
+  faChevronDown,
+  faX,
   faEnvelope,
   faReply,
   faToggleOff,

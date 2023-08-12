@@ -1,0 +1,92 @@
+.Shoppe__contact {
+  border-top: 1px solid #d8d8d8;
+  width: 1315px;
+  margin-left: 96px;
+  margin-bottom: 240px;
+}
+
+.Shoppe__contact-container {
+  margin-top: 125px;
+}
+
+.Shoppe__contact-container h1 {
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: var(--size-33);
+  font-weight: 500;
+  line-height: 43px;
+  margin-bottom: 39px;
+}
+
+.Shoppe__contact-container h3 {
+  padding: 0 370px;
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: var(--size-20);
+  font-weight: 400;
+  line-height: 26px;
+  margin-bottom: 108px;
+}
+
+.input-type {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 270px;
+}
+
+.input-type .first {
+  margin-right: 116px;
+}
+
+.first input {
+  width: 396px;
+  margin-bottom: 94px;
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+  border: none;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-footer);
+}
+
+.last input {
+  width: 396px;
+  margin-bottom: 94px;
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 400;
+  line-height: 27px;
+  border: none;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-footer);
+}
+
+.Shoppe__contact-container .message {
+  width: 908px;
+  border: none;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-footer);
+  margin-left: 270px;
+}
+
+.Shoppe__contact .button {
+  cursor: pointer;
+  margin-left: 463px;
+  margin-top: 96px;
+  width: 500px;
+  height: 53px;
+  background: var(--color-text-black);
+  border-radius: 4px;
+  font-family: var(--font-family);
+  font-size: var(--size-16);
+  font-weight: 700;
+  color: var(--color-text-white);
+  transition: 0.5s ease;
+}
+
+.Shoppe__contact .button:hover {
+  background: var(--color-footer);
+  color: var(--color-text-black);
+}
