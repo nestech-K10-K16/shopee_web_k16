@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import "./index.css";
 import { DefaultLayout } from "components";
 import useAuthForm from "components/common/useAuthForm/UseAuthForm";
+import "./index.css";
 
 const UserPage = () => {
   const {
@@ -27,7 +27,7 @@ const UserPage = () => {
     <>
       <div className="hover__navbar">
         <DefaultLayout>
-          <div className="Shoppe__myAccount section__padding">
+          <div className="Shoppe__myAccount">
             <form onSubmit={formSubmitter}>
               <h1>My account</h1>
               <Tabs
@@ -97,7 +97,7 @@ const UserPage = () => {
                     <input className="checkbox" type="checkbox" />
                     <label>Remember me</label>
                   </div>
-                  <button type="submit" className="btn">
+                  <button type="submit" className="btn-black">
                     Sign In
                   </button>
                   <h5>
@@ -139,7 +139,7 @@ const UserPage = () => {
                     <input className="checkbox" type="checkbox" />
                     <label>Remember me</label>
                   </div>
-                  <button type="submit" className="btn">
+                  <button type="submit" className="btn-black">
                     Register
                   </button>
                 </TabPanel>

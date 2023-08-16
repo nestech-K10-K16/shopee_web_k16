@@ -11,7 +11,7 @@
   content: "";
   position: absolute;
   left: 13px;
-  bottom: -22px;
+  bottom: -17px;
   width: 50%;
   height: 1px;
   background: var(--color-text-black);
@@ -22,7 +22,7 @@
   justify-content: center;
   box-sizing: border-box;
   border-top: 1px solid #d8d8d8;
-  width: 1310px;
+  width: 1320px;
   height: 900px;
   margin-left: 96px;
 }
@@ -34,9 +34,7 @@ form {
 form h1 {
   display: flex;
   justify-content: center;
-  font-family: var(--font-family);
   font-size: var(--size-33);
-  font-style: normal;
   font-weight: 500;
   line-height: 43px;
 
@@ -65,7 +63,6 @@ form h1 {
   border-radius: 8px;
   cursor: pointer;
 
-  font-family: var(--font-family);
   font-size: var(--size-20);
   font-weight: 400;
   line-height: 26px;
@@ -78,7 +75,6 @@ form h1 {
   cursor: pointer;
 
   padding: 16px 84px;
-  font-family: var(--font-family);
   font-size: var(--size-20);
   font-weight: 400;
   line-height: 26px;
@@ -89,12 +85,12 @@ form h1 {
   width: 500px;
   height: 30px;
 
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
   border-bottom: 1px solid var(--color-gray);
   margin-bottom: 46px;
+  outline: none;
 }
 
 .fill-email input {
@@ -102,11 +98,11 @@ form h1 {
   width: 500px;
   height: 30px;
 
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
   border-bottom: 1px solid var(--color-gray);
+  outline: none;
   margin-bottom: 46px;
 }
 
@@ -115,11 +111,11 @@ form h1 {
   width: 500px;
   height: 30px;
 
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
   border-bottom: 1px solid var(--color-gray);
+  outline: none;
   margin-bottom: 15px;
 }
 
@@ -138,51 +134,33 @@ form h1 {
 
 label {
   color: var(--color-text-black);
-  font-family: var(--font-family);
   font-size: var(--size-16);
-  font-style: normal;
   font-weight: 400;
   line-height: 27px;
   margin: 0px 5px 69px;
 }
 
-.btn {
+.btn-black {
   width: 500px;
   height: 53px;
   border-radius: 4px;
   border: 1px solid var(--color-text-white);
-  background: var(--color-text-black);
   margin-bottom: 13px;
   cursor: pointer;
 
-  font-family: var(--font-family);
   font-size: var(--size-16);
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
-  color: var(--color-text-white);
   transition: 0.5s ease;
-}
-
-.btn:hover {
-  background: var(--color-footer);
-  color: var(--color-text-black);
 }
 
 h5 {
   display: flex;
   justify-content: center;
-  font-family: var(--font-family);
   font-size: var(--size-16);
-  font-style: normal;
   font-weight: 400;
   line-height: 27px;
   cursor: pointer;
   margin-bottom: 247px;
-}
-
-.tabIndex {
-  background: var(--color-text-white) !important;
 }
 
 .Shoppe__myAccount-login.active-tab {

@@ -46,7 +46,6 @@
 }
 
 .Shoppe__home-title_layer p {
-  font-family: var(--font-family);
   font-size: var(--size-26);
   margin: 20px;
 }
@@ -74,7 +73,6 @@
 
 .shoppe__home-title_jewelry-content h3 {
   font-size: var(--size-20);
-  font-family: var(--font-family);
   line-height: 26px;
   font-weight: 400;
   color: var(--color-text-black);
@@ -83,7 +81,6 @@
 
 .shoppe__home-title_jewelry-content h4 {
   font-size: var(--size-20);
-  font-family: var(--font-family);
   font-weight: 500;
   line-height: 26px;
   text-transform: capitalize;

@@ -27,12 +27,12 @@ const ShopPage = () => {
                   <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
                 </Link>
               </div>
-              <select id="country" name="Shop By">
+              <select className="select-01">
                 <option value="australia">Shop By</option>
                 <option value="canada">I don't no</option>
                 <option value="usa">I don't no</option>
               </select>
-              <select id="country" name="Sort By">
+              <select className="select-02">
                 <option value="australia">Sort By</option>
                 <option value="canada">I don't no</option>
                 <option value="usa">I don't no</option>

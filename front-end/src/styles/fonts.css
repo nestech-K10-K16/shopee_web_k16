@@ -59,7 +59,6 @@ body {
   font-weight: var(--font-weight-400);
   font-size: var(--size-16);
   line-height: var(--line-height-27);
-  letter-spacing: var(--letter-spacing-10);
 }
 
 .body-large {
@@ -78,5 +77,4 @@ body {
   font-weight: var(--font-weight-400);
   font-size: var(--size-12);
   line-height: var(--line-height-20);
-  letter-spacing: var(--letter-spacing-10);
 }

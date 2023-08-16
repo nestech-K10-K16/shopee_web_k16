@@ -11,7 +11,7 @@
   content: "";
   position: absolute;
   left: 16px;
-  bottom: -25px;
+  bottom: -23.5px;
   width: 53%;
   height: 1px;
   background: var(--color-text-black);
@@ -22,14 +22,13 @@
   justify-content: space-between;
   border-top: 1px solid #d8d8d8;
   width: 1315px;
-  height: 1300px;
+  height: 1280px;
   margin-left: 96px;
   margin-bottom: 240px;
 }
 
 .Shoppe__blogPage-text {
   width: 280px;
-
   margin-top: 96px;
 }
 
@@ -59,7 +58,6 @@
 .Shoppe__blogPage-white {
   display: flex;
   cursor: pointer;
-  font-family: var(--font-family);
   font-size: var(--size-20);
   font-weight: 500;
   line-height: 26px;
@@ -72,7 +70,6 @@
   width: 56px;
   display: flex;
   cursor: pointer;
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -84,7 +81,6 @@
   width: 38px;
   display: flex;
   cursor: pointer;
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -96,7 +92,6 @@
   width: 90px;
   display: flex;
   cursor: pointer;
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -108,7 +103,6 @@
   width: 50px;
   display: flex;
   cursor: pointer;
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;

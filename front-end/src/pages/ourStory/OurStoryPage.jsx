@@ -10,7 +10,7 @@ const OurStoryPage = () => {
         <DefaultLayout>
           <div className="Shoppe__ourStory">
             <div className="Shoppe__ourStory-container">
-              <h1>About</h1>
+              <div className="heading-01">About</div>
               <h3>Who we are and why we do what we do!</h3>
               <h6>
                 Duis rutrum dictum libero quis rutrum. Etiam sed neque aliquam,

@@ -11,7 +11,7 @@
   content: "";
   position: absolute;
   left: 16px;
-  bottom: -25px;
+  bottom: -23.5px;
   width: 53%;
   height: 1px;
   background: var(--color-text-black);
@@ -31,7 +31,6 @@
 .Shoppe__blogSingle-heading h1 {
   display: flex;
   justify-content: center;
-  font-family: var(--font-family);
   font-size: 33px;
   font-weight: 500;
   text-transform: capitalize;
@@ -40,7 +39,6 @@
 
 .Shoppe__blogSingle-heading h4 {
   text-align: center;
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -68,7 +66,6 @@
 }
 
 .Shoppe__blogSingle-sub_heading h3 {
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -86,7 +83,6 @@
 }
 
 .Shoppe__blogSingle-secondary_title h2 {
-  font-family: var(--font-family);
   font-size: var(--size-26);
   font-weight: 400;
   line-height: 35px;
@@ -94,7 +90,6 @@
 }
 
 .Shoppe__blogSingle-secondary_title p {
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -132,7 +127,6 @@
 }
 
 .text h2:first-child {
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -140,7 +134,6 @@
 
 .text h2:last-child {
   color: var(--color-footer);
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -165,18 +158,14 @@
 }
 
 .Shoppe__blogSingle-reply h3 {
-  font-family: var(--font-family);
   font-size: var(--size-26);
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
   margin-top: 48px;
 }
 
 .Shoppe__blogSingle-reply p {
   margin-top: 16px;
   margin-bottom: 74px;
-  font-family: var(--font-family);
   font-size: var(--size-14);
   font-weight: 400;
   line-height: 22px;
@@ -192,16 +181,15 @@
   border: none;
   margin-bottom: 50px;
   border-bottom: 1px solid var(--color-footer);
-  font-family: var(--font-family);
   font-size: var(--size-14);
   font-weight: 400;
   line-height: 22px;
   padding-bottom: 13px;
+  outline: none;
 }
 
 .remember {
   font-family: var(--font-family);
-  font-size: var(--size-12);
   font-weight: 400;
   margin-bottom: 72px;
 }
@@ -210,13 +198,8 @@
   cursor: pointer;
 }
 
-.Shoppe__blogSingle-reply button {
-  margin-top: 64px;
-}
-
 .Shoppe__blogSingle-reply h2 {
   color: var(--color-footer);
-  font-family: var(--font-family);
   font-size: var(--size-14);
   font-weight: 400;
   line-height: 22px;
@@ -229,28 +212,23 @@
   padding: 0 330px;
 }
 
-.hover {
+.Shoppe__blogSingle-reply button {
+  margin-top: 64px;
+}
+
+.Shoppe__blogSingle-reply .btn-black {
   cursor: pointer;
-  color: var(--color-text-white);
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 700;
   width: 197px;
   height: 53px;
   border-radius: 4px;
   border: 1px solid var(--color-text-white);
-  background: var(--color-text-black);
   transition: 0.5s ease;
-}
-
-.hover:hover {
-  color: var(--color-text-black);
-  background: var(--color-footer);
 }
 
 h6 {
   margin-top: 68px;
-  font-family: var(--font-family);
   font-size: var(--size-26);
   font-weight: 400;
   line-height: 35px;

@@ -1,11 +1,5 @@
 .Shoppe__shopPage p {
   position: relative;
-  padding: 0rem 1rem;
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: var(--size-16);
-  line-height: 27px;
-  color: black;
   transition: 0.5s ease;
 }
 
@@ -17,7 +11,7 @@
   content: "";
   position: absolute;
   left: 16px;
-  bottom: -26px;
+  bottom: -24px;
   width: 53%;
   height: 0.1rem;
   background: var(--color-text-black);
@@ -42,7 +36,6 @@
   display: flex;
   flex-direction: row;
 
-  font-family: var(--font-family);
   font-size: var(--size-33);
   font-weight: 500;
   line-height: 43px;
@@ -61,25 +54,36 @@
   margin-bottom: 11px;
 }
 
-select {
+.select-01 {
   width: 261px;
   height: 53px;
 
-  font-family: var(--font-family);
   font-size: var(--size-14);
-  font-style: normal;
   font-weight: 400;
   line-height: 22px;
 
   border: 1px solid var(--color-gray);
   border-radius: 4px;
-  margin-bottom: 44px;
+  margin-bottom: 24px;
+}
+
+.select-02 {
+  width: 261px;
+  height: 53px;
+
+  font-size: var(--size-14);
+  font-weight: 400;
+  line-height: 22px;
+
+  border: 1px solid var(--color-gray);
+  border-radius: 4px;
 }
 
 .slider-container {
   width: 261.002px;
   height: 2px;
   margin-bottom: 12px;
+  margin-top: 45px;
 }
 
 .slider-container .slider-track {
@@ -107,7 +111,6 @@ select {
   justify-content: space-between;
   margin: 42px 0px;
 
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -126,7 +129,6 @@ select {
 
 .Shoppe__shopPage-price_display p {
   color: var(--color-footer);
-  font-family: var(--font-family);
   font-size: var(--size-14);
   font-weight: 400;
   line-height: 22px;
@@ -151,9 +153,9 @@ select {
   grid-gap: 25px;
 }
 
-.update img {
-  width: 333px;
+.update .shoppe__home-title_jewelry-image img {
+  width: 673px;
   height: 350px;
-  left: 20px;
-  margin-right: -10px;
+  left: 70px;
+  margin-right: -80px;
 }

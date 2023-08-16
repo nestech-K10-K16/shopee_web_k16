@@ -12,7 +12,6 @@
 .Shoppe__checkout-container h1 {
   display: flex;
   justify-content: center;
-  font-family: var(--font-family);
   font-size: var(--size-33);
   font-weight: 500;
   line-height: 43px;
@@ -26,7 +25,6 @@ span {
 .Shoppe__checkout-container h2 {
   width: 297px;
   height: 25px;
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -36,7 +34,6 @@ span {
 .Shoppe__checkout-container h3 {
   width: 359px;
   height: 25px;
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -54,7 +51,6 @@ span {
 .code h4 {
   width: 389px;
   height: 25px;
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -67,7 +63,6 @@ span {
 }
 
 .coupon p {
-  font-family: var(--font-family);
   font-size: var(--size-12);
   font-weight: 400;
   line-height: 20px;
@@ -82,9 +77,6 @@ span {
   width: 168px;
   height: 53px;
   border-radius: 4px;
-  background: var(--color-text-black);
-  color: var(--color-text-white);
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -103,7 +95,6 @@ span {
 }
 
 .details-input h2 {
-  font-family: var(--font-family);
   font-size: var(--size-26);
   font-weight: 400;
   line-height: 35px;
@@ -116,7 +107,6 @@ span {
 }
 
 .first-last .zero-one {
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -126,10 +116,10 @@ span {
   border-bottom: 1px solid var(--color-footer);
   padding-bottom: 12px;
   margin-bottom: 39px;
+  outline: none;
 }
 
 .details-input .zero-two {
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -138,6 +128,7 @@ span {
   border-bottom: 1px solid var(--color-footer);
   margin-bottom: 39px;
   padding-bottom: 12px;
+  outline: none;
 }
 
 .remember-zero {
@@ -145,7 +136,6 @@ span {
 }
 
 .order-button h2 {
-  font-family: var(--font-family);
   font-size: var(--size-26);
   font-weight: 400;
   line-height: 25px;
@@ -167,7 +157,6 @@ span {
 }
 
 .product h2 {
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -184,7 +173,6 @@ span {
 }
 
 .Lira h3 {
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -204,7 +192,6 @@ span {
 }
 
 .Hair h3 {
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -224,7 +211,6 @@ span {
 }
 
 .sub-ship h3 {
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -250,7 +236,6 @@ span {
 }
 
 .money-total h4 {
-  font-family: var(--font-family);
   font-weight: 700;
 }
 
@@ -260,6 +245,7 @@ span {
 
 .container input {
   background: var(--color-text-black);
+  border-style: hidden;
 }
 
 .checkmark {
@@ -268,7 +254,6 @@ span {
 }
 
 .bg-button p {
-  font-family: var(--font-family);
   font-size: var(--size-12);
   font-weight: 400;
   line-height: 20px;
@@ -292,7 +277,6 @@ span {
   margin-top: -20px;
   background: var(--color-text-black);
   color: var(--color-text-white);
-  font-family: var(--font-family);
   font-size: var(--size-16);
   font-weight: 700;
   cursor: pointer;

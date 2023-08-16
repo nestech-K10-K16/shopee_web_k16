@@ -20,7 +20,7 @@ const Checkout = () => {
               <h4>If you have a coupon code, please apply it below.</h4>
               <div className="coupon">
                 <p>Coupon Code</p>
-                <button>APPLY COUPON</button>
+                <button className="btn-black">APPLY COUPON</button>
               </div>
             </div>
             <div className="details__order-text">
@@ -143,7 +143,7 @@ const Checkout = () => {
                     </label>
                   </div>
                   <Link to="/order">
-                    <button>PLACE ORDER</button>
+                    <button className="btn-black">PLACE ORDER</button>
                   </Link>
                 </div>
               </div>

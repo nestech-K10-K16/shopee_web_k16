@@ -14,7 +14,7 @@ const ResetPassword = () => {
               we'll send you an e-mail
             </h3>
             <input type="email" placeholder="Email"></input>
-            <button type="submit" className="btn">
+            <button type="submit" className="btn-black">
               RESET PASSWORD
             </button>
           </div>

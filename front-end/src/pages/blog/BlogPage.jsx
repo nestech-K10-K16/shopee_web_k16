@@ -26,7 +26,6 @@ const BlogPage = () => {
   const userChange = (index) => {
     setTabIndex(index);
 
-    // Set the active state for each tab based on the index
     const newActiveTabs = activeTabs.map((_, i) => (i === index ? 1 : 0));
     setActiveTabs(newActiveTabs);
   };

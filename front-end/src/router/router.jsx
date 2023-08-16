@@ -1,18 +1,20 @@
-import ShopPage from "pages/shop/ShopPage";
-import BlogPage from "pages/blog/BlogPage";
-import OurStoryPage from "pages/ourStory/OurStoryPage";
-import SearchPage from "pages/search/SearchPage";
-import CartPage from "pages/cart/CartPage";
-import UserPage from "pages/user/UserPage";
-import ResetPassword from "pages/resetPassword/ResetPassword";
-import HomePage from "pages/home/HomePage";
-import Product from "pages/product/Product";
-import BlogSingle from "components/common/blogSingle/BlogSingle";
-import Account from "pages/account/Account";
-import { Contact } from "pages";
-import { Privacy } from "pages";
-import Checkout from "pages/checkout/Checkout";
-import OrderPage from "pages/order/OrderPage";
+import {
+  OrderPage,
+  Checkout,
+  Privacy,
+  Contact,
+  Account,
+  HomePage,
+  Product,
+  ResetPassword,
+  ShopPage,
+  BlogPage,
+  OurStoryPage,
+  SearchPage,
+  CartPage,
+  UserPage,
+} from "pages";
+import { BlogSingle } from "components";
 
 export const ROUTE_ID = {
   HOME: "HomeRoute",
@@ -21,8 +23,8 @@ export const ROUTE_ID = {
   PRiVACY: "PrivacyRoute",
   CONTACT: "ContactRoute",
   ACCOUNT: "AccountRoute",
-  PRODUCT: "ProductRoute",
   BLOG_SINGLE: "BlogSingleRoute",
+  PRODUCT: "ProductRoute",
   RESET_PASSWORD: "ResetPasswordRoute",
   SHOP: "ShopRoute",
   BLOG: "BlogRoute",
@@ -32,151 +34,27 @@ export const ROUTE_ID = {
   USER: "UserRoute",
 };
 
-export const PATHNAME_LIST = {
-  HOME: "/",
-  ORDER: "/order",
-  CHECKOUT: "/checkout",
-  PRiVACY: "/privacy",
-  CONTACT: "/contact",
-  ACCOUNT: "/accounts",
-  BLOG_SINGLE: "/blog-single",
-  PRODUCT: "/product",
-  RESET_PASSWORD: "/reset-password",
-  SHOP: "/shop",
-  BLOG: "/blog",
-  OUR_STORY: "/our-story",
-  SEARCH: "/search",
-  CART: "/cart",
-  USER: "/user",
-};
-
-export const NAME_LAYOUT = {
-  DEFAULT_LAYOUT: "DefaultLayout",
-  MAIN_LAYOUT: "MainLayout",
-};
-
-export const DEFAULT_PATHNAME = "/";
-
-// Define routes
-export const OrderRoute = {
-  id: ROUTE_ID.ORDER,
-  path: PATHNAME_LIST.ORDER,
-  component: OrderPage,
+const createRoute = (id, path, component) => ({
+  id,
+  path,
+  component,
   layout: null,
-};
-
-export const CheckoutRoute = {
-  id: ROUTE_ID.CHECKOUT,
-  path: PATHNAME_LIST.CHECKOUT,
-  component: Checkout,
-  layout: null,
-};
-
-export const PrivacyRoute = {
-  id: ROUTE_ID.PRiVACY,
-  path: PATHNAME_LIST.PRiVACY,
-  component: Privacy,
-  layout: null,
-};
-
-export const ContactRoute = {
-  id: ROUTE_ID.CONTACT,
-  path: PATHNAME_LIST.CONTACT,
-  component: Contact,
-  layout: null,
-};
-
-export const AccountRoute = {
-  id: ROUTE_ID.ACCOUNT,
-  path: PATHNAME_LIST.ACCOUNT,
-  component: Account,
-  layout: null,
-};
-
-export const BlogSingleRoute = {
-  id: ROUTE_ID.BLOG_SINGLE,
-  path: PATHNAME_LIST.BLOG_SINGLE,
-  component: BlogSingle,
-  layout: null,
-};
-
-export const HomeRoute = {
-  id: ROUTE_ID.HOME,
-  path: PATHNAME_LIST.HOME,
-  component: HomePage,
-  layout: null,
-};
-
-export const ProductRoute = {
-  id: ROUTE_ID.PRODUCT,
-  path: PATHNAME_LIST.PRODUCT,
-  component: Product,
-  layout: null,
-};
-
-export const ResetPasswordRoute = {
-  id: ROUTE_ID.RESET_PASSWORD,
-  path: PATHNAME_LIST.RESET_PASSWORD,
-  component: ResetPassword,
-  layout: null,
-};
-
-export const ShopRoute = {
-  id: ROUTE_ID.SHOP,
-  path: PATHNAME_LIST.SHOP,
-  component: ShopPage,
-  layout: null,
-};
-
-export const BlogRoute = {
-  id: ROUTE_ID.BLOG,
-  path: PATHNAME_LIST.BLOG,
-  component: BlogPage,
-  layout: null,
-};
-
-export const Our_StoryRoute = {
-  id: ROUTE_ID.OUR_STORY,
-  path: PATHNAME_LIST.OUR_STORY,
-  component: OurStoryPage,
-  layout: null,
-};
-
-export const UserRoute = {
-  id: ROUTE_ID.USER,
-  path: PATHNAME_LIST.USER,
-  component: UserPage,
-  layout: null,
-};
-
-export const CartRoute = {
-  id: ROUTE_ID.CART,
-  path: PATHNAME_LIST.CART,
-  component: CartPage,
-  layout: null,
-};
-
-export const SearchRoute = {
-  id: ROUTE_ID.SEARCH,
-  path: PATHNAME_LIST.SEARCH,
-  component: SearchPage,
-  layout: null,
-};
+});
 
 export const appRoute = [
-  CheckoutRoute,
-  OrderRoute,
-  HomeRoute,
-  PrivacyRoute,
-  ContactRoute,
-  AccountRoute,
-  BlogSingleRoute,
-  ProductRoute,
-  ResetPasswordRoute,
-  ShopRoute,
-  BlogRoute,
-  Our_StoryRoute,
-  SearchRoute,
-  CartRoute,
-  UserRoute,
+  createRoute(ROUTE_ID.ORDER, "/order", OrderPage),
+  createRoute(ROUTE_ID.CHECKOUT, "/checkout", Checkout),
+  createRoute(ROUTE_ID.PRiVACY, "/privacy", Privacy),
+  createRoute(ROUTE_ID.CONTACT, "/contact", Contact),
+  createRoute(ROUTE_ID.ACCOUNT, "/accounts", Account),
+  createRoute(ROUTE_ID.BLOG_SINGLE, "/blog-single", BlogSingle),
+  createRoute(ROUTE_ID.HOME, "/", HomePage),
+  createRoute(ROUTE_ID.PRODUCT, "/product", Product),
+  createRoute(ROUTE_ID.RESET_PASSWORD, "/reset-password", ResetPassword),
+  createRoute(ROUTE_ID.SHOP, "/shop", ShopPage),
+  createRoute(ROUTE_ID.BLOG, "/blog", BlogPage),
+  createRoute(ROUTE_ID.OUR_STORY, "/our-story", OurStoryPage),
+  createRoute(ROUTE_ID.SEARCH, "/search", SearchPage),
+  createRoute(ROUTE_ID.CART, "/cart", CartPage),
+  createRoute(ROUTE_ID.USER, "/user", UserPage),
 ];
