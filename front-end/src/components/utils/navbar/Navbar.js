@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "assets/logo.svg";
 import "configs/fontIcon";
 import "./style.css";
+import { ShoppingBag } from "components";
 
 const Menu = () => (
   <>
@@ -19,21 +20,9 @@ const Menu = () => (
   </>
 );
 
-const Icon = () => (
-  <>
-    <Link to="/search">
-      <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-    </Link>
-    <Link to="/cart" className="active__navbar-cart">
-      <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
-    </Link>
-    <Link to="/user" className="active__navbar-user">
-      <FontAwesomeIcon icon="fa-solid fa-user" />
-    </Link>
-  </>
-);
-
 const Navbar = () => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div>
       <div className="shoppe__header-links">
@@ -48,7 +37,24 @@ const Navbar = () => {
             <Menu />
           </div>
           <div className="shoppe__navbar-icons">
-            <Icon />
+            <Link to="/search">
+              <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+            </Link>
+            <Link className="active__navbar-cart">
+              <FontAwesomeIcon
+                onClick={() => {
+                  setOpenModal(true);
+                }}
+                icon="fa-solid fa-cart-shopping"
+              />
+              <ShoppingBag
+                open={openModal}
+                onclose={() => setOpenModal(false)}
+              />
+            </Link>
+            <Link to="/user" className="active__navbar-user">
+              <FontAwesomeIcon icon="fa-solid fa-user" />
+            </Link>
           </div>
         </div>
       </div>

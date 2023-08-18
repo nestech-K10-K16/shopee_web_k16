@@ -1,8 +1,4 @@
 /* General styles */
-.product-navbar p {
-  position: relative;
-}
-
 .product-navbar p.active__navbar-shop::before {
   content: "";
   position: absolute;
@@ -20,6 +16,7 @@
   height: 1800px;
   margin-left: 96px;
   margin-bottom: 240px;
+  z-index: 1;
 }
 
 /* Product image and text container */
@@ -150,7 +147,7 @@
 }
 
 /* Add to cart button */
-.Shoppe__product-button button {
+.Shoppe__product-button .btn-white {
   width: 360px;
   height: 53px;
   padding: 16px 127px;
@@ -163,7 +160,7 @@
 }
 
 /* Add to cart button hover state */
-.Shoppe__product-button button:hover {
+.Shoppe__product-button .btn-white:hover {
   width: 400px;
   margin-left: 23px;
 }

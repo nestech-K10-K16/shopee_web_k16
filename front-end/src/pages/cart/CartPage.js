@@ -4,28 +4,8 @@ import { home01, home02, home03 } from "pages/home/import";
 import "configs/fontIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import CartItem from "components/common/cartItem/CartItem";
 import "./index.css";
-
-const CartItem = ({ imgSrc, title, details, price }) => (
-  <div className="all-img">
-    <div className="image-cart">
-      <img src={imgSrc} alt="" />
-      <div className="text-cart">
-        <h3>{title}</h3>
-        <h4>{details}</h4>
-        <h4>{price}</h4>
-      </div>
-    </div>
-    <div className="title">
-      <div className="count">
-        <p>-</p>
-        <p>1</p>
-        <p>+</p>
-      </div>
-      <FontAwesomeIcon icon="fa-solid fa-x" />
-    </div>
-  </div>
-);
 
 const CartPage = () => {
   return (

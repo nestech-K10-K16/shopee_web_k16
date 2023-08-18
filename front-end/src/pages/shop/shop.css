@@ -1,5 +1,4 @@
 .Shoppe__shopPage p {
-  position: relative;
   transition: 0.5s ease;
 }
 
@@ -25,6 +24,7 @@
   height: 1200px;
   margin-left: 96px;
   margin-bottom: 240px;
+  z-index: 1;
 }
 
 .Shoppe__shopPage-text {

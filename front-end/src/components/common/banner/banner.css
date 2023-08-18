@@ -4,7 +4,6 @@
   left: 150px;
   z-index: 1;
   color: var(--color-text-white);
-  font-family: var(--font-family);
 }
 
 .shoppe__banner-content h1 {
