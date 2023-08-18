@@ -1,0 +1,35 @@
+@import "styles/custom/variable";
+
+#product-style {
+  position: relative;
+  margin-bottom: 0.5rem;
+
+  &:hover button {
+    opacity: 1;
+    bottom: -24px;
+    height: 3rem;
+  }
+  
+  img {
+    width: 100%;
+  }
+
+  button {
+    background-color: transparent;
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    height: 1.3rem;
+    left: 50%;
+    bottom: -11px;
+    width: 100%;
+    border: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    transition: 0.6s;
+  }
+
+  button:hover {
+    background-color: $bright-gray;
+  }
+}

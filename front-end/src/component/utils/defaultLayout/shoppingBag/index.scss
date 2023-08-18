@@ -5,8 +5,9 @@
   border-left: 3px solid $bright-gray;
   position: fixed;
   overflow-y: scroll;
+  overflow-x: hidden;
   right: 0;
   top: 0;
   height: 100%;
-  translate: 5s;
+  transition: 1s;
 }

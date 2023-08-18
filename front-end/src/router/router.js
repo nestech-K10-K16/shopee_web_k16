@@ -12,7 +12,7 @@ import BlogSingle from "pages/blogSingle";
 import OurStory from "pages/ourStory";
 
 import Account from "pages/account";
-import ViewOrder from "pages/viewOrder";
+import Order from "pages/Order";
 
 import Contact from "pages/contact";
 import Privacy from "pages/privacy";
@@ -34,7 +34,7 @@ export const ROUTE_ID = {
   OUR_STORY: "OurStoryRoute",
 
   ACCOUNT: "AccountRoute",
-  VIEW_ORDER: "ViewOrderRoute",
+  ORDER: "OrderRoute",
 
   CONTACT: "ContactRoute",
   PRIVACY: "PrivacyRoute",
@@ -57,7 +57,7 @@ export const PATHNAME_LIST = {
   OUR_STORY: "/our-story",
 
   ACCOUNT: "/account",
-  VIEW_ORDER: "/view-order",
+  ORDER: "/order",
 
   CONTACT: "/contact",
   PRIVACY: "/privacy",
@@ -134,10 +134,10 @@ export const AccountRoute = {
   component: Account,
 };
 
-export const ViewOrderRoute = {
-  id: ROUTE_ID.VIEW_ORDER,
-  path: PATHNAME_LIST.VIEW_ORDER,
-  component: ViewOrder,
+export const OrderRoute = {
+  id: ROUTE_ID.ORDER,
+  path: PATHNAME_LIST.ORDER,
+  component: Order,
 };
 
 export const ContactRoute = {
@@ -170,7 +170,7 @@ export const appRoute = [
   BlogSingleRoute,
   OurStoryRoute,
   AccountRoute,
-  ViewOrderRoute,
+  OrderRoute,
   ContactRoute,
   PrivacyRoute,
   TestRoute,

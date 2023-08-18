@@ -1,14 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./index.scss";
-import {
-  IMG_POST_01,
-  IMG_PRODUCT_01,
-  IMG_PRODUCT_02,
-  IMG_PRODUCT_03,
-  IMG_PRODUCT_04,
-  IMG_PRODUCT_05,
-} from "assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
@@ -16,88 +7,103 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 class SlideShowImage extends React.Component {
-  state = {
-    slideIndex: 0,
+  constructor(props) {
+    super(props);
 
-    mainImg: [{ url: "" }],
+    this.state = {
+      slideIndex: 0,
+      styleSlide: "slide-show-image__container__slide-from-left",
+    };
+  }
 
-    listImage: [
-      {
-        id: "1",
-        url: IMG_POST_01,
-      },
-      {
-        id: "2",
-        url: IMG_PRODUCT_01,
-      },
-      {
-        id: "3",
-        url: IMG_PRODUCT_02,
-      },
-      {
-        id: "4",
-        url: IMG_PRODUCT_03,
-      },
-      {
-        id: "5",
-        url: IMG_PRODUCT_04,
-      },
-      {
-        id: "6",
-        url: IMG_PRODUCT_05,
-      },
-      {
-        id: "7",
-        url: IMG_PRODUCT_05,
-      },
-    ],
-  };
+  getNewSlideIndex(step) {
+    const slideIndex = this.state.slideIndex;
+    const numberSlide = this.props.image.length;
+
+    let newSlideIndex = slideIndex + step;
+
+    if (newSlideIndex >= numberSlide) newSlideIndex = 0;
+    else if (newSlideIndex < 0) newSlideIndex = numberSlide - 1;
+
+    return newSlideIndex;
+  }
 
   setSlideIndex(index) {
-    this.setState({ slideIndex: index });
+    this.setState({
+      slideIndex: index,
+    });
+  }
+
+  forward() {
+    this.setState({
+      slideIndex: this.getNewSlideIndex(1),
+      styleSlide: "slide-show-image__container__slide-from-right",
+    });
+  }
+
+  backward() {
+    this.setState({
+      slideIndex: this.getNewSlideIndex(-1),
+      styleSlide: "slide-show-image__container__slide-from-left",
+    });
   }
 
   render() {
-    let { listImage, mainImg } = this.state;
+    const { image, widthMainImg, heightMainImg, heightChildImg } = this.props;
 
     return (
-      <div>
-        {mainImg.map((item, index) => {
-          return (
-            <div id="slider" key={index}>
-              <div className="slider-main">
+      <div id="slide-show-image">
+        <div
+          className="slide-show-image__container relative mb-4 "
+          style={{
+            width: `${widthMainImg}`,
+            height: `${heightMainImg}`,
+          }}
+        >
+          {image.map((image, index) => {
+            return (
+              <div className={`${this.state.styleSlide}`} key={index}>
                 <img
-                  className="slider-main__image-main"
-                  src={IMG_PRODUCT_01}
+                  className={`${
+                    this.state.slideIndex === index ? "active" : ""
+                  } absolute collapse `}
+                  style={{
+                    width: `${widthMainImg}`,
+                    height: `${heightMainImg}`,
+                  }}
+                  src={image.src}
                   alt=""
                 />
-                <button className="slider-main__prev">
-                  <FontAwesomeIcon
-                    icon={faChevronLeft}
-                    size="2xl"
-                    onClick={listImage.length + 1}
-                  />
-                </button>
-                <button className="slider-main__next">
-                  <FontAwesomeIcon icon={faChevronRight} size="2xl" />
-                </button>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+          <button
+            className="slide-show-image__container__forward absolute top-[50%] right-0"
+            onClick={() => this.forward()}
+          >
+            <FontAwesomeIcon icon={faChevronRight} size="2xl" />
+          </button>
+          <button
+            className="slide-show-image__container__backward absolute top-[50%] left-0"
+            onClick={() => this.backward()}
+          >
+            <FontAwesomeIcon icon={faChevronLeft} size="2xl" />
+          </button>
+        </div>
 
-        <div className="flex justify-between">
-          {listImage.map((item, index) => {
+        <div className="slide-show-image__img-list flex justify-between">
+          {image.map((item, index) => {
             return (
-              <div>
-                <img
-                  key={index}
-                  className="slider-image-list"
-                  src={item.url}
-                  alt=""
-                  onClick={() => this.setSlideIndex(index)}
-                ></img>
-              </div>
+              <img
+                key={index}
+                className={`cursor-pointer ${
+                  this.state.slideIndex === index ? "active" : ""
+                }`}
+                style={{ height: `${heightChildImg}` }}
+                src={item.src}
+                alt=""
+                onClick={() => this.setSlideIndex(index)}
+              ></img>
             );
           })}
         </div>

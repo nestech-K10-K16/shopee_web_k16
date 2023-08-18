@@ -1,34 +1,71 @@
 @import "styles/custom/variable";
 
-.slider-main {
-  position: relative;
-  margin-bottom: 0.6rem;
+#slide-show-image {
+  overflow-x: hidden;
 }
 
-.slider-main button {
-  position: absolute;
+.slide-show-image__container__slide-from-left img.active {
+  visibility: visible;
+  animation-name: slide-from-left;
+  animation-duration: 1s;
 }
 
-.slider-main__image-main {
-  width: 1221px;
-  height: 632.02px;
+@keyframes slide-from-left {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
-.slider-main__prev {
-  top: 50%;
-  left: 0;
+.slide-show-image__container__slide-from-left img {
+  animation-name: slide-right;
+  animation-duration: 1s;
 }
 
-.slider-main__next {
-  top: 50%;
-  right: 0;
+@keyframes slide-right {
+  from {
+    visibility: visible;
+    transform: translateX(0);
+  }
+  to {
+    visibility: visible;
+    transform: translateX(110%);
+  }
 }
 
-.slider-image-list {
-  height: 8rem;
-  cursor: pointer;
+.slide-show-image__container__slide-from-right img.active {
+  visibility: visible;
+  animation-name: slide-from-right;
+  animation-duration: 1s;
 }
 
-.slider-image-list img.active {
+@keyframes slide-from-right {
+  from {
+    transform: translateX(110%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slide-show-image__container__slide-from-right img {
+  animation-name: slide-left;
+  animation-duration: 1s;
+}
+
+@keyframes slide-left {
+  from {
+    visibility: visible;
+    transform: translateX(0);
+  }
+  to {
+    visibility: visible;
+    transform: translateX(-110%);
+  }
+}
+
+.slide-show-image__img-list img.active {
   border: 2px solid $black;
 }

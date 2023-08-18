@@ -48,7 +48,7 @@ const ShoppingBag = (props) => {
 
   const handleDetele = (id) => {
     setProduct((item) => {
-      return item.filter((remove) => remove.id !== id);
+      return item.filter((item) => item.id !== id);
     });
 
     if (product.length === 1) {
@@ -93,38 +93,41 @@ const ShoppingBag = (props) => {
 
   return (
     <div id="shopping-bag" className={props.className}>
-      <div className="shopping-bag__content px-[5vh] py-[2vh] w-[27rem]">
-        <div className="flex justify-end">
-          <button className="bg-body border-0" onClick={props.onClick}>
-            <FontAwesomeIcon icon={faChevronRight} size="xl" />
-          </button>
+      <div className="w-[27rem]">
+        <div className="shopping-bag__content px-[5vh] py-[2vh]">
+          <div className="flex justify-end">
+            <button className="bg-body border-0" onClick={props.backOnClick}>
+              <FontAwesomeIcon icon={faChevronRight} size="xl" />
+            </button>
+          </div>
+
+          <p className="heading-05 mb-4">Shopping bag</p>
+          <p className="heading-05 mb-4">{product.length} Items</p>
+
+          <div className="shopping-bag__content__product mb-[2.4rem]">
+            <Items />
+            <p className="heading-03">{messing}</p>
+          </div>
         </div>
 
-        <p className="heading-05 mb-4">Shopping bag</p>
-        <p className="heading-05 mb-4">{product.length} Items</p>
+        <div className="border border-bright_gray mb-6"></div>
 
-        <div className="shopping-bag__content__product mb-[2.4rem]">
-          <Items />
-          <p className="heading-03">{messing}</p>
-        </div>
-      </div>
+        <div className="shopping-bag__total-money px-[5vh] pb-[5vh]">
+          <div className="flex justify-between mb-4">
+            <p className="heading-05">Subtotal ({product.length} items)</p>
 
-      <div className="border border-bright_gray mb-6"></div>
+            <p className="heading-05">$ {sumTotal}</p>
+          </div>
 
-      <div className="px-[5vh] pb-[5vh]">
-        <div className="flex justify-between mb-4">
-          <p className="heading-05">Subtotal ({product.length} items)</p>
-
-          <p className="heading-05">$ {sumTotal}</p>
-        </div>
-
-        <div className="flex">
-          <Button
-            className="button--secondary text-center w-full"
-            to={PATHNAME_LIST.CART}
-          >
-            VIEW CART
-          </Button>
+          <div className="flex">
+            <Button
+              className="button--secondary text-center w-full"
+              to={PATHNAME_LIST.CART}
+              onClick={props.viewCartOnClick}
+            >
+              VIEW CART
+            </Button>
+          </div>
         </div>
       </div>
     </div>

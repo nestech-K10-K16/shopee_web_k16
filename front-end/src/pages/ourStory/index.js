@@ -23,7 +23,7 @@ const OurStory = () => {
         <p className="heading-02">Top trends</p>
 
         <div className="mb-5">
-          <IMG_OUR_STORY_01 />
+          <img src={IMG_OUR_STORY_01} alt="" />
         </div>
 
         <p className="heading-05">
@@ -41,16 +41,14 @@ const OurStory = () => {
           </li>
 
           <li>
-            <p className="heading-05">
-              Lorem ipsum dolor sit amet consectetur{" "}
-            </p>
+            <p className="heading-05">Lorem ipsum dolor sit amet consectetur</p>
           </li>
         </ul>
 
         <p className="heading-02">Produced with care</p>
 
         <div className="mb-5">
-          <IMG_OUR_STORY_02 />
+          <img src={IMG_OUR_STORY_02} alt="" />
         </div>
 
         <p className="heading-05">

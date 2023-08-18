@@ -3,7 +3,7 @@ import "./index.scss";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 import { PATHNAME_LIST } from "router/router";
-import { IMG_LOGO_SHOPEE } from "assets";
+import { IMG_LOGO } from "assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
@@ -31,7 +31,7 @@ const Header = (props) => {
               className="header__content__left-sider__logo"
               to={PATHNAME_LIST.HOME}
             >
-              <IMG_LOGO_SHOPEE />
+              <img src={IMG_LOGO} alt="" />
             </Link>
           </div>
 

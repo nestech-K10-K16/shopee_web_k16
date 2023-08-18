@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import { PATHNAME_LIST } from "router/router";
 import { Button, Input, Select } from "component/common";
 
 const CheckOut = () => {
+  const [email, setEmail] = useState("");
+
+  const placeOrderOnClick = () => {
+    this.props.email = email;
+  };
+
   return (
     <section id="check-out">
       <div className="check-out__content">
@@ -52,7 +58,7 @@ const CheckOut = () => {
         </div>
 
         <div className="check-out__content__bill flex justify-between">
-          <div className="check-out__content__bill__right-side heading-05 w-[35rem]">
+          <div className="check-out__content__bill__left-side heading-05 w-[35rem]">
             <p className="heading-01 mb-6">Billing Details</p>
 
             <form className="flex flex-col gap-y-4">
@@ -72,7 +78,12 @@ const CheckOut = () => {
               <Input className="w-full" placeholder="Postcode / ZIP *"></Input>
               <Input className="w-full" placeholder="Town / City *"></Input>
               <Input className="w-full" placeholder="Phone *"></Input>
-              <Input className="w-full" placeholder="Email *"></Input>
+              <Input
+                className="w-full"
+                placeholder="Email *"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></Input>
 
               <span className="flex items-center">
                 <input className="mr-2" type="checkbox" />
@@ -88,7 +99,7 @@ const CheckOut = () => {
             </form>
           </div>
 
-          <div className="check-out__content__bill__left-side w-[35rem]">
+          <div className="check-out__content__bill__right-side w-[35rem]">
             <p className="heading-01">YOUR ORDER</p>
 
             <div className="heading-05 flex flex-col gap-y-4 bg-bright_gray p-8">
@@ -163,7 +174,13 @@ const CheckOut = () => {
                 </span>
               </div>
 
-              <Button className="text-center">PLACE ORDER</Button>
+              <Button
+                className="text-center"
+                to={PATHNAME_LIST.ORDER}
+                onClick={placeOrderOnClick}
+              >
+                PLACE ORDER
+              </Button>
             </div>
           </div>
         </div>

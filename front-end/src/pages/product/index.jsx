@@ -2,17 +2,18 @@ import { React, useState } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import {
+  IMG_PRODUCT_01,
   IMG_PRODUCT_02,
   IMG_PRODUCT_03,
   IMG_PRODUCT_04,
-  IMG_PRODUCT_06,
-} from "../../assets";
+} from "assets";
 import {
   Input,
   Button,
-  ProductStyle,
   AmountInput,
   TextArea,
+  ListProduct,
+  SlideShowImage,
 } from "component/common";
 import Rating from "@mui/material/Rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,8 +24,37 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import { PATHNAME_LIST } from "router/router";
 
 const Product = () => {
+  const image = [
+    { src: IMG_PRODUCT_01 },
+    { src: IMG_PRODUCT_02 },
+    { src: IMG_PRODUCT_03 },
+    { src: IMG_PRODUCT_04 },
+  ];
+
+  const product = [
+    {
+      name: "Lira Earrings",
+      price: 20,
+      src: IMG_PRODUCT_01,
+      to: PATHNAME_LIST.PRODUCT,
+    },
+    {
+      name: "Hal Earrings",
+      price: 25,
+      src: IMG_PRODUCT_02,
+      to: PATHNAME_LIST.PRODUCT,
+    },
+    {
+      name: "Kaede Hair Pin Set Of 3 ",
+      price: 30,
+      src: IMG_PRODUCT_03,
+      to: PATHNAME_LIST.PRODUCT,
+    },
+  ];
+
   const [heart, setHeart] = useState(false);
 
   const onClickHeart = () => {
@@ -36,16 +66,14 @@ const Product = () => {
   return (
     <section id="product">
       <div className="product__content">
-        <div className="product__content__top flex gap-x-4 mb-24">
-          <div className="product__content__top__product-type-list grid grid-cols-1 w-[27rem]">
-            <img src={IMG_PRODUCT_02} alt="" />
-            <img src={IMG_PRODUCT_02} alt="" />
-            <img src={IMG_PRODUCT_02} alt="" />
-            <img src={IMG_PRODUCT_02} alt="" />
-          </div>
-
-          <div className="product__content__top__product">
-            <img className="w-[115rem]" src={IMG_PRODUCT_02} alt="" />
+        <div className="product__content__top flex mb-24">
+          <div className="mr-6">
+            <SlideShowImage
+              image={image}
+              widthMainImg={"32rem"}
+              heightMainImg={"32rem"}
+              heightChildImg={"7.5rem"}
+            />
           </div>
 
           <div className="product__content__top__product-infomation">
@@ -202,34 +230,7 @@ const Product = () => {
         <div className="product__content__similar-items-list">
           <p className="heading-02 mb-[4.9rem]">Similar Items</p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4">
-            <div>
-              <ProductStyle
-                className="body-large"
-                src={IMG_PRODUCT_03}
-              ></ProductStyle>
-              <p className="heading-03">Hal Earrings</p>
-              <p className="heading-04 text-beaver">$ 25,00</p>
-            </div>
-
-            <div>
-              <ProductStyle
-                className="body-large"
-                src={IMG_PRODUCT_06}
-              ></ProductStyle>
-              <p className="heading-03">Plaine Necklace</p>
-              <p className="heading-04 text-beaver">$ 19,00</p>
-            </div>
-
-            <div>
-              <ProductStyle
-                className="body-large"
-                src={IMG_PRODUCT_04}
-              ></ProductStyle>
-              <p className="heading-03">Kaede Hair Pin Set Of 3</p>
-              <p className="heading-04 text-beaver">$ 30,00</p>
-            </div>
-          </div>
+          <ListProduct listProduct={product} />
         </div>
       </div>
     </section>

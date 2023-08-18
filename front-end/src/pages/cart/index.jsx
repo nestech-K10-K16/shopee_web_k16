@@ -93,6 +93,10 @@ const Cart = () => {
     );
   };
 
+  const onClick = () => {
+    window.history.replaceState()
+  };
+
   return (
     <section id="cart">
       <div className="cart__content">
@@ -108,7 +112,10 @@ const Cart = () => {
 
             <div>
               <div className="flex justify-end mb-12">
-                <Button className="button--secondary body-large">
+                <Button
+                  className="button--secondary body-large"
+                  onClick={onClick}
+                >
                   UPDATE CART
                 </Button>
               </div>
