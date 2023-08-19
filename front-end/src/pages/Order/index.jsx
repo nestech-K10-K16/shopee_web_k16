@@ -23,7 +23,7 @@ const Order = () => {
 
               <div className="heading-0">
                 <p>EMAIL</p>
-                <p>Vitathemes@gmail.com</p>
+                <p>{window.location.email}</p>
               </div>
 
               <div className="heading-05">

@@ -2,16 +2,21 @@ import React from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { connect } from "react-redux";
 
 class ListProduct extends React.Component {
   render() {
-    const addToCartNotify = () => {
+    const addToCartNotify = (id) => {
       toast.success("Has been added to cart");
+
+      this.props.addToCartProduct(id);
     };
+
+    let listProduct = this.props.product;
 
     return (
       <div className="grid grid-cols-3 gap-4">
-        {this.props.listProduct.map((item) => {
+        {listProduct.map((item) => {
           return (
             <div key={item.name}>
               <div id="product-style">
@@ -19,7 +24,10 @@ class ListProduct extends React.Component {
                   <Link to={item.to}>
                     <img src={item.src} alt="" />
                   </Link>
-                  <button className="body-large" onClick={addToCartNotify}>
+                  <button
+                    className="body-large"
+                    onClick={() => addToCartNotify(item)}
+                  >
                     Add to cart
                   </button>
                 </div>
@@ -35,4 +43,15 @@ class ListProduct extends React.Component {
   }
 }
 
-export default ListProduct;
+const mapStateToProps = (state) => {
+  return { product: state.product };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCartProduct: (id) =>
+      dispatch({ type: "ADD_PRODUCT_CART", payload: id }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListProduct);

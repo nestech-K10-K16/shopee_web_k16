@@ -1,58 +1,10 @@
 import React from "react";
 import "./index.scss";
 import { Input, Select, ToggleButton, ListProduct } from "component/common";
-import { PATHNAME_LIST } from "router/router";
-import {
-  IMG_PRODUCT_01,
-  IMG_PRODUCT_02,
-  IMG_PRODUCT_03,
-  IMG_PRODUCT_04,
-  IMG_PRODUCT_05,
-  IMG_PRODUCT_06,
-} from "assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Shop = () => {
-  const product = [
-    {
-      name: "Lira Earrings",
-      price: 20,
-      src: IMG_PRODUCT_01,
-      to: PATHNAME_LIST.PRODUCT,
-    },
-    {
-      name: "Hal Earrings",
-      price: 25,
-      src: IMG_PRODUCT_02,
-      to: PATHNAME_LIST.PRODUCT,
-    },
-    {
-      name: "Kaede Hair Pin Set Of 3 ",
-      price: 30,
-      src: IMG_PRODUCT_03,
-      to: PATHNAME_LIST.PRODUCT,
-    },
-    {
-      name: "Hair Pin Set of 3",
-      price: 30,
-      src: IMG_PRODUCT_04,
-      to: PATHNAME_LIST.PRODUCT,
-    },
-    {
-      name: "Plaine Necklace",
-      price: 19,
-      src: IMG_PRODUCT_05,
-      to: PATHNAME_LIST.PRODUCT,
-    },
-    {
-      name: "Yuki Hair Pin Set of 3",
-      price: 29,
-      src: IMG_PRODUCT_06,
-      to: PATHNAME_LIST.PRODUCT,
-    },
-  ];
-
   return (
     <main>
       <section id="shop">
@@ -85,7 +37,7 @@ const Shop = () => {
           </div>
 
           <div className="shop__content__product">
-            <ListProduct listProduct={product} />
+            <ListProduct />
           </div>
         </div>
       </section>

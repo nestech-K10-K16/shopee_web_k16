@@ -8,7 +8,6 @@ const CheckOut = () => {
   const [email, setEmail] = useState("");
 
   const placeOrderOnClick = () => {
-    this.props.email = email;
   };
 
   return (

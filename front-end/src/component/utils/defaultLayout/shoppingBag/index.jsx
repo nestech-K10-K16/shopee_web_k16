@@ -1,68 +1,35 @@
 import React, { useState } from "react";
 import "./index.scss";
-import { IMG_PRODUCT_02, IMG_PRODUCT_03, IMG_PRODUCT_04 } from "assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faClose } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "component/common";
 import { PATHNAME_LIST } from "router/router";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ShoppingBag = (props) => {
-  const listProduct = [
-    {
-      id: "1",
-      name: "Lira Earrings",
-      url: IMG_PRODUCT_02,
-      color: "Black / Medium",
-      price: 20,
-    },
-    {
-      id: "2",
-      name: "Ollie Earrings",
-      url: IMG_PRODUCT_03,
-      color: "Black / Medium",
-      price: 25,
-    },
-    {
-      id: "3",
-      name: "Kaede Hair Pin",
-      url: IMG_PRODUCT_04,
-      color: "Black / Medium",
-      price: 30,
-    },
-    {
-      id: "4",
-      name: "Ollie Earrings",
-      url: IMG_PRODUCT_03,
-      color: "Black / Medium",
-      price: 250,
-    },
-  ];
-
-  const [product, setProduct] = useState(listProduct);
+  let productCart = props.productCart;
   const [messing, setMessing] = useState("");
 
-  const sumTotal = product.reduce(
-    (item, index) => (item = item + index.price),
-    0
-  );
-
   const handleDetele = (id) => {
-    setProduct((item) => {
-      return item.filter((item) => item.id !== id);
-    });
+    props.deleteProductCart(id);
+  };
 
-    if (product.length === 1) {
-      setMessing("your cart is empty");
+  const itemOnChange = () => {
+    if (productCart.length === 0) {
+      setMessing("Your cart is empty");
     }
   };
 
   const Items = () => {
     return (
       <div className="flex flex-col gap-y-6">
-        {product.map((item) => {
+        {productCart.map((item) => {
           return (
-            <div className="flex" key={item.id}>
-              <img className="w-48 mr-3" src={item.url} alt="" />
+            <div className="flex" key={item.name}>
+              <Link to={item.to}>
+                <img className="w-48 mr-3" src={item.src} alt="" />
+              </Link>
 
               <div className="flex flex-col justify-between mr-5">
                 <div>
@@ -79,7 +46,7 @@ const ShoppingBag = (props) => {
               <div>
                 <button
                   className="bg-body border-0"
-                  onClick={() => handleDetele(item.id)}
+                  onClick={() => handleDetele(item)}
                 >
                   <FontAwesomeIcon icon={faClose} />
                 </button>
@@ -102,7 +69,9 @@ const ShoppingBag = (props) => {
           </div>
 
           <p className="heading-05 mb-4">Shopping bag</p>
-          <p className="heading-05 mb-4">{product.length} Items</p>
+          <p className="heading-05 mb-4" onChange={itemOnChange}>
+            {productCart.length} Items
+          </p>
 
           <div className="shopping-bag__content__product mb-[2.4rem]">
             <Items />
@@ -114,9 +83,9 @@ const ShoppingBag = (props) => {
 
         <div className="shopping-bag__total-money px-[5vh] pb-[5vh]">
           <div className="flex justify-between mb-4">
-            <p className="heading-05">Subtotal ({product.length} items)</p>
+            <p className="heading-05">Subtotal ({productCart.length} items)</p>
 
-            <p className="heading-05">$ {sumTotal}</p>
+            <p className="heading-05">$ 100</p>
           </div>
 
           <div className="flex">
@@ -134,4 +103,15 @@ const ShoppingBag = (props) => {
   );
 };
 
-export default ShoppingBag;
+const mapStateToProps = (state) => {
+  return { productCart: state.productCart };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteProductCart: (id) =>
+      dispatch({ type: "DELETE_PRODUCT_CART", payload: id }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShoppingBag);

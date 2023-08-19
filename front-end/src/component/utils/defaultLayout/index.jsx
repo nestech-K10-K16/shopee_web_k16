@@ -7,37 +7,43 @@ import "react-toastify/dist/ReactToastify.css";
 
 const DefaultLayout = ({ children }) => {
   const [styleShoppingBag, setStyleShoppingBag] = useState("w-0");
+  const [background, setBackground] = useState("");
 
   const OpenModel = () => {
-    setStyleShoppingBag("w-[28rem]");
+    setStyleShoppingBag("w-[28rem] ");
+    setBackground("opacity-70");
   };
 
   const CloseModel = () => {
     setStyleShoppingBag("w-0");
+    setBackground("");
   };
 
   return (
-    <div className="position-relative">
-      <Header onClick={OpenModel} />
-      {children}
+    <div>
+      <div className={background}>
+        <Header onClick={OpenModel} />
+        {children}
+
+        <ToastContainer
+          position="top-left"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable
+          pauseOnHover={false}
+          theme="light"
+        />
+        <Footer />
+      </div>
       <ShoppingBag
         className={styleShoppingBag}
         backOnClick={CloseModel}
         viewCartOnClick={CloseModel}
       />
-      <ToastContainer
-        position="top-left"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable
-        pauseOnHover={false}
-        theme="light"
-      />
-      <Footer />
     </div>
   );
 };

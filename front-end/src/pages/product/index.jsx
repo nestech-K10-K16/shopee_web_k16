@@ -24,7 +24,6 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import { PATHNAME_LIST } from "router/router";
 
 const Product = () => {
   const image = [
@@ -32,27 +31,6 @@ const Product = () => {
     { src: IMG_PRODUCT_02 },
     { src: IMG_PRODUCT_03 },
     { src: IMG_PRODUCT_04 },
-  ];
-
-  const product = [
-    {
-      name: "Lira Earrings",
-      price: 20,
-      src: IMG_PRODUCT_01,
-      to: PATHNAME_LIST.PRODUCT,
-    },
-    {
-      name: "Hal Earrings",
-      price: 25,
-      src: IMG_PRODUCT_02,
-      to: PATHNAME_LIST.PRODUCT,
-    },
-    {
-      name: "Kaede Hair Pin Set Of 3 ",
-      price: 30,
-      src: IMG_PRODUCT_03,
-      to: PATHNAME_LIST.PRODUCT,
-    },
   ];
 
   const [heart, setHeart] = useState(false);
@@ -72,7 +50,7 @@ const Product = () => {
               image={image}
               widthMainImg={"32rem"}
               heightMainImg={"32rem"}
-              heightChildImg={"7.5rem"}
+              heightChildImg={"7.6rem"}
             />
           </div>
 
@@ -230,7 +208,7 @@ const Product = () => {
         <div className="product__content__similar-items-list">
           <p className="heading-02 mb-[4.9rem]">Similar Items</p>
 
-          <ListProduct listProduct={product} />
+          <ListProduct />
         </div>
       </div>
     </section>

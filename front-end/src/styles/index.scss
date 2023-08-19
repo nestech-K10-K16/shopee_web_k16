@@ -2,4 +2,6 @@
 @import "./custom/main.scss";
 @import "./custom/variable.scss";
 
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
