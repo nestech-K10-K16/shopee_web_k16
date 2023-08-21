@@ -161,7 +161,7 @@ const Account = () => {
                       />
                       <input type="text" placeholder="Confirm new password" />
                     </div>
-                    <button className="button">SAVE CHANGES</button>
+                    <button className="btn-black">SAVE CHANGES</button>
                   </div>
                 </TabPanel>
               </Tabs>

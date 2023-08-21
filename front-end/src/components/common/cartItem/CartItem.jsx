@@ -18,7 +18,7 @@ const CartItem = ({ imgSrc, title, details, price }) => (
         <p>1</p>
         <p>+</p>
       </div>
-      <FontAwesomeIcon icon="fa-solid fa-x" />
+      <FontAwesomeIcon className="icon-item" icon="fa-solid fa-x" />
     </div>
   </div>
 );

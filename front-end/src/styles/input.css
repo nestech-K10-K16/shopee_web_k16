@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
 .btn-black {
   background: var(--color-text-black);
   color: var(--color-text-white);
@@ -28,4 +40,56 @@
   background: var(--color-text-black);
   color: var(--color-text-white);
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+html,
+body {
+  font-family: var(--font-family-base);
+}
+
+.heading-01 {
+  font-weight: var(--font-weight-500);
+  font-size: var(--size-33);
+}
+
+.heading-02 {
+  font-weight: var(--font-weight-400);
+  font-size: var(--size-26);
+  line-height: var(--line-height-35);
+}
+
+.heading-03 {
+  font-weight: var(--font-weight-400);
+  font-size: var(--size-26);
+  line-height: var(--line-height-35);
+}
+
+.heading-04 {
+  font-weight: var(--font-weight-400);
+  font-size: var(--size-26);
+  line-height: var(--line-height-20);
+}
+
+.heading-05 {
+  font-weight: var(--font-weight-400);
+  font-size: var(--size-16);
+  line-height: var(--line-height-27);
+}
+
+.body-large {
+  font-weight: var(--font-weight-700);
+  font-size: var(--size-16);
+  line-height: var(--line-height-20);
+}
+
+.body-medium {
+  font-weight: var(--font-weight-400);
+  font-size: var(--size-14);
+  line-height: var(--line-height-22);
+}
+
+.body-small {
+  font-weight: var(--font-weight-400);
+  font-size: var(--size-12);
+  line-height: var(--line-height-20);
 }

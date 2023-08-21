@@ -1,132 +1,105 @@
 import React, { useState, useEffect } from "react";
 import introduce from "assets/img__home-introduce.jpg";
+import { home01, home02, home03, home04 } from "pages/home/import";
 import { Link } from "react-router-dom";
 import "./banner.css";
 
 const Banner = () => {
-  const [slideIndex, setSlideIndex] = useState(1);
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  const slidesData = [
+    {
+      imgSrc: introduce,
+      title: "Gold big hoops",
+      price: "$ 78,00",
+    },
+    {
+      imgSrc: home01,
+      title: "Gold big Bosnia",
+      price: "$ 99,00",
+    },
+    {
+      imgSrc: home02,
+      title: "Gold big Sonic",
+      price: "$ 118,00",
+    },
+    {
+      imgSrc: home03,
+      title: "Gold big Gong",
+      price: "$ 108,00",
+    },
+    {
+      imgSrc: home04,
+      title: "Gold big Baghdad",
+      price: "$ 168,00",
+    },
+  ];
 
   function currentSlide(n) {
     setSlideIndex(n);
   }
 
-  function showSlides(n) {
-    let slides = document.getElementsByClassName("Shoppe__banner");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {
-      setSlideIndex(1);
+  const showSlide = (index) => {
+    const slides = document.querySelectorAll(".Shoppe__banner");
+    const dots = document.querySelectorAll(".dot");
+
+    slides.forEach((slide) => {
+      slide.style.display = "none";
+    });
+
+    dots.forEach((dot) => {
+      dot.classList.remove("active");
+    });
+
+    if (slides[index]) {
+      slides[index].style.display = "block";
+      dots[index].classList.add("active");
     }
-    if (n < 1) {
-      setSlideIndex(slides.length);
-    }
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].classList.remove("active");
-    }
-    if (slides[slideIndex - 1]) {
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].classList.add("active");
-    }
-  }
+  };
+  useEffect(() => {
+    showSlide(slideIndex);
+  }, [slideIndex]);
 
   useEffect(() => {
-    showSlides(slideIndex);
-  });
-
-  // useEffect(() => {
-  //   // Hàm tự động tăng giá trị của slideIndex sau mỗi 3 giây
-  //   const autoSlide = setInterval(() => {
-  //     setSlideIndex((prevIndex) => (prevIndex === 3 ? 1 : prevIndex + 1));
-  //   }, 3000);
-
-  //   return () => {
-  //     clearInterval(autoSlide);
-  //   };
-  // }, []);
+    const autoSlide = setInterval(() => {
+      setSlideIndex((prevIndex) =>
+        prevIndex === slidesData.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000);
+    return () => {
+      clearInterval(autoSlide);
+    };
+  }, [slidesData.length]);
   return (
     <>
-      <div className="Shoppe__banner fade">
-        <img src={introduce} alt="introduce" />
+      <div className="Shoppe__banner-container">
+        {slidesData.map((slide, index) => (
+          <div
+            key={index}
+            className={`Shoppe__banner fade ${
+              slideIndex === index + 1 ? "active" : ""
+            }`}
+          >
+            <img src={slide.imgSrc} alt="introduce" />
+            <div className="Shoppe__banner-content">
+              <h1>{slide.title}</h1>
+              <h2>{slide.price}</h2>
+              <Link to="/product">
+                <button>View Product</button>
+              </Link>
+            </div>
+          </div>
+        ))}
 
-        <div className="Shoppe__banner-content">
-          <h1>Gold big hoops</h1>
-          <h2>$ 68,00</h2>
-          <Link to="/product">
-            <button>View Product</button>
-          </Link>
+        <div className="Shoppe__banner-slider">
+          {slidesData.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${slideIndex === index + 1 ? "active" : ""}`}
+              onClick={() => currentSlide(index + 1)}
+            ></span>
+          ))}
         </div>
-      </div>
-
-      <div className="Shoppe__banner fade">
-        <img src={introduce} alt="introduce" />
-
-        <div className="Shoppe__banner-content">
-          <h1>Gold big hoops</h1>
-          <h2>$ 67,00</h2>
-          <Link to="/product">
-            <button>View Product</button>
-          </Link>
-        </div>
-      </div>
-      <div className="Shoppe__banner fade">
-        <img src={introduce} alt="introduce" />
-
-        <div className="Shoppe__banner-content">
-          <h1>Gold big hoops</h1>
-          <h2>$ 69,00</h2>
-          <Link to="/product">
-            <button>View Product</button>
-          </Link>
-        </div>
-      </div>
-
-      <div className="Shoppe__banner fade">
-        <img src={introduce} alt="introduce" />
-
-        <div className="Shoppe__banner-content">
-          <h1>Gold big hoops</h1>
-          <h2>$ 99,00</h2>
-          <Link to="/product">
-            <button>View Product</button>
-          </Link>
-        </div>
-      </div>
-
-      <div className="Shoppe__banner fade">
-        <img src={introduce} alt="introduce" />
-
-        <div className="Shoppe__banner-content">
-          <h1>Gold big hoops</h1>
-          <h2>$ 129,00</h2>
-          <Link to="/product">
-            <button>View Product</button>
-          </Link>
-        </div>
-      </div>
-
-      <div className="Shoppe__banner-slider">
-        <span
-          className={`dot ${slideIndex === 1 ? "active" : ""}`}
-          onClick={() => currentSlide(1)}
-        ></span>
-        <span
-          className={`dot ${slideIndex === 2 ? "active" : ""}`}
-          onClick={() => currentSlide(2)}
-        ></span>
-        <span
-          className={`dot ${slideIndex === 3 ? "active" : ""}`}
-          onClick={() => currentSlide(3)}
-        ></span>
-        <span
-          className={`dot ${slideIndex === 4 ? "active" : ""}`}
-          onClick={() => currentSlide(4)}
-        ></span>
-        <span
-          className={`dot ${slideIndex === 5 ? "active" : ""}`}
-          onClick={() => currentSlide(5)}
-        ></span>
       </div>
     </>
   );

@@ -10,7 +10,7 @@ const ShoppingCart = ({ open, onclose }) => {
   if (!open) return null;
   return (
     <>
-      <div className="Shoppe__bag bg-black">
+      <div className="Shoppe__bag">
         <div className="Shoppe__bag-container">
           <div className="icon-shopping">
             <h1>Shopping bag</h1>

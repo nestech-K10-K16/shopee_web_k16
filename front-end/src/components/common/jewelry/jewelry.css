@@ -6,7 +6,6 @@
 }
 
 .shoppe__home-title_jewelry-image {
-  position: relative;
   overflow: hidden;
   display: flex;
 }
@@ -19,13 +18,7 @@
   transition: 0.5s ease;
 }
 
-.shoppe__home-title_jewelry-image:hover img {
-  border-radius: 8px;
-  transform: scale(1.1);
-}
-
-.shoppe__home-title_jewelry-image .Shoppe__home-title_layer {
-  position: absolute;
+/* .shoppe__home-title_jewelry-image .Shoppe__home-title_layer {
   left: 0;
   bottom: 0;
   width: 100%;
@@ -42,9 +35,9 @@
 .shoppe__home-title_jewelry-image:hover .Shoppe__home-title_layer {
   border-radius: 8px;
   transform: translateY(60%);
-}
+} */
 
-.Shoppe__home-title_layer p {
+/* .Shoppe__home-title_layer p {
   font-size: var(--size-26);
   margin: 20px;
 }
@@ -59,7 +52,7 @@
   background: var(--color-text-white);
   font-size: 20px;
   color: var(--color-light);
-}
+} */
 
 .shoppe__home-title_jewelry-content {
   display: flex;

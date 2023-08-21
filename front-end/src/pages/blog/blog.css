@@ -1,12 +1,3 @@
-.Shoppe__blogPage p {
-  position: relative;
-  transition: 0.5s ease;
-}
-
-.Shoppe__blogPage p:hover {
-  color: var(--color-footer);
-}
-
 .Shoppe__blogPage p.active__navbar-blog::before {
   content: "";
   position: absolute;
@@ -30,6 +21,14 @@
 .Shoppe__blogPage-text {
   width: 280px;
   margin-top: 96px;
+}
+
+.Shoppe__blogPage-text h1 {
+  font-size: var(--size-33);
+  font-family: var(--font-family);
+  font-weight: 500;
+  line-height: 43px;
+  margin-left: -210px;
 }
 
 .Shoppe__blogPage-search {

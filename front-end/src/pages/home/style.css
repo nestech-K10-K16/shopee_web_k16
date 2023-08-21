@@ -1,3 +1,17 @@
+.Loader {
+  background-color: var(--color-bg);
+}
+
+.loader-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  padding: 20px;
+  border-radius: 8px;
+}
+
 .shoppe__home {
   padding: 0px 96px;
   margin-bottom: 250px;

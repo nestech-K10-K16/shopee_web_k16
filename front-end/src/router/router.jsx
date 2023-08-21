@@ -13,7 +13,7 @@ import {
   CartPage,
   UserPage,
 } from "pages";
-import { BlogSingle } from "components";
+import { BlogSingle, ShoppingBag } from "components";
 
 export const ROUTE_ID = {
   HOME: "HomeRoute",
@@ -29,6 +29,7 @@ export const ROUTE_ID = {
   BLOG: "BlogRoute",
   OUR_STORY: "Our_StoryRoute",
   SEARCH: "SearchRoute",
+  SHOPPING_BAG: "ShoppingBagRoute",
   CART: "CartRoute",
   USER: "UserRoute",
 };
@@ -53,6 +54,7 @@ export const appRoute = [
   createRoute(ROUTE_ID.SHOP, "/shop", ShopPage),
   createRoute(ROUTE_ID.BLOG, "/blog", BlogPage),
   createRoute(ROUTE_ID.OUR_STORY, "/our-story", OurStoryPage),
+  createRoute(ROUTE_ID.SHOPPING_BAG, "/shopping-bag", ShoppingBag),
   createRoute(ROUTE_ID.CART, "/cart", CartPage),
   createRoute(ROUTE_ID.USER, "/user", UserPage),
 ];

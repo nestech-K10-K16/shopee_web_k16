@@ -40,6 +40,10 @@
   flex-direction: column;
 }
 
+.Shoppe__cart-item .icon-item {
+  cursor: pointer;
+}
+
 .all-img {
   display: flex;
   justify-content: space-between;

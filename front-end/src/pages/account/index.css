@@ -5,8 +5,8 @@
 .account__navbar a.active__navbar-user::before {
   content: "";
   position: absolute;
-  left: 13px;
-  bottom: -22px;
+  left: 10px;
+  bottom: -17px;
   width: 50%;
   height: 1px;
   background: var(--color-text-black);
