@@ -1,13 +1,13 @@
-.Shoppe__ourStory-about p {
+.shoppe__ourStory-about p {
   position: relative;
   transition: 0.5s ease;
 }
 
-.Shoppe__ourStory-about p:hover {
+.shoppe__ourStory-about p:hover {
   color: var(--color-footer);
 }
 
-.Shoppe__ourStory-about p.active__navbar-ourStory::before {
+.shoppe__ourStory-about p.active__navbar-ourStory::before {
   content: "";
   position: absolute;
   left: 16px;
@@ -17,64 +17,61 @@
   background: var(--color-text-black);
 }
 
-.Shoppe__ourStory {
+.shoppe__ourStory {
   border-top: 1px solid #d8d8d8;
   width: 1315px;
   height: 1750px;
   margin-left: 96px;
 }
 
-.Shoppe__ourStory-container {
+.shoppe__ourStory-container {
   margin-top: 96px;
 }
 
-.Shoppe__ourStory-container .heading-01 {
+.shoppe__ourStory-container .heading-01 {
   display: flex;
   justify-content: center;
   line-height: 43px;
 }
 
-.Shoppe__ourStory-container h3 {
-  margin-top: 24px;
+.heading-03 {
+  margin-top: -28px;
   text-align: center;
-  font-size: var(--size-20);
-  font-weight: 400;
-  line-height: 26px;
 }
 
-.Shoppe__ourStory-container h6 {
-  margin-top: 46px;
-  margin-bottom: 39px;
+.shoppe__ourStory-container h6 {
+  margin: 46px 0 39px;
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
   padding: 0 330px;
 }
 
-.Shoppe__ourStory-headline {
+.shoppe__ourStory-headline {
   margin-bottom: 39px;
   padding: 0 330px;
 }
-.Shoppe__ourStory-headline h2 {
+
+.shoppe__ourStory-headline h2 {
   font-size: var(--size-26);
   font-weight: 400;
   line-height: 35px;
 }
 
-.Shoppe__ourStory-headline img {
+.shoppe__ourStory-headline img {
   margin-top: 23px;
   width: 670px;
   height: 300px;
 }
 
-.Shoppe__ourStory-headline h4 {
+.shoppe__ourStory-headline h4 {
   margin-top: 48px;
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
 }
 
-.Shoppe__ourStory-headline li {
+.shoppe__ourStory-headline li {
   margin-top: 16px;
   margin-left: 27px;
   font-size: var(--size-16);

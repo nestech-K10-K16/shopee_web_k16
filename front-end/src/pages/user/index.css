@@ -1,27 +1,3 @@
-.hover__navbar a {
-  position: relative;
-}
-
-.hover__navbar a.active__navbar-user::before {
-  content: "";
-  position: absolute;
-  left: 13px;
-  bottom: -17px;
-  width: 50%;
-  height: 1px;
-  background: var(--color-text-black);
-}
-
-.Shoppe__myAccount {
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-  border-top: 1px solid #d8d8d8;
-  width: 1300px;
-  height: 900px;
-  margin-left: 96px;
-}
-
 form {
   margin-top: 50px;
 }

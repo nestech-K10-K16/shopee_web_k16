@@ -1,46 +1,39 @@
-.Shoppe__shopPage p {
-  transition: 0.5s ease;
-}
-
-.Shoppe__shopPage p:hover {
-  color: var(--color-footer);
-}
-
-.Shoppe__shopPage p.active__navbar-shop::before {
-  content: "";
-  position: absolute;
-  left: 16px;
-  bottom: -24px;
-  width: 53%;
-  height: 0.1rem;
-  background: var(--color-text-black);
-}
-
-.Shoppe__shopPage-container {
+.shoppe__shopPage-container {
+  /* position: relative; */
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #d8d8d8;
-  width: 1315px;
+  width: 1301px;
   height: 1200px;
   margin-left: 96px;
   margin-bottom: 240px;
 }
 
-.Shoppe__shopPage-text {
+/* .shoppe__shopPage-container::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  bottom: 1199.5px;
+  width: 3%;
+  height: 0.1rem;
+  background: var(--color-text-black);
+  margin-left: 930px;
+} */
+
+.shoppe__shopPage-text {
   margin-right: 36px;
   margin-top: 110px;
 }
 
-.Shoppe__shopPage-text h1 {
+.shoppe__shopPage-text h1 {
   display: flex;
   flex-direction: row;
-
   font-size: var(--size-33);
   font-weight: 500;
   line-height: 43px;
 }
 
-.Shoppe__shopPage-search {
+.shoppe__shopPage-search {
   margin-top: 41px;
   margin-bottom: 39px;
   display: flex;
@@ -48,7 +41,7 @@
   border-bottom: 1px solid var(--color-gray);
 }
 
-.Shoppe__shopPage-search input {
+.shoppe__shopPage-search input {
   border: none;
   margin-bottom: 11px;
 }
@@ -56,11 +49,9 @@
 .select-01 {
   width: 261px;
   height: 53px;
-
   font-size: var(--size-14);
   font-weight: 400;
   line-height: 22px;
-
   border: 1px solid var(--color-gray);
   border-radius: 4px;
   margin-bottom: 24px;
@@ -69,11 +60,9 @@
 .select-02 {
   width: 261px;
   height: 53px;
-
   font-size: var(--size-14);
   font-weight: 400;
   line-height: 22px;
-
   border: 1px solid var(--color-gray);
   border-radius: 4px;
 }
@@ -109,7 +98,6 @@
   display: flex;
   justify-content: space-between;
   margin: 42px 0px;
-
   font-size: var(--size-16);
   font-weight: 400;
   line-height: 27px;
@@ -121,23 +109,23 @@
   color: var(--color-footer);
 }
 
-.Shoppe__shopPage-price_display {
+.shoppe__shopPage-price_display {
   display: flex;
   justify-content: space-between;
 }
 
-.Shoppe__shopPage-price_display p {
+.shoppe__shopPage-price_display p {
   color: var(--color-footer);
   font-size: var(--size-14);
   font-weight: 400;
   line-height: 22px;
 }
 
-.Shoppe__shopPage-price p:last-child {
+.shoppe__shopPage-price p:last-child {
   color: var(--color-light);
 }
 
-.Shoppe__shopPage_home-container {
+.shoppe__shopPage_home-container {
   margin-top: 150px;
   display: flex;
   align-items: center;
@@ -145,16 +133,16 @@
   margin-right: 96px;
 }
 
-.Shoppe__shopPage_home-container_group {
+.shoppe__shopPage_home-container_group {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  grid-gap: 25px;
+  grid-gap: 30px;
 }
 
 .update .shoppe__home-title_jewelry-image img {
   width: 673px;
   height: 350px;
   left: 70px;
-  margin-right: -80px;
+  margin-right: -90px;
 }

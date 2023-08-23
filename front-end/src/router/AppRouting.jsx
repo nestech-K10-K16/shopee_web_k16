@@ -1,22 +1,21 @@
-import { Fragment } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { appRoute } from "./router";
-import { DefaultLayout } from "components";
+import PageWrapper from "../components/common/wrapper/PageWrapper";
 
 const AppRouting = () => {
   return (
     <Routes>
       {appRoute.map((route) => {
         const Component = route.component;
-        const Layout = route.layout === null ? Fragment : DefaultLayout;
         return (
           <Route
             key={route.id}
             path={route.path}
             element={
-              <Layout>
+              <PageWrapper>
                 <Component />
-              </Layout>
+              </PageWrapper>
             }
           />
         );

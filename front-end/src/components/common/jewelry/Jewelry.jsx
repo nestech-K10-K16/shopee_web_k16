@@ -8,7 +8,7 @@ const Jewelry = ({ imgUrl, text, dollar }) => {
     <div className="shoppe__home-title_jewelry">
       <div className="shoppe__home-title_jewelry-image">
         <img src={imgUrl} alt="home_image" />
-        <div className="Shoppe__home-title_layer">
+        <div className="shoppe__home-title_layer">
           {/* <Link to="/cart">
             <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
           </Link> */}

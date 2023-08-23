@@ -72,7 +72,6 @@
 }
 
 .comment-action {
-  font-family: var(--font-family);
   font-size: var(--size-14);
   margin-right: 8px;
 }
