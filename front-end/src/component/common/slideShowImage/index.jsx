@@ -66,7 +66,7 @@ class SlideShowImage extends React.Component {
                 <img
                   className={`${
                     this.state.slideIndex === index ? "active" : ""
-                  } absolute collapse `}
+                  } absolute collapse`}
                   style={{
                     width: `${widthMainImg}`,
                     height: `${heightMainImg}`,

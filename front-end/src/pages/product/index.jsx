@@ -1,12 +1,6 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
-import {
-  IMG_PRODUCT_01,
-  IMG_PRODUCT_02,
-  IMG_PRODUCT_03,
-  IMG_PRODUCT_04,
-} from "assets";
 import {
   Input,
   Button,
@@ -24,17 +18,14 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import { useDispatch, useSelector } from "react-redux";
+import { TYPE_REDUX } from "constants/common";
 
 const Product = () => {
-  const image = [
-    { src: IMG_PRODUCT_01 },
-    { src: IMG_PRODUCT_02 },
-    { src: IMG_PRODUCT_03 },
-    { src: IMG_PRODUCT_04 },
-  ];
+  const { productDetail } = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   const [heart, setHeart] = useState(false);
-
   const onClickHeart = () => {
     setHeart(!heart);
   };
@@ -44,79 +35,98 @@ const Product = () => {
   return (
     <section id="product">
       <div className="product__content">
-        <div className="product__content__top flex mb-24">
-          <div className="mr-6">
-            <SlideShowImage
-              image={image}
-              widthMainImg={"32rem"}
-              heightMainImg={"32rem"}
-              heightChildImg={"7.6rem"}
-            />
-          </div>
+        {productDetail?.map((item) => {
+          const image = [
+            { src: item.src },
+            { src: item.src },
+            { src: item.src },
+            { src: item.src },
+          ];
 
-          <div className="product__content__top__product-infomation">
-            <p className="heading-02 mb-6">Lira Earrings</p>
-            <p className="heading-04 mb-14">$ 20,00</p>
-            <Rating
-              className="mb-5"
-              name="half-rating"
-              defaultValue={2.5}
-              precision={0.5}
-            />
-            <p className="heading-05 mb-11">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              placerat, augue a volutpat hendrerit, sapien tortor faucibus
-              augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu
-              facilisis consequat sed eu felis.
-            </p>
+          return (
+            <div className="flex mb-16" key={item.id}>
+              <div className="mr-6">
+                <SlideShowImage
+                  image={image}
+                  widthMainImg={"32rem"}
+                  heightMainImg={"32rem"}
+                  heightChildImg={"7.6rem"}
+                />
+              </div>
 
-            <div className="flex text-center mb-[4.6rem]">
-              <AmountInput className="mr-5" />
-              <Button className="button--secondary body-large w-full">
-                ADD TO CART
-              </Button>
-            </div>
+              <div className="product__content__top__product-infomation">
+                <p className="heading-02 mb-6">{item.name}</p>
+                <p className="heading-04 mb-14">$ {item.price}</p>
+                <Rating
+                  className="mb-5"
+                  name="half-rating"
+                  defaultValue={2.5}
+                  precision={0.5}
+                />
+                <p className="heading-05 mb-11">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Aliquam placerat, augue a volutpat hendrerit, sapien tortor
+                  faucibus augue, a maximus elit ex vitae libero. Sed quis
+                  mauris eget arcu facilisis consequat sed eu felis.
+                </p>
 
-            <div className="flex mb-9 gap-x-8">
-              <FontAwesomeIcon
-                icon={faHeart}
-                size="xl"
-                style={{ color: heart ? "red" : "black" }}
-                onClick={onClickHeart}
-              />
+                <div className="flex text-center mb-[4.6rem]">
+                  <AmountInput className="mr-5" />
+                  <Button
+                    className="button--secondary body-large w-full"
+                    onClick={() =>
+                      dispatch({
+                        type: TYPE_REDUX.ADD_PRODUCT_CART_FROM_PRODUCT_DETAIL,
+                        payload: item,
+                      })
+                    }
+                  >
+                    ADD TO CART
+                  </Button>
+                </div>
 
-              <div className="border border-solid border-bright_gray"></div>
+                <div className="flex mb-9 gap-x-8">
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    size="xl"
+                    style={{ color: heart ? "red" : "black" }}
+                    onClick={onClickHeart}
+                  />
 
-              <div className="flex gap-x-6">
-                <Link>
-                  <FontAwesomeIcon icon={faEnvelope} size="xl" />
-                </Link>
+                  <div className="border border-solid border-bright_gray"></div>
 
-                <Link>
-                  <FontAwesomeIcon icon={faFacebookF} size="xl" />
-                </Link>
+                  <div className="flex gap-x-6">
+                    <Link>
+                      <FontAwesomeIcon icon={faEnvelope} size="xl" />
+                    </Link>
 
-                <Link>
-                  <FontAwesomeIcon icon={faInstagram} size="xl" />
-                </Link>
+                    <Link>
+                      <FontAwesomeIcon icon={faFacebookF} size="xl" />
+                    </Link>
 
-                <Link>
-                  <FontAwesomeIcon icon={faTwitter} size="xl" />
-                </Link>
+                    <Link>
+                      <FontAwesomeIcon icon={faInstagram} size="xl" />
+                    </Link>
+
+                    <Link>
+                      <FontAwesomeIcon icon={faTwitter} size="xl" />
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="flex">
+                  <p className="heading-05 mr-4">SKU:</p>
+                  <p className="heading-05 text-dark_silver">12</p>
+                </div>
+
+                <div className="flex">
+                  <p className="heading-05 mr-4">Categories:</p>
+                  <p className="heading-05 text-dark_silver">Fashion, Style</p>
+                </div>
               </div>
             </div>
-
-            <div className="flex">
-              <p className="heading-05 mr-4">SKU:</p>
-              <p className="heading-05 text-dark_silver">12</p>
-            </div>
-
-            <div className="flex">
-              <p className="heading-05 mr-4">Categories:</p>
-              <p className="heading-05 text-dark_silver">Fashion, Style</p>
-            </div>
-          </div>
-        </div>
+          );
+        })}
 
         <Tabs
           className="product__content__information mb-24"
@@ -206,8 +216,7 @@ const Product = () => {
         </Tabs>
 
         <div className="product__content__similar-items-list">
-          <p className="heading-02 mb-[4.9rem]">Similar Items</p>
-
+          <p className="heading-02 mb-12">Similar Items</p>
           <ListProduct />
         </div>
       </div>

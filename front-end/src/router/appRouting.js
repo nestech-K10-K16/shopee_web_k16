@@ -3,7 +3,8 @@ import { Fragment } from "react";
 import { appRoute } from "./router";
 import { DefaultLayout } from "../component/utils";
 
-function AppRouting() {
+
+const AppRouting = () => {
   return (
     <Routes>
       {appRoute.map((route) => {
@@ -23,6 +24,6 @@ function AppRouting() {
       })}
     </Routes>
   );
-}
+};
 
 export default AppRouting;

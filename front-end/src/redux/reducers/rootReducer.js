@@ -6,7 +6,7 @@ import {
   IMG_PRODUCT_05,
   IMG_PRODUCT_06,
 } from "assets";
-import { PATHNAME_LIST } from "router/router";
+import { TYPE_REDUX } from "constants/common";
 
 const initState = {
   product: [
@@ -14,66 +14,139 @@ const initState = {
       name: "Lira Earrings",
       price: 20,
       src: IMG_PRODUCT_01,
-      to: PATHNAME_LIST.PRODUCT,
     },
     {
       name: "Hal Earrings",
       price: 25,
       src: IMG_PRODUCT_02,
-      to: PATHNAME_LIST.PRODUCT,
     },
     {
       name: "Kaede Hair Pin Set Of 3 ",
       price: 30,
       src: IMG_PRODUCT_03,
-      to: PATHNAME_LIST.PRODUCT,
     },
     {
       name: "Hair Pin Set of 3",
       price: 30,
       src: IMG_PRODUCT_04,
-      to: PATHNAME_LIST.PRODUCT,
     },
     {
       name: "Plaine Necklace",
       price: 19,
       src: IMG_PRODUCT_05,
-      to: PATHNAME_LIST.PRODUCT,
     },
     {
       name: "Yuki Hair Pin Set of 3",
       price: 20,
       src: IMG_PRODUCT_06,
-      to: PATHNAME_LIST.PRODUCT,
     },
   ],
-
+  productDetail: [],
   productCart: [],
 };
 
 const rootReducer = (state = initState, action) => {
+  const { product, productDetail, productCart } = state;
+  const idProduct = product.find((item) => item === action.payload);
+  const idProductDetails = productDetail.find(
+    (item) => item === action.payload
+  );
+
   switch (action.type) {
-    case "DELETE_PRODUCT_CART":
+    case TYPE_REDUX.ADD_PRODUCT_CART_FROM_PRODUCT:
+      const productCarts = {
+        name: idProduct.name,
+        price: idProduct.price,
+        color: "Black / Medium",
+        src: idProduct.src,
+        amount: 1,
+      };
+
+      if (productCart.find((item) => item.name === action.payload.name)) {
+        return {
+          ...state,
+          productCart: productCart.map((item) => {
+            if (item.name === action.payload.name) {
+              return { ...item, amount: item.amount + 1 };
+            }
+            return item;
+          }),
+        };
+      } else {
+        return {
+          ...state,
+          productCart: [...state.productCart, productCarts],
+        };
+      }
+
+    case TYPE_REDUX.ADD_PRODUCT_CART_FROM_PRODUCT_DETAIL:
+      const productCartFromProductDetail = {
+        name: idProductDetails.name,
+        price: idProductDetails.price,
+        color: "Black / Medium",
+        src: idProductDetails.src,
+        amount: 1,
+      };
+
+      if (productCart.find((item) => item.name === action.payload.name)) {
+        return {
+          ...state,
+          productCart: productCart.map((item) => {
+            if (item.name === action.payload.name) {
+              return { ...item, amount: item.amount + 1 };
+            }
+            return item;
+          }),
+        };
+      } else {
+        return {
+          ...state,
+          productCart: [...state.productCart, productCartFromProductDetail],
+        };
+      }
+
+    case TYPE_REDUX.INCREASE_AMOUNT_PRODUCT_CART:
       return {
         ...state,
-        productCart: state.productCart.filter(
-          (item) => item.name !== action.payload.name
-        ),
+        productCart: productCart.map((item) => {
+          if (item.name === action.payload.name) {
+            return { ...item, amount: item.amount + 1 };
+          }
+          return item;
+        }),
       };
 
-    case "ADD_PRODUCT_CART":
-      const products = state.product.find(
-        (item) => item.name === action.payload.name
-      );
-
-      const productCarts = {
-        name: products.name,
-        price: products.price,
-        color: "Black / Medium",
-        src: products.src,
-        to: products.to,
+    case TYPE_REDUX.DECREASE_AMOUNT_PRODUCT_CART:
+      return {
+        ...state,
+        productCart: productCart.map((item) => {
+          if (item.name === action.payload.name) {
+            if (item.amount >= 2) {
+              return { ...item, amount: item.amount - 1 };
+            }
+          }
+          return item;
+        }),
       };
-      return { ...state, productCart: [...state.productCart, productCarts] };
+
+    case TYPE_REDUX.DELETE_PRODUCT_CART:
+      return {
+        ...state,
+        productCart: productCart.filter((item) => item !== action.payload),
+      };
+
+    case TYPE_REDUX.ADD_PRODUCT_DETAIL:
+      const productDetails = {
+        name: idProduct.name,
+        price: idProduct.price,
+        src: idProduct.src,
+      };
+
+      return {
+        ...state,
+        productDetail: [productDetails],
+      };
+
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import { useState, React } from "react";
+import React, { useState } from "react";
 import Header from "./header";
 import Footer from "./footer";
 import ShoppingBag from "./shoppingBag";
@@ -10,8 +10,8 @@ const DefaultLayout = ({ children }) => {
   const [background, setBackground] = useState("");
 
   const OpenModel = () => {
-    setStyleShoppingBag("w-[28rem] ");
-    setBackground("opacity-70");
+    setStyleShoppingBag("w-[29rem] ");
+    setBackground("opacity-50");
   };
 
   const CloseModel = () => {
@@ -24,25 +24,24 @@ const DefaultLayout = ({ children }) => {
       <div className={background}>
         <Header onClick={OpenModel} />
         {children}
-
-        <ToastContainer
-          position="top-left"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss={false}
-          draggable
-          pauseOnHover={false}
-          theme="light"
-        />
         <Footer />
       </div>
       <ShoppingBag
         className={styleShoppingBag}
         backOnClick={CloseModel}
         viewCartOnClick={CloseModel}
+      />
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover={false}
+        theme="light"
       />
     </div>
   );

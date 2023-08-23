@@ -30,7 +30,6 @@
     transform: translateX(0);
   }
   to {
-    visibility: visible;
     transform: translateX(110%);
   }
 }
@@ -61,7 +60,6 @@
     transform: translateX(0);
   }
   to {
-    visibility: visible;
     transform: translateX(-110%);
   }
 }
