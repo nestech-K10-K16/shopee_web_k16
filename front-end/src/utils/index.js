@@ -4,7 +4,6 @@ export const validateEmail = (email) => {
 
 export const validatePassword = (password) => {
   return (
-
     /[A-Z]/.test(password) &&
     /[0-9]/.test(password) &&
     /[^a-zA-Z\d]/.test(password)

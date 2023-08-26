@@ -1,16 +1,14 @@
-import { React } from "react";
+import React from "react";
 import "./index.scss";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 import { PATHNAME_LIST } from "router/router";
-import { connect } from "react-redux";
 import { IMG_LOGO } from "assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { useSelector } from "react-redux";
 
 const Header = (props) => {
-  let productCart = props.productCart;
+  const { productCart } = useSelector((state) => state);
 
   $(function () {
     $(".header__content__left-sider").click(function () {
@@ -63,14 +61,14 @@ const Header = (props) => {
               <div className="flex items-center space-x-8">
                 <li>
                   <Link>
-                    <FontAwesomeIcon icon={faSearch} />
+                    <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
                   </Link>
                 </li>
 
                 <li>
                   <div className="flex">
                     <Link className={props.className} onClick={props.onClick}>
-                      <FontAwesomeIcon icon={faCartShopping} />
+                      <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
                     </Link>
                     <p className="ml-1">({productCart.length})</p>
                   </div>
@@ -78,7 +76,7 @@ const Header = (props) => {
 
                 <li>
                   <Link to={PATHNAME_LIST.ACCOUNT}>
-                    <FontAwesomeIcon icon={faUser} />
+                    <FontAwesomeIcon icon="fa-regular fa-user" />
                   </Link>
                 </li>
               </div>
@@ -92,10 +90,4 @@ const Header = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    productCart: state.productCart,
-  };
-};
-
-export default connect(mapStateToProps)(Header);
+export default Header;

@@ -1,22 +1,13 @@
 import React from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
 import { TYPE_REDUX } from "constants/common";
 import { useDispatch, useSelector } from "react-redux";
 import { PATHNAME_LIST } from "router/router";
 
 const ListProduct = () => {
-  const { product } = useSelector((state) => state);
+  const product = useSelector((state) => state.product);
   const dispatch = useDispatch();
-
-  const addToCartOnClick = (id) => {
-    toast.success("Has been added to cart");
-    dispatch({
-      type: TYPE_REDUX.ADD_PRODUCT_CART_FROM_PRODUCT,
-      payload: id,
-    });
-  };
 
   return (
     <div className="grid grid-cols-3 gap-4">
@@ -37,7 +28,12 @@ const ListProduct = () => {
               </Link>
               <button
                 className="body-large"
-                onClick={() => addToCartOnClick(item)}
+                onClick={() =>
+                  dispatch({
+                    type: TYPE_REDUX.ADD_PRODUCT_CART,
+                    payload: item,
+                  })
+                }
               >
                 Add to cart
               </button>

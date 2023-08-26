@@ -1,52 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-@import "./variable.scss";
 
 html,
 body {
-  font-family: var(--font-family-base);
+  font-family: theme("fontFamily.base");
 }
 
 .heading-01 {
-  font-weight: $font-weight-500;
-  font-size: $size-33;
+  font-weight: theme("fontWeight.500");
+  font-size: theme("fontSize.33");
 }
 
 .heading-02 {
-  font-weight: $font-weight-400;
-  font-size: $size-26;
-  line-height: $line-height-35;
+  font-weight: theme("fontWeight.400");
+  font-size: theme("fontSize.26");
+  line-height: theme("lineHeight.35");
 }
 
 .heading-03 {
-  font-weight: $font-weight-400;
-  font-size: $size-20;
-  line-height: $line-height-26;
+  font-weight: theme("fontWeight.400");
+  font-size: theme("fontSize.20");
+  line-height: theme("lineHeight.26");
 }
 
 .heading-04 {
-  font-weight: $font-weight-500;
-  font-size: $size-20;
-  line-height: $line-height-20;
+  font-weight: theme("fontWeight.500");
+  font-size: theme("fontSize.20");
+  line-height: theme("lineHeight.20");
 }
 
 .heading-05 {
-  font-weight: $font-weight-400;
-  font-size: $size-16;
-  line-height: $line-height-27;
+  font-weight: theme("fontWeight.400");
+  font-size: theme("fontSize.16");
+  line-height: theme("lineHeight.27");
 }
 
 .body-large {
-  font-weight: $font-weight-700;
-  font-size: $size-16;
+  font-weight: theme("fontWeight.700");
+  font-size: theme("fontSize.16");
 }
 
 .body-medium {
-  font-weight: $font-weight-400;
-  font-size: $size-14;
+  font-weight: theme("fontWeight.400");
+  font-size: theme("fontSize.14");
 }
 
 .body-small {
-  font-weight: $font-weight-400;
-  font-size: $size-12;
-  line-height: $line-height-20;
+  font-weight: theme("fontWeight.400");
+  font-size: theme("fontSize.12");
+  line-height: theme("lineHeight.20");
 }

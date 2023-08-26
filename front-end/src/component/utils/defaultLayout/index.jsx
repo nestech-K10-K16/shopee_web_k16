@@ -11,7 +11,7 @@ const DefaultLayout = ({ children }) => {
 
   const OpenModel = () => {
     setStyleShoppingBag("w-[29rem] ");
-    setBackground("opacity-50");
+    setBackground("opacity-50 bg-[rgb(0,0,0,0.1)]");
   };
 
   const CloseModel = () => {
@@ -21,11 +21,11 @@ const DefaultLayout = ({ children }) => {
 
   return (
     <div>
-      <div className={background}>
+      <section className={background}>
         <Header onClick={OpenModel} />
         {children}
         <Footer />
-      </div>
+      </section>
       <ShoppingBag
         className={styleShoppingBag}
         backOnClick={CloseModel}

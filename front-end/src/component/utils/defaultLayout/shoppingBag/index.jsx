@@ -9,16 +9,25 @@ import { TYPE_REDUX } from "constants/common";
 import { useDispatch, useSelector } from "react-redux";
 
 const ShoppingBag = (props) => {
-  const { productCart } = useSelector((state) => state);
+  const productCart = useSelector((state) => state.productCart);
   const dispatch = useDispatch();
 
   const Items = () => {
     return (
       <div className="flex flex-col gap-y-6">
-        {productCart.map((item) => {
+        {productCart?.map((item) => {
           return (
-            <div className="flex" key={item.name}>
-              <Link className="mr-3" to={PATHNAME_LIST.PRODUCT}>
+            <div className="flex" key={item.id}>
+              <Link
+                className="mr-3"
+                to={PATHNAME_LIST.PRODUCT}
+                onClick={() =>
+                  dispatch({
+                    type: TYPE_REDUX.ADD_PRODUCT_DETAIL,
+                    payload: item,
+                  })
+                }
+              >
                 <img src={item.src} alt="" />
               </Link>
 
@@ -86,7 +95,23 @@ const ShoppingBag = (props) => {
           </div>
 
           <p className="heading-05 mb-4">Shopping bag</p>
-          <p className="heading-05 mb-6">{productCart.length} Items</p>
+          <div className="flex justify-between items-center mb-6">
+            <p className="heading-05 ">{productCart.length} Items</p>
+            <div className="flex">
+              <p className="heading-05 mr-2">Delete all</p>
+              <button
+                className="bg-body border-0"
+                onClick={() =>
+                  dispatch({
+                    type: TYPE_REDUX.DELETE_ALL_PRODUCT_CART,
+                    payload: productCart.find((item) => item),
+                  })
+                }
+              >
+                <FontAwesomeIcon icon={faClose} size="xl" />
+              </button>
+            </div>
+          </div>
 
           <div className="shopping-bag__content__product mb-[2.4rem]">
             <Items />

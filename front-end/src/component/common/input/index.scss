@@ -1,7 +1,5 @@
-@import "styles/custom/variable";
-
 #input {
-  border: 1px solid $bright-gray;
+  border: 1px solid theme("colors.bright_gray");
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -10,5 +8,5 @@
 }
 
 #input:focus {
-  border-bottom: 1px solid $black;
+  border-bottom: 1px solid theme("colors.black.1");
 }

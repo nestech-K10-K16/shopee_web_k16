@@ -1,14 +1,12 @@
-@import "styles/custom/variable";
-
 #footer {
   padding: 8vh 10vw;
 }
 
 .footer-bottom a {
-  color: $dark-silver;
+  color: theme("colors.dark_silver");
   text-decoration: none;
 }
 
 .footer-bottom a:hover {
-  color: $black;
+  color: theme("colors.black.1");
 }

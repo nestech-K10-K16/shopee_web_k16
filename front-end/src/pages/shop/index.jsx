@@ -2,9 +2,23 @@ import React from "react";
 import "./index.scss";
 import { Input, Select, ToggleButton, ListProduct } from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { useState } from "react";
+import { TYPE_REDUX } from "constants/common";
+import { bindActionCreators } from "redux";
 
 const Shop = () => {
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState("");
+
+  const searchProductOnChange = (e) => {
+    setSearch(e.target.value);
+
+    bindActionCreators(
+      dispatch({ type: TYPE_REDUX.SEARCH_PRODUCT, payload: search })
+    );
+  };
+
   return (
     <main>
       <section id="shop">
@@ -12,9 +26,15 @@ const Shop = () => {
           <div className="shop__content__left-side-bar w-80 mr-8">
             <p className="heading-01">Shop The Latest</p>
             <div className="flex items-center mb-4">
-              <Input className="w-full pr-4" placeholder="search..." />
+              <Input
+                className="w-full pr-4"
+                type="text"
+                value={search}
+                placeholder="search..."
+                onChange={(e) => searchProductOnChange(e)}
+              />
               <button className="bg-none border-0 -ml-4">
-                <FontAwesomeIcon icon={faSearch} />
+                <FontAwesomeIcon icon="fa-solid fa-search" />
               </button>
             </div>
 

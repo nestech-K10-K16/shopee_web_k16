@@ -11,18 +11,12 @@ import {
 } from "component/common";
 import Rating from "@mui/material/Rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faHeart } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebookF,
-  faInstagram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import { useDispatch, useSelector } from "react-redux";
 import { TYPE_REDUX } from "constants/common";
 
 const Product = () => {
-  const { productDetail } = useSelector((state) => state);
+  const productDetail = useSelector((state) => state.productDetail);
   const dispatch = useDispatch();
 
   const [heart, setHeart] = useState(false);
@@ -71,12 +65,12 @@ const Product = () => {
                 </p>
 
                 <div className="flex text-center mb-[4.6rem]">
-                  <AmountInput className="mr-5" />
+                  <AmountInput id={item} className="mr-5" value={item.amount} />
                   <Button
                     className="button--secondary body-large w-full"
                     onClick={() =>
                       dispatch({
-                        type: TYPE_REDUX.ADD_PRODUCT_CART_FROM_PRODUCT_DETAIL,
+                        type: TYPE_REDUX.ADD_PRODUCT_CART,
                         payload: item,
                       })
                     }
@@ -87,7 +81,7 @@ const Product = () => {
 
                 <div className="flex mb-9 gap-x-8">
                   <FontAwesomeIcon
-                    icon={faHeart}
+                    icon="fa-solid fa-heart"
                     size="xl"
                     style={{ color: heart ? "red" : "black" }}
                     onClick={onClickHeart}
@@ -97,19 +91,28 @@ const Product = () => {
 
                   <div className="flex gap-x-6">
                     <Link>
-                      <FontAwesomeIcon icon={faEnvelope} size="xl" />
+                      <FontAwesomeIcon
+                        icon="fa-regular fa-envelope"
+                        size="xl"
+                      />
                     </Link>
 
                     <Link>
-                      <FontAwesomeIcon icon={faFacebookF} size="xl" />
+                      <FontAwesomeIcon
+                        icon="fa-brands fa-facebook-f"
+                        size="xl"
+                      />
                     </Link>
 
                     <Link>
-                      <FontAwesomeIcon icon={faInstagram} size="xl" />
+                      <FontAwesomeIcon
+                        icon="fa-brands fa-instagram"
+                        size="xl"
+                      />
                     </Link>
 
                     <Link>
-                      <FontAwesomeIcon icon={faTwitter} size="xl" />
+                      <FontAwesomeIcon icon="fa-brands fa-twitter" size="xl" />
                     </Link>
                   </div>
                 </div>

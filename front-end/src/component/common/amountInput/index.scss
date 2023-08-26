@@ -1,11 +1,9 @@
-@import "styles/custom/variable";
-
 #amount-input {
   display: flex;
 }
 
 #amount-input input {
-  background-color: $bright-gray;
+  background-color: theme("colors.bright_gray");
   text-align: center;
   border: 0;
   outline: none;
@@ -13,17 +11,17 @@
 }
 
 #amount-input button {
-  background-color: $bright-gray;;
+  background-color: theme("colors.bright_gray");
   border: 0;
   width: 100%;
 }
 
 #amount-input button:hover {
-  background-color: $alice-blue;
+  background-color: theme("colors.black[0.1]");
 }
 
 #amount-input button:active {
-  background-color: $bright-gray;
+  background-color: theme("colors.bright_gray");
 }
 
 #amount-input button:first-child {

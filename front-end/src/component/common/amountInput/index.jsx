@@ -1,23 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.scss";
+import { useDispatch } from "react-redux";
+import { TYPE_REDUX } from "constants/common";
 
 const AmountInput = (props) => {
-  const [number, setNumber] = useState(1);
-
-  const onClickIncrease = () => {
-    setNumber(number + 1);
-  };
-
-  const onClickDecrease = () => {
-    if (number === 1) return;
-    setNumber(number - 1);
-  };
+  const dispatch = useDispatch();
+  const { id } = props;
 
   return (
     <div id="amount-input" className={props.className}>
-      <button onClick={onClickIncrease}>+</button>
-      <input value={number} readOnly></input>
-      <button onClick={onClickDecrease}>-</button>
+      <button
+        onClick={() =>
+          dispatch({
+            type: TYPE_REDUX.INCREASE_AMOUNT_PRODUCT_CART,
+            payload: id,
+          })
+        }
+      >
+        +
+      </button>
+      <input value={props.value} readOnly></input>
+      <button
+        onClick={() =>
+          dispatch({
+            type: TYPE_REDUX.DECREASE_AMOUNT_PRODUCT_CART,
+            payload: id,
+          })
+        }
+      >
+        -
+      </button>
     </div>
   );
 };

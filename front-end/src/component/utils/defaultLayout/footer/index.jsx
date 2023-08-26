@@ -4,13 +4,6 @@ import { Link } from "react-router-dom";
 import { Input } from "component/common";
 import { PATHNAME_LIST } from "router/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import {
-  faFacebookF,
-  faInstagram,
-  faLinkedinIn,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -43,25 +36,25 @@ const Footer = () => {
               ></Input>
 
               <button className="text-dark_silver hover:text-black -ml-4">
-                <FontAwesomeIcon icon={faArrowRight} />
+                <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
               </button>
             </div>
 
             <div className="flex justify-end gap-8">
               <Link>
-                <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
+                <FontAwesomeIcon icon="fa-brands fa-linkedin-in" size="lg" />
               </Link>
 
               <Link>
-                <FontAwesomeIcon icon={faFacebookF} size="lg" />
+                <FontAwesomeIcon icon="fa-brands fa-facebook-f" size="lg" />
               </Link>
 
               <Link>
-                <FontAwesomeIcon icon={faInstagram} size="lg" />
+                <FontAwesomeIcon icon="fa-brands fa-instagram" size="lg" />
               </Link>
 
               <Link>
-                <FontAwesomeIcon icon={faTwitter} size="lg" />
+                <FontAwesomeIcon icon="fa-brands fa-twitter" size="lg" />
               </Link>
             </div>
           </div>

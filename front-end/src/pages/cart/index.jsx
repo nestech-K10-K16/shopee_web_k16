@@ -4,11 +4,12 @@ import { AmountInput, Button, Input, Select } from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { PATHNAME_LIST } from "router/router";
-import { connect } from "react-redux";
 import { TYPE_REDUX } from "constants/common";
+import { useDispatch, useSelector } from "react-redux";
 
-const Cart = (props) => {
-  const { productCart, deleteProductCart } = props;
+const Cart = () => {
+  const productCart = useSelector((state) => state.productCart);
+  const dispatch = useDispatch();
 
   const Items = () => {
     return (
@@ -26,13 +27,22 @@ const Cart = (props) => {
                 </div>
 
                 <div>
-                  <AmountInput className="w-[6rem] h-12 mr-6" />
+                  <AmountInput
+                    id={item}
+                    className="w-[6rem] h-12 mr-6"
+                    value={item.amount}
+                  />
                 </div>
 
                 <div>
                   <button
                     className="bg-body border-0"
-                    onClick={() => deleteProductCart(item)}
+                    onClick={() =>
+                      dispatch({
+                        type: TYPE_REDUX.DELETE_PRODUCT_CART,
+                        payload: item,
+                      })
+                    }
                   >
                     <FontAwesomeIcon icon={faClose} />
                   </button>
@@ -140,18 +150,4 @@ const Cart = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  const { productCart } = state;
-  return {
-    productCart,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    deleteProductCart: (id) =>
-      dispatch({ type: TYPE_REDUX.DELETE_PRODUCT_CART, payload: id }),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default Cart;

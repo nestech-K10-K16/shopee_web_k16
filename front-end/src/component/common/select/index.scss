@@ -1,13 +1,11 @@
-@import "styles/custom/variable";
-
 .select {
   outline: none;
-  border: 1px solid $bright-gray;
+  border: 1px solid theme("colors.bright_gray");
   border-radius: 6px;
   padding: 8px 0;
 
   &:required:invalid {
-    color: $dark-silver;
+    color: theme("colors.dark_silver");
   }
 
   &-secondary {

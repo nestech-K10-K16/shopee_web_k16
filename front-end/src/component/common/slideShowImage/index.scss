@@ -1,5 +1,3 @@
-@import "styles/custom/variable";
-
 #slide-show-image {
   overflow-x: hidden;
 }
@@ -65,5 +63,5 @@
 }
 
 .slide-show-image__img-list img.active {
-  border: 2px solid $black;
+  border: 2px solid theme("colors.black.1");
 }

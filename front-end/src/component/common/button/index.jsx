@@ -1,16 +1,17 @@
 import React from "react";
 import "./index.scss";
-import { Link } from "react-router-dom";
 
 const Button = (props) => {
+  const { children } = props;
+
   return (
-    <Link
-      className={`button ${props.className}`}
+    <button
+      className={`button ${props.type} ${props.className}`}
       to={props.to}
       onClick={props.onClick}
     >
-      {props.children}
-    </Link>
+      {children}
+    </button>
   );
 };
 

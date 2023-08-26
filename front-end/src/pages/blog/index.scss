@@ -1,18 +1,13 @@
-@import "styles/custom/variable";
-
 #blog {
   padding: 8vh 10vw;
 }
 
 .blog__content__left-side-bar__categories a {
-  color: $dark-silver;
+  color: theme("colors.dark_silver");
 }
 
 .blog__content__left-side-bar__categories a:hover {
-  color: $black;
-  font-weight: $font-weight-400;
-  font-size: $size-20;
-  line-height: $line-height-20;
+  color: theme("colors.black.1");
 }
 
 .blog__content__blog-post img {
@@ -20,9 +15,9 @@
 }
 
 .blog__content__blog-post a {
-  color: $beaver;
+  color: theme("colors.beaver");
 }
 
 .blog__content__blog-post a:hover {
-  color: $black;
+  color: theme("colors.black.1");
 }
