@@ -9,6 +9,6 @@ export const TYPE_REDUX = {
 };
 
 export const TYPE_BUTTON = {
-  WHITE: "White",
-  BLACK: "Black",
+  BUTTON: "Button",
+  LINK: "Link",
 };

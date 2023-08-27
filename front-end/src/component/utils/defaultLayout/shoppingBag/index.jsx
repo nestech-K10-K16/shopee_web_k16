@@ -5,7 +5,7 @@ import { faChevronRight, faClose } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "component/common";
 import { PATHNAME_LIST } from "router/router";
 import { Link } from "react-router-dom";
-import { TYPE_REDUX } from "constants/common";
+import { TYPE_BUTTON, TYPE_REDUX } from "constants/common";
 import { useDispatch, useSelector } from "react-redux";
 
 const ShoppingBag = (props) => {
@@ -135,7 +135,8 @@ const ShoppingBag = (props) => {
 
           <div className="flex">
             <Button
-              className="button--secondary text-center w-full"
+              className="white text-center w-full"
+              type={TYPE_BUTTON.LINK}
               to={PATHNAME_LIST.CART}
               onClick={props.viewCartOnClick}
             >

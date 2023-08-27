@@ -1,4 +1,5 @@
 export { default as Input } from "./input";
+export { default as RangeSlider } from "./rangeSlider";
 export { default as TextArea } from "./textArea";
 export { default as Select } from "./select";
 export { default as Button } from "./button";

@@ -1,22 +1,29 @@
 import React from "react";
 import "./index.scss";
-import { Input, Select, ToggleButton, ListProduct } from "component/common";
+import {
+  Input,
+  Select,
+  ToggleButton,
+  ListProduct,
+  RangeSlider,
+} from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useDispatch } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { TYPE_REDUX } from "constants/common";
-import { bindActionCreators } from "redux";
 
 const Shop = () => {
+  const productSearch = useSelector(
+    (state) => state.productSearch,
+    shallowEqual
+  );
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
 
-  const searchProductOnChange = (e) => {
-    setSearch(e.target.value);
-
-    bindActionCreators(
-      dispatch({ type: TYPE_REDUX.SEARCH_PRODUCT, payload: search })
-    );
+  const searchOnKeyDown = (e) => {
+    if (e.key === "Enter") {
+      dispatch({ type: TYPE_REDUX.SEARCH_PRODUCT, payload: search });
+    }
   };
 
   return (
@@ -31,9 +38,15 @@ const Shop = () => {
                 type="text"
                 value={search}
                 placeholder="search..."
-                onChange={(e) => searchProductOnChange(e)}
+                onChange={(e) => setSearch(e.target.value)}
+                onKeyDown={(e) => searchOnKeyDown(e)}
               />
-              <button className="bg-none border-0 -ml-4">
+              <button
+                className="bg-none border-0 -ml-4"
+                onClick={() =>
+                  dispatch({ type: TYPE_REDUX.SEARCH_PRODUCT, payload: search })
+                }
+              >
                 <FontAwesomeIcon icon="fa-solid fa-search" />
               </button>
             </div>
@@ -44,6 +57,9 @@ const Shop = () => {
             <Select className="w-full mb-4">
               <option value="">Sort By</option>
             </Select>
+
+            <RangeSlider />
+            <input type="range"/>
 
             <div className="flex justify-between items-center mb-2">
               <p className="heading-05 mb-0">On sale</p>
@@ -58,6 +74,7 @@ const Shop = () => {
 
           <div className="shop__content__product">
             <ListProduct />
+            {productSearch}
           </div>
         </div>
       </section>

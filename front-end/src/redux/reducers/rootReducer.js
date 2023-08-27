@@ -12,37 +12,31 @@ import { toast } from "react-toastify";
 const initState = {
   product: [
     {
-      id: "1",
       name: "Lira Earrings",
       price: 20,
       src: IMG_PRODUCT_01,
     },
     {
-      id: 2,
       name: "Hal Earrings",
       price: 25,
       src: IMG_PRODUCT_02,
     },
     {
-      id: 3,
-      name: "Kaede Hair Pin Set Of 3 ",
+      name: "Kaede Hair Pin Set Of 3",
       price: 30,
       src: IMG_PRODUCT_03,
     },
     {
-      id: 4,
       name: "Hair Pin Set of 3",
       price: 30,
       src: IMG_PRODUCT_04,
     },
     {
-      id: 5,
       name: "Plaine Necklace",
       price: 19,
       src: IMG_PRODUCT_05,
     },
     {
-      id: 6,
       name: "Yuki Hair Pin Set of 3",
       price: 20,
       src: IMG_PRODUCT_06,
@@ -175,16 +169,56 @@ const rootReducer = (state = initState, action) => {
       break;
 
     case TYPE_REDUX.SEARCH_PRODUCT:
-      console.log(action.payload);
-      if (product.find((item) => item.id === action.payload)) {
+      const searchProducts = product.filter(
+        (item) => item.name === action.payload
+      );
+
+      if (product.find((item) => item.name === action.payload)) {
         return {
           ...state,
           product: [
-            ...state.product,
-            product.filter((item) => item.id === action),
+            searchProducts.reduce((item, key) => {
+              item.push(product[key]);
+              return item;
+            }),
           ],
         };
-      } else return { ...state };
+      } else
+        return {
+          ...state,
+          product: [
+            {
+              name: "Lira Earrings",
+              price: 20,
+              src: IMG_PRODUCT_01,
+            },
+            {
+              name: "Hal Earrings",
+              price: 25,
+              src: IMG_PRODUCT_02,
+            },
+            {
+              name: "Kaede Hair Pin Set Of 3",
+              price: 30,
+              src: IMG_PRODUCT_03,
+            },
+            {
+              name: "Hair Pin Set of 3",
+              price: 30,
+              src: IMG_PRODUCT_04,
+            },
+            {
+              name: "Plaine Necklace",
+              price: 19,
+              src: IMG_PRODUCT_05,
+            },
+            {
+              name: "Yuki Hair Pin Set of 3",
+              price: 20,
+              src: IMG_PRODUCT_06,
+            },
+          ],
+        };
 
     default:
       return state;
