@@ -5,6 +5,7 @@ import {
   faCartShopping,
   faSearch,
   faArrowRight,
+  faClose,
 } from "@fortawesome/free-solid-svg-icons";
 import { faUser, faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -19,6 +20,7 @@ library.add(
   faCartShopping,
   faSearch,
   faArrowRight,
+  faClose,
   faUser,
   faEnvelope,
   faFacebookF,

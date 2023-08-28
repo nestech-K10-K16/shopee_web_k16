@@ -2,10 +2,10 @@ import React from "react";
 import "./index.scss";
 import { AmountInput, Button, Input, Select } from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { PATHNAME_LIST } from "router/router";
 import { TYPE_REDUX } from "constants/common";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const productCart = useSelector((state) => state.productCart);
@@ -18,7 +18,17 @@ const Cart = () => {
           return (
             <div key={item.id}>
               <div className="flex mb-4">
-                <img className="w-32 mr-8" src={item.src} alt="" />
+                <Link
+                  to={PATHNAME_LIST.PRODUCT}
+                  onClick={() =>
+                    dispatch({
+                      type: TYPE_REDUX.ADD_PRODUCT_DETAIL,
+                      payload: item,
+                    })
+                  }
+                >
+                  <img className="w-32 mr-8" src={item.src} alt="" />
+                </Link>
 
                 <div className="mr-16">
                   <p className="heading-03 mb-4">{item.name}</p>
@@ -44,7 +54,7 @@ const Cart = () => {
                       })
                     }
                   >
-                    <FontAwesomeIcon icon={faClose} />
+                    <FontAwesomeIcon icon="fa-solid fa-close" />
                   </button>
                 </div>
               </div>
