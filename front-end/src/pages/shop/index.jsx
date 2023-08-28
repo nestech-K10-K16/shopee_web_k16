@@ -59,7 +59,6 @@ const Shop = () => {
             </Select>
 
             <RangeSlider />
-            <input type="range"/>
 
             <div className="flex justify-between items-center mb-2">
               <p className="heading-05 mb-0">On sale</p>

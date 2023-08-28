@@ -1,12 +1,9 @@
 import React from "react";
 import "./index.scss";
+import ReactSlider from "react-slider";
 
 const RangeSlider = () => {
-  return (
-    <div>
-      <input className="range-slider" type="range" min="0" max="100" />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default RangeSlider;
