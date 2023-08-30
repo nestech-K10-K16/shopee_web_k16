@@ -1,0 +1,23 @@
+#blog {
+  padding: 8vh 10vw;
+}
+
+.blog__content__left-side-bar__categories a {
+  color: theme("colors.dark_silver");
+}
+
+.blog__content__left-side-bar__categories a:hover {
+  color: theme("colors.black.1");
+}
+
+.blog__content__blog-post img {
+  width: 100%;
+}
+
+.blog__content__blog-post a {
+  color: theme("colors.beaver");
+}
+
+.blog__content__blog-post a:hover {
+  color: theme("colors.black.1");
+}

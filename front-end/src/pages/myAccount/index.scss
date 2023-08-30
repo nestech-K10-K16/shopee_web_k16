@@ -1,0 +1,25 @@
+#my-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 8vh 10vw;
+}
+
+.my-account__content__switch {
+  background-color: theme("colors.bright_gray");
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.my-account__content__switch li {
+  border: 5px solid theme("colors.bright_gray");
+  background-color: theme("colors.bright_gray");
+  padding: 0.8rem 3.8rem;
+  border-radius: 10px;
+}
+
+.my-account__content__switch li.tab-active {
+  background-color: theme("colors.white");
+}

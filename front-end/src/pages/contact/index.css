@@ -1,0 +1,14 @@
+#contact {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 8vh 10vw;
+}
+
+.contact__content__heading{
+  width: 36rem;
+}
+
+.contact__content__info-customer div input{
+  width: 20rem;
+}

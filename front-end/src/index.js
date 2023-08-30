@@ -1,10 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import "./style/index.css";
+import "styles/index.scss";
+import "configs/icon";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import rootReducer from "redux/reducers/rootReducer";
+
+const reduxStore = createStore(rootReducer);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <Provider store={reduxStore}>
+    <App />
+  </Provider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

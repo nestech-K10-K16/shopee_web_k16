@@ -1,0 +1,16 @@
+.select {
+  outline: none;
+  border: 1px solid theme("colors.bright_gray");
+  border-radius: 6px;
+  padding: 8px 0;
+
+  &:required:invalid {
+    color: theme("colors.dark_silver");
+  }
+
+  &-secondary {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+}

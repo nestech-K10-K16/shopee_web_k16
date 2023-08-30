@@ -1,0 +1,13 @@
+/* reset password */
+#reset-password {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8vh 10vw;
+}
+
+.reset-password__content__title{
+  width: 30rem;
+}

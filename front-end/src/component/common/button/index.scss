@@ -1,0 +1,19 @@
+.black {
+  background-color: theme("colors.black.1");
+  color: theme("colors.white");
+
+  &:hover {
+    background-color: theme("colors.white");
+    color: theme("colors.black.1");
+  }
+}
+
+.white {
+  background-color: theme("colors.white");
+  color: theme("colors.black.1");
+
+  &:hover {
+    background-color: theme("colors.black.1");
+    color: theme("colors.white");
+  }
+}

@@ -1,0 +1,30 @@
+#product {
+  display: flex;
+  justify-content: center;
+  padding: 8vh 10vw;
+}
+
+.product__content__information__heading li {
+  color: theme("colors.dark_silver");
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.product__content__information__heading li::after {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: -22px;
+}
+
+.product__content__information__heading li.tab-active {
+  color: theme("colors.black.1");
+}
+
+.product__content__information__heading li.tab-active::after {
+  background-color: theme("colors.black.1");
+}

@@ -1,0 +1,37 @@
+#account {
+  padding: 8vh 10vw;
+}
+
+.account__content__tab-list {
+  border-bottom: 2px solid theme("colors.bright_gray");
+}
+
+.account__content__tab-list li a {
+  color: theme("colors.dark_silver");
+  display: block;
+  position: relative;
+  text-decoration: none;
+  margin-right: 2rem;
+}
+
+.account__content__tab-list li a:hover {
+  color: theme("colors.black.1");
+}
+
+.account__content__tab-list li a::after {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: -18px;
+}
+
+.account__content__tab-list li.tab-active a {
+  color: theme("colors.black.1");
+}
+
+.account__content__tab-list li.tab-active a::after {
+  background-color: theme("colors.black.1");
+}
