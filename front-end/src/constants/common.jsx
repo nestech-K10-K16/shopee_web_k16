@@ -6,6 +6,7 @@ export const TYPE_REDUX = {
   DELETE_ALL_PRODUCT_CART: "DeleteAllProductCart",
   ADD_PRODUCT_DETAIL: "AddProductDetail",
   SEARCH_PRODUCT: "SearchProduct",
+  PRICE_FILTER_PRODUCT: "PriceFilterProduct",
 };
 
 export const TYPE_BUTTON = {

@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import ReactSlider from "react-slider";
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { TYPE_REDUX } from "constants/common";
 
 const RangeSlider = () => {
-  const min = 0;
-  const max = 100;
+  const product = useSelector((state) => state.product);
+  const productPrice = product.map((item) => item.price);
+  const dispatch = useDispatch();
 
-  const valueSliderOnChange = (e) => {
-    e.target.value = min;
-  };
+  const min = Math.min.apply(null, productPrice);
+  const max = Math.max.apply(null, productPrice);
+  const [slider, setSlider] = useState([min, max]);
 
   const StyledSlider = styled(ReactSlider)`
     width: 100%;
@@ -17,15 +21,15 @@ const RangeSlider = () => {
   `;
 
   const StyledThumb = styled.div`
-    height: 25px;
-    width: 28px;
-    line-height: 25px;
+    padding: 6px;
     text-align: center;
     background-color: #000;
     color: #fff;
     cursor: grab;
-    margin-top: -11px;
+    margin-top: -15px;
     outline: none;
+    font-size: 15px;
+    border-radius: 50%;
   `;
 
   const Thumb = (props, state) => (
@@ -36,7 +40,7 @@ const RangeSlider = () => {
     top: 0;
     bottom: 0;
     background: ${(props) =>
-      props.index === 2 ? "#f00" : props.index === 1 ? "#0f0" : "#ddd"};
+      props.index === 2 ? "#ddd" : props.index === 1 ? "black" : "#ddd"};
   `;
 
   const Track = (props, state) => (
@@ -46,18 +50,30 @@ const RangeSlider = () => {
   return (
     <div className="mt-4 mb-6">
       <StyledSlider
-        defaultValue={[0, 100]}
         renderTrack={Track}
         renderThumb={Thumb}
-        minDistance={12}
-        value={[min, max]}
-        onChange={(e) => valueSliderOnChange(e)}
+        pearling
+        value={slider}
+        min={min}
+        max={max}
+        onAfterChange={setSlider}
       />
 
-      <div className="mt-4">
+      <div className="flex justify-between mt-8">
         <span>
-          Price: {min} - {max}
+          Price: $ {slider[0]} - $ {slider[1]}
         </span>
+        <button
+          onClick={() =>
+            dispatch({
+              type: TYPE_REDUX.PRICE_FILTER_PRODUCT,
+              payload_min: slider[0],
+              payload_max: slider[1],
+            })
+          }
+        >
+          <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+        </button>
       </div>
     </div>
   );

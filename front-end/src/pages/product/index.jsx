@@ -17,6 +17,7 @@ import { TYPE_REDUX } from "constants/common";
 
 const Product = () => {
   const productDetail = useSelector((state) => state.productDetail);
+  const product = useSelector((state) => state.product);
   const dispatch = useDispatch();
 
   const [heart, setHeart] = useState(false);
@@ -220,7 +221,7 @@ const Product = () => {
 
         <div className="product__content__similar-items-list">
           <p className="heading-02 mb-12">Similar Items</p>
-          <ListProduct />
+          <ListProduct map={product} />
         </div>
       </div>
     </section>

@@ -4,19 +4,16 @@ import {
   Input,
   Select,
   ToggleButton,
-  ListProduct,
   RangeSlider,
+  ListProduct,
 } from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { TYPE_REDUX } from "constants/common";
 
 const Shop = () => {
-  const productSearch = useSelector(
-    (state) => state.productSearch,
-    shallowEqual
-  );
+  const searchProduct = useSelector((state) => state.searchProduct);
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
 
@@ -72,8 +69,7 @@ const Shop = () => {
           </div>
 
           <div className="shop__content__product">
-            <ListProduct />
-            {productSearch}
+            <ListProduct map={searchProduct} />
           </div>
         </div>
       </section>

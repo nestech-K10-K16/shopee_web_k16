@@ -12,8 +12,10 @@ import {
   IMG_PRODUCT_05,
   IMG_PRODUCT_06,
 } from "assets";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+  const product = useSelector((state) => state.product);
   const image = [
     { src: IMG_BANNER },
     { src: IMG_PRODUCT_01 },
@@ -40,7 +42,7 @@ const Home = () => {
           <div className="flex justify-between items-center mb-4">
             <p className="heading-01">Shop The Latest</p>
             <Link
-              className="heading-04 text-beaver hover:text-black"
+              className="heading-04 text-beaver hover:text-black-1"
               to={PATHNAME_LIST.SHOP}
             >
               View all
@@ -48,7 +50,7 @@ const Home = () => {
           </div>
 
           <div>
-            <ListProduct />
+            <ListProduct map={product} />
           </div>
         </div>
       </div>

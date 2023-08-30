@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
 
 const Header = (props) => {
-  const { productCart } = useSelector((state) => state);
+  const productCart = useSelector((state) => state.productCart);
 
   $(function () {
     $(".header__content__left-sider").click(function () {

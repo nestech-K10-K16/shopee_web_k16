@@ -2,16 +2,16 @@ import React from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import { TYPE_REDUX } from "constants/common";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { PATHNAME_LIST } from "router/router";
 
-const ListProduct = () => {
-  const product = useSelector((state) => state.product);
+const ListProduct = (props) => {
+  const { map } = props;
   const dispatch = useDispatch();
 
   return (
     <div className="grid grid-cols-3 gap-4">
-      {product?.map((item) => {
+      {map?.map((item) => {
         return (
           <div id="product-style" key={item.id}>
             <div className="product-style__image">
