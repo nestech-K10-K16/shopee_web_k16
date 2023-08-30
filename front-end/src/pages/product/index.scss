@@ -1,0 +1,357 @@
+@use "../../styles/colors" as *;
+@use "../../styles/fonts" as *;
+@use "../../styles/main" as *;
+
+.Shoppe__product {
+  border-top: 1px solid #d8d8d8;
+  width: 1315px;
+  height: 2200px;
+  margin-left: 96px;
+  margin-bottom: 240px;
+  z-index: 1;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 128px;
+    margin-bottom: 99px;
+  }
+
+  &-image {
+    display: flex;
+    justify-content: space-between;
+
+    .small-image img {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      margin-right: 39px;
+    }
+
+    .big-image img {
+      width: 540px;
+      height: 600px;
+      border-radius: 8px;
+    }
+
+    .big {
+      & .slider-gray,
+      & .slider-black {
+        width: 540px;
+        height: 2px;
+        margin-top: 24px;
+      }
+    }
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 64px;
+
+    h1 {
+      margin-top: 37px;
+
+      &::after {
+        content: "12";
+        margin-left: 16px;
+        color: $color-footer;
+      }
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-size: $size-16;
+      font-weight: 400;
+      line-height: 27px;
+
+      &::after {
+        content: "Fashion, Style";
+        margin-left: 16px;
+        color: $color-footer;
+      }
+    }
+
+    h4 {
+      font-size: $size-20;
+      font-weight: 500;
+      line-height: 26px;
+      color: $color-light;
+      margin-bottom: 70px;
+    }
+
+    &-star {
+      display: flex;
+      flex-direction: row;
+
+      img {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+      }
+    }
+
+    p {
+      font-size: $size-16;
+      font-weight: 400;
+      line-height: 27px;
+      color: $color-footer;
+    }
+  }
+
+  &-button {
+    display: flex;
+    flex-direction: row;
+
+    & .btn-white {
+      width: 358px;
+      height: 53px;
+
+      &.btn-white {
+        width: 360px;
+        height: 53px;
+        padding: 16px 127px;
+        border-radius: 4px;
+        font-size: $size-14;
+        font-weight: 700;
+        margin-top: 48px;
+        cursor: pointer;
+        transition: 0.5s ease;
+
+        &:hover {
+          width: 400px;
+          margin-left: 23px;
+        }
+      }
+    }
+
+    .count {
+      display: flex;
+      flex-direction: row;
+      width: 102px;
+      height: 53px;
+      background: $color-light-gray;
+      padding: 14px 16px;
+      border-radius: 4px;
+      margin-right: 23px;
+      margin-top: 48px;
+
+      p {
+        margin-right: 24px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-tabs {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    border-bottom: 1px solid $color-gray;
+    padding-bottom: 34px;
+
+    &-tab {
+      display: flex;
+      width: auto;
+      cursor: pointer;
+      font-size: $size-20;
+      font-weight: 400;
+      line-height: 26px;
+      color: $color-gray;
+      outline: none;
+      margin-right: 96px;
+      transition-delay: 0.1s;
+
+      &.active-tab {
+        color: $color-text-black;
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 0px;
+          width: 6.6%;
+          height: 1px;
+          background: $color-text-black;
+        }
+      }
+
+      &:hover {
+        color: $color-footer;
+      }
+      &:nth-child(1).active-tab::before {
+        width: 6.6%;
+      }
+      &:nth-child(2).active-tab::before {
+        width: 13.5%;
+      }
+      &:nth-child(3).active-tab::before {
+        width: 7%;
+      }
+    }
+  }
+
+  .description {
+    width: 1248px;
+    font-size: $size-16;
+    font-weight: 400;
+    line-height: 27px;
+    color: $color-footer;
+    margin-top: 39px;
+  }
+
+  .information {
+    margin-top: 39px;
+
+    h2,
+    h3,
+    h4,
+    p {
+      font-size: $size-16;
+      font-weight: 400;
+      line-height: 27px;
+    }
+  }
+
+  .heading {
+    font-size: $size-26;
+    font-weight: 400;
+    line-height: 35px;
+    margin-top: 66px;
+  }
+
+  .Shoppe__product-similar_item {
+    display: flex;
+    flex-direction: row;
+    margin-top: 47px;
+
+    h4 {
+      font-size: $size-20;
+      color: $color-light;
+    }
+
+    .image {
+      width: 390px;
+      display: flex;
+      flex-direction: column;
+      margin-right: 47px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      h3,
+      h4 {
+        margin-top: 16px;
+        font-size: $size-20;
+        font-weight: 400;
+        line-height: 26px;
+      }
+    }
+  }
+
+  .review {
+    display: flex;
+    flex-direction: row;
+    margin-top: 42px;
+
+    .review-1 {
+      margin-right: 88px;
+
+      .evaluate {
+        h3,
+        h4,
+        p {
+          font-size: $size-20;
+          font-weight: 400;
+          line-height: 26px;
+          margin-bottom: 16px;
+
+          h3 {
+            margin-bottom: 76px;
+          }
+
+          h4::after {
+            content: "6 May, 2020";
+            color: $color-footer;
+            font-size: $size-14;
+            font-weight: 400;
+            line-height: 22px;
+            margin-left: 16px;
+          }
+
+          p {
+            width: 580px;
+            height: 57px;
+            color: $color-footer;
+          }
+
+          .review-star {
+            display: flex;
+            flex-direction: row;
+
+            img {
+              margin-right: 10px;
+              margin-top: 16px;
+              margin-bottom: 24px;
+            }
+          }
+
+          .evaluate .input input {
+            margin-top: -96px;
+            font-size: $size-14;
+            font-weight: 400;
+            line-height: 22px;
+            color: $color-footer;
+          }
+
+          .img {
+            display: flex;
+            flex-direction: row;
+          }
+
+          .review-2 button {
+            margin-top: 20px;
+            cursor: pointer;
+            width: 123px;
+            height: 53px;
+            border-radius: 4px;
+            background: $color-text-black;
+            font-size: $size-16;
+            font-weight: 700;
+            color: $color-text-white;
+          }
+
+          h3 {
+            font-size: $size-20;
+            font-weight: 400;
+            line-height: 26px;
+
+            &:first-child {
+              margin-bottom: 11px;
+            }
+
+            &:last-child {
+              margin-bottom: 46px;
+              color: $color-footer;
+              font-size: $size-13;
+            }
+          }
+
+          p {
+            margin-top: -50px;
+          }
+
+          h4 {
+            margin-bottom: 107px;
+            color: $color-footer;
+            border-bottom: 1px solid $color-footer;
+            padding-bottom: 61px;
+            font-size: $size-14;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,8 @@
+@use "../../styles/colors" as *;
+@use "../../styles/fonts" as *;
+
 .shoppe__cart {
-  border-top: 1px solid #d8d8d8;
+  border-top: 1px solid $color-gray;
   width: 1315px;
   height: 1290px;
   margin-left: 96px;
@@ -24,6 +27,35 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+
+  .all-img {
+    .title {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      margin-left: 80px;
+    }
+
+    .count {
+      display: flex;
+      flex-direction: row;
+      margin-right: 52px;
+      background: $color-gray;
+      width: 102px;
+      height: 53px;
+      padding: 20px 28px;
+
+      p {
+        padding: 0px 5px;
+        color: $color-footer;
+      }
+
+      p:first-child,
+      p:last-child {
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 .shoppe__cart-item .icon-item {
@@ -35,7 +67,7 @@
   justify-content: space-between;
   margin-right: 39px;
   margin-bottom: 78px;
-  border-bottom: 1px solid var(--color-footer);
+  border-bottom: 1px solid $color-footer;
   padding-bottom: 39px;
 }
 
@@ -51,28 +83,21 @@
 }
 
 .text-cart h3 {
-  font-size: var(--size-20);
+  font-size: $size-20;
   font-weight: 400;
   line-height: 26px;
   margin-bottom: 14px;
 }
 
 .text-cart h4 {
-  font-size: var(--size-16);
+  font-size: $size-16;
   font-weight: 400;
   line-height: 27px;
-  color: var(--color-footer);
+  color: $color-footer;
 }
 
 .text-cart h4:last-child {
-  color: var(--color-light);
-}
-
-.all-img .title {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  margin-left: 124px;
+  color: $color-light;
 }
 
 .shoppe__cart-item .btn-white {
@@ -80,7 +105,7 @@
   width: 168px;
   height: 53px;
   border-radius: 4px;
-  border: 1px solid var(--color-text-black);
+  border: 1px solid $color-text-black;
   margin-left: 508px;
   margin-bottom: 64px;
   transition: 0.5s ease;
@@ -92,22 +117,22 @@
 }
 
 .button p {
-  font-size: var(--size-12);
+  font-size: $size-12;
   width: 336px;
   font-weight: 400;
   line-height: 20px;
-  border-bottom: 1px solid var(--color-footer);
+  border-bottom: 1px solid $color-footer;
   padding-bottom: 21px;
 }
 
 .button .btn-black {
   cursor: pointer;
-  padding: 16px 28px;
+  padding: 16px 27px;
   width: 168px;
   height: 53px;
   border-radius: 4px;
-  border: 1px solid var(--color-text-black);
-  font-size: var(--size-14);
+  border: 1px solid $color-text-black;
+  font-size: $size-14;
   font-weight: 700;
   transition: 0.5s ease;
 }
@@ -115,6 +140,10 @@
 .shoppe__cart-totals {
   margin-top: 20px;
   margin-left: 100px;
+
+  .heading-02 {
+    margin-bottom: 44px;
+  }
 }
 
 .shoppe__cart-totals .btn-black {
@@ -124,8 +153,8 @@
   width: 540px;
   height: 53px;
   border-radius: 4px;
-  border: 1px solid var(--color-text-black);
-  font-size: var(--size-16);
+  border: 1px solid $color-text-black;
+  font-size: $size-16;
   font-weight: 600;
   line-height: 27px;
 }
@@ -137,7 +166,7 @@
 .hero-block {
   display: flex;
   margin-bottom: 45px;
-  border-bottom: 1px solid var(--color-footer);
+  border-bottom: 1px solid $color-footer;
 }
 
 .hero-money {
@@ -149,23 +178,23 @@
 .hero-money h1 {
   width: 66px;
   height: 28px;
-  font-size: var(--size-16);
+  font-size: $size-16;
   font-weight: 400;
   line-height: 27px;
-  color: var(--color-footer);
+  color: $color-footer;
   margin-bottom: 39px;
 }
 
 .heading-05 {
   width: 250px;
   height: 58px;
-  color: var(--color-footer);
+  color: $color-footer;
   margin-bottom: 39px;
 }
 
 .hero-text h3,
 .hero-text h4 {
-  font-size: var(--size-16);
+  font-size: $size-16;
   font-weight: 400;
   line-height: 27px;
   margin-bottom: 23px;
@@ -181,23 +210,23 @@
 }
 
 .calculate h3 {
-  font-size: var(--size-16);
+  font-size: $size-16;
   font-weight: 400;
   line-height: 27px;
-  color: var(--color-text-black);
+  color: $color-text-black;
 }
 
 .select h3,
 .city h3,
 .post h3 {
-  font-size: var(--size-16);
+  font-size: $size-16;
   font-weight: 400;
   line-height: 27px;
-  color: var(--color-footer);
+  color: $color-footer;
 }
 
 .icon-s {
-  color: var(--color-footer);
+  color: $color-footer;
 }
 
 .hero-money .btn-white {
@@ -205,8 +234,8 @@
   width: 250px;
   height: 53px;
   border-radius: 4px;
-  border: 1px solid var(--color-text-black);
-  font-size: var(--size-16);
+  border: 1px solid $color-text-black;
+  font-size: $size-16;
   font-weight: 600;
   line-height: 27px;
   margin-bottom: 39px;
@@ -221,7 +250,7 @@
 
 .total h6 {
   margin-bottom: 23px;
-  font-size: var(--size-16);
+  font-size: $size-16;
   font-weight: 600;
   line-height: 27px;
 }

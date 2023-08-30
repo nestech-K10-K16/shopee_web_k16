@@ -1,0 +1,144 @@
+@use "../../styles/colors" as *;
+@use "../../styles/fonts" as *;
+@use "../../styles/main" as *;
+
+.Shoppe__order {
+  width: 1315px;
+  height: 843px;
+  border-top: 1px solid $color-footer;
+  margin-left: 96px;
+
+  &-container {
+    margin-top: 96px;
+  }
+}
+
+.rectangle {
+  display: flex;
+  flex-direction: row;
+  width: 1315px;
+  height: 68px;
+  background: $color-light-gray;
+  border-top: 2px solid $color-light;
+
+  & .icon-circle {
+    color: $color-light;
+    padding: 23px 16px 23px 39px;
+  }
+
+  & h3 {
+    font-size: $size-16;
+    font-weight: 400;
+    line-height: 27px;
+    padding-top: 19px;
+  }
+}
+
+.order-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 96px;
+}
+
+.order-details {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 169px;
+
+  .main-title {
+    margin-right: 139px;
+
+    .heading-02 {
+      margin-bottom: 29px;
+    }
+
+    .black,
+    .gray {
+      font-size: $size-16;
+      font-weight: 400;
+      line-height: 27px;
+    }
+
+    .gray {
+      color: $color-footer;
+    }
+  }
+}
+
+.secondary-title {
+  margin-top: 60px;
+
+  .black,
+  .gray {
+    font-size: $size-16;
+    font-weight: 400;
+    line-height: 27px;
+  }
+
+  .gray {
+    color: $color-footer;
+  }
+
+  h2:nth-child(4) {
+    width: 119px;
+    height: 107px;
+  }
+}
+
+.summary {
+  width: 580px;
+
+  .heading-02 {
+    margin-bottom: 39px;
+  }
+
+  .order-summary {
+    background: $color-light-gray;
+    padding: 39px 57px;
+
+    .product {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $color-gray;
+      padding-bottom: 18px;
+
+      h2 {
+        font-size: $size-16;
+        font-weight: 400;
+        line-height: 27px;
+      }
+    }
+
+    .border {
+      border-bottom: 1px solid $color-gray;
+      padding-bottom: 18px;
+    }
+
+    .Lira,
+    .sub-ship {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 18px;
+    }
+
+    .Lira h3 {
+      font-size: $size-16;
+      font-weight: 400;
+      line-height: 27px;
+      color: $color-footer;
+    }
+
+    .sub-ship {
+      border-bottom: 1px solid $color-gray;
+
+      h3 {
+        font-size: $size-16;
+        font-weight: 400;
+        line-height: 27px;
+      }
+      h3:last-child {
+        color: $color-footer;
+      }
+    }
+  }
+}

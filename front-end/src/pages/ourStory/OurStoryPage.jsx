@@ -1,6 +1,6 @@
 import React from "react";
 import { Blog01, Blog04 } from "pages/blog/import";
-import "./ourStory.css";
+import "./ourStory.scss";
 
 const OurStoryPage = () => {
   return (

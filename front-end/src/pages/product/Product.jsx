@@ -4,7 +4,7 @@ import "configs/fontIcon";
 import { home01, home02, home03, home05 } from "pages/home/import";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import "./index.css";
+import "./index.scss";
 
 const Product = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -83,7 +83,7 @@ const Product = () => {
           <div className="Shoppe__product-tabs">
             <Tab
               value={1}
-              className={`Shoppe__product-white ${
+              className={`Shoppe__product-tab ${
                 activeTabs[0] ? "active-tab" : ""
               }`}
               onClick={() => userChange(0)}
@@ -92,7 +92,7 @@ const Product = () => {
             </Tab>
             <Tab
               value={2}
-              className={`Shoppe__product-black ${
+              className={`Shoppe__product-tab ${
                 activeTabs[1] ? "active-tab" : ""
               }`}
               onClick={() => userChange(1)}
@@ -101,7 +101,7 @@ const Product = () => {
             </Tab>
             <Tab
               value={3}
-              className={`Shoppe__product-black_02 ${
+              className={`Shoppe__product-tab ${
                 activeTabs[2] ? "active-tab" : ""
               }`}
               onClick={() => userChange(2)}

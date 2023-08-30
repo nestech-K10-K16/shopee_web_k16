@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { slidesData } from "utils/slidesData";
+import { slidesData } from "data/slidesData";
 import {
   showSlide,
   autoSlide,
   currentSlide,
 } from "hook/slidesShowLogic/SlidesShowLogic";
-import "./banner.css";
+import "./banner.scss";
 
 const Banner = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -31,10 +31,10 @@ const Banner = () => {
         >
           <img src={slide.imgSrc} alt="introduce" />
           <div className="Shoppe__banner-content">
-            <h1>{slide.title}</h1>
-            <h2>{slide.price}</h2>
+            <h1 className="heading-01">{slide.title}</h1>
+            <h2 className="heading-02">{slide.price}</h2>
             <Link to="/product">
-              <button>View Product</button>
+              <button className="btn-white">View Product</button>
             </Link>
           </div>
         </div>

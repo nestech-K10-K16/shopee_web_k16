@@ -2,23 +2,21 @@ import React from "react";
 
 const OrderSummary = () => {
   return (
-    <div className="summary">
-      <h2 className="heading-02">ORDER Summary</h2>
-      <div className="order-summary">
-        {/* Product */}
-        <div className="product">
-          <h2>PRODUCT</h2>
-          <h2>TOTAL</h2>
-        </div>
-        {/* Items */}
+    <div className="order-summary">
+      <div className="product">
+        <h2>PRODUCT</h2>
+        <h2>TOTAL</h2>
+      </div>
+      <div className="border">
         <OrderItem name="Lira Earrings" price="$64" />
         <OrderItem name="Ollie Earrings" price="$10" />
         <OrderItem name="Kaede Hair Pin" price="$10" />
-        {/* Subtotal, Shipping, Total */}
-        <OrderTotalRow label="SUBTOTAL" amount="$85" />
-        <OrderTotalRow label="SHIPPING" amount="Free shipping" />
-        <OrderTotalRow label="TOTAL" amount="$85" />
       </div>
+
+      {/* Subtotal, Shipping, Total */}
+      <OrderTotalRow label="SUBTOTAL" amount="$85" />
+      <OrderTotalRow label="SHIPPING" amount="Free shipping" />
+      <OrderTotalRow label="TOTAL" amount="$85" />
     </div>
   );
 };

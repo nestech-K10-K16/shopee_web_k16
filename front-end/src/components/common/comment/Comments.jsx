@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import {
   getComments as getCommentsApi,
   createComment as createCommentApi,
-} from "utils/dummyData";
+} from "data/dummyData";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 import "./index.css";
@@ -17,7 +17,9 @@ const Comments = (currentUserId) => {
   }, []);
 
   const rootComments = useMemo(() => {
-    backedComments.filter((backedComment) => backedComment.parentId === null);
+    return backedComments.filter(
+      (backedComment) => backedComment.parentId === null
+    );
   }, [backedComments]);
 
   const getReplies = (commentId) => {

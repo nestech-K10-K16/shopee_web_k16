@@ -1,7 +1,7 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./jewelry.css";
+import "./jewelry.scss";
 
 const Jewelry = ({ imgUrl, text, dollar }) => {
   return (

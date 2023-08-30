@@ -1,0 +1,125 @@
+@use "../../styles/colors" as *;
+@use "../../styles/fonts" as *;
+@use "../../styles/main" as *;
+
+.shoppe__myAccount {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid $color-gray;
+  width: 1315px;
+  height: 960px;
+  margin-left: 96px;
+
+  form {
+    margin-top: 96px;
+
+    h1 {
+      display: flex;
+      justify-content: center;
+      font-size: $size-33;
+      font-weight: 500;
+      line-height: 43px;
+      color: $color-text-black;
+      margin-bottom: 64px;
+    }
+  }
+}
+
+.shoppe__myAccount-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  width: 500px;
+  height: 60px;
+  border-radius: 8px;
+  background: $color-light-gray;
+  margin-bottom: 126px;
+}
+
+.shoppe__myAccount-login,
+.shoppe__myAccount-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $size-20;
+  font-weight: 400;
+  line-height: $line-height-26;
+  cursor: pointer;
+}
+
+.shoppe__myAccount-login {
+  width: 236px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.shoppe__myAccount-register {
+  padding: 16px 84px;
+}
+
+.fill-username,
+.fill-email,
+.fill-password {
+  input {
+    border: none;
+    width: 500px;
+    height: 30px;
+    font-size: $size-16;
+    font-weight: 400;
+    line-height: $line-height-27;
+    border-bottom: 1px solid $color-gray;
+    outline: none;
+    margin-bottom: 46px;
+  }
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+
+  .checkbox {
+    width: 16px;
+    height: 17.174px;
+    border: 1px solid $color-footer;
+    border-radius: 2px;
+    margin-bottom: 71.83px;
+  }
+
+  label {
+    color: $color-text-black;
+    font-size: $size-16;
+    font-weight: 400;
+    line-height: $line-height-27;
+    margin: 0px 5px 69px;
+  }
+}
+
+.btn-black {
+  width: 500px;
+  height: 53px;
+  border-radius: 4px;
+  border: 1px solid $color-text-white;
+  margin-bottom: 13px;
+  cursor: pointer;
+  font-size: $size-16;
+  font-weight: 500;
+  transition: 0.5s ease;
+}
+
+h5 {
+  display: flex;
+  justify-content: center;
+  font-size: $size-16;
+  font-weight: 400;
+  line-height: $line-height-27;
+  cursor: pointer;
+  margin-bottom: 247px;
+}
+
+.shoppe__myAccount-login.active-tab {
+  background-color: $color-text-white;
+}
+
+.shoppe__myAccount-register.active-tab {
+  background-color: $color-bg;
+}

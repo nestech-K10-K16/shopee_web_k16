@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./index.css";
+import OrderSummary from "components/common/oder/OrderSummary";
+import "./index.scss";
 
 const Checkout = () => {
   return (
@@ -8,7 +9,8 @@ const Checkout = () => {
       <div className="Shoppe__checkout-container">
         <h1>Checkout</h1>
         <h2>
-          <span>Returning customer? </span>Click here to login
+          <span>Returning customer? </span>
+          <Link to="/user">Click here to login</Link>
         </h2>
         <h3>
           <span>Have a coupon?</span> Click here to enter your code
@@ -76,34 +78,7 @@ const Checkout = () => {
           <div className="order-button">
             <h2>YOUR ORDER</h2>
             <div className="bg-button">
-              <div className="product">
-                <h2>PRODUCT</h2>
-                <h2>TOTAL</h2>
-              </div>
-              <div className="Lira">
-                <h3>Lira Earrings </h3>
-                <h3>$64</h3>
-              </div>
-              <div className="Lira">
-                <h3>Ollie Earrings</h3>
-                <h3>$10</h3>
-              </div>
-              <div className="Hair">
-                <h3>Kaede Hair Pin </h3>
-                <h3>$10</h3>
-              </div>
-              <div className="sub-ship">
-                <h3>SUBTOTAL </h3>
-                <h3>$85</h3>
-              </div>
-              <div className="sub-ship">
-                <h3>SHIPPING </h3>
-                <h3>Free shipping</h3>
-              </div>
-              <div className="money-total">
-                <h4>TOTAL </h4>
-                <h4>$85</h4>
-              </div>
+              <OrderSummary />
               <label class="container">
                 <input type="radio" checked="checked" name="radio" />
                 <span className="checkmark">Direct bank transfer</span>
@@ -114,7 +89,7 @@ const Checkout = () => {
                 shipped until the funds have cleared in our account
               </p>
               <div className="label">
-                <label class="container-01">
+                <label class="container">
                   <input type="radio" name="radio" />
                   <span className="checkmark">Direct bank transfer</span>
                 </label>

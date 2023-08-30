@@ -1,0 +1,132 @@
+@use "../../styles/colors" as *;
+@use "../../styles/fonts" as *;
+@use "../../styles/main" as *;
+
+.shoppe__shopPage-container {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid $color-gray;
+  width: 1315px;
+  height: 1200px;
+  margin-left: 96px;
+  margin-bottom: 240px;
+}
+
+.shoppe__shopPage-text {
+  margin-right: 36px;
+  margin-top: 110px;
+
+  h1 {
+    display: flex;
+    flex-direction: row;
+    font-size: $size-33;
+    font-weight: 500;
+    line-height: 43px;
+  }
+}
+
+.shoppe__shopPage-search {
+  margin-top: 41px;
+  margin-bottom: 39px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-gray;
+
+  input {
+    border: none;
+    margin-bottom: 11px;
+    outline: none;
+  }
+}
+
+.select-01,
+.select-02 {
+  width: 261px;
+  height: 53px;
+  font-size: $size-14;
+  font-weight: 400;
+  line-height: 22px;
+  border: 1px solid $color-gray;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.slider-container {
+  width: 261.002px;
+  height: 2px;
+  margin-bottom: 12px;
+  margin-top: 45px;
+
+  .slider-track {
+    height: 2px;
+
+    &.slider-track-0 {
+      background: $color-footer;
+    }
+
+    &.slider-track-1 {
+      background: $color-text-black;
+    }
+  }
+
+  .slider-thumb {
+    cursor: pointer;
+    width: 2.5px;
+    height: 10px;
+    background: $color-text-black;
+    top: -4px;
+  }
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  margin: 42px 0px;
+  font-size: $size-16;
+  font-weight: 400;
+  line-height: 27px;
+
+  .off {
+    cursor: pointer;
+    font-size: 30px;
+    color: $color-footer;
+  }
+}
+
+.shoppe__shopPage-price_display {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    color: $color-footer;
+    font-size: $size-14;
+    font-weight: 400;
+    line-height: 22px;
+
+    &:last-child {
+      color: $color-light;
+    }
+  }
+}
+
+.shoppe__shopPage_home-container {
+  margin-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 96px;
+
+  &_group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    grid-gap: 30px;
+  }
+}
+
+.update img {
+  width: 410px;
+  height: 350px;
+  left: 70px;
+  margin-right: -90px;
+}

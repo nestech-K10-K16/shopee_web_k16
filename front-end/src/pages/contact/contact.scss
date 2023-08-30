@@ -1,0 +1,97 @@
+@use "../../styles/colors" as *;
+@use "../../styles/fonts" as *;
+@use "../../styles/main" as *;
+
+.shoppe__contact {
+  border-top: 1px solid #d8d8d8;
+  width: 1315px;
+  margin-left: 96px;
+  margin-bottom: 240px;
+
+  &-container {
+    margin-top: 125px;
+
+    h1 {
+      display: flex;
+      justify-content: center;
+      font-size: $size-33;
+      font-weight: 500;
+      line-height: 43px;
+      margin-bottom: 39px;
+    }
+
+    h3 {
+      padding: 0 370px;
+      text-align: center;
+      font-size: $size-20;
+      font-weight: 400;
+      line-height: 26px;
+      margin-bottom: 108px;
+    }
+
+    .input-type {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 270px;
+
+      .first {
+        margin-right: 116px;
+
+        input {
+          outline: none;
+          width: 396px;
+          margin-bottom: 94px;
+          font-size: $size-16;
+          font-weight: 400;
+          line-height: 27px;
+          border: none;
+          padding-bottom: 12px;
+          border-bottom: 1px solid $color-footer;
+        }
+      }
+
+      .last {
+        input {
+          outline: none;
+          width: 396px;
+          margin-bottom: 94px;
+          font-size: $size-16;
+          font-weight: 400;
+          line-height: 27px;
+          border: none;
+          padding-bottom: 12px;
+          border-bottom: 1px solid $color-footer;
+        }
+      }
+    }
+
+    .message {
+      width: 908px;
+      border: none;
+      padding-bottom: 12px;
+      border-bottom: 1px solid $color-footer;
+      margin-left: 270px;
+      outline: none;
+    }
+  }
+
+  &-btn-black {
+    cursor: pointer;
+    margin-left: 463px;
+    margin-top: 96px;
+    width: 500px;
+    height: 53px;
+    background: $color-text-black;
+    border-radius: 4px;
+    font-size: $size-16;
+    font-weight: 700;
+    color: $color-text-white;
+    transition: 0.5s ease;
+
+    &:hover {
+      background: $color-bg;
+      box-shadow: 5px 10px 18px #888888;
+      color: $color-text-black;
+    }
+  }
+}

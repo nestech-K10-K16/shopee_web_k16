@@ -18,7 +18,7 @@ const PageWrapper = ({ children }) => {
         <div className="loader-wrapper">
           <ClipLoader
             size={80}
-            color="color-errors"
+            color="$color-errors"
             loading={loading}
             speedMultiplier={0.5}
           />

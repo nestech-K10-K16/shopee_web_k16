@@ -1,27 +1,20 @@
-.Shoppe__blogSingle-details p {
-  position: relative;
-  transition: 0.5s ease;
-}
-
-.Shoppe__blogSingle-details p:hover {
-  color: var(--color-footer);
-}
-
-.Shoppe__blogSingle-details p.active__navbar-blog::before {
-  content: "";
-  position: absolute;
-  left: 16px;
-  bottom: -23.5px;
-  width: 53%;
-  height: 1px;
-  background: var(--color-text-black);
-}
-
 .Shoppe__blogSingle-container {
+  position: relative;
   border-top: 1px solid #d8d8d8;
   width: 1315px;
   height: 3819px;
   margin-left: 96px;
+}
+
+.Shoppe__blogSingle-container::before {
+  content: "";
+  position: absolute;
+  left: 36px;
+  bottom: 3818.5px;
+  width: 2.4%;
+  height: 0.1rem;
+  background: var(--color-text-black);
+  margin-left: 993px;
 }
 
 .Shoppe__blogSingle-heading {

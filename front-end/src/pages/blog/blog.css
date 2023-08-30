@@ -1,4 +1,4 @@
-.Shoppe__blogPage-container {
+.shoppe__blogPage-container {
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #d8d8d8;
@@ -8,20 +8,17 @@
   margin-bottom: 240px;
 }
 
-.Shoppe__blogPage-text {
+.shoppe__blogPage-text {
   width: 280px;
   margin-top: 96px;
 }
 
-.Shoppe__blogPage-text h1 {
-  font-size: var(--size-33);
-  font-family: var(--font-family);
-  font-weight: 500;
+.shoppe__blogPage-text h1 {
   line-height: 43px;
   margin-left: -210px;
 }
 
-.Shoppe__blogPage-search {
+.shoppe__blogPage-search {
   margin-top: 36px;
   display: flex;
   flex-direction: row;
@@ -30,21 +27,22 @@
   margin-bottom: 62px;
 }
 
-.Shoppe__blogPage-search input {
+.shoppe__blogPage-search input {
   border: none;
   margin-bottom: 8px;
+  outline: none;
 }
 
-.Shoppe__blogPage-search a {
+.shoppe__blogPage-search a {
   width: 19px;
   height: 19px;
 }
 
-.Shoppe__blogPage-convert {
+.shoppe__blogPage-convert {
   width: 100px;
 }
 
-.Shoppe__blogPage-tab {
+.shoppe__blogPage-tab {
   display: flex;
   cursor: pointer;
   font-size: var(--size-20);
@@ -57,36 +55,36 @@
   transition-delay: 0.1s;
 }
 
-.Shoppe__blogPage-tab:hover {
+.shoppe__blogPage-tab:hover {
   color: var(--color-footer);
 }
 
-.Shoppe__blogPage-tab.active-tab {
+.shoppe__blogPage-tab.active-tab {
   color: var(--color-text-black);
 }
 
-.Shoppe__blogPage-content {
+.shoppe__blogPage-content {
   width: 980px;
   height: 1250px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  margin-top: 67px;
+  margin-top: 100px;
 }
 
-.Shoppe__blogPage-title {
+.shoppe__blogPage-title {
   width: 540px;
   height: 300px;
   margin-bottom: 64px;
 }
 
-.Shoppe__blogPage-button {
+.shoppe__blogPage-button {
   display: flex;
   justify-content: center;
   margin-left: 400px;
 }
 
-.Shoppe__blogPage-button button:first-child {
+.shoppe__blogPage-button button:first-child {
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -97,7 +95,7 @@
   margin-right: 4px;
 }
 
-.Shoppe__blogPage-button button:last-child {
+.shoppe__blogPage-button button:last-child {
   width: 40px;
   height: 40px;
   background: var(--color-text-white);

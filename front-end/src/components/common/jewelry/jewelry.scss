@@ -1,0 +1,91 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/fonts" as *;
+@use "../../../styles/main" as *;
+
+.shoppe__home-title_jewelry {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &-image {
+    overflow: hidden;
+    display: flex;
+
+    img {
+      border-radius: 8px;
+      width: 400px;
+      height: 430px;
+      cursor: pointer;
+      transition: 0.5s ease;
+    }
+  }
+
+  /* &-image .Shoppe__home-title_layer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--color-footer));
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    transform: translateY(100%);
+    transition: 0.5s ease;
+
+    &:hover {
+      border-radius: 8px;
+      transform: translateY(60%);
+    }
+  } */
+
+  /* .Shoppe__home-title_layer p {
+    font-size: var(--size-26);
+    margin: 20px;
+  }
+
+  .Shoppe__home-title_layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--color-text-white);
+    font-size: 20px;
+    color: var(--color-light);
+  } */
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 24px 0;
+    height: 100%;
+
+    h3 {
+      font-size: $size-20;
+      line-height: 26px;
+      font-weight: 400;
+      color: $color-text-black;
+      margin-bottom: 16px;
+    }
+
+    h4 {
+      font-size: $size-20;
+      font-weight: 500;
+      line-height: 26px;
+      text-transform: capitalize;
+      color: $color-light;
+    }
+
+    @media screen and (max-width: 550px) {
+      h3 {
+        font-size: $size-14;
+        line-height: 22px;
+      }
+    }
+  }
+}

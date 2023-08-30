@@ -1,0 +1,67 @@
+@use "../../styles/colors" as *;
+@use "../../styles/fonts" as *;
+@use "../../styles/main" as *;
+
+.loader {
+  background-color: $color-bg;
+}
+
+.loader-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  padding: 20px;
+  border-radius: 8px;
+  color: $color-errors;
+}
+
+.shoppe__home {
+  padding: 0px 96px;
+  margin-bottom: 250px;
+
+  &-img img {
+    width: 1315px;
+    height: 650px;
+    border-radius: 16px;
+  }
+
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 64px 0 39px;
+
+    h1 {
+      font-size: $size-33;
+      font-weight: 500;
+      line-height: 43px;
+    }
+
+    h4 {
+      font-size: $size-20;
+      font-weight: 500;
+      line-height: 26px;
+      text-transform: capitalize;
+      color: $color-light;
+      cursor: pointer;
+    }
+  }
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &_group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      grid-gap: 57px;
+    }
+
+    &_box img {
+      width: 100%;
+    }
+  }
+}

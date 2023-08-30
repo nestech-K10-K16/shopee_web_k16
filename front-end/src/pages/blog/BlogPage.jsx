@@ -13,10 +13,10 @@ const BlogPage = () => {
     useTabs(0);
 
   return (
-    <div className="Shoppe__blogPage-container">
-      <div className="Shoppe__blogPage-text">
-        <h1>Blog</h1>
-        <div className="Shoppe__blogPage-search">
+    <div className="shoppe__blogPage-container">
+      <div className="shoppe__blogPage-text">
+        <h1 className="heading-01">Blog</h1>
+        <div className="shoppe__blogPage-search">
           <input type="search" placeholder="Search.." />
           <Link to="/search">
             <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
@@ -27,9 +27,9 @@ const BlogPage = () => {
           onSelect={(index) => setTabIndex(index)}
         >
           <TabList data-selected-index={tabIndex} onSelect={handleChange}>
-            <div className="Shoppe__blogPage-convert">
+            <div className="shoppe__blogPage-convert">
               <Tab
-                className={`Shoppe__blogPage-tab ${
+                className={`shoppe__blogPage-tab ${
                   activeTabs[0] ? "active-tab" : ""
                 }`}
                 onClick={() => userChange(0)}
@@ -37,7 +37,7 @@ const BlogPage = () => {
                 Categories
               </Tab>
               <Tab
-                className={`Shoppe__blogPage-tab ${
+                className={`shoppe__blogPage-tab ${
                   activeTabs[1] ? "active-tab" : ""
                 }`}
                 onClick={() => userChange(1)}
@@ -45,7 +45,7 @@ const BlogPage = () => {
                 Fashion
               </Tab>
               <Tab
-                className={`Shoppe__blogPage-tab ${
+                className={`shoppe__blogPage-tab ${
                   activeTabs[2] ? "active-tab" : ""
                 }`}
                 onClick={() => userChange(2)}
@@ -53,7 +53,7 @@ const BlogPage = () => {
                 Style
               </Tab>
               <Tab
-                className={`Shoppe__blogPage-tab ${
+                className={`shoppe__blogPage-tab ${
                   activeTabs[3] ? "active-tab" : ""
                 }`}
                 onClick={() => userChange(3)}
@@ -61,7 +61,7 @@ const BlogPage = () => {
                 Accessories
               </Tab>
               <Tab
-                className={`Shoppe__blogPage-tab ${
+                className={`shoppe__blogPage-tab ${
                   activeTabs[4] ? "active-tab" : ""
                 }`}
                 onClick={() => userChange(4)}
@@ -77,8 +77,8 @@ const BlogPage = () => {
           <TabPanel></TabPanel>
         </Tabs>
       </div>
-      <div className="Shoppe__blogPage-content">
-        <div className="Shoppe__blogPage-title">
+      <div className="shoppe__blogPage-content">
+        <div className="shoppe__blogPage-title">
           <div className="update">
             <BrandStuff
               imgUrl={Blog01}
@@ -89,7 +89,7 @@ const BlogPage = () => {
             />
           </div>
         </div>
-        <div className="Shoppe__blogPage-title">
+        <div className="shoppe__blogPage-title">
           <div className="update">
             <BrandStuff
               imgUrl={Blog02}
@@ -100,7 +100,7 @@ const BlogPage = () => {
             />
           </div>
         </div>
-        <div className="Shoppe__blogPage-title">
+        <div className="shoppe__blogPage-title">
           <div className="update">
             <BrandStuff
               imgUrl={Blog03}
@@ -111,7 +111,7 @@ const BlogPage = () => {
             />
           </div>
         </div>
-        <div className="Shoppe__blogPage-title">
+        <div className="shoppe__blogPage-title">
           <div className="update">
             <BrandStuff
               imgUrl={Blog04}
@@ -123,7 +123,7 @@ const BlogPage = () => {
           </div>
         </div>
 
-        <div className="Shoppe__blogPage-button">
+        <div className="shoppe__blogPage-button">
           <button>1</button>
           <button>2</button>
         </div>

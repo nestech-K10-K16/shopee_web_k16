@@ -1,10 +1,10 @@
 import React from "react";
-import "./privacy.css";
+import "./privacy.scss";
 
 const Privacy = () => {
   return (
-    <div className="Shoppe__privacy">
-      <div className="Shoppe__privacy-container">
+    <div className="shoppe__privacy">
+      <div className="shoppe__privacy-container">
         <h1>Privacy Policy</h1>
         <h4>
           Duis rutrum dictum libero quis rutrum. Etiam sed neque aliquam,

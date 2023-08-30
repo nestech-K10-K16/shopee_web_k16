@@ -1,0 +1,62 @@
+@use "../../styles/colors" as *;
+@use "../../styles/fonts" as *;
+@use "../../styles/main" as *;
+
+.Shoppe__resetPassword {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid #d8d8d8;
+  width: 1301px;
+  height: 800px;
+  margin-left: 96px;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 128px;
+
+    h1 {
+      display: flex;
+      justify-content: center;
+      font-size: $size-33;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 43px;
+      color: $color-text-black;
+      margin-bottom: 39px;
+    }
+
+    h3 {
+      color: $color-text-black;
+      width: 500px;
+      text-align: center;
+      margin-bottom: 76px;
+      font-size: $size-20;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px;
+    }
+
+    input {
+      border: none;
+      width: 500px;
+      height: 30px;
+      font-size: $size-16;
+      font-weight: 400;
+      line-height: 27px;
+      border-bottom: 1px solid $color-gray;
+      margin-bottom: 46px;
+    }
+  }
+
+  .btn {
+    transition: 0.5s ease;
+
+    &:hover {
+      background: $color-footer;
+      color: $color-text-black;
+    }
+  }
+}

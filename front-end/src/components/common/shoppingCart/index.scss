@@ -1,0 +1,127 @@
+@use "styles/colors" as *;
+@use "styles/fonts" as *;
+
+.shoppe__bag {
+  position: fixed;
+  top: 0;
+  right: 0;
+  max-height: 1005px;
+  width: 420px;
+  border: 1px solid $color-gray;
+  background: $color-text-white;
+  overflow-y: auto;
+  max-height: calc(100vh);
+  z-index: 999;
+  transition: max-height 0.3s ease-out;
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+}
+
+.closing {
+  max-height: 0;
+  padding: 0;
+  border: none;
+}
+
+.shoppe__bag-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $color-footer;
+  padding: 72px 36px 19px;
+}
+
+.icon-shopping {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-shopping h1 {
+  font-size: $size-16;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.icon-shopping .close {
+  cursor: pointer;
+}
+
+.shoppe__bag-container h2 {
+  margin-top: 17px;
+  font-size: $size-12;
+  font-weight: 400;
+  line-height: 20px;
+  color: $color-footer;
+  margin-bottom: 5px;
+}
+
+.shoppe__bag-item .image-cart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shoppe__bag-item {
+  .title {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60px;
+  }
+
+  .count {
+    display: flex;
+    flex-direction: row;
+    background: $color-light-gray;
+    width: 50px;
+    height: 20px;
+    margin-right: 20px;
+
+    p {
+      padding: 3px 5px;
+      color: $color-footer;
+    }
+  }
+}
+
+.image-cart img {
+  height: 136px;
+}
+
+.text-cart {
+  margin-left: 8px;
+}
+
+.view-cart {
+  width: 320px;
+  height: 125px;
+  margin-left: 20px;
+  margin-top: 21px;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 21px;
+}
+
+.subtotal h1,
+.subtotal h2 {
+  font-size: $size-16;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.btn-cart {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 328px;
+  height: 53px;
+  border-radius: 4px;
+  border: 1px solid $color-text-black;
+  font-size: $size-16;
+  font-weight: 700;
+}
+
+.btn-cart:hover {
+  background-color: $color-text-black;
+  color: $color-text-white;
+}

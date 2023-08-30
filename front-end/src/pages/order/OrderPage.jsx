@@ -3,22 +3,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "configs/fontIcon";
 import OrderDetails from "../../components/common/oder/OrderDetails";
 import OrderSummary from "components/common/oder/OrderSummary";
-import "./index.css";
+import "./index.scss";
 
 const OrderPage = () => {
   return (
-    <div className="Shoppe__order border-t border-solid border-color-gray ml-[96px]">
+    <div className="Shoppe__order ">
       <div className="Shoppe__order-container">
-        <div className="rectangle flex flex-row w-[1315px] h-[68px] ">
+        <div className="rectangle">
           <FontAwesomeIcon
             className="icon-circle"
             icon="fa-regular fa-circle-check"
           />
           <h3>We’ve received your order</h3>
         </div>
-        <div className="order-section flex flex-between ">
+        <div className="order-section">
           <OrderDetails />
-          <OrderSummary />
+          <div className="summary">
+            <h2 className="heading-02">ORDER Summary</h2>
+            <OrderSummary />
+          </div>
         </div>
       </div>
     </div>

@@ -1,49 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import CartItem from "../cartItem/CartItem";
-import { home01, home02, home03, home04 } from "pages/home/import";
 import { Link } from "react-router-dom";
 import "configs/fontIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./index.css";
+import { useCart } from "hook/useCart/useCart";
+import "./index.scss";
 
 const ShoppingCart = ({ open, onclose }) => {
+  const { cartItems, removeCartItem } = useCart();
+  const [isClosing, setIsClosing] = useState(false);
+
   if (!open) return null;
   return (
     <>
-      <div className="Shoppe__bag">
-        <div className="Shoppe__bag-container">
+      <div className={`shoppe__bag ${isClosing ? "closing" : ""}`}>
+        <div className="shoppe__bag-container">
           <div className="icon-shopping">
             <h1>Shopping bag</h1>
             <div className="close">
-              <FontAwesomeIcon onClick={onclose} icon="fa-solid fa-x" />
+              <FontAwesomeIcon
+                onClick={() => {
+                  setIsClosing(true);
+                  setTimeout(() => onclose(), 300); // Thêm setTimeout để sau khi kéo xong thì đóng
+                }}
+                icon="fa-solid fa-x"
+              />
             </div>
           </div>
           <h2>5 items</h2>
-          <div className="Shoppe__cart-item">
-            <CartItem
-              imgSrc={home01}
-              title="Lira Earrings"
-              details="Black / Medium"
-              price="$ 20,00"
-            />
-            <CartItem
-              imgSrc={home02}
-              title="Ollie Earrings"
-              details="Black / Medium"
-              price="$ 20,00"
-            />
-            <CartItem
-              imgSrc={home03}
-              title="Ollie Earrings"
-              details="Black / Medium"
-              price="$ 20,00"
-            />
-            <CartItem
-              imgSrc={home04}
-              title="Lira Earrings"
-              details="Black / Medium"
-              price="$ 20,00"
-            />
+          <div className="shoppe__bag-item">
+            {cartItems.map((item, index) => (
+              <CartItem
+                key={index}
+                imgSrc={item.imgSrc}
+                title={item.title}
+                details={item.details}
+                price={item.price}
+                onRemove={() => removeCartItem(index)}
+              />
+            ))}
           </div>
         </div>
         <div className="view-cart">

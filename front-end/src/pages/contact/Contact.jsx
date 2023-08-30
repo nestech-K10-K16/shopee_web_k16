@@ -1,10 +1,10 @@
 import React from "react";
-import "./contact.css";
+import "./contact.scss";
 
 const Contact = () => {
   return (
-    <div className="Shoppe__contact">
-      <div className="Shoppe__contact-container">
+    <div className="shoppe__contact">
+      <div className="shoppe__contact-container">
         <h1>Contact Us</h1>
         <h3>
           Say Hello send us your thoughts about our products or share your ideas

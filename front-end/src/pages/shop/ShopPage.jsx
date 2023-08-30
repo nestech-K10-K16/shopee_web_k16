@@ -5,7 +5,7 @@ import "configs/fontIcon";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Slider from "react-slider";
-import "./shop.css";
+import "./shop.scss";
 
 const Min = 0;
 const Max = 180;

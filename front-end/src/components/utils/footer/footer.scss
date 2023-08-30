@@ -1,0 +1,83 @@
+@use "styles/colors" as *;
+@use "styles/fonts" as *;
+
+.Shoppe__footer {
+  width: 1340px;
+  border-top: 1px solid $color-gray;
+  margin-left: 90px;
+  margin-bottom: 90px;
+}
+
+.Shoppe__footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Shoppe__footer-links-1 {
+  display: flex;
+  color: $color-footer;
+  margin-top: 55px;
+
+  h4 {
+    font-size: $size-16;
+    line-height: 27px;
+    margin-right: 41px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+}
+
+.Shoppe__footer-links-2 {
+  display: flex;
+  color: $color-footer;
+  border-bottom: 1px solid $color-text-black;
+
+  input {
+    font-size: $size-16;
+    line-height: 27px;
+    font-weight: 400;
+    width: 244px;
+    height: 18px;
+    outline: none;
+    margin-top: 48px;
+    margin-right: 128px;
+    border: none;
+  }
+
+  .icon {
+    margin-top: 50px;
+  }
+}
+
+.Shoppe__footer-lastPage {
+  display: flex;
+  justify-content: space-between;
+  color: $color-footer;
+  margin-top: 48px;
+}
+
+.Shoppe__footer-copyright span {
+  color: $color-text-black;
+}
+
+.Shoppe__footer-icon {
+  .fa-linkedin-in {
+    cursor: pointer;
+    margin-right: 20px;
+  }
+
+  .fa-facebook-f {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .fa-instagram {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .fa-twitter {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+}

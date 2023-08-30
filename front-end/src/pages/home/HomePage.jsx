@@ -4,7 +4,7 @@ import { home01, home02, home03, home04, home05, home06 } from "./import";
 import "react-slideshow-image/dist/styles.css";
 import { Link } from "react-router-dom";
 import { Banner } from "components";
-import "./style.css";
+import "./style.scss";
 
 const Home = () => {
   return (

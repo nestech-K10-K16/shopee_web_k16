@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import useAuthForm from "hook/useAuthForm/UseAuthForm";
-import "./index.css";
+import "./index.scss";
 
 const UserPage = () => {
   const {
@@ -24,15 +24,18 @@ const UserPage = () => {
   } = useAuthForm();
 
   return (
-    <div className="flex justify-center border-t border-solid border-color-gray w-[1300px] h-[900px] ml-[96px]">
+    <div className="shoppe__myAccount">
       <form onSubmit={formSubmitter}>
         <h1>My account</h1>
-        <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-          <TabList selectedIndex={tabIndex} onSelect={handleChange}>
-            <div className="Shoppe__myAccount-container">
+        <Tabs
+          data-selected-index={tabIndex}
+          onSelect={(index) => setTabIndex(index)}
+        >
+          <TabList data-selected-index={tabIndex} onSelect={handleChange}>
+            <div className="shoppe__myAccount-container">
               <Tab
                 value={1}
-                className={`Shoppe__myAccount-login ${
+                className={`shoppe__myAccount-login ${
                   signInActive ? "active-tab" : ""
                 }`}
                 onClick={() => userChange(0)}
@@ -41,7 +44,7 @@ const UserPage = () => {
               </Tab>
               <Tab
                 value={2}
-                className={`Shoppe__myAccount-register ${
+                className={`shoppe__myAccount-register ${
                   registerActive ? "active-tab" : ""
                 }`}
                 onClick={() => userChange(1)}
