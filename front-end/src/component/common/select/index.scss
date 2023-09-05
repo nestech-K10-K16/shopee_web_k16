@@ -1,11 +1,11 @@
 .select {
   outline: none;
-  border: 1px solid theme("colors.bright_gray");
+  border: 1px solid theme("colors.bright-gray");
   border-radius: 6px;
   padding: 8px 0;
 
   &:required:invalid {
-    color: theme("colors.dark_silver");
+    color: theme("colors.dark-silver");
   }
 
   &-secondary {

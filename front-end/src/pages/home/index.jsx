@@ -15,7 +15,7 @@ import {
 import { useSelector } from "react-redux";
 
 const Home = () => {
-  const product = useSelector((state) => state.product);
+  const { product } = useSelector((state) => state.productSlice);
   const image = [
     { src: IMG_BANNER },
     { src: IMG_PRODUCT_01 },

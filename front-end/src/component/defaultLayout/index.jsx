@@ -22,7 +22,7 @@ const DefaultLayout = ({ children }) => {
   return (
     <div>
       <section className={background}>
-        <Header onClick={OpenModel} />
+        <Header ShoppingBagOnClick={OpenModel} />
         {children}
         <Footer />
       </section>

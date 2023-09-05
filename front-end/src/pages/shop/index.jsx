@@ -3,23 +3,27 @@ import "./index.scss";
 import {
   Input,
   Select,
-  ToggleButton,
   RangeSlider,
   ListProduct,
+  ToggleButton,
 } from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { TYPE_REDUX } from "constants/common";
+import { filterProductName } from "redux/reducers/feature/productSlice";
 
 const Shop = () => {
-  const searchProduct = useSelector((state) => state.searchProduct);
+  const { searchProduct } = useSelector((state) => state.productSlice);
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
 
+  const filterProduct = () => {
+    dispatch(filterProductName(search));
+  };
+
   const searchOnKeyDown = (e) => {
     if (e.key === "Enter") {
-      dispatch({ type: TYPE_REDUX.SEARCH_PRODUCT, payload: search });
+      filterProduct();
     }
   };
 
@@ -40,9 +44,7 @@ const Shop = () => {
               />
               <button
                 className="bg-none border-0 -ml-4"
-                onClick={() =>
-                  dispatch({ type: TYPE_REDUX.SEARCH_PRODUCT, payload: search })
-                }
+                onClick={() => filterProduct()}
               >
                 <FontAwesomeIcon icon="fa-solid fa-search" />
               </button>
@@ -58,12 +60,12 @@ const Shop = () => {
             <RangeSlider />
 
             <div className="flex justify-between items-center mb-2">
-              <p className="heading-05 mb-0">On sale</p>
+              <p className="heading-05">On sale</p>
               <ToggleButton />
             </div>
 
             <div className="flex justify-between items-center">
-              <p className="heading-05 mb-0">In stock</p>
+              <p className="heading-05">In stock</p>
               <ToggleButton />
             </div>
           </div>

@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer>
       <section id="footer">
-        <div className="border border-solid border-bright_gray mb-4"></div>
+        <div className="border border-solid border-bright-gray mb-4"></div>
 
         <div className="footer-bottom flex justify-between">
           <div className="footer-bottom__left-side">
@@ -17,9 +17,7 @@ const Footer = () => {
               <Link className="heading-05" to={PATHNAME_LIST.CONTACT}>
                 CONTACT
               </Link>
-
               <Link className="heading-05">TERMS OF SERVICES</Link>
-
               <Link className="heading-05">SHIPPING AND RETURNS</Link>
             </div>
 
@@ -34,8 +32,7 @@ const Footer = () => {
                 className="heading-05 w-full pr-4"
                 placeholder="Give an email, get the newsletter."
               ></Input>
-
-              <button className="text-dark_silver hover:text-black -ml-4">
+              <button className="text-dark-silver hover:text-black-1 -ml-4">
                 <FontAwesomeIcon icon="fa-solid fa-arrow-right" />
               </button>
             </div>
@@ -44,15 +41,12 @@ const Footer = () => {
               <Link>
                 <FontAwesomeIcon icon="fa-brands fa-linkedin-in" size="lg" />
               </Link>
-
               <Link>
                 <FontAwesomeIcon icon="fa-brands fa-facebook-f" size="lg" />
               </Link>
-
               <Link>
                 <FontAwesomeIcon icon="fa-brands fa-instagram" size="lg" />
               </Link>
-
               <Link>
                 <FontAwesomeIcon icon="fa-brands fa-twitter" size="lg" />
               </Link>

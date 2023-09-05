@@ -1,15 +1,22 @@
 import React from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faClose } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "component/common";
 import { PATHNAME_LIST } from "router/router";
 import { Link } from "react-router-dom";
-import { TYPE_BUTTON, TYPE_REDUX } from "constants/common";
+import { TYPE_BUTTON } from "constants/common";
 import { useDispatch, useSelector } from "react-redux";
+import {
+  addToProductDetail,
+  decreaseAmoutProduct,
+  increaseAmoutProduct,
+  removeAllProductCart,
+  removeProductCart,
+} from "redux/reducers/feature/productSlice";
 
 const ShoppingBag = (props) => {
-  const productCart = useSelector((state) => state.productCart);
+  const { className, backOnClick, viewCartOnClick } = props;
+  const { productCart } = useSelector((state) => state.productSlice);
   const dispatch = useDispatch();
 
   const Items = () => {
@@ -21,12 +28,7 @@ const ShoppingBag = (props) => {
               <Link
                 className="mr-3"
                 to={PATHNAME_LIST.PRODUCT}
-                onClick={() =>
-                  dispatch({
-                    type: TYPE_REDUX.ADD_PRODUCT_DETAIL,
-                    payload: item,
-                  })
-                }
+                onClick={() => dispatch(addToProductDetail(item))}
               >
                 <img src={item.src} alt="" />
               </Link>
@@ -40,25 +42,11 @@ const ShoppingBag = (props) => {
 
                 <div className="heading-05 flex justify-between w-28">
                   <p>QTY:</p>
-                  <button
-                    onClick={() =>
-                      dispatch({
-                        type: TYPE_REDUX.DECREASE_AMOUNT_PRODUCT_CART,
-                        payload: item,
-                      })
-                    }
-                  >
+                  <button onClick={() => dispatch(decreaseAmoutProduct(item))}>
                     -
                   </button>
                   {item.amount}
-                  <button
-                    onClick={() =>
-                      dispatch({
-                        type: TYPE_REDUX.INCREASE_AMOUNT_PRODUCT_CART,
-                        payload: item,
-                      })
-                    }
-                  >
+                  <button onClick={() => dispatch(increaseAmoutProduct(item))}>
                     +
                   </button>
                 </div>
@@ -67,14 +55,9 @@ const ShoppingBag = (props) => {
               <div>
                 <button
                   className="bg-body border-0"
-                  onClick={() =>
-                    dispatch({
-                      type: TYPE_REDUX.DELETE_PRODUCT_CART,
-                      payload: item,
-                    })
-                  }
+                  onClick={() => dispatch(removeProductCart(item))}
                 >
-                  <FontAwesomeIcon icon={faClose} />
+                  <FontAwesomeIcon icon="close" />
                 </button>
               </div>
             </div>
@@ -85,12 +68,12 @@ const ShoppingBag = (props) => {
   };
 
   return (
-    <div id="shopping-bag" className={props.className}>
+    <div id="shopping-bag" className={className}>
       <div className="w-[28rem]">
         <div className="shopping-bag__content px-[5vh] py-[2vh]">
           <div className="flex justify-end">
-            <button className="bg-body border-0" onClick={props.backOnClick}>
-              <FontAwesomeIcon icon={faChevronRight} size="xl" />
+            <button className="bg-body border-0" onClick={backOnClick}>
+              <FontAwesomeIcon icon="chevron-right" size="xl" />
             </button>
           </div>
 
@@ -101,14 +84,9 @@ const ShoppingBag = (props) => {
               <p className="heading-05 mr-2">Delete all</p>
               <button
                 className="bg-body border-0"
-                onClick={() =>
-                  dispatch({
-                    type: TYPE_REDUX.DELETE_ALL_PRODUCT_CART,
-                    payload: productCart.find((item) => item),
-                  })
-                }
+                onClick={() => dispatch(removeAllProductCart())}
               >
-                <FontAwesomeIcon icon={faClose} size="xl" />
+                <FontAwesomeIcon icon="close" size="xl" />
               </button>
             </div>
           </div>
@@ -118,7 +96,7 @@ const ShoppingBag = (props) => {
           </div>
         </div>
 
-        <div className="border border-bright_gray mb-6"></div>
+        <div className="border border-bright-gray mb-6"></div>
 
         <div className="shopping-bag__total-money px-[5vh] pb-[5vh]">
           <div className="flex justify-between mb-4">
@@ -138,7 +116,7 @@ const ShoppingBag = (props) => {
               className="white text-center w-full"
               type={TYPE_BUTTON.LINK}
               to={PATHNAME_LIST.CART}
-              onClick={props.viewCartOnClick}
+              onClick={viewCartOnClick}
             >
               VIEW CART
             </Button>

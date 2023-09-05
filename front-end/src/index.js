@@ -4,10 +4,7 @@ import App from "./App";
 import "styles/index.scss";
 import "configs/icon";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import rootReducer from "redux/reducers/rootReducer";
-
-const reduxStore = createStore(rootReducer);
+import reduxStore from "redux/index";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

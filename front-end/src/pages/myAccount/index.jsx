@@ -4,6 +4,7 @@ import { Button, Input } from "component/common";
 import { validateEmail, validatePassword } from "utils";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
+import { TYPE_BUTTON } from "constants/common";
 
 const MyAccount = () => {
   const [fullName, setFullName] = useState("");
@@ -109,6 +110,8 @@ const MyAccount = () => {
     }
   };
 
+  const tab = ["Login", "Register"];
+
   return (
     <section id="my-account">
       <div className="my-account__content">
@@ -116,96 +119,94 @@ const MyAccount = () => {
 
         <Tabs selectedIndex={tabIndex} onSelect={(e) => setTabIndex(e)}>
           <TabList className="my-account__content__switch heading-03 flex mb-8">
-            <Tab className={tabIndex === 0 ? "tab-active" : ""}>
-              <Link className="text-black text-decoration-none">Login</Link>
-            </Tab>
-            <Tab className={tabIndex === 1 ? "tab-active" : ""}>
-              <Link className="text-black text-decoration-none">Register</Link>
-            </Tab>
+            {tab?.map((item, index) => {
+              return (
+                <Tab
+                  className={tabIndex === index ? "tab-active" : ""}
+                  key={index}
+                >
+                  <Link className="text-black-1">{item}</Link>
+                </Tab>
+              );
+            })}
           </TabList>
 
-          <TabPanel className="my-account__content__login ">
-            <form className="flex flex-col ">
-              <p className="text-danger">{message}</p>
+          <TabPanel className="my-account__content__login flex flex-col ">
+            <p className="text-rusty-red">{message}</p>
 
-              <Input
-                className="heading-05 mb-3"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              ></Input>
+            <Input
+              className="heading-05 mb-3"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            ></Input>
 
-              <Input
-                className="heading-05 mb-3"
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              ></Input>
+            <Input
+              className="heading-05 mb-3"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></Input>
 
-              <div
-                className="flex items-center mb-8"
-              >
-                <input className="heading-05 me-3" type="checkbox" />
-                Remember me
-              </div>
+            <span className="flex items-center mb-8">
+              <input className="heading-05 me-3" type="checkbox" />
+              Remember me
+            </span>
 
-              <Button
-                className="body-large mb-3"
-                to={homePage}
-                onClick={onClickButtonLogin}
-              >
-                SIGN IN
-              </Button>
+            <Button
+              className="black body-large mb-3"
+              type={TYPE_BUTTON.LINK}
+              to={homePage}
+              onClick={onClickButtonLogin}
+            >
+              SIGN IN
+            </Button>
 
-              <Link className="my-account__content__sign-in__forgot-password heading-05 text-black text-decoration-none">
-                Have you forgotten your password
-              </Link>
-            </form>
+            <Link className="heading-05">Have you forgotten your password</Link>
           </TabPanel>
 
-          <TabPanel className="my-account__content__register">
-            <form className="my-account__user flex flex-col">
-              <p className="text-danger">{message}</p>
+          <TabPanel className="my-account__content__register flex flex-col">
+            <p className="text-rusty-red">{message}</p>
 
-              <Input
-                className="heading-05 mb-2"
-                placeholder="Full name"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-              ></Input>
+            <Input
+              className="heading-05 mb-2"
+              placeholder="Full name"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+            ></Input>
 
-              <Input
-                className="heading-05 mb-2"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              ></Input>
+            <Input
+              className="heading-05 mb-2"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            ></Input>
 
-              <Input
-                className="heading-05 mb-2"
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              ></Input>
+            <Input
+              className="heading-05 mb-2"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></Input>
 
-              <Input
-                className="heading-05 mb-8"
-                type="password"
-                placeholder="Enter the password"
-                value={rePassword}
-                onChange={(e) => setRePassword(e.target.value)}
-              ></Input>
+            <Input
+              className="heading-05 mb-8"
+              type="password"
+              placeholder="Enter the password"
+              value={rePassword}
+              onChange={(e) => setRePassword(e.target.value)}
+            ></Input>
 
-              <Button
-                className="body-large"
-                to={homePage}
-                onClick={onClickButtonRegister}
-              >
-                SIGN UP
-              </Button>
-            </form>
+            <Button
+              className="black body-large"
+              type={TYPE_BUTTON.LINK}
+              to={homePage}
+              onClick={onClickButtonRegister}
+            >
+              SIGN UP
+            </Button>
           </TabPanel>
         </Tabs>
       </div>

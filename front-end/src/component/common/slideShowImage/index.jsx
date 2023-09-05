@@ -6,7 +6,7 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-class SlideShowImage extends React.Component {
+class SlideShowImage extends React.PureComponent {
   constructor(props) {
     super(props);
 

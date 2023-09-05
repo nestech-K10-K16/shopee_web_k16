@@ -1,16 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./index.scss";
-import {
-  IMG_POST_01,
-  IMG_POST_02,
-  IMG_POST_03,
-  IMG_POST_04,
-} from "../../assets";
+import { IMG_POST_01, IMG_POST_02, IMG_POST_03, IMG_POST_04 } from "assets";
 import { PATHNAME_LIST } from "router/router";
 import { Input } from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const Blog = () => {
   return (
@@ -22,7 +16,7 @@ const Blog = () => {
           <div className="blog__content__left-side-bar__search mb-10">
             <Input className="heading-05 w-full pr-4" placeholder="Search..." />
             <button className="bg-body border-0 -ml-4">
-              <FontAwesomeIcon icon={faSearch} />
+              <FontAwesomeIcon icon="search" />
             </button>
           </div>
 

@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import "./index.scss";
 import ReactSlider from "react-slider";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { TYPE_REDUX } from "constants/common";
+import { filterProductPrice } from "redux/reducers/feature/productSlice";
 
 const RangeSlider = () => {
-  const product = useSelector((state) => state.product);
+  const { product } = useSelector((state) => state.productSlice);
   const productPrice = product.map((item) => item.price);
   const dispatch = useDispatch();
 
@@ -64,13 +63,7 @@ const RangeSlider = () => {
           Price: $ {slider[0]} - $ {slider[1]}
         </span>
         <button
-          onClick={() =>
-            dispatch({
-              type: TYPE_REDUX.PRICE_FILTER_PRODUCT,
-              payload_min: slider[0],
-              payload_max: slider[1],
-            })
-          }
+          onClick={() => dispatch(filterProductPrice([slider[0], slider[1]]))}
         >
           <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
         </button>

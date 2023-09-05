@@ -1,9 +1,12 @@
 import React from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
-import { TYPE_REDUX } from "constants/common";
 import { useDispatch } from "react-redux";
 import { PATHNAME_LIST } from "router/router";
+import {
+  addProductToCart,
+  addToProductDetail,
+} from "redux/reducers/feature/productSlice";
 
 const ListProduct = (props) => {
   const { map } = props;
@@ -17,23 +20,13 @@ const ListProduct = (props) => {
             <div className="product-style__image">
               <Link
                 to={PATHNAME_LIST.PRODUCT}
-                onClick={() =>
-                  dispatch({
-                    type: TYPE_REDUX.ADD_PRODUCT_DETAIL,
-                    payload: item,
-                  })
-                }
+                onClick={() => dispatch(addToProductDetail(item))}
               >
                 <img src={item.src} alt="" />
               </Link>
               <button
                 className="body-large"
-                onClick={() =>
-                  dispatch({
-                    type: TYPE_REDUX.ADD_PRODUCT_CART,
-                    payload: item,
-                  })
-                }
+                onClick={() => dispatch(addProductToCart(item))}
               >
                 Add to cart
               </button>

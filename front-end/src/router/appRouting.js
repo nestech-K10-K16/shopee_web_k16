@@ -1,8 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Fragment } from "react";
 import { appRoute } from "./router";
-import { DefaultLayout } from "../component/utils";
-
+import DefaultLayout from "component/defaultLayout";
 
 const AppRouting = () => {
   return (

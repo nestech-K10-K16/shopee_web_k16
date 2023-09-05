@@ -1,22 +1,17 @@
 import MyAccount from "pages/myAccount";
 import ResetPassword from "pages/resetPasword";
-
 import Home from "pages/home";
 import Shop from "pages/shop";
 import Product from "pages/product";
 import Cart from "pages/cart";
 import CheckOut from "pages/checkOut";
-
 import Blog from "pages/blog";
 import BlogSingle from "pages/blogSingle";
 import OurStory from "pages/ourStory";
-
 import Account from "pages/account";
 import Order from "pages/Order";
-
 import Contact from "pages/contact";
 import Privacy from "pages/privacy";
-
 import Test from "pages/test";
 
 export const ROUTE_ID = {
@@ -25,20 +20,15 @@ export const ROUTE_ID = {
   PRODUCT: "ProductRoute",
   CART: "CartRoute",
   CHECK_OUT: "CheckOutRoute",
-
   MY_ACCOUNT: "MyAccountRoute",
   RESET_PASSWORD: "ResetPasswordRoute",
-
   BLOG: "BlogRoute",
   BLOG_SINGLE: "BlogSingleRoute",
   OUR_STORY: "OurStoryRoute",
-
   ACCOUNT: "AccountRoute",
   ORDER: "OrderRoute",
-
   CONTACT: "ContactRoute",
   PRIVACY: "PrivacyRoute",
-
   TEST: "TestRoute",
 };
 
@@ -48,20 +38,15 @@ export const PATHNAME_LIST = {
   PRODUCT: "/product",
   CART: "/cart",
   CHECK_OUT: "/check-out",
-
   MY_ACCOUNT: "/my-account",
   RESET_PASSWORD: "/reset-password",
-
   BLOG: "/blog",
   BLOG_SINGLE: "/blog-single",
   OUR_STORY: "/our-story",
-
   ACCOUNT: "/account",
   ORDER: "/order",
-
   CONTACT: "/contact",
   PRIVACY: "/privacy",
-
   TEST: "/test",
 };
 

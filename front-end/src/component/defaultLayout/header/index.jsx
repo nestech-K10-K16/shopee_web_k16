@@ -8,7 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
 
 const Header = (props) => {
-  const productCart = useSelector((state) => state.productCart);
+  const { productCart } = useSelector((state) => state.productSlice);
+  const { ShoppingBagOnClick } = props;
 
   $(function () {
     $(".header__content__left-sider").click(function () {
@@ -67,7 +68,7 @@ const Header = (props) => {
 
                 <li>
                   <div className="flex">
-                    <Link className={props.className} onClick={props.onClick}>
+                    <Link onClick={ShoppingBagOnClick}>
                       <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
                     </Link>
                     <p className="ml-1">({productCart.length})</p>
@@ -84,7 +85,7 @@ const Header = (props) => {
           </div>
         </div>
 
-        <div className="border border-solid border-bright_gray"></div>
+        <div className="border border-solid border-bright-gray"></div>
       </section>
     </header>
   );

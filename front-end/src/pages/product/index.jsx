@@ -13,29 +13,31 @@ import Rating from "@mui/material/Rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import { useDispatch, useSelector } from "react-redux";
-import { TYPE_REDUX } from "constants/common";
+import { addProductToCart } from "redux/reducers/feature/productSlice";
 
 const Product = () => {
-  const productDetail = useSelector((state) => state.productDetail);
-  const product = useSelector((state) => state.product);
+  const { productDetail, product } = useSelector((state) => state.productSlice);
   const dispatch = useDispatch();
 
   const [heart, setHeart] = useState(false);
-  const onClickHeart = () => {
-    setHeart(!heart);
-  };
-
   const [tabIndex, setTabIndex] = useState(0);
 
-  return (
-    <section id="product">
-      <div className="product__content">
+  const Items = () => {
+    return (
+      <div>
         {productDetail?.map((item) => {
           const image = [
             { src: item.src },
             { src: item.src },
             { src: item.src },
             { src: item.src },
+          ];
+
+          const icon = [
+            "fa-regular fa-envelope",
+            "fa-brands fa-facebook-f",
+            "fa-brands fa-instagram",
+            "fa-brands fa-twitter",
           ];
 
           return (
@@ -66,15 +68,14 @@ const Product = () => {
                 </p>
 
                 <div className="flex text-center mb-[4.6rem]">
-                  <AmountInput id={item} className="mr-5" value={item.amount} />
+                  <AmountInput
+                    item={item}
+                    className="mr-5"
+                    value={item.amount}
+                  />
                   <Button
-                    className="button--secondary body-large w-full"
-                    onClick={() =>
-                      dispatch({
-                        type: TYPE_REDUX.ADD_PRODUCT_CART,
-                        payload: item,
-                      })
-                    }
+                    className="white body-large w-full"
+                    onClick={() => dispatch(addProductToCart(item))}
                   >
                     ADD TO CART
                   </Button>
@@ -85,52 +86,55 @@ const Product = () => {
                     icon="fa-solid fa-heart"
                     size="xl"
                     style={{ color: heart ? "red" : "black" }}
-                    onClick={onClickHeart}
+                    onClick={() => setHeart(!heart)}
                   />
 
-                  <div className="border border-solid border-bright_gray"></div>
+                  <div className="border border-solid border-bright-gray"></div>
 
                   <div className="flex gap-x-6">
-                    <Link>
-                      <FontAwesomeIcon
-                        icon="fa-regular fa-envelope"
-                        size="xl"
-                      />
-                    </Link>
-
-                    <Link>
-                      <FontAwesomeIcon
-                        icon="fa-brands fa-facebook-f"
-                        size="xl"
-                      />
-                    </Link>
-
-                    <Link>
-                      <FontAwesomeIcon
-                        icon="fa-brands fa-instagram"
-                        size="xl"
-                      />
-                    </Link>
-
-                    <Link>
-                      <FontAwesomeIcon icon="fa-brands fa-twitter" size="xl" />
-                    </Link>
+                    {icon?.map((item) => {
+                      return (
+                        <Link>
+                          <FontAwesomeIcon
+                            className="text-dark-silver hover:text-black-1"
+                            icon={item}
+                            size="xl"
+                          />
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
 
                 <div className="flex">
                   <p className="heading-05 mr-4">SKU:</p>
-                  <p className="heading-05 text-dark_silver">12</p>
+                  <p className="heading-05 text-dark-silver">12</p>
                 </div>
 
                 <div className="flex">
                   <p className="heading-05 mr-4">Categories:</p>
-                  <p className="heading-05 text-dark_silver">Fashion, Style</p>
+                  <p className="heading-05 text-dark-silver">Fashion, Style</p>
                 </div>
               </div>
             </div>
           );
         })}
+      </div>
+    );
+  };
+
+  const tab = ["Description", "Aditional information", "Reviews(0)"];
+  const aditionalInformation = [
+    { name: "Weight", info: "0.3kg" },
+    { name: "Dimentions", info: "15 x 10 x 1" },
+    { name: "Colours", info: "Black, Browns, White" },
+    { name: "Material", info: "Metal" },
+  ];
+
+  return (
+    <section id="product">
+      <div className="product__content">
+        <Items />
 
         <Tabs
           className="product__content__information mb-24"
@@ -138,18 +142,18 @@ const Product = () => {
           onSelect={(index) => setTabIndex(index)}
         >
           <TabList className="product__content__information__heading heading-03 flex gap-x-16 mb-5">
-            <Tab className={tabIndex === 0 ? "tab-active" : ""}>
-              Description
-            </Tab>
-            <Tab className={tabIndex === 1 ? "tab-active" : ""}>
-              Aditional information
-            </Tab>
-            <Tab className={tabIndex === 2 ? "tab-active" : ""}>Reviews(0)</Tab>
+            {tab?.map((item, index) => {
+              return (
+                <Tab className={tabIndex === index ? "tab-active" : ""}>
+                  {item}
+                </Tab>
+              );
+            })}
           </TabList>
 
-          <div className="border border-solid border-bright_gray mb-5"></div>
+          <div className="border border-solid border-bright-gray mb-5"></div>
 
-          <TabPanel className="heading-05 text-dark_silver">
+          <TabPanel className="heading-05 text-dark-silver">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
             placerat, augue a volutpat hendrerit, sapien tortor faucibus augue,
             a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis
@@ -159,27 +163,19 @@ const Product = () => {
 
           <TabPanel className="heading-05">
             <ul className="flex flex-col gap-y-3">
-              <li>
-                <span>Weight: </span>
-                <span className="text-dark_silver">0.3kg</span>
-              </li>
-              <li>
-                <span>Dimentions: </span>
-                <span className="text-dark_silver">15 x 10 x 1</span>
-              </li>
-              <li>
-                <span>Colours: </span>
-                <span className="text-dark_silver">Black, Browns, White</span>
-              </li>
-              <li>
-                <span>Material: </span>
-                <span className="text-dark_silver">Metal</span>
-              </li>
+              {aditionalInformation?.map((item) => {
+                return (
+                  <li>
+                    <span>{item.name}: </span>
+                    <span className="text-dark-silver">{item.info}</span>
+                  </li>
+                );
+              })}
             </ul>
           </TabPanel>
 
           <TabPanel className="flex justify-between">
-            <div></div>
+            <div className="heading-03">0 Reviews for lira earings</div>
 
             <div className="flex flex-col">
               <p className="heading-03 mb-3">Add a Review</p>
@@ -188,7 +184,7 @@ const Product = () => {
                 marked *
               </p>
 
-              <form className="flex flex-col gap-y-[2.8rem] mb-[1.5rem]">
+              <form className="flex flex-col gap-y-4 mb-4">
                 <TextArea placeholder="Your Review*" />
                 <Input placeholder="Enter your name*" />
                 <Input placeholder="Enter your Email*" />
@@ -196,14 +192,14 @@ const Product = () => {
 
               <div className="flex mb-4">
                 <input className="mr-3" type="checkbox" />
-                <p className="heading-05 text-dark_silver">
+                <p className="heading-05 text-dark-silver">
                   Save my name, email, and website in this browser for the next
                   time I comment
                 </p>
               </div>
 
-              <div className="mb-12">
-                <p className="body-medium text-dark_silver">Your Rating*</p>
+              <div className="mb-6">
+                <p className="body-medium text-dark-silver">Your Rating*</p>
                 <Rating
                   className="margin-bottom-2rem"
                   name="half-rating"
@@ -213,7 +209,7 @@ const Product = () => {
               </div>
 
               <div>
-                <Button className="body-large py-4 px-6">submit</Button>
+                <Button className="black body-large py-4 px-6">submit</Button>
               </div>
             </div>
           </TabPanel>

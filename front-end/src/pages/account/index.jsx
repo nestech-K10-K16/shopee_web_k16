@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
@@ -8,40 +8,36 @@ import { PATHNAME_LIST } from "router/router";
 const Account = () => {
   const [tabIndex, setTabIndex] = useState(0);
 
+  const tab = [
+    { name: "Dashboard" },
+    { name: "Orders" },
+    { name: "Downloads" },
+    { name: "Addresses" },
+    { name: "Account details" },
+    { name: "Logout", to: PATHNAME_LIST.MY_ACCOUNT },
+  ];
+
   return (
     <section id="account">
       <div className="account__content">
         <p className="heading-01 text-center">My Account</p>
 
         <Tabs selectedIndex={tabIndex} onSelect={(e) => setTabIndex(e)}>
-          <TabList className="account__content__tab-list heading-03 flex pb-4 mb-3">
-            <Tab className={tabIndex === 0 ? "tab-active" : ""}>
-              <Link>Dashboard</Link>
-            </Tab>
-            <Tab className={tabIndex === 1 ? "tab-active" : ""}>
-              <Link>Orders</Link>
-            </Tab>
-            <Tab className={tabIndex === 2 ? "tab-active" : ""}>
-              <Link>Downloads</Link>
-            </Tab>
-            <Tab className={tabIndex === 3 ? "tab-active" : ""}>
-              <Link>Addresses</Link>
-            </Tab>
-            <Tab className={tabIndex === 4 ? "tab-active" : ""}>
-              <Link>Account details</Link>
-            </Tab>
-            <Tab className={tabIndex === 5 ? "tab-active" : ""}>
-              <Link to={PATHNAME_LIST.MY_ACCOUNT}>Logout</Link>
-            </Tab>
+          <TabList className="account__content__tab-list heading-03 flex pb-4 mb-4">
+            {tab?.map((item, index) => {
+              return (
+                <Tab className={tabIndex === index ? "tab-active" : ""}>
+                  <Link to={item.to}>{item.name}</Link>
+                </Tab>
+              );
+            })}
           </TabList>
 
-          <TabPanel className="heading-05" value={0}>
+          <TabPanel className="heading-05">
             <div className="flex mb-2">
-              <p className="heading-05 mr-1">
-                Hello Vitatheme (not Vitatheme?{" "}
-              </p>
+              <p className="heading-05 mr-1">Hello Vitatheme (not Vitatheme?</p>
               <Link
-                className="heading-05 text-beaver hover:text-black"
+                className="heading-05 text-beaver hover:text-black-1"
                 to={PATHNAME_LIST.MY_ACCOUNT}
               >
                 Log out)
@@ -53,166 +49,73 @@ const Account = () => {
               and account details.
             </p>
           </TabPanel>
-          <TabPanel value={1}>
-            <table className="table w-full">
-              <thead className="border-b-2 border-solid border-black items-center">
-                <tr className="heading-05">
-                  <th>ORDER NUMBER</th>
-                  <th>DATE</th>
-                  <th>STATUS</th>
-                  <th>TOTAL</th>
-                  <th>ACTIONS</th>
-                </tr>
-              </thead>
 
-              <tbody className="border-b-2 border-solid border-bright_gray ">
-                <tr>
-                  <td>7643980998990</td>
-                  <td>October 8,2021</td>
-                  <td>Delivered</td>
-                  <td>$ 105</td>
-                  <td>
-                    <Link className="text-beaver">View Order</Link>
-                  </td>
-                </tr>
-              </tbody>
+          <TabPanel></TabPanel>
 
-              <tbody className="border-b-2 border-solid border-bright_gray ">
-                <tr>
-                  <td>943980998990</td>
-                  <td>October 8,2021</td>
-                  <td>Processing</td>
-                  <td>$ 100</td>
-                  <td>
-                    <Link className="text-beaver">View Order</Link>
-                  </td>
-                </tr>
-              </tbody>
+          <TabPanel></TabPanel>
 
-              <tbody>
-                <tr>
-                  <td>879980998990</td>
-                  <td>October 8,2021</td>
-                  <td>Delivered</td>
-                  <td>$ 65</td>
-                  <td>
-                    <Link className="text-beaver">View Order</Link>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </TabPanel>
-          <TabPanel value={2}>
-            <table className="table">
-              <thead>
-                <tr className="heading-05">
-                  <th>ORDER NUMBER</th>
-                  <th>DATE</th>
-                  <th>STATUS</th>
-                  <th>TOTAL</th>
-                  <th>ACTIONS</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>7643980998990</td>
-                  <td>October 8,2021</td>
-                  <td>Delivered</td>
-                  <td>$ 105</td>
-                  <td>
-                    <Link
-                      className="text-beaver text-decoration-none"
-                      to={PATHNAME_LIST.VIEW_ORDER}
-                    >
-                      View Order | Dowload
-                    </Link>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>943980998990</td>
-                  <td>October 8,2021</td>
-                  <td>Processing</td>
-                  <td>$ 100</td>
-                  <td>
-                    <Link className="text-beaver text-decoration-none">
-                      View Order | Dowload
-                    </Link>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>879980998990</td>
-                  <td>October 8,2021</td>
-                  <td>Delivered</td>
-                  <td>$ 65</td>
-                  <td>
-                    <Link className="text-beaver text-decoration-none">
-                      View Order | Dowload
-                    </Link>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </TabPanel>
-          <TabPanel value={3}>
-            <p>
+          <TabPanel>
+            <p className="heading-05 mb-8">
               The following addresses will be used on the checkout page by
               default.
             </p>
-            <div className="d-flex justify-content-between">
-              <div>
+
+            <div className="flex justify-between w-[60rem]">
+              <div className="flex flex-col gap-y-4">
                 <p className="heading-03">Billing address</p>
-                <p className="body-large text-beaver">ADD</p>
+                <button className="body-large flex text-beaver hover:text-black-1">
+                  ADD
+                </button>
                 <p className="body-medium text-dark-silver">
                   You have not set up this type of address yet.
                 </p>
               </div>
 
-              <div>
+              <div className="flex flex-col gap-y-4">
                 <p className="heading-03">Shipping address</p>
-                <p className="body-large text-beaver">ADD</p>
+                <button className="body-large flex text-beaver hover:text-black-1">
+                  ADD
+                </button>
                 <p className="body-medium text-dark-silver">
                   You have not set up this type of address yet.
                 </p>
               </div>
             </div>
           </TabPanel>
-          <TabPanel className="d-flex flex-column align-items-center" value={4}>
-            <div style={{ width: "30rem" }}>
+
+          <TabPanel className="flex flex-col items-center">
+            <div className="w-[30rem]">
               <p className="heading-01 text-center">Account details</p>
 
-              <form className="d-flex flex-column w-100">
-                <Input className="body-medium mb-3" placeholder="First name*" />
-                <Input className="body-medium mb-3" placeholder="Last name*" />
-                <Input
-                  className="body-medium mb-2"
-                  placeholder="Display name*"
-                />
-                <p className="body-small text-dark-silver mb-2">
-                  This will be how your name will be displayed in the account
-                  section and in reviews.
-                </p>
-                <Input
-                  className="body-medium mb-3"
-                  placeholder="Email address*"
-                />
+              <form className="flex flex-col w-full gap-y-6">
+                <Input className="body-medium" placeholder="First name*" />
+                <Input className="body-medium" placeholder="Last name*" />
+                <div>
+                  <Input
+                    className="body-medium mb-4"
+                    placeholder="Display name*"
+                  />
+                  <p className="body-small text-dark-silver">
+                    This will be how your name will be displayed in the account
+                    section and in reviews.
+                  </p>
+                </div>
+                <Input className="body-medium" placeholder="Email address*" />
                 <p className="body-large">Password change</p>
                 <Input
-                  className="body-medium mb-3"
+                  className="body-medium"
                   placeholder="Current password (leave blank to leave unchanged)"
                 />
                 <Input
-                  className="body-medium mb-3"
+                  className="body-medium"
                   placeholder="New password (leave blank to leave unchanged)"
                 />
                 <Input
-                  className="body-medium mb-5"
+                  className="body-medium"
                   placeholder="Confirm new password"
                 />
 
-                <Button className="text-center">SAVE CHANGES</Button>
+                <Button className="black text-center">SAVE CHANGES</Button>
               </form>
             </div>
           </TabPanel>

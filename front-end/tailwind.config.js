@@ -8,11 +8,12 @@ module.exports = {
         0.1: "#0000001a",
         1: "black",
       },
+      "rusty-red": "#DC3545",
       white: "white",
       beaver: "#a18a68",
-      dark_silver: "#707070",
-      bright_gray: "#efefef",
-      light_sivler: "#D8D8D8",
+      "dark-silver": "#707070",
+      "bright-gray": "#efefef",
+      "light-sivler": "#D8D8D8",
     },
 
     fontFamily: {
@@ -23,7 +24,7 @@ module.exports = {
       400: 400,
       500: 500,
       600: 600,
-      700: 700, 
+      700: 700,
       900: 900,
     },
 
