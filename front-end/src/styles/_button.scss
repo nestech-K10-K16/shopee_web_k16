@@ -19,13 +19,13 @@ $color-text-white: #fff;
 }
 
 .btn-white {
-  background: $color-text-black;
-  color: $color-text-white;
+  background: $color-text-white;
+  color: $color-text-black;
   border: 1px solid $color-text-black;
 
   &:hover {
-    background: $color-text-white;
-    color: $color-text-black;
+    background: $color-text-black;
+    color: $color-text-white;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   }
 }

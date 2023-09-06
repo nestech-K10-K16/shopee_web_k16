@@ -1,5 +1,8 @@
+@use "styles/colors" as *;
+@use "styles/fonts" as *;
+
 .shoppe__account {
-  border-top: 1px solid #d8d8d8;
+  border-top: 1px solid $color-gray;
   width: 1320px;
   height: 1000px;
   margin-left: 96px;
@@ -21,24 +24,24 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  border-bottom: 1px solid var(--color-gray);
+  border-bottom: 1px solid $color-gray;
   padding-bottom: 34px;
 }
 
 .shoppe__account-tab {
   display: flex;
   cursor: pointer;
-  font-size: var(--size-20);
+  font-size: $size-20;
   font-weight: 400;
-  line-height: 26px;
-  color: var(--color-gray);
+  line-height: $size-26;
+  color: $color-gray;
   margin-right: 64px;
   outline: none;
   transition-delay: 0.1s;
 }
 
 .shoppe__account-tab:hover {
-  color: var(--color-footer);
+  color: $color-footer;
 }
 
 .shoppe__account-tab:nth-child(1).active-tab::before {
@@ -47,7 +50,7 @@
   bottom: 0px;
   width: 6.6%;
   height: 1px;
-  background: var(--color-text-black);
+  background: $color-text-black;
 }
 
 .shoppe__account-tab:nth-child(2).active-tab::before {
@@ -56,7 +59,7 @@
   bottom: 0px;
   width: 4%;
   height: 1px;
-  background: var(--color-text-black);
+  background: $color-text-black;
 }
 
 .shoppe__account-tab:nth-child(3).active-tab::before {
@@ -65,7 +68,7 @@
   bottom: 0px;
   width: 7%;
   height: 1px;
-  background: var(--color-text-black);
+  background: $color-text-black;
 }
 
 .shoppe__account-tab:nth-child(4).active-tab::before {
@@ -74,7 +77,7 @@
   bottom: 0px;
   width: 6.4%;
   height: 1px;
-  background: var(--color-text-black);
+  background: $color-text-black;
 }
 
 .shoppe__account-tab:nth-child(5).active-tab::before {
@@ -83,7 +86,7 @@
   bottom: 0px;
   width: 9.3%;
   height: 1px;
-  background: var(--color-text-black);
+  background: $color-text-black;
 }
 
 .shoppe__account-tab:nth-child(6).active-tab::before {
@@ -92,11 +95,11 @@
   bottom: 0px;
   width: 4.5%;
   height: 1px;
-  background: var(--color-text-black);
+  background: $color-text-black;
 }
 
 .shoppe__account-tab.active-tab {
-  color: var(--color-text-black);
+  color: $color-text-black;
 }
 
 .dashboard {
@@ -105,13 +108,13 @@
 
 .dashboard h3,
 .dashboard span {
-  font-size: var(--size-16);
+  font-size: $size-16;
   font-weight: 400;
-  line-height: 27px;
+  line-height: $size-27;
 }
 
 .dashboard span {
-  color: var(--color-light);
+  color: $color-light;
 }
 
 .orders {
@@ -120,21 +123,21 @@
   margin-top: 39px;
   width: 1248px;
   height: 68px;
-  border: 1px solid var(--color-text-black);
-  background: var(--color-light-gray);
+  border: 1px solid $color-text-black;
+  background: $color-light-gray;
 }
 
 .orders h4,
 .orders span {
-  font-size: var(--size-16);
+  font-size: $size-16;
   font-weight: 400;
-  line-height: 27px;
+  line-height: $size-27;
   padding: 19px 40px;
 }
 
 .orders span {
   font-weight: 700;
-  color: var(--color-light);
+  color: $color-light;
   padding: 23px 40px;
 }
 
@@ -143,9 +146,9 @@
 }
 
 .address h2 {
-  font-size: var(--size-16);
+  font-size: $size-16;
   font-weight: 400;
-  line-height: 27px;
+  line-height: $size-27;
 }
 
 .add {
@@ -161,25 +164,39 @@
 .bill h3,
 .bill p,
 .bill h6 {
-  font-size: var(--size-20);
+  font-size: $size-20;
   font-weight: 400;
-  line-height: 26px;
+  line-height: $size-26;
 }
 
 .bill p {
   font-weight: 700;
-  color: var(--color-light);
+  color: $color-light;
 }
 
 .details {
   padding: 0 420px;
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 37px;
+
+    input {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid $color-footer;
+      padding-bottom: 13px;
+      margin-bottom: 37px;
+    }
+  }
 }
 
 .details h1 {
   margin-top: 39px;
   display: flex;
   justify-content: center;
-  font-size: var(--size-33);
+  font-size: $size-33;
   font-weight: 500;
   line-height: 43px;
 }
@@ -194,8 +211,8 @@
   width: 500px;
   height: 53px;
   border-radius: 4px;
-  background: var(--color-text-black);
-  font-size: var(--size-16);
+  background: $color-text-black;
+  font-size: $size-16;
   font-weight: 700;
-  color: var(--color-text-white);
+  color: $color-text-white;
 }

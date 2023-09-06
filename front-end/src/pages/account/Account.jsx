@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import { useTabs } from "hook/useTabs/useTabs";
-import "./index.css";
+import "./index.scss";
 
 const Account = () => {
   const { tabIndex, activeTabs, handleChange, userChange, setTabIndex } =

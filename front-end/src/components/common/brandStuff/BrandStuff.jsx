@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./index.css";
+import "./index.scss";
 
 const BrandStuff = ({ imgUrl, text_01, text_02, text_03, text_04 }) => {
   return (

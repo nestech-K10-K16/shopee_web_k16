@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Blog01, Blog02, Blog03, Blog04 } from "./import";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import { useTabs } from "hook/useTabs/useTabs";
-import "./blog.css";
+import "./blog.scss";
 
 const BlogPage = () => {
   const { tabIndex, activeTabs, handleChange, userChange, setTabIndex } =
@@ -79,48 +79,40 @@ const BlogPage = () => {
       </div>
       <div className="shoppe__blogPage-content">
         <div className="shoppe__blogPage-title">
-          <div className="update">
-            <BrandStuff
-              imgUrl={Blog01}
-              text_01="Fashion - October 8, 2020"
-              text_02="Top Trends From Spring"
-              text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
-              text_04="Read More"
-            />
-          </div>
+          <BrandStuff
+            imgUrl={Blog01}
+            text_01="Fashion - October 8, 2020"
+            text_02="Top Trends From Spring"
+            text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
+            text_04="Read More"
+          />
         </div>
         <div className="shoppe__blogPage-title">
-          <div className="update">
-            <BrandStuff
-              imgUrl={Blog02}
-              text_01="Fashion - October 8, 2020"
-              text_02="Top Trends From Spring"
-              text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
-              text_04="Read More"
-            />
-          </div>
+          <BrandStuff
+            imgUrl={Blog02}
+            text_01="Fashion - October 8, 2020"
+            text_02="Top Trends From Spring"
+            text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
+            text_04="Read More"
+          />
         </div>
         <div className="shoppe__blogPage-title">
-          <div className="update">
-            <BrandStuff
-              imgUrl={Blog03}
-              text_01="Fashion - October 8, 2020"
-              text_02="Top Trends From Spring"
-              text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
-              text_04="Read More"
-            />
-          </div>
+          <BrandStuff
+            imgUrl={Blog03}
+            text_01="Fashion - October 8, 2020"
+            text_02="Top Trends From Spring"
+            text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
+            text_04="Read More"
+          />
         </div>
         <div className="shoppe__blogPage-title">
-          <div className="update">
-            <BrandStuff
-              imgUrl={Blog04}
-              text_01="Fashion - October 8, 2020"
-              text_02="Top Trends From Spring"
-              text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
-              text_04="Read More"
-            />
-          </div>
+          <BrandStuff
+            imgUrl={Blog04}
+            text_01="Fashion - October 8, 2020"
+            text_02="Top Trends From Spring"
+            text_03="Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero... "
+            text_04="Read More"
+          />
         </div>
 
         <div className="shoppe__blogPage-button">

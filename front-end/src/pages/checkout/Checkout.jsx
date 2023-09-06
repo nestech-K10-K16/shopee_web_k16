@@ -70,7 +70,7 @@ const Checkout = () => {
               <label>Ship to a different address?</label>
             </div>
             <input
-              type="email"
+              type="text"
               className="zero-two"
               placeholder="Order notes *"
             />

@@ -1,7 +1,10 @@
+@use "../../styles/colors" as *;
+@use "../../styles/fonts" as *;
+
 .shoppe__blogPage-container {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #d8d8d8;
+  border-top: 1px solid $color-gray;
   width: 1315px;
   height: 1280px;
   margin-left: 96px;
@@ -23,7 +26,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 1px solid var(--color-gray);
+  border-bottom: 1px solid $color-gray;
   margin-bottom: 62px;
 }
 
@@ -45,22 +48,22 @@
 .shoppe__blogPage-tab {
   display: flex;
   cursor: pointer;
-  font-size: var(--size-20);
+  font-size: $size-20;
   font-weight: 500;
   line-height: 26px;
   text-transform: capitalize;
   margin-bottom: 10px;
-  color: var(--color-gray);
+  color: $color-gray;
   outline: none;
   transition-delay: 0.1s;
 }
 
 .shoppe__blogPage-tab:hover {
-  color: var(--color-footer);
+  color: $color-footer;
 }
 
 .shoppe__blogPage-tab.active-tab {
-  color: var(--color-text-black);
+  color: $color-text-black;
 }
 
 .shoppe__blogPage-content {
@@ -84,22 +87,23 @@
   margin-left: 400px;
 }
 
-.shoppe__blogPage-button button:first-child {
+.shoppe__blogPage-button button {
   width: 40px;
   height: 40px;
   cursor: pointer;
-  background: var(--color-text-black);
-  border: 1px solid var(--color-gray);
-  color: var(--color-text-white);
-  border-radius: 4px;
-  margin-right: 4px;
-}
 
-.shoppe__blogPage-button button:last-child {
-  width: 40px;
-  height: 40px;
-  background: var(--color-text-white);
-  border-radius: 4px;
-  border: 1px solid var(--color-light);
-  color: var(--color-text-black);
+  &:first-child {
+    background: $color-text-black;
+    border: 1px solid $color-gray;
+    color: $color-text-white;
+    border-radius: 4px;
+    margin-right: 4px;
+  }
+
+  &:last-child {
+    background: $color-text-white;
+    border-radius: 4px;
+    border: 1px solid $color-light;
+    color: $color-text-black;
+  }
 }

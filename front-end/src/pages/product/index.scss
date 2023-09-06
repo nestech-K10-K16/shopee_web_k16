@@ -2,7 +2,7 @@
 @use "../../styles/fonts" as *;
 @use "../../styles/main" as *;
 
-.Shoppe__product {
+.shoppe__product {
   border-top: 1px solid #d8d8d8;
   width: 1315px;
   height: 2200px;
@@ -52,6 +52,9 @@
 
     h1 {
       margin-top: 37px;
+      font-size: $size-16;
+      font-weight: 400;
+      line-height: 27px;
 
       &::after {
         content: "12";
@@ -60,8 +63,6 @@
       }
     }
 
-    h1,
-    h2,
     h3 {
       font-size: $size-16;
       font-weight: 400;
@@ -98,6 +99,28 @@
       font-weight: 400;
       line-height: 27px;
       color: $color-footer;
+    }
+
+    .icon {
+      margin-top: 80px;
+      display: flex;
+      flex-direction: row;
+
+      .heart {
+        margin-right: 50px;
+        border-right: 1px solid $color-footer;
+        padding-right: 50px;
+
+        .red {
+          margin-left: 10px;
+          color: red;
+        }
+      }
+
+      .social .gray {
+        margin-right: 10px;
+        color: $color-footer;
+      }
     }
   }
 
@@ -151,43 +174,43 @@
     flex-direction: row;
     border-bottom: 1px solid $color-gray;
     padding-bottom: 34px;
+  }
 
-    &-tab {
-      display: flex;
-      width: auto;
-      cursor: pointer;
-      font-size: $size-20;
-      font-weight: 400;
-      line-height: 26px;
-      color: $color-gray;
-      outline: none;
-      margin-right: 96px;
-      transition-delay: 0.1s;
+  &-tab {
+    display: flex;
+    width: auto;
+    cursor: pointer;
+    font-size: $size-20;
+    font-weight: 400;
+    line-height: 26px;
+    color: $color-gray;
+    outline: none;
+    margin-right: 96px;
+    transition-delay: 0.1s;
 
-      &.active-tab {
-        color: $color-text-black;
-        &:before {
-          content: "";
-          position: absolute;
-          bottom: 0px;
-          width: 6.6%;
-          height: 1px;
-          background: $color-text-black;
-        }
-      }
-
-      &:hover {
-        color: $color-footer;
-      }
-      &:nth-child(1).active-tab::before {
+    &.active-tab {
+      color: $color-text-black;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0px;
         width: 6.6%;
+        height: 1px;
+        background: $color-text-black;
       }
-      &:nth-child(2).active-tab::before {
-        width: 13.5%;
-      }
-      &:nth-child(3).active-tab::before {
-        width: 7%;
-      }
+    }
+
+    &:hover {
+      color: $color-footer;
+    }
+    &:nth-child(1).active-tab::before {
+      width: 6.6%;
+    }
+    &:nth-child(2).active-tab::before {
+      width: 13.5%;
+    }
+    &:nth-child(3).active-tab::before {
+      width: 7%;
     }
   }
 
@@ -210,6 +233,31 @@
       font-size: $size-16;
       font-weight: 400;
       line-height: 27px;
+      margin-bottom: 9px;
+    }
+
+    h2::after {
+      content: "0.3 kg";
+      margin-left: 10px;
+      color: $color-footer;
+    }
+
+    h3::after {
+      content: "15 x 10 x 1 cm";
+      margin-left: 10px;
+      color: $color-footer;
+    }
+
+    h4::after {
+      content: "Black, Browns, White";
+      margin-left: 10px;
+      color: $color-footer;
+    }
+
+    p::after {
+      content: "Metal";
+      color: $color-footer;
+      margin-left: 10px;
     }
   }
 
@@ -220,38 +268,7 @@
     margin-top: 66px;
   }
 
-  .Shoppe__product-similar_item {
-    display: flex;
-    flex-direction: row;
-    margin-top: 47px;
-
-    h4 {
-      font-size: $size-20;
-      color: $color-light;
-    }
-
-    .image {
-      width: 390px;
-      display: flex;
-      flex-direction: column;
-      margin-right: 47px;
-
-      img {
-        width: 100%;
-        height: auto;
-      }
-
-      h3,
-      h4 {
-        margin-top: 16px;
-        font-size: $size-20;
-        font-weight: 400;
-        line-height: 26px;
-      }
-    }
-  }
-
-  .review {
+  .review-product {
     display: flex;
     flex-direction: row;
     margin-top: 42px;
@@ -260,98 +277,107 @@
       margin-right: 88px;
 
       .evaluate {
-        h3,
-        h4,
-        p {
+        .heading-04 {
           font-size: $size-20;
-          font-weight: 400;
-          line-height: 26px;
-          margin-bottom: 16px;
+          margin-bottom: 76px;
+        }
 
-          h3 {
-            margin-bottom: 76px;
-          }
+        .heading-03 {
+          font-size: $size-20;
 
-          h4::after {
+          &::after {
             content: "6 May, 2020";
             color: $color-footer;
+            margin-left: 10px;
             font-size: $size-14;
-            font-weight: 400;
-            line-height: 22px;
-            margin-left: 16px;
           }
 
-          p {
-            width: 580px;
-            height: 57px;
+          &:last-child::after {
+            content: "6 May, 2020";
             color: $color-footer;
-          }
-
-          .review-star {
-            display: flex;
-            flex-direction: row;
-
-            img {
-              margin-right: 10px;
-              margin-top: 16px;
-              margin-bottom: 24px;
-            }
-          }
-
-          .evaluate .input input {
-            margin-top: -96px;
-            font-size: $size-14;
-            font-weight: 400;
-            line-height: 22px;
-            color: $color-footer;
-          }
-
-          .img {
-            display: flex;
-            flex-direction: row;
-          }
-
-          .review-2 button {
-            margin-top: 20px;
-            cursor: pointer;
-            width: 123px;
-            height: 53px;
-            border-radius: 4px;
-            background: $color-text-black;
-            font-size: $size-16;
-            font-weight: 700;
-            color: $color-text-white;
-          }
-
-          h3 {
-            font-size: $size-20;
-            font-weight: 400;
-            line-height: 26px;
-
-            &:first-child {
-              margin-bottom: 11px;
-            }
-
-            &:last-child {
-              margin-bottom: 46px;
-              color: $color-footer;
-              font-size: $size-13;
-            }
-          }
-
-          p {
-            margin-top: -50px;
-          }
-
-          h4 {
-            margin-bottom: 107px;
-            color: $color-footer;
-            border-bottom: 1px solid $color-footer;
-            padding-bottom: 61px;
+            margin-left: 10px;
             font-size: $size-14;
           }
         }
+
+        .review-star {
+          img {
+            margin-left: 10px;
+            margin-bottom: 24px;
+          }
+        }
+
+        p {
+          width: 580px;
+          height: 57px;
+          font-size: $size-16;
+          color: $color-footer;
+          border-bottom: 1px solid $color-gray;
+          padding-bottom: 39px;
+          margin-bottom: 24px;
+        }
+
+        p:nth-child(3) {
+          border: none;
+        }
       }
+    }
+
+    .review-2 {
+      .heading-03 {
+        font-size: $size-20;
+        margin-bottom: 11px;
+      }
+
+      p {
+        color: $color-footer;
+        margin-bottom: 46px;
+
+        &:nth-child(3) {
+          margin-bottom: 46px;
+          border-bottom: 1px solid $color-gray;
+          padding-bottom: 61px;
+        }
+      }
+
+      input {
+        border-bottom: 1px solid $color-gray;
+        padding-bottom: 13px;
+        margin-bottom: 46px;
+      }
+
+      label {
+        margin-top: 20px;
+        color: $color-footer;
+      }
+      h4 {
+        font-size: $size-14;
+        font-weight: $font-weight-400;
+        line-height: 22px;
+        color: $color-footer;
+        margin-top: -100px;
+        margin-bottom: 13px;
+      }
+
+      .img img {
+        margin-left: 10px;
+        margin-bottom: 48px;
+      }
+
+      button {
+        width: 123px;
+        height: 53px;
+      }
+    }
+  }
+
+  &-similar {
+    display: flex;
+    flex-direction: row;
+
+    .shoppe__home-title_jewelry {
+      margin-right: 54px;
+      margin-top: 47px;
     }
   }
 }

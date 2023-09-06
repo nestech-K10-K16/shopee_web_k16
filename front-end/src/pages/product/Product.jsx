@@ -4,6 +4,7 @@ import "configs/fontIcon";
 import { home01, home02, home03, home05 } from "pages/home/import";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
+import { Jewelry } from "components";
 import "./index.scss";
 
 const Product = () => {
@@ -22,9 +23,9 @@ const Product = () => {
   };
 
   return (
-    <div className="Shoppe__product">
-      <div className="Shoppe__product-container">
-        <div className="Shoppe__product-image">
+    <div className="shoppe__product">
+      <div className="shoppe__product-container">
+        <div className="shoppe__product-image">
           <div className="small-image">
             {[1, 2, 3, 4].map((item) => (
               <img key={item} src={home01} alt={`home0${item}`} />
@@ -36,10 +37,10 @@ const Product = () => {
             <div className="slider-black"></div>
           </div>
         </div>
-        <div className="Shoppe__product-text">
-          <h2>Lira Earrings</h2>
+        <div className="shoppe__product-text">
+          <h2 className="heading-02">Lira Earrings</h2>
           <h4>$ 20,00</h4>
-          <div className="Shoppe__product-star">
+          <div className="shoppe__product-star">
             {[1, 2, 3, 4, 5].map((item) => (
               <img key={item} src={Star} alt={`star${item}`} />
             ))}
@@ -51,7 +52,7 @@ const Product = () => {
             a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis
             consequat sed eu felis.
           </p>
-          <div className="Shoppe__product-button">
+          <div className="shoppe__product-button">
             <div className="count">
               <p>-</p>
               <p>1</p>
@@ -80,10 +81,10 @@ const Product = () => {
       </div>
       <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <TabList selectedIndex={tabIndex} onSelect={handleChange}>
-          <div className="Shoppe__product-tabs">
+          <div className="shoppe__product-tabs">
             <Tab
               value={1}
-              className={`Shoppe__product-tab ${
+              className={`shoppe__product-tab ${
                 activeTabs[0] ? "active-tab" : ""
               }`}
               onClick={() => userChange(0)}
@@ -92,7 +93,7 @@ const Product = () => {
             </Tab>
             <Tab
               value={2}
-              className={`Shoppe__product-tab ${
+              className={`shoppe__product-tab ${
                 activeTabs[1] ? "active-tab" : ""
               }`}
               onClick={() => userChange(1)}
@@ -101,7 +102,7 @@ const Product = () => {
             </Tab>
             <Tab
               value={3}
-              className={`Shoppe__product-tab ${
+              className={`shoppe__product-tab ${
                 activeTabs[2] ? "active-tab" : ""
               }`}
               onClick={() => userChange(2)}
@@ -128,11 +129,11 @@ const Product = () => {
           </div>
         </TabPanel>
         <TabPanel value={3}>
-          <div className="review">
+          <div className="review-product">
             <div className="review-1">
               <div className="evaluate">
-                <h3>2 Reviews for lira earings</h3>
-                <h4>Scarlet withch</h4>
+                <h3 className="heading-04">2 Reviews for lira earings</h3>
+                <h3 className="heading-03">Scarlet withch</h3>
                 <div className="review-star">
                   {[1, 2, 3, 4, 5].map((item) => (
                     <img key={item} src={Star} alt={`star${item}`} />
@@ -144,7 +145,7 @@ const Product = () => {
                 </p>
               </div>
               <div className="evaluate">
-                <h4>Scarlet withch</h4>
+                <h3 className="heading-03">Scarlet withch</h3>
                 <div className="review-star">
                   {[1, 2, 3, 4, 5].map((item) => (
                     <img key={item} src={Star} alt={`star${item}`} />
@@ -158,12 +159,12 @@ const Product = () => {
               </div>
             </div>
             <div className="review-2">
-              <h3>Add a Review</h3>
-              <h2>
+              <h3 className="heading-03">Add a Review</h3>
+              <p>
                 Your email address will not be published. Required fields are
                 marked *
-              </h2>
-              <h4>Your Review*</h4>
+              </p>
+              <p>Your Review*</p>
               <div className="slider"></div>
               <div className="input">
                 <input type="text" placeholder="Enter your name*" />
@@ -176,34 +177,26 @@ const Product = () => {
                   time I comment
                 </label>
               </div>
-              <p>Your Rating*</p>
+              <h4>Your Rating*</h4>
               <div className="img">
                 {[1, 2, 3, 4, 5].map((item) => (
                   <img key={item} src={StarWHite} alt={`star${item}`} />
                 ))}
               </div>
-              <button>Submit</button>
+              <button className="btn-black">Submit</button>
             </div>
           </div>
         </TabPanel>
       </Tabs>
       <h1 className="heading">Similar Items</h1>
-      <div className="Shoppe__product-similar_item">
-        {[
-          { img: home02, title: "Ollie Earrings", price: "$ 30,00" },
-          { img: home03, title: "Hal Earrings", price: "$ 25,00" },
-          {
-            img: home05,
-            title: "Kaede Hair Pin Set Of 3",
-            price: "$ 30,00",
-          },
-        ].map((item, index) => (
-          <div className="image" key={index}>
-            <img src={item.img} alt={`home${index}`} />
-            <h3>{item.title}</h3>
-            <h4>{item.price}</h4>
-          </div>
-        ))}
+      <div className="shoppe__product-similar">
+        <Jewelry imgUrl={home02} text="Ollie Earrings" dollar="$ 30,00" />
+        <Jewelry imgUrl={home03} text="Hal Earrings" dollar="$ 25,00" />
+        <Jewelry
+          imgUrl={home05}
+          text="Kaede Hair Pin Set Of 3"
+          dollar="$ 30,00"
+        />
       </div>
     </div>
   );

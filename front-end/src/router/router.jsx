@@ -13,10 +13,11 @@ import {
   CartPage,
   UserPage,
 } from "pages";
-import { BlogSingle, ShoppingBag } from "components";
+import { BlogSingle, ShoppingBag, Error } from "components";
 
 export const ROUTE_ID = {
   HOME: "HomeRoute",
+  ERROR: "ErrorRoute",
   ORDER: "OrderRoute",
   CHECKOUT: "CheckoutRoute",
   PRiVACY: "PrivacyRoute",
@@ -57,4 +58,5 @@ export const appRoute = [
   createRoute(ROUTE_ID.SHOPPING_BAG, "/shopping-bag", ShoppingBag),
   createRoute(ROUTE_ID.CART, "/cart", CartPage),
   createRoute(ROUTE_ID.USER, "/user", UserPage),
+  createRoute(ROUTE_ID.ERROR, "/error", Error),
 ];

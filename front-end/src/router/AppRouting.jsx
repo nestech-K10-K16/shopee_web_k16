@@ -1,6 +1,7 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { appRoute } from "./router";
+import { Error } from "components";
 import PageWrapper from "../components/common/wrapper/PageWrapper";
 
 const AppRouting = () => {
@@ -20,6 +21,8 @@ const AppRouting = () => {
           />
         );
       })}
+      <Route path="/error" element={<Error />} />
+      <Route path="*" element={<Navigate to="/error" />} />
     </Routes>
   );
 };

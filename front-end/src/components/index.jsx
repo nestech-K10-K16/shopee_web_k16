@@ -5,3 +5,4 @@ export { default as DefaultLayout } from "./utils/defaultLayout/index";
 export { default as Banner } from "./common/banner/Banner";
 export { default as BlogSingle } from "./common/blogSingle/BlogSingle";
 export { default as ShoppingBag } from "./common/shoppingCart/ShoppingCart";
+export { default as Error } from "./utils/404/Error";

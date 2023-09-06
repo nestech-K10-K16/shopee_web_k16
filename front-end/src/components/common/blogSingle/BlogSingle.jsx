@@ -3,7 +3,7 @@ import { BlogSingle01, BlogSingle02 } from "./import";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "configs/fontIcon";
 import Comments from "../comment/Comments";
-import "./index.css";
+import "./index.scss";
 
 const BlogSingle = () => {
   return (
