@@ -5,7 +5,8 @@ import {
   faCartShopping,
   faSearch,
   faArrowRight,
-  faClose,
+  faXmark,
+  faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { faUser, faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -21,8 +22,9 @@ library.add(
   faCartShopping,
   faSearch,
   faArrowRight,
+  faChevronLeft,
   faChevronRight,
-  faClose,
+  faXmark,
   faUser,
   faEnvelope,
   faFacebookF,

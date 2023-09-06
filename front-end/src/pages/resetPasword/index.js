@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
 import { Button, Input } from "component/common";
+import { TYPE_BUTTON } from "constants/common";
 
 const ResetPassword = () => {
   return (
@@ -19,7 +20,9 @@ const ResetPassword = () => {
 
             <Input className="heading-05 mb-5" placeholder="Email" />
 
-            <Button className="body-large" text="RESET PASSWORD"></Button>
+            <Button className="body-large" type={TYPE_BUTTON.LINK}>
+              RESET PASSWORD
+            </Button>
           </div>
         </div>
       </section>

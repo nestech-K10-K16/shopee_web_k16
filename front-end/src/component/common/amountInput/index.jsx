@@ -8,12 +8,12 @@ import {
 
 const AmountInput = (props) => {
   const dispatch = useDispatch();
-  const { item } = props;
+  const { item, amount } = props;
 
   return (
     <div id="amount-input" className={props.className}>
       <button onClick={() => dispatch(increaseAmoutProduct(item))}>+</button>
-      <input value={props.value}></input>
+      <div>{amount}</div>
       <button onClick={() => dispatch(decreaseAmoutProduct(item))}>-</button>
     </div>
   );

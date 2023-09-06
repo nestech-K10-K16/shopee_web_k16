@@ -36,11 +36,11 @@ const ShoppingBag = (props) => {
               <div className="flex flex-col justify-between mr-5">
                 <div className="w-44">
                   <p>{item.name}</p>
-                  <p className="text-dark_silver">{item.color}</p>
+                  <p className="text-dark-silver">{item.color}</p>
                   <p className="text-beaver">$ {item.price}</p>
                 </div>
 
-                <div className="heading-05 flex justify-between w-28">
+                <div className="heading-05 flex justify-between text-dark-silver w-28">
                   <p>QTY:</p>
                   <button onClick={() => dispatch(decreaseAmoutProduct(item))}>
                     -
@@ -57,7 +57,7 @@ const ShoppingBag = (props) => {
                   className="bg-body border-0"
                   onClick={() => dispatch(removeProductCart(item))}
                 >
-                  <FontAwesomeIcon icon="close" />
+                  <FontAwesomeIcon icon="fa-solid fa-xmark" />
                 </button>
               </div>
             </div>
@@ -73,20 +73,22 @@ const ShoppingBag = (props) => {
         <div className="shopping-bag__content px-[5vh] py-[2vh]">
           <div className="flex justify-end">
             <button className="bg-body border-0" onClick={backOnClick}>
-              <FontAwesomeIcon icon="chevron-right" size="xl" />
+              <FontAwesomeIcon icon="fa-solid fa-xmark" size="xl"/>
             </button>
           </div>
 
           <p className="heading-05 mb-4">Shopping bag</p>
           <div className="flex justify-between items-center mb-6">
-            <p className="heading-05 ">{productCart.length} Items</p>
+            <p className="heading-05 text-dark-silver">
+              {productCart.length} Items
+            </p>
             <div className="flex">
               <p className="heading-05 mr-2">Delete all</p>
               <button
                 className="bg-body border-0"
                 onClick={() => dispatch(removeAllProductCart())}
               >
-                <FontAwesomeIcon icon="close" size="xl" />
+                <FontAwesomeIcon icon="fa-solid fa-close" size="xl" />
               </button>
             </div>
           </div>

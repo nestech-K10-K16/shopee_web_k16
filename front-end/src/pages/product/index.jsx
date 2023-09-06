@@ -69,9 +69,9 @@ const Product = () => {
 
                 <div className="flex text-center mb-[4.6rem]">
                   <AmountInput
-                    item={item}
                     className="mr-5"
-                    value={item.amount}
+                    item={item}
+                    amount={item.amount}
                   />
                   <Button
                     className="white body-large w-full"
@@ -92,9 +92,9 @@ const Product = () => {
                   <div className="border border-solid border-bright-gray"></div>
 
                   <div className="flex gap-x-6">
-                    {icon?.map((item) => {
+                    {icon?.map((item, index) => {
                       return (
-                        <Link>
+                        <Link key={index}>
                           <FontAwesomeIcon
                             className="text-dark-silver hover:text-black-1"
                             icon={item}
@@ -124,6 +124,7 @@ const Product = () => {
   };
 
   const tab = ["Description", "Aditional information", "Reviews(0)"];
+
   const aditionalInformation = [
     { name: "Weight", info: "0.3kg" },
     { name: "Dimentions", info: "15 x 10 x 1" },
@@ -144,7 +145,10 @@ const Product = () => {
           <TabList className="product__content__information__heading heading-03 flex gap-x-16 mb-5">
             {tab?.map((item, index) => {
               return (
-                <Tab className={tabIndex === index ? "tab-active" : ""}>
+                <Tab
+                  className={tabIndex === index ? "tab-active" : ""}
+                  key={index}
+                >
                   {item}
                 </Tab>
               );
@@ -163,9 +167,9 @@ const Product = () => {
 
           <TabPanel className="heading-05">
             <ul className="flex flex-col gap-y-3">
-              {aditionalInformation?.map((item) => {
+              {aditionalInformation?.map((item, index) => {
                 return (
-                  <li>
+                  <li key={index}>
                     <span>{item.name}: </span>
                     <span className="text-dark-silver">{item.info}</span>
                   </li>

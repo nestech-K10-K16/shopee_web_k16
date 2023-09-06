@@ -20,7 +20,7 @@
 
 .account__content__tab-list li a::after {
   content: "";
-  background-color: transparent;
+  background-color: theme("colors.transparent");
   position: absolute;
   height: 2px;
   width: 100%;

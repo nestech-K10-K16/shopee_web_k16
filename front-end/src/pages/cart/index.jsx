@@ -3,9 +3,13 @@ import "./index.scss";
 import { AmountInput, Button, Input, Select } from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PATHNAME_LIST } from "router/router";
-import { TYPE_REDUX } from "constants/common";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import {
+  addToProductDetail,
+  removeAllProductCart,
+  removeProductCart,
+} from "redux/reducers/feature/productSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
   const { productCart } = useSelector((state) => state.productSlice);
@@ -19,47 +23,36 @@ const Cart = () => {
             <div key={item.id}>
               <div className="flex mb-4">
                 <Link
+                  className="mr-4"
                   to={PATHNAME_LIST.PRODUCT}
-                  onClick={() =>
-                    dispatch({
-                      type: TYPE_REDUX.ADD_PRODUCT_DETAIL,
-                      payload: item,
-                    })
-                  }
+                  onClick={() => dispatch(addToProductDetail(item))}
                 >
-                  <img className="w-32 mr-8" src={item.src} alt="" />
+                  <img src={item.src} alt="" />
                 </Link>
 
-                <div className="mr-16">
+                <div className="w-[26rem] mr-8">
                   <p className="heading-03 mb-4">{item.name}</p>
-                  <p className="heading-05 text-dark_silver">{item.color}</p>
+                  <p className="heading-05 text-dark-silver">{item.color}</p>
                   <p className="heading-05 text-beaver">$ {item.price}</p>
                 </div>
 
-                <div>
-                  <AmountInput
-                    id={item}
-                    className="w-[6rem] h-12 mr-6"
-                    value={item.amount}
-                  />
-                </div>
+                <AmountInput
+                  className="w-[6rem] h-12 mr-6"
+                  item={item}
+                  amount={item.amount}
+                />
 
                 <div>
                   <button
                     className="bg-body border-0"
-                    onClick={() =>
-                      dispatch({
-                        type: TYPE_REDUX.DELETE_PRODUCT_CART,
-                        payload: item,
-                      })
-                    }
+                    onClick={() => dispatch(removeProductCart(item))}
                   >
-                    <FontAwesomeIcon icon="fa-solid fa-close" />
+                    <FontAwesomeIcon icon="fa-solid fa-xmark" />
                   </button>
                 </div>
               </div>
 
-              <div className="border border-bright_gray" />
+              <div className="border border-bright-gray" />
             </div>
           );
         })}
@@ -75,15 +68,27 @@ const Cart = () => {
         <div className="flex justify-between">
           <div className="cart__content__left-side w-[29.5rem]">
             <div className="mb-8">
-              <p className="heading-04 mb-6">{productCart.length} item</p>
+              <div className="flex justify-between mb-6">
+                <p className="heading-04 text-dark-silver">
+                  {productCart.length} item
+                </p>
+
+                <div className="flex">
+                  <p className="heading-05 mr-2">Delete all</p>
+                  <button
+                    className="bg-body border-0"
+                    onClick={() => dispatch(removeAllProductCart())}
+                  >
+                    <FontAwesomeIcon icon="fa-solid fa-xmark" size="xl" />
+                  </button>
+                </div>
+              </div>
               <Items />
             </div>
 
             <div>
               <div className="flex justify-end mb-12">
-                <Button className="button--secondary body-large">
-                  UPDATE CART
-                </Button>
+                <Button className="white body-large">UPDATE CART</Button>
               </div>
 
               <div className="flex items-center">
@@ -91,7 +96,7 @@ const Cart = () => {
                   className="body-small w-full mr-6"
                   placeholder="Coupon Code"
                 ></Input>
-                <Button className="body-large text-center w-[13rem]">
+                <Button className="black body-large text-center w-[13rem]">
                   APPLY COUPON
                 </Button>
               </div>
@@ -146,7 +151,7 @@ const Cart = () => {
                 </div>
 
                 <Button
-                  className="body-large text-center"
+                  className="black body-large text-center"
                   to={PATHNAME_LIST.CHECK_OUT}
                 >
                   PROCEED TO CHECKOUT

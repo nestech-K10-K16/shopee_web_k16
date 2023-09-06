@@ -53,37 +53,37 @@ export const PATHNAME_LIST = {
 export const DEFAULT_PATHNAME = PATHNAME_LIST.HOME;
 
 // Define routes
-export const HomeRoute = {
+const HomeRoute = {
   id: ROUTE_ID.HOME,
   path: PATHNAME_LIST.HOME,
   component: Home,
 };
 
-export const ShopRoute = {
+const ShopRoute = {
   id: ROUTE_ID.SHOP,
   path: PATHNAME_LIST.SHOP,
   component: Shop,
 };
 
-export const ProductRoute = {
+const ProductRoute = {
   id: ROUTE_ID.PRODUCT,
   path: PATHNAME_LIST.PRODUCT,
   component: Product,
 };
 
-export const CartRoute = {
+const CartRoute = {
   id: ROUTE_ID.CART,
   path: PATHNAME_LIST.CART,
   component: Cart,
 };
 
-export const CheckOutRoute = {
+const CheckOutRoute = {
   id: ROUTE_ID.CHECK_OUT,
   path: PATHNAME_LIST.CHECK_OUT,
   component: CheckOut,
 };
 
-export const MyAccountRoute = {
+const MyAccountRoute = {
   id: ROUTE_ID.MY_ACCOUNT,
   path: PATHNAME_LIST.MY_ACCOUNT,
   component: MyAccount,
@@ -95,49 +95,49 @@ export const ResetPasswordRoute = {
   component: ResetPassword,
 };
 
-export const BlogRoute = {
+const BlogRoute = {
   id: ROUTE_ID.BLOG,
   path: PATHNAME_LIST.BLOG,
   component: Blog,
 };
 
-export const BlogSingleRoute = {
+const BlogSingleRoute = {
   id: ROUTE_ID.BLOG_SINGLE,
   path: PATHNAME_LIST.BLOG_SINGLE,
   component: BlogSingle,
 };
 
-export const OurStoryRoute = {
+const OurStoryRoute = {
   id: ROUTE_ID.OUR_STORY,
   path: PATHNAME_LIST.OUR_STORY,
   component: OurStory,
 };
 
-export const AccountRoute = {
+const AccountRoute = {
   id: ROUTE_ID.ACCOUNT,
   path: PATHNAME_LIST.ACCOUNT,
   component: Account,
 };
 
-export const OrderRoute = {
+const OrderRoute = {
   id: ROUTE_ID.ORDER,
   path: PATHNAME_LIST.ORDER,
   component: Order,
 };
 
-export const ContactRoute = {
+const ContactRoute = {
   id: ROUTE_ID.CONTACT,
   path: PATHNAME_LIST.CONTACT,
   component: Contact,
 };
 
-export const PrivacyRoute = {
+const PrivacyRoute = {
   id: ROUTE_ID.PRIVACY,
   path: PATHNAME_LIST.PRIVACY,
   component: Privacy,
 };
 
-export const TestRoute = {
+const TestRoute = {
   id: ROUTE_ID.TEST,
   path: PATHNAME_LIST.TEST,
   component: Test,

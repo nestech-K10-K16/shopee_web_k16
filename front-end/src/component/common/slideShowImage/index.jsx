@@ -1,10 +1,6 @@
 import React from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
 
 class SlideShowImage extends React.PureComponent {
   constructor(props) {
@@ -81,13 +77,13 @@ class SlideShowImage extends React.PureComponent {
             className="slide-show-image__container__forward absolute top-[50%] right-0 mr-4"
             onClick={() => this.forward()}
           >
-            <FontAwesomeIcon icon={faChevronRight} size="2xl" />
+            <FontAwesomeIcon icon="fa-solid fa-chevron-right" size="2xl" />
           </button>
           <button
             className="slide-show-image__container__backward absolute top-[50%] left-0 ml-4"
             onClick={() => this.backward()}
           >
-            <FontAwesomeIcon icon={faChevronLeft} size="2xl" />
+            <FontAwesomeIcon icon="fa-solid fa-chevron-left" size="2xl" />
           </button>
         </div>
 

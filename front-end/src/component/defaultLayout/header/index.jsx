@@ -38,34 +38,31 @@ const Header = (props) => {
           </div>
 
           <div className="header__content__right-side">
-            <ul className="header__content__right-side__menu flex list-none mb-0 space-x-8">
-              <div className="flex items-center space-x-8">
-                <li>
-                  <Link className="heading-05" to={PATHNAME_LIST.SHOP}>
-                    Shop
-                  </Link>
-                </li>
-                <li>
-                  <Link className="heading-05" to={PATHNAME_LIST.BLOG}>
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link className="heading-05" to={PATHNAME_LIST.OUR_STORY}>
-                    Our story
-                  </Link>
-                </li>
-              </div>
+            <ul className="header__content__right-side__menu flex space-x-8">
+              <li>
+                <Link className="heading-05" to={PATHNAME_LIST.SHOP}>
+                  Shop
+                </Link>
+              </li>
+              <li>
+                <Link className="heading-05" to={PATHNAME_LIST.BLOG}>
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link className="heading-05" to={PATHNAME_LIST.OUR_STORY}>
+                  Our story
+                </Link>
+              </li>
 
-              <div className="border border-dark_silver -rotate-180"></div>
+              <div className="border border-dark-silver -rotate-180"></div>
 
-              <div className="flex items-center space-x-8">
+              <div className="header__content__right-side__menu-icon flex space-x-8">
                 <li>
                   <Link>
                     <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
                   </Link>
                 </li>
-
                 <li>
                   <div className="flex">
                     <Link onClick={ShoppingBagOnClick}>
@@ -74,7 +71,6 @@ const Header = (props) => {
                     <p className="ml-1">({productCart.length})</p>
                   </div>
                 </li>
-
                 <li>
                   <Link to={PATHNAME_LIST.ACCOUNT}>
                     <FontAwesomeIcon icon="fa-regular fa-user" />

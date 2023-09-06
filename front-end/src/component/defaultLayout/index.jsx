@@ -26,6 +26,7 @@ const DefaultLayout = ({ children }) => {
         {children}
         <Footer />
       </section>
+      
       <ShoppingBag
         className={styleShoppingBag}
         backOnClick={CloseModel}

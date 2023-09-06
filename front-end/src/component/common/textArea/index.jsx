@@ -4,8 +4,7 @@ import "./index.scss";
 const TextArea = (props) => {
   return (
     <textarea
-      id="text-area"
-      className={props.className}
+      className={`text-area ${props.className}`}
       placeholder={props.placeholder}
     ></textarea>
   );
