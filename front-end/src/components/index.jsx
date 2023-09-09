@@ -3,6 +3,6 @@ export { default as Jewelry } from "./common/jewelry/Jewelry";
 export { default as Navbar } from "./utils/navbar/Navbar";
 export { default as DefaultLayout } from "./utils/defaultLayout/index";
 export { default as Banner } from "./common/banner/Banner";
-export { default as BlogSingle } from "./common/blogSingle/BlogSingle";
+export { default as BlogSingle } from "../pages/blogSingle/BlogSingle";
 export { default as ShoppingBag } from "./common/shoppingCart/ShoppingCart";
-export { default as Error } from "./utils/404/Error";
+export { default as Error } from "./utils/error/Error";

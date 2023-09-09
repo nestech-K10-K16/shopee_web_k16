@@ -10,53 +10,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  p {
-    position: relative;
-    padding: 0rem 1rem;
-    font-weight: 400;
-    font-size: $size-16;
-    line-height: 27px;
-    color: black;
-    transition: 0.5s ease;
-
-    &:hover {
-      color: $color-footer;
-    }
-
-    &.active__navbar-shop::before {
-      content: "";
-      position: absolute;
-      bottom: -25px;
-      left: 18px;
-      width: 50%;
-      height: 1px;
-      background-color: $color-text-black;
-      transition: 0.3s ease;
-    }
-
-    &.active__navbar-blog::before {
-      content: "";
-      position: absolute;
-      bottom: -25px;
-      left: 18px;
-      width: 50%;
-      height: 1px;
-      background-color: $color-text-black;
-      transition: 0.3s ease;
-    }
-
-    &.active__navbar-ourStory::before {
-      content: "";
-      position: absolute;
-      bottom: -25px;
-      left: 18px;
-      width: 68%;
-      height: 1px;
-      background-color: $color-text-black;
-      transition: 0.3s ease;
-    }
-  }
 }
 
 .shoppe__navbar {
@@ -68,50 +21,30 @@
   flex-direction: row;
   margin-right: 5px;
 
-  p {
+  ul {
+    display: flex;
     position: relative;
-    padding: 0rem 1rem;
-    font-weight: 400;
-    font-size: $size-16;
-    line-height: 27px;
-    color: black;
+    flex-direction: row;
+    list-style: none;
+    gap: 64px;
+    margin-right: 40px;
+
+    .active-shop::before {
+      content: "";
+      position: absolute;
+      bottom: -21.5px;
+      left: 1px;
+      width: 14%;
+      height: 2px;
+      background-color: $color-text-black;
+    }
+  }
+
+  li {
     transition: 0.5s ease;
 
     &:hover {
       color: $color-footer;
-    }
-
-    &.active__navbar-shop::before {
-      content: "";
-      position: absolute;
-      bottom: -25px;
-      left: 18px;
-      width: 50%;
-      height: 1px;
-      background-color: $color-text-black;
-      transition: 0.3s ease;
-    }
-
-    &.active__navbar-blog::before {
-      content: "";
-      position: absolute;
-      bottom: -25px;
-      left: 18px;
-      width: 50%;
-      height: 1px;
-      background-color: $color-text-black;
-      transition: 0.3s ease;
-    }
-
-    &.active__navbar-ourStory::before {
-      content: "";
-      position: absolute;
-      bottom: -25px;
-      left: 18px;
-      width: 68%;
-      height: 1px;
-      background-color: $color-text-black;
-      transition: 0.3s ease;
     }
   }
 }

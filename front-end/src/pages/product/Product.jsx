@@ -79,8 +79,11 @@ const Product = () => {
           <h3>Categories:</h3>
         </div>
       </div>
-      <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-        <TabList selectedIndex={tabIndex} onSelect={handleChange}>
+      <Tabs
+        data-selected-index={tabIndex}
+        onSelect={(index) => setTabIndex(index)}
+      >
+        <TabList data-selected-index={tabIndex} onSelect={handleChange}>
           <div className="shoppe__product-tabs">
             <Tab
               value={1}

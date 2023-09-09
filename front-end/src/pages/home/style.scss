@@ -1,6 +1,6 @@
-@use "../../styles/colors" as *;
-@use "../../styles/fonts" as *;
-@use "../../styles/main" as *;
+@use "styles/colors" as *;
+@use "styles/fonts" as *;
+@use "styles/main" as *;
 
 .loader {
   background-color: $color-bg;
