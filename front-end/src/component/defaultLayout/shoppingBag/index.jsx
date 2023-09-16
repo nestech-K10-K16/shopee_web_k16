@@ -1,15 +1,13 @@
 import React from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "component/common";
+import { AmountInput, Button } from "component/common";
 import { PATHNAME_LIST } from "router/router";
 import { Link } from "react-router-dom";
 import { TYPE_BUTTON } from "constants/common";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToProductDetail,
-  decreaseAmoutProduct,
-  increaseAmoutProduct,
   removeAllProductCart,
   removeProductCart,
 } from "redux/reducers/feature/productSlice";
@@ -40,15 +38,13 @@ const ShoppingBag = (props) => {
                   <p className="text-beaver">$ {item.price}</p>
                 </div>
 
-                <div className="heading-05 flex justify-between text-dark-silver w-28">
-                  <p>QTY:</p>
-                  <button onClick={() => dispatch(decreaseAmoutProduct(item))}>
-                    -
-                  </button>
-                  {item.amount}
-                  <button onClick={() => dispatch(increaseAmoutProduct(item))}>
-                    +
-                  </button>
+                <div className="flex items-center">
+                  <p className="heading-05 mr-2">QTY:</p>
+                  <AmountInput
+                    className="amount-input-02"
+                    item={item}
+                    amount={item.amount}
+                  />
                 </div>
               </div>
 
@@ -73,7 +69,7 @@ const ShoppingBag = (props) => {
         <div className="shopping-bag__content px-[5vh] py-[2vh]">
           <div className="flex justify-end">
             <button className="bg-body border-0" onClick={backOnClick}>
-              <FontAwesomeIcon icon="fa-solid fa-xmark" size="xl"/>
+              <FontAwesomeIcon icon="fa-solid fa-chevron-right" size="xl"/>
             </button>
           </div>
 

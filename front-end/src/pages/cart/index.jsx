@@ -30,17 +30,19 @@ const Cart = () => {
                   <img src={item.src} alt="" />
                 </Link>
 
-                <div className="w-[26rem] mr-8">
+                <div className="w-[26rem] mr-6">
                   <p className="heading-03 mb-4">{item.name}</p>
                   <p className="heading-05 text-dark-silver">{item.color}</p>
                   <p className="heading-05 text-beaver">$ {item.price}</p>
                 </div>
 
-                <AmountInput
-                  className="w-[6rem] h-12 mr-6"
-                  item={item}
-                  amount={item.amount}
-                />
+                <div>
+                  <AmountInput
+                    className="amount-input-01 mr-6"
+                    item={item}
+                    amount={item.amount}
+                  />
+                </div>
 
                 <div>
                   <button

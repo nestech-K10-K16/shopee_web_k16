@@ -69,7 +69,7 @@ const Product = () => {
 
                 <div className="flex text-center mb-[4.6rem]">
                   <AmountInput
-                    className="mr-5"
+                    className="amount-input-01 mr-5"
                     item={item}
                     amount={item.amount}
                   />

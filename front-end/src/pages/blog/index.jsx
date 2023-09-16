@@ -1,12 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./index.scss";
+import { Link } from "react-router-dom";
 import { IMG_POST_01, IMG_POST_02, IMG_POST_03, IMG_POST_04 } from "assets";
 import { PATHNAME_LIST } from "router/router";
 import { Input } from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import $ from "jquery";
 
 const Blog = () => {
+  const categories = ["Fashion", "Style", "Accessories", "Season"];
+  $(function () {
+    $(".blog__content__left-side-bar__categories a").click(function () {
+      $(".blog__content__left-side-bar__categories a").removeClass("active");
+      $(this).addClass("active");
+    });
+  });
+
   return (
     <section id="blog">
       <div className="blog__content flex">
@@ -21,21 +30,14 @@ const Blog = () => {
           </div>
 
           <ul className="blog__content__left-side-bar__categories flex flex-col gap-y-3">
-            <li className="heading-04">
-              <Link>Categories</Link>
-            </li>
-            <li className="heading-05">
-              <Link>Fashion</Link>
-            </li>
-            <li className="heading-05">
-              <Link>Style</Link>
-            </li>
-            <li className="heading-05">
-              <Link>Accessories</Link>
-            </li>
-            <li className="heading-05">
-              <Link>Season</Link>
-            </li>
+            <li className="heading-04">Categories</li>
+            {categories?.map((item, index) => {
+              return (
+                <li className="heading-05" key={index}>
+                  <Link>{item}</Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
