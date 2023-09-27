@@ -3,13 +3,21 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const configViewEngine = (app) => {
-  //config view engine
-  app.set("views", path.join("./src", "views"));
-  app.set("view engine", "ejs");
+  app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+    );
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    next();
+  });
 
   //config public
   app.use(express.static(path.join("./src", "public")));
-  app.use(express.static(path.join("./src", "public/css/index.css")));
 
   //config body parser
   app.use(bodyParser.urlencoded({ extended: false }));

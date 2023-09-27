@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import {
   decreaseAmoutProduct,
   increaseAmoutProduct,
-} from "redux/reducers/feature/productSlice";
+} from "redux/reducers/productSlice";
 
 const AmountInput = (props) => {
   const dispatch = useDispatch();

@@ -10,7 +10,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { filterProductName } from "redux/reducers/feature/productSlice";
+import { filterProductName } from "redux/reducers/productSlice";
 
 const Shop = () => {
   const { searchProduct } = useSelector((state) => state.productSlice);

@@ -1,20 +1,21 @@
 const productModel = require("../models/product.model");
 
-const viewProduct = (res) => {
-  res.redirect("/product");
-};
-
 module.exports = {
   product: async (req, res) => {
     const result = await productModel.getList();
-    return res.render("product", { listProduct: result });
+    res.send(result);
   },
 
   addNewProduct: async (req, res) => {
     const { IdProduct, Name, Amount, Price, Image } = req.body;
 
     if (!IdProduct) {
-      res.send({ message: "id cannot be empty" });
+      res.send("id your is empty");
+      return;
+    }
+
+    if (!productModel.getById(IdProduct)) {
+      res.send("already have this id");
       return;
     }
 
@@ -25,8 +26,6 @@ module.exports = {
       Price || 0,
       Image,
     ]);
-
-    viewProduct(res);
   },
 
   updateProduct: async (req, res) => {
@@ -38,12 +37,9 @@ module.exports = {
       Image,
       req.params.id,
     ]);
-
-    viewProduct(res);
   },
 
   deleteProduct: async (req, res) => {
     await productModel.deleteProduct(req.params.id);
-    viewProduct(res);
   },
 };

@@ -8,7 +8,7 @@ import {
   addToProductDetail,
   removeAllProductCart,
   removeProductCart,
-} from "redux/reducers/feature/productSlice";
+} from "redux/reducers/productSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {

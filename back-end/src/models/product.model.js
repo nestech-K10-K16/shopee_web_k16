@@ -8,17 +8,14 @@ module.exports = {
 
   getById: async (data) => {
     const [result] = await db.query(
-      "SELECT * FROM product WHERE IdProduct = ?",
+      "SELECT IdProduct FROM product WHERE IdProduct = ?",
       data
     );
     return result;
   },
 
   addNewProduct: async (data) => {
-    await db.query(
-      "INSERT INTO product VALUES (?,?,?,?,?)",
-      data
-    );
+    await db.query("INSERT INTO product VALUES (?,?,?,?,?)", data);
   },
 
   updateProduct: async (data) => {

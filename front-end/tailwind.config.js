@@ -4,12 +4,22 @@ module.exports = {
   theme: {
     colors: {
       transparent: "transparent",
+      white: "white",
+      "white-smoke": "whitesmoke",
       black: {
         0.1: "#0000001a",
         1: "black",
       },
+      yellow: {
+        400: "#facc15",
+      },
+      red: {
+        400: "#f87171",
+      },
+      green: {
+        400: "#4ade80",
+      },
       "rusty-red": "#DC3545",
-      white: "white",
       beaver: "#a18a68",
       "dark-silver": "#707070",
       "bright-gray": "#efefef",

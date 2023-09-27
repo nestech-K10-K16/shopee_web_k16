@@ -10,7 +10,7 @@ import {
   addToProductDetail,
   removeAllProductCart,
   removeProductCart,
-} from "redux/reducers/feature/productSlice";
+} from "redux/reducers/productSlice";
 
 const ShoppingBag = (props) => {
   const { className, backOnClick, viewCartOnClick } = props;
@@ -69,7 +69,7 @@ const ShoppingBag = (props) => {
         <div className="shopping-bag__content px-[5vh] py-[2vh]">
           <div className="flex justify-end">
             <button className="bg-body border-0" onClick={backOnClick}>
-              <FontAwesomeIcon icon="fa-solid fa-chevron-right" size="xl"/>
+              <FontAwesomeIcon icon="fa-solid fa-chevron-right" size="xl" />
             </button>
           </div>
 

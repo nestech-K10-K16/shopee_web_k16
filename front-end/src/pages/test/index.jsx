@@ -1,12 +1,12 @@
 import React from "react";
 import "./index.scss";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import ProductApi from "api/productApi";
 
 const Test = () => {
-  const product = useSelector((state) =>
-    state.product.map((item) => item.price)
-  );
-  console.log(Math.max.apply(null, product));
+  useEffect(() => {
+    ProductApi.getList().then((res) => console.log(res));
+  });
 
   return (
     <section id="test">

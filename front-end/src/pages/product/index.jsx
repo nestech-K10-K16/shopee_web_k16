@@ -13,7 +13,7 @@ import Rating from "@mui/material/Rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import { useDispatch, useSelector } from "react-redux";
-import { addProductToCart } from "redux/reducers/feature/productSlice";
+import { addProductToCart } from "redux/reducers/productSlice";
 
 const Product = () => {
   const { productDetail, product } = useSelector((state) => state.productSlice);

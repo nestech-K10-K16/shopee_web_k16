@@ -1,3 +1,4 @@
+//Pages
 import MyAccount from "pages/myAccount";
 import ResetPassword from "pages/resetPasword";
 import Home from "pages/home";
@@ -13,8 +14,11 @@ import Order from "pages/Order";
 import Contact from "pages/contact";
 import Privacy from "pages/privacy";
 import Test from "pages/test";
+//Data
+import ProductData from "data/productData";
 
 export const ROUTE_ID = {
+  //Pages
   HOME: "HomeRoute",
   SHOP: "ShopRoute",
   PRODUCT: "ProductRoute",
@@ -30,6 +34,8 @@ export const ROUTE_ID = {
   CONTACT: "ContactRoute",
   PRIVACY: "PrivacyRoute",
   TEST: "TestRoute",
+  //Data
+  PRODUCT_DATA: "ProductDataRoute",
 };
 
 export const PATHNAME_LIST = {
@@ -48,11 +54,13 @@ export const PATHNAME_LIST = {
   CONTACT: "/contact",
   PRIVACY: "/privacy",
   TEST: "/test",
+  //Data
+  PRODUCT_DATA: "/data/product",
 };
 
 export const DEFAULT_PATHNAME = PATHNAME_LIST.HOME;
 
-// Define routes
+// Pages
 const HomeRoute = {
   id: ROUTE_ID.HOME,
   path: PATHNAME_LIST.HOME,
@@ -143,7 +151,15 @@ const TestRoute = {
   component: Test,
 };
 
+//Data
+const ProductDataRoute = {
+  id: ROUTE_ID.PRODUCT_DATA,
+  path: PATHNAME_LIST.PRODUCT_DATA,
+  component: ProductData,
+};
+
 export const appRoute = [
+  //Pages
   HomeRoute,
   ShopRoute,
   ProductRoute,
@@ -159,4 +175,6 @@ export const appRoute = [
   ContactRoute,
   PrivacyRoute,
   TestRoute,
+  //Data
+  ProductDataRoute,
 ];

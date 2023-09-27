@@ -3,7 +3,7 @@ import ReactSlider from "react-slider";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { filterProductPrice } from "redux/reducers/feature/productSlice";
+import { filterProductPrice } from "redux/reducers/productSlice";
 
 const RangeSlider = () => {
   const { product } = useSelector((state) => state.productSlice);

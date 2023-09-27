@@ -12,10 +12,8 @@ import {
   IMG_PRODUCT_05,
   IMG_PRODUCT_06,
 } from "assets";
-import { useSelector } from "react-redux";
 
 const Home = () => {
-  const { product } = useSelector((state) => state.productSlice);
   const image = [
     { src: IMG_BANNER },
     { src: IMG_PRODUCT_01 },
@@ -50,7 +48,7 @@ const Home = () => {
           </div>
 
           <div>
-            <ListProduct map={product} />
+            <ListProduct />
           </div>
         </div>
       </div>

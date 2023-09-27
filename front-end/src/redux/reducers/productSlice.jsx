@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import ProductApi from "api/productApi";
 import {
   IMG_PRODUCT_01,
   IMG_PRODUCT_02,
@@ -11,45 +12,57 @@ import { toast } from "react-toastify";
 
 const listProduct = [
   {
-    id: 1,
-    name: "Lira Earrings",
-    price: 20,
+    IdProduct: 1,
+    Name: "Lira Earrings",
+    Price: 20,
     src: IMG_PRODUCT_01,
   },
   {
-    id: 2,
-    name: "Hal Earrings",
-    price: 25,
+    IdProduct: 2,
+    Name: "Hal Earrings",
+    Price: 25,
     src: IMG_PRODUCT_02,
   },
   {
-    id: 3,
-    name: "Kaede Hair Pin Set Of 3",
-    price: 30,
+    IdProduct: 3,
+    Name: "Kaede Hair Pin Set Of 3",
+    Price: 30,
     src: IMG_PRODUCT_03,
   },
   {
-    id: 4,
-    name: "Hair Pin Set of 3",
-    price: 35,
+    IdProduct: 4,
+    Name: "Hair Pin Set of 3",
+    Price: 35,
     src: IMG_PRODUCT_04,
   },
   {
-    id: 5,
-    name: "Plaine Necklace",
-    price: 40,
+    IdProduct: 5,
+    Name: "Plaine Necklace",
+    Price: 40,
     src: IMG_PRODUCT_05,
   },
   {
-    id: 6,
-    name: "Yuki Hair Pin Set of 3",
-    price: 45,
+    IdProduct: 6,
+    Name: "Yuki Hair Pin Set of 3",
+    Price: 45,
     src: IMG_PRODUCT_06,
   },
 ];
 
+export const getListProduct = createAsyncThunk(
+  "productSlice/getListProduct",
+  async () => {
+    try {
+      const response = await ProductApi.getListProduct();
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+);
+
 const initialState = {
-  product: listProduct,
+  product: {},
   productDetail: [],
   productCart: [],
   searchProduct: listProduct,
@@ -64,8 +77,8 @@ const productSlice = createSlice({
   name: "productSlice",
   initialState,
   reducers: {
-    addProductToCart(state, action) {
-      const { id, name, src, price, amount } = action.payload;
+    addProductToCart: (state, action) => {
+      const { IdProduct, Name, src, price, amount } = action.payload;
 
       if (idProductCart(state, action)) {
         toast.info("This item is already in your Shopping bag");
@@ -74,8 +87,8 @@ const productSlice = createSlice({
         state.productCart = [
           ...state.productCart,
           {
-            id: id,
-            name: name,
+            id: IdProduct,
+            name: Name,
             src: src,
             price: price,
             color: "Black / Medium",
@@ -85,7 +98,7 @@ const productSlice = createSlice({
       }
     },
 
-    increaseAmoutProduct(state, action) {
+    increaseAmoutProduct: (state, action) => {
       if (idProductCart(state, action))
         idProductCart(state, action).amount += 1;
 
@@ -93,7 +106,7 @@ const productSlice = createSlice({
         idProductDetail(state, action).amount += 1;
     },
 
-    decreaseAmoutProduct(state, action) {
+    decreaseAmoutProduct: (state, action) => {
       if (
         idProductCart(state, action) &&
         idProductCart(state, action).amount > 1
@@ -107,7 +120,7 @@ const productSlice = createSlice({
         idProductDetail(state, action).amount -= 1;
     },
 
-    addToProductDetail(state, action) {
+    addToProductDetail: (state, action) => {
       const { id, name, src, price } = action.payload;
 
       state.productDetail = [
@@ -123,28 +136,34 @@ const productSlice = createSlice({
       ];
     },
 
-    removeProductCart(state, action) {
+    removeProductCart: (state, action) => {
       state.productCart = state.productCart.filter(
         (item) => item.id !== action.payload.id
       );
     },
 
-    removeAllProductCart(state) {
+    removeAllProductCart: (state) => {
       state.productCart = [];
     },
 
-    filterProductName(state, action) {
+    filterProductName: (state, action) => {
       state.searchProduct = state.product.filter((item) => {
         return item.name.toLowerCase().includes(action.payload.toLowerCase());
       });
     },
 
-    filterProductPrice(state, action) {
+    filterProductPrice: (state, action) => {
       state.searchProduct = state.product.filter(
         (item) =>
           item.price >= action.payload[0] && item.price <= action.payload[1]
       );
     },
+  },
+
+  extraReducers: (builder) => {
+    builder.addCase(getListProduct.fulfilled, (state, action) => {
+      state.product = action.payload;
+    });
   },
 });
 
@@ -158,4 +177,5 @@ export const {
   filterProductName,
   filterProductPrice,
 } = productSlice.actions;
+
 export default productSlice.reducer;
