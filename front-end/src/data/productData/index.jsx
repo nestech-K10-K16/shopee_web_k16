@@ -1,42 +1,53 @@
 import React, { useEffect, useState } from "react";
 import "./index.scss";
 import axiosClient from "api/axiosClient";
-import CreateProduct from "./createProduct";
 import ProductApi from "api/productApi";
+import CreateProduct from "./createProduct";
+import EditProduct from "./EditProduct";
 
 const ProductData = () => {
-  const [listPorduct, setListProduct] = useState([]);
+  const [listProduct, setListProduct] = useState([]);
+  const [dataProduct, setDataProduct] = useState("");
 
   useEffect(() => {
-    const fetchListProduct = () => {
-      axiosClient.get("product").then((res) => setListProduct(res));
+    const fetchProduct = async () => {
+      const result = await axiosClient.get("product");
+      setListProduct(result);
     };
-    fetchListProduct();
+    fetchProduct();
   }, []);
 
   //event
-  const openModel = () => {
+  const openModelCreate = () => {
     document.getElementById("form-create-product").style.display = "block";
   };
 
-  const deleteProduct = async (IdProduct) => {
-    const item = listPorduct.find(
-      (item) => item.IdProduct === IdProduct
-    ).IdProduct;
+  const openModelEdit = (id) => {
+    ProductApi.getByIdProduct(id).then((res) => setDataProduct(res[0]));
+    document.getElementById("form-edit-product").style.display = "block";
+  };
 
+  const deleteProduct = async (id) => {
+    const item = listProduct.find((item) => item.IdProduct === id).IdProduct;
     if (window.confirm(`do you want to delete this id: ${item} ?`)) {
       await ProductApi.deleteProduct(item);
+      setListProduct(
+        listProduct.filter((item) => {
+          return item.IdProduct !== id;
+        })
+      );
     }
   };
 
   return (
     <section id="product-data">
       <CreateProduct />
+      <EditProduct dataProduct={dataProduct} />
       <div className="flex justify-between mb-4">
         <p className="heading-01">List Product</p>
         <button
-          className="bg-green-400 rounded-full py-2 px-4"
-          onClick={() => openModel()}
+          className="bg-green-400 border rounded-full py-2 px-4"
+          onClick={() => openModelCreate()}
         >
           Create
         </button>
@@ -53,7 +64,7 @@ const ProductData = () => {
           </tr>
         </thead>
 
-        {listPorduct?.map((item) => {
+        {listProduct?.map((item) => {
           return (
             <tbody key={item.IdProduct}>
               <tr>
@@ -63,11 +74,14 @@ const ProductData = () => {
                 <td>{item.Price}</td>
                 <td>{item.Image}</td>
                 <td className="flex gap-x-2">
-                  <button className="bg-yellow-400 rounded-full py-2 px-4">
+                  <button
+                    className="bg-yellow-400 border rounded-full py-2 px-4"
+                    onClick={() => openModelEdit(item.IdProduct)}
+                  >
                     Edit
                   </button>
                   <button
-                    className="bg-red-400 rounded-full py-2 px-4"
+                    className="bg-red-400 border rounded-full py-2 px-4"
                     onClick={() => deleteProduct(item.IdProduct)}
                   >
                     Delete

@@ -5,13 +5,27 @@ const ProductApi = {
     return axiosClient.get("product");
   },
 
-  addProduct: (IdProduct, Name, Amount, Price, Image) => {
+  getByIdProduct: (id) => {
+    return axiosClient.get(`product/id/${id}`);
+  },
+
+  addProduct: (id, name, amount, price, image) => {
     return axiosClient.post("product/add", {
-      IdProduct,
-      Name,
-      Amount,
-      Price,
-      Image,
+      id,
+      name,
+      amount,
+      price,
+      image,
+    });
+  },
+
+  editProduct: (id, name, amount, price, image) => {
+    return axiosClient.put(`product/update`, {
+      id,
+      name,
+      amount,
+      price,
+      image,
     });
   },
 
