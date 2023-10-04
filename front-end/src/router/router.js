@@ -15,7 +15,7 @@ import Contact from "pages/contact";
 import Privacy from "pages/privacy";
 import Test from "pages/test";
 //Data
-import ProductData from "data/productData";
+import ProductData from "system/productData";
 
 export const ROUTE_ID = {
   //Pages
@@ -55,7 +55,7 @@ export const PATHNAME_LIST = {
   PRIVACY: "/privacy",
   TEST: "/test",
   //Data
-  PRODUCT_DATA: "/data/product",
+  PRODUCT_DATA: "/system/product",
 };
 
 export const DEFAULT_PATHNAME = PATHNAME_LIST.HOME;

@@ -15,40 +15,40 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const product_model_1 = __importDefault(require("../models/product.model"));
 const productController = {
     product: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        const result = yield product_model_1.default.getList().catch(err => console.log(err));
+        const result = yield product_model_1.default.getList();
         ;
         res.send(result);
     }),
     getById: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        const result = yield product_model_1.default.getById(req.params.id).catch(err => console.log(err));
+        const result = yield product_model_1.default.getById(req.params.id);
         ;
         res.send(result);
     }),
     addNewProduct: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        const { id, name, amount, price, image } = req.body;
+        const { IdProduct, Name, Amount, Price, Image } = req.body;
         const result = yield product_model_1.default.addNewProduct([
-            id,
-            name,
-            amount || 0,
-            price || 0,
-            image,
+            IdProduct,
+            Name,
+            Amount || 0,
+            Price || 0,
+            Image,
         ]).catch(err => console.log(err));
         res.send(result);
     }),
     updateProduct: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        const { id, name, amount, price, image } = req.body;
+        const { IdProduct, Name, Amount, Price, Image } = req.body;
         const result = yield product_model_1.default.updateProduct([
-            name,
-            amount,
-            price,
-            image,
-            id
-        ]).catch(err => console.log(err));
+            Name,
+            Amount,
+            Price,
+            Image,
+            IdProduct
+        ]);
         ;
         res.send(result);
     }),
     deleteProduct: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        const result = yield product_model_1.default.deleteProduct(req.params.id).catch(err => console.log(err));
+        const result = yield product_model_1.default.deleteProduct(req.params.id);
         res.send(result);
     }),
 };

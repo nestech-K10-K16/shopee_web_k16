@@ -3,14 +3,13 @@ import "./index.scss";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
-import { PATHNAME_LIST } from "router/router";
 import {
   addProductToCart,
   addToProductDetail,
   getListProduct,
 } from "redux/reducers/productSlice";
-import "assets/image/img_product-01.png";
-import { IMG_PRODUCT_01 } from "assets";
+import { PATHNAME_LIST } from "router/router";
+import { convertBufferToBase64 } from "utils/common";
 
 const ListProduct = () => {
   const dispatch = useDispatch();
@@ -23,7 +22,7 @@ const ListProduct = () => {
       setProductList(currentProduct);
     };
     fetchProductList();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="grid grid-cols-3 gap-4">
@@ -35,7 +34,7 @@ const ListProduct = () => {
                 to={PATHNAME_LIST.PRODUCT}
                 onClick={() => dispatch(addToProductDetail(item))}
               >
-                <img src={IMG_PRODUCT_01} alt="" />
+                <img src={convertBufferToBase64(item.Image)} alt="" />
               </Link>
               <button
                 className="body-large"

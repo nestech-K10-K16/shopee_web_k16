@@ -2,35 +2,33 @@ import axiosClient from "./axiosClient";
 
 const ProductApi = {
   getListProduct: () => {
-    return axiosClient.get("product");
-  },
-
-  getByIdProduct: (id) => {
-    return axiosClient.get(`product/id/${id}`);
-  },
-
-  addProduct: (id, name, amount, price, image) => {
-    return axiosClient.post("product/add", {
-      id,
-      name,
-      amount,
-      price,
-      image,
+    return axiosClient.get("product").catch((err) => {
+      throw err;
     });
   },
 
-  editProduct: (id, name, amount, price, image) => {
-    return axiosClient.put(`product/update`, {
-      id,
-      name,
-      amount,
-      price,
-      image,
+  getByIdProduct: (id) => {
+    return axiosClient.get(`product/id/${id}`).catch((err) => {
+      throw err;
+    });
+  },
+
+  addProduct: (product) => {
+    return axiosClient.post("product/add", product).catch((err) => {
+      throw err;
+    });
+  },
+
+  editProduct: (product) => {
+    return axiosClient.put(`product/update`, product).catch((err) => {
+      throw err;
     });
   },
 
   deleteProduct: (id) => {
-    return axiosClient.delete(`product/delete/${id}`);
+    return axiosClient.delete(`product/delete/${id}`).catch((err) => {
+      throw err;
+    });
   },
 };
 

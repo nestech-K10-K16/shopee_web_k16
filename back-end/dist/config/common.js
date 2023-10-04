@@ -12,7 +12,7 @@ const Config = (app) => {
         next();
     });
     //config body parser
-    app.use(body_parser_1.default.json());
-    app.use(body_parser_1.default.urlencoded({ extended: false }));
+    app.use(body_parser_1.default.json({ limit: "50mb" }));
+    app.use(body_parser_1.default.urlencoded({ extended: false, limit: "50mb" }));
 };
 exports.default = Config;

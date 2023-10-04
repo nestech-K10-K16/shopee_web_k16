@@ -52,12 +52,8 @@ const listProduct = [
 export const getListProduct = createAsyncThunk(
   "productSlice/getListProduct",
   async () => {
-    try {
-      const response = await ProductApi.getListProduct();
-      return response;
-    } catch (error) {
-      console.error(error);
-    }
+    const response = await ProductApi.getListProduct();
+    return response;
   }
 );
 

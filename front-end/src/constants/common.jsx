@@ -13,3 +13,9 @@ export const TYPE_BUTTON = {
   BUTTON: "Button",
   LINK: "Link",
 };
+
+export const CLASS_NAME = {
+  HIDDEN: "hidden",
+  OPEN_MODEL: "open-model",
+  CLOSE_MODEL: "close-model",
+};
