@@ -54,7 +54,31 @@ module.exports = {
       35: "2.1875rem",
     },
 
-    extend: {},
+    keyframes: ({ theme }) => ({
+      "open-model": {
+        from: { top: theme("spacing.-1/2") },
+        to: { top: theme("spacing.1/2") },
+      },
+      "close-model": {
+        from: {
+          display: "block",
+          top: theme("spacing.1/2"),
+        },
+        to: { top: theme("spacing.-1/2") },
+      },
+    }),
+
+    animation: {
+      "open-model": "open-model 0.8s",
+      "close-model": "close-model 0.8s",
+    },
+
+    extend: {
+      spacing: {
+        "-1/2": "-50%",
+        "1/2": "50%",
+      },
+    },
   },
   plugins: [],
 };

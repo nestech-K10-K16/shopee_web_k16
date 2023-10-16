@@ -1,32 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { unwrapResult } from "@reduxjs/toolkit";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addProductToCart,
   addToProductDetail,
-  getListProduct,
 } from "redux/reducers/productSlice";
+import { getListProduct } from "redux/createAsyncThunk/productThunk";
 import { PATHNAME_LIST } from "router/router";
 import { convertBufferToBase64 } from "utils/common";
 
 const ListProduct = () => {
+  const { product } = useSelector((state) => state.productSlice);
   const dispatch = useDispatch();
-  const [productList, setProductList] = useState([]);
 
   useEffect(() => {
-    const fetchProductList = async () => {
-      const actionResult = await dispatch(getListProduct());
-      const currentProduct = unwrapResult(actionResult);
-      setProductList(currentProduct);
-    };
-    fetchProductList();
+    dispatch(getListProduct());
   }, [dispatch]);
 
   return (
     <div className="grid grid-cols-3 gap-4">
-      {productList?.map((item) => {
+      {product?.map((item) => {
         return (
           <div id="product-style" key={item.IdProduct}>
             <div className="product-style__image">

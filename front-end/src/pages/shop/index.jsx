@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import {
   Input,
@@ -8,12 +8,10 @@ import {
   ToggleButton,
 } from "component/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { filterProductName } from "redux/reducers/productSlice";
 
 const Shop = () => {
-  const { searchProduct } = useSelector((state) => state.productSlice);
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
 
@@ -71,7 +69,7 @@ const Shop = () => {
           </div>
 
           <div className="shop__content__product">
-            <ListProduct map={searchProduct} />
+            <ListProduct />
           </div>
         </div>
       </section>

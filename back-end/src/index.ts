@@ -1,13 +1,13 @@
 import express from "express"
-import Config from "./config/common";
-import router from "./routers";
+import ConfigServer from "./config/configServer";
+import Router from "./routers";
 const app = express()
 
 //config  
-Config(app)
+ConfigServer(app)
 
 //router
-app.use("/", router)
+Router(app)
 
 app.listen(8080, () => {
   console.log("Server is running on port 8080");

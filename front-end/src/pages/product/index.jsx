@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductToCart } from "redux/reducers/productSlice";
+import { convertBufferToBase64 } from "utils/common";
 
 const Product = () => {
   const { productDetail, product } = useSelector((state) => state.productSlice);
@@ -26,11 +27,12 @@ const Product = () => {
     return (
       <div>
         {productDetail?.map((item) => {
+          const base64 = convertBufferToBase64(item.Image);
           const image = [
-            { src: item.src },
-            { src: item.src },
-            { src: item.src },
-            { src: item.src },
+            { src: base64 },
+            { src: base64 },
+            { src: base64 },
+            { src: base64 },
           ];
 
           const icon = [
@@ -41,7 +43,7 @@ const Product = () => {
           ];
 
           return (
-            <div className="flex mb-16" key={item.id}>
+            <div className="flex mb-16" key={item.IdProduct}>
               <div className="mr-6">
                 <SlideShowImage
                   image={image}
@@ -52,8 +54,8 @@ const Product = () => {
               </div>
 
               <div className="product__content__top__product-infomation">
-                <p className="heading-02 mb-6">{item.name}</p>
-                <p className="heading-04 mb-14">$ {item.price}</p>
+                <p className="heading-02 mb-6">{item.Name}</p>
+                <p className="heading-04 mb-14">$ {item.Price}</p>
                 <Rating
                   className="mb-5"
                   name="half-rating"
@@ -71,7 +73,7 @@ const Product = () => {
                   <AmountInput
                     className="amount-input-01 mr-5"
                     item={item}
-                    amount={item.amount}
+                    amount={item.Amount}
                   />
                   <Button
                     className="white body-large w-full"

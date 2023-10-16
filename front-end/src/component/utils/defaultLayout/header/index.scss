@@ -1,0 +1,38 @@
+@mixin black {
+  color: theme("colors.black.1");
+}
+
+#header {
+  padding: 8vh 10vw;
+}
+
+.header__content__right-side__menu li a {
+  color: theme("colors.dark-silver");
+  display: block;
+  position: relative;
+
+  &:hover {
+    color: theme("colors.black.1");
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: -26px;
+  }
+
+  &.active {
+    color: theme("colors.black.1");
+  }
+
+  &.active::after {
+    background-color: theme("colors.black.1");
+  }
+}
+
+.header__content__right-side__menu-icon li a::after {
+  bottom: -29px;
+}

@@ -10,5 +10,7 @@ export const convertFiletoBase64 = (file) => {
 };
 
 export const convertBufferToBase64 = (buffer) => {
-  return Buffer(buffer, "base64").toString("binary");
+  const encoded = Buffer(buffer, "binary").toString("base64");
+  const decoded = Buffer.from(encoded, "base64").toString("utf8");
+  return decoded;
 };

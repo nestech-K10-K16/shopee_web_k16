@@ -1,54 +1,65 @@
 import { Request, Response } from 'express';
-import productModel from '../models/product.model';
+import ProductModel from '../models/product.model';
+import ProductService from '../service/product.service';
+import { typeProduct } from '../config/type';
 
-interface typeProduct {
-  IdProduct: string
-  Name: string
-  Amount: number
-  Price: number
-  Image: Blob
+const getList = async (req: Request, res: Response) => {
+  try {
+    const result = await ProductModel.getList();
+    res.send(result)
+  }
+  catch {
+    res.status(500).json({ error: "server error" })
+  }
 }
 
-const productController = {
-  product: async (req: Request, res: Response) => {
-    const result = await productModel.getList();;
-    res.send(result);
-  },
+const getById = async (req: Request<{ id: string }>, res: Response) => {
+  try {
+    const result = await ProductModel.getById(req.params.id)
+    res.send(result)
+  }
+  catch {
+    res.status(500).json({ error: "server error" })
+  }
+}
 
-  getById: async (req: Request<{ id: string }>, res: Response) => {
-    const result = await productModel.getById(req.params.id);;
-    res.send(result);
-  },
-
-  addNewProduct: async (req: Request<{}, {}, typeProduct>, res: Response) => {
+const create = async (req: Request<{}, {}, typeProduct>, res: Response) => {
+  try {
     const { IdProduct, Name, Amount, Price, Image } = req.body;
 
-    const result = await productModel.addNewProduct([
-      IdProduct,
-      Name,
-      Amount || 0,
-      Price || 0,
-      Image,
-    ]).catch(err => console.log(err));
-    res.send(result)
-  },
+    if (await ProductService.checkCreate(req.body, res)) {
+      const result = await ProductModel.create([IdProduct, Name, Amount, Price, Image])
+      res.send({ message: "Product added successfully", data: result })
+    }
+  }
+  catch {
+    res.status(500).json({ error: "server error" })
+  }
+}
 
-  updateProduct: async (req: Request<{ id: number }, {}, typeProduct>, res: Response) => {
+const edit = async (req: Request<{ id: number }, {}, typeProduct>, res: Response) => {
+  try {
     const { IdProduct, Name, Amount, Price, Image } = req.body;
-    const result = await productModel.updateProduct([
-      Name,
-      Amount,
-      Price,
-      Image,
-      IdProduct
-    ]);;
-    res.send(result)
-  },
 
-  deleteProduct: async (req: Request<{ id: string }>, res: Response) => {
-    const result = await productModel.deleteProduct(req.params.id);
-    res.send(result)
-  },
-};
+    if (await ProductService.checkEdit(req.body, res)) {
+      const result = await ProductModel.edit([Name, Amount, Price, Image, IdProduct])
+      res.send({ message: "Product updated successfully", data: result })
+    }
+  }
+  catch {
+    res.status(500).json({ error: "server error" })
+  }
+}
 
-export default productController
+const remove = async (req: Request<{ id: string }>, res: Response) => {
+  try {
+    const result = await ProductModel.remove(req.params.id)
+    res.send({ message: "Product deleted successfully", data: result })
+  }
+  catch {
+    res.status(500).json({ error: "server error" })
+  }
+}
+
+const ProductController = { getList, getById, create, edit, remove }
+export default ProductController 

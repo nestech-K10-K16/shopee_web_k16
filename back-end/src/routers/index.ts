@@ -1,12 +1,12 @@
+import { Express } from "express";
+import UserRouter from "./common/user.router";
+import RoleRouter from "./common/role.router";
+import ProductRouter from "./common/product.router";
 
-import productController from "../controllers/product.controller";
-import { Router } from "express";
-const router = Router();
+const router = [UserRouter, RoleRouter, ProductRouter]
 
-router.get("/product", productController.product);
-router.get("/product/id/:id", productController.getById)
-router.post("/product/add", productController.addNewProduct);
-router.put("/product/update", productController.updateProduct);
-router.delete("/product/delete/:id", productController.deleteProduct);
+const Router = (app: Express) => {
+    app.use("/", router.map(item => item))
+}
 
-export default router
+export default Router

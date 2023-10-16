@@ -1,12 +1,10 @@
 import axios from "axios";
-import queryString from "query-string";
 
 const axiosClient = axios.create({
   baseURL: "http://localhost:8080/",
   headers: {
     "Content-Type": "application/json",
   },
-  paramsSerializer: (params) => queryString.stringify(params),
 });
 
 axiosClient.interceptors.request.use(
@@ -23,7 +21,7 @@ axiosClient.interceptors.response.use(
     return res.data;
   },
   (error) => {
-    return Promise.reject(error);
+    return Promise.reject(error.response.data);
   }
 );
 
