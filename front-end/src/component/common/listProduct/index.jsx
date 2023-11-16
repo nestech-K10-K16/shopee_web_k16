@@ -1,29 +1,21 @@
-import React, { useEffect } from "react";
+import React, { memo } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  addProductToCart,
-  addToProductDetail,
-} from "redux/reducers/productSlice";
-import { getListProduct } from "redux/createAsyncThunk/productThunk";
+import { useDispatch } from "react-redux";
+import { addToProductDetail } from "redux/reducers/productSlice";
 import { PATHNAME_LIST } from "router/router";
 import { convertBufferToBase64 } from "utils/common";
+import { createCart } from "redux/createAsyncThunk/cartThunk";
 
-const ListProduct = () => {
-  const { product } = useSelector((state) => state.productSlice);
+const ListProduct = ({ map }) => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getListProduct());
-  }, [dispatch]);
-
   return (
-    <div className="grid grid-cols-3 gap-4">
-      {product?.map((item) => {
+    <div id="list-product" className="grid grid-cols-3 gap-4">
+      {map?.map((item) => {
         return (
-          <div id="product-style" key={item.IdProduct}>
-            <div className="product-style__image">
+          <div key={item.IdProduct}>
+            <div className="list-product__image">
               <Link
                 to={PATHNAME_LIST.PRODUCT}
                 onClick={() => dispatch(addToProductDetail(item))}
@@ -32,7 +24,15 @@ const ListProduct = () => {
               </Link>
               <button
                 className="body-large"
-                onClick={() => dispatch(addProductToCart(item))}
+                onClick={() =>
+                  dispatch(
+                    createCart({
+                      IdProduct: item.IdProduct,
+                      Amount: 1,
+                      IntoMoney: item.Price,
+                    })
+                  )
+                }
               >
                 Add to cart
               </button>
@@ -47,4 +47,4 @@ const ListProduct = () => {
   );
 };
 
-export default ListProduct;
+export default memo(ListProduct);

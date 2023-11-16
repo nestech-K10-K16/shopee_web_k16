@@ -28,6 +28,7 @@ const Footer = () => {
         <div className="footer-bottom__right-side">
           <div className="w-80 mb-4">
             <Input
+              id={"input"}
               className="heading-05 w-full pr-4"
               placeholder="Give an email, get the newsletter."
             ></Input>

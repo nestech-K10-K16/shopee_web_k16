@@ -8,6 +8,7 @@ import {
   faXmark,
   faChevronLeft,
   faChevronRight,
+  faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { faUser, faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -30,5 +31,6 @@ library.add(
   faFacebookF,
   faInstagram,
   faLinkedinIn,
-  faTwitter
+  faTwitter,
+  faRightFromBracket
 );

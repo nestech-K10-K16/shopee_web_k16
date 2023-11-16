@@ -12,8 +12,11 @@ import {
   IMG_PRODUCT_05,
   IMG_PRODUCT_06,
 } from "assets";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+  const { productList } = useSelector((state) => state.productSlice);
+
   const image = [
     { src: IMG_BANNER },
     { src: IMG_PRODUCT_01 },
@@ -33,7 +36,7 @@ const Home = () => {
             heightMainImg={"632px"}
             widthMainImg={"1221px"}
             heightChildImg={"9rem"}
-          ></SlideShowImage>
+          />
         </div>
 
         <div className="home__content__product">
@@ -48,7 +51,7 @@ const Home = () => {
           </div>
 
           <div>
-            <ListProduct />
+            <ListProduct map={productList} />
           </div>
         </div>
       </div>

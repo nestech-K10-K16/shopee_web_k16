@@ -1,115 +1,118 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-import { getListProduct } from "redux/createAsyncThunk/productThunk";
+import {
+  createProduct,
+  deleteProduct,
+  editProduct,
+  getByIdProduct,
+  getListProduct,
+} from "redux/createAsyncThunk/productThunk";
+import { convertBufferToBase64 } from "utils/common";
+import { KEY_LOCAL_STORAGE } from "constants/common";
 
 const initialState = {
-  product: [],
-  productDetail: [],
-  productCart: [],
-  isLoading: true,
+  productList: [],
+  productById: [],
+  editProductValue: [],
+  searchProduct: [],
+  priceProduct: [],
+  productDetail: {},
 };
-
-const idProductCart = (state, action) =>
-  state.productCart.find((item) => item.IdProduct === action.payload.IdProduct);
-const idProductDetail = (state, action) =>
-  state.productDetail.find((item) => item.Name === action.payload.Name);
 
 const productSlice = createSlice({
   name: "productSlice",
   initialState,
   reducers: {
-    addProductToCart: (state, action) => {
-      console.log(state.product);
-      if (idProductCart(state, action)) {
-        toast.info("This item is already in your Shopping bag");
-      } else {
-        toast.success("The item added to your Shopping bag");
-        state.productCart.push({
-          ...action.payload,
-          Color: "Black / Medium",
-          Amount: 1,
-        });
-      }
-    },
-
-    increaseAmoutProduct: (state, action) => {
-      if (idProductCart(state, action))
-        idProductCart(state, action).Amount += 1;
-
-      if (idProductDetail(state, action))
-        idProductDetail(state, action).Amount += 1;
-    },
-
-    decreaseAmoutProduct: (state, action) => {
-      if (
-        idProductCart(state, action) &&
-        idProductCart(state, action).Amount > 1
-      )
-        idProductCart(state, action).Amount -= 1;
-
-      if (
-        idProductDetail(state, action) &&
-        idProductDetail(state, action).Amount > 1
-      )
-        idProductDetail(state, action).Amount -= 1;
+    addProductToEdit: (state, action) => {
+      state.editProductValue = action.payload;
     },
 
     addToProductDetail: (state, action) => {
-      state.productDetail = [
-        {
-          ...action.payload,
-          Amount: idProductCart(state, action)
-            ? idProductCart(state, action).Amount
-            : 1,
-        },
-      ];
-    },
+      const data = {
+        ...action.payload,
+        Amount: 1,
+        Image: convertBufferToBase64(action.payload.Image),
+      };
+      state.productDetail = data;
 
-    removeProductCart: (state, action) => {
-      state.productCart = state.productCart.filter(
-        (item) => item.IdProduct !== action.payload.IdProduct
+      localStorage.setItem(
+        KEY_LOCAL_STORAGE.PRODUCT_DETAIL,
+        JSON.stringify(data)
       );
     },
 
-    removeAllProductCart: (state) => {
-      state.productCart = [];
+    refreshProductDetail: (state) => {
+      state.productDetail = JSON.parse(
+        localStorage.getItem(KEY_LOCAL_STORAGE.PRODUCT_DETAIL)
+      );
     },
 
-    filterProductName: (state, action) => {
-      state.searchProduct = state.product.filter((item) => {
-        return item.name.toLowerCase().includes(action.payload.toLowerCase());
-      });
+    filterByNameProduct: (state, action) => {
+      state.searchProduct = state.productList.filter((item) =>
+        item.Name.toLowerCase().includes(action.payload.toLowerCase())
+      );
     },
 
     filterProductPrice: (state, action) => {
-      state.searchProduct = state.product.filter(
+      state.searchProduct = state.productList.filter(
         (item) =>
-          item.price >= action.payload[0] && item.price <= action.payload[1]
+          item.Price >= action.payload[0] && item.Price <= action.payload[1]
       );
     },
   },
 
   extraReducers: (builder) => {
-    builder.addCase(getListProduct.pending, (state) => {
-      state.isLoading = true;
+    // get list product
+    builder.addCase(getListProduct.fulfilled, (state, action) => {
+      state.productList = action.payload;
     });
 
-    builder.addCase(getListProduct.fulfilled, (state, action) => {
-      state.isLoading = false;
-      state.product = action.payload;
+    // get by id product
+    builder.addCase(getByIdProduct.fulfilled, (state, action) => {
+      state.productById = action.payload[0];
+    });
+
+    // create product
+    builder.addCase(createProduct.fulfilled, (state, action) => {
+      if (action.payload.errCode === 1) {
+        toast.error(action.payload.message);
+        return;
+      }
+
+      toast.success(action.payload.message);
+      state.productList.unshift(action.meta.arg);
+    });
+
+    // edit product
+    builder.addCase(editProduct.fulfilled, (state, action) => {
+      if (action.payload.errCode === 1) {
+        toast.error(action.payload.message);
+        return;
+      }
+
+      toast.success(action.payload.message);
+      const objIndex = state.product.findIndex(
+        (item) => item.IdProduct === action.meta.arg.IdProduct
+      );
+      state.productList[objIndex] = action.meta.arg;
+    });
+
+    // delete product
+    builder.addCase(deleteProduct.fulfilled, (state, action) => {
+      toast.success(action.payload.message);
+      state.productList = state.product.filter((item) => {
+        return item.IdProduct !== action.meta.arg;
+      });
     });
   },
 });
 
 export const {
-  addProductToCart,
-  increaseAmoutProduct,
-  decreaseAmoutProduct,
+  addProductToEdit,
+  addProductDetailtoCart,
   addToProductDetail,
-  removeProductCart,
-  removeAllProductCart,
-  filterProductName,
+  refreshProductDetail,
+  filterByNameProduct,
   filterProductPrice,
 } = productSlice.actions;
-
 export default productSlice.reducer;

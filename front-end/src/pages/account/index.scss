@@ -1,5 +1,26 @@
 #account {
   padding: 8vh 10vw;
+
+  & table,
+  td,
+  th {
+    border: 1px solid theme("colors.black.1");
+    text-align: left;
+  }
+
+  & table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  & th,
+  td {
+    padding: 15px;
+  }
+
+  & tr:hover {
+    background-color: theme("colors.bright-gray");
+  }
 }
 
 .account__content__tab-list {

@@ -1,28 +1,32 @@
 import Connection from "../config/database";
+import { typeProduct } from "../types/common";
 
 const getList = async () => {
-  const [result] = await Connection.query("SELECT * FROM PRODUCT");
+  const [result] = await Connection.execute("SELECT * FROM PRODUCT");
   return result;
 }
 
-const getById = async (data: string) => {
-  const [result] = await Connection.query("SELECT * FROM PRODUCT where IdProduct = ?", data);
+const getById = async (id: string) => {
+  const [result] = await Connection.execute("SELECT * FROM PRODUCT where IdProduct = ?", [id]);
   return result;
 }
 
-const create = async (data: object) => {
-  const [result] = await Connection.query("INSERT INTO PRODUCT VALUES (?,?,?,?,?)", data);
+const create = async (data: typeProduct) => {
+  const { IdProduct, Name, Amount, Price, Image } = data
+  const [result] = await Connection.execute("INSERT INTO PRODUCT VALUES (?,?,?,?,?)",
+    [IdProduct, Name, Amount, Price, Image]);
   return result
 }
 
-const edit = async (data: object) => {
-  const [result] = await Connection
-    .query("UPDATE PRODUCT SET Name =?, Amount =?, Price =?, Image =? WHERE IdProduct =?", data);
+const edit = async (data: typeProduct) => {
+  const { IdProduct, Name, Amount, Price, Image } = data
+  const [result] = await Connection.execute("UPDATE PRODUCT SET Name =?, Amount =?, Price =?, Image =? WHERE IdProduct =?",
+    [Name, Amount, Price, Image, IdProduct]);
   return result
 }
 
-const remove = async (data: string) => {
-  const [result] = await Connection.query("DELETE FROM PRODUCT WHERE IdProduct =?", data)
+const remove = async (id: string) => {
+  const [result] = await Connection.execute("DELETE FROM PRODUCT WHERE IdProduct =?", [id])
   return result
 }
 

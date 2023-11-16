@@ -1,34 +1,38 @@
-import React from "react";
+import React, { memo } from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { useCallback } from "react";
 
 const SlideShowImage = (props) => {
   const { image, widthMainImg, heightMainImg, heightChildImg } = props;
   const [slideIndex, setSlideIndex] = useState(0);
   const [animation, setAnimation] = useState("slide-from-left");
 
-  const getNewSlideIndex = (step) => {
-    var newSlideIndex = slideIndex + step;
+  const getNewSlideIndex = useCallback(
+    (step) => {
+      var newSlideIndex = slideIndex + step;
 
-    if (newSlideIndex >= image.length) {
-      newSlideIndex = 0;
-    } else if (newSlideIndex < 0) {
-      newSlideIndex = image.length - 1;
-    }
+      if (newSlideIndex >= image.length) {
+        newSlideIndex = 0;
+      } else if (newSlideIndex < 0) {
+        newSlideIndex = image.length - 1;
+      }
 
-    return newSlideIndex;
-  };
+      return newSlideIndex;
+    },
+    [image.length, slideIndex]
+  );
 
-  const fordwardOnClick = () => {
+  const fordwardOnClick = useCallback(() => {
     setSlideIndex(getNewSlideIndex(1));
     setAnimation("slide-from-right");
-  };
+  }, [getNewSlideIndex]);
 
-  const backwardOnClick = () => {
+  const backwardOnClick = useCallback(() => {
     setSlideIndex(getNewSlideIndex(-1));
     setAnimation("slide-from-left");
-  };
+  }, [getNewSlideIndex]);
 
   return (
     <div id="slide-show-image">
@@ -96,4 +100,4 @@ const SlideShowImage = (props) => {
   );
 };
 
-export default SlideShowImage;
+export default memo(SlideShowImage);

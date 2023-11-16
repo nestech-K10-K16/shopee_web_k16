@@ -1,30 +1,29 @@
 import React from "react";
 import "./index.scss";
-import { TYPE_BUTTON } from "constants/common";
 import { Link } from "react-router-dom";
+import { TYPE_BUTTON } from "constants/common";
 
 const Button = (props) => {
-  const { type, children } = props;
+  const { typeButton, children } = props;
 
-  const buttonDefault = () => {
-    return (
-      <button
-        className={`border rounded-[10px] p-2 ${props.className}`}
-        onClick={props.onClick}
-      >
-        {children}
-      </button>
-    );
-  };
-
-  switch (type) {
+  switch (typeButton) {
     case TYPE_BUTTON.BUTTON:
-      return buttonDefault();
+      return (
+        <button
+          id={props.id}
+          className={props.className}
+          type={props.type}
+          onClick={props.onClick}
+        >
+          {children}
+        </button>
+      );
 
     case TYPE_BUTTON.LINK:
       return (
         <Link
-          className={`border rounded-[10px] p-2 ${props.className}`}
+          id={props.id}
+          className={props.className}
           to={props.to}
           onClick={props.onClick}
         >
@@ -33,7 +32,7 @@ const Button = (props) => {
       );
 
     default:
-      return buttonDefault();
+      break;
   }
 };
 

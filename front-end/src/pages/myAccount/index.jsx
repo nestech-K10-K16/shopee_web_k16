@@ -1,129 +1,67 @@
-import { React, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import "./index.scss";
-import { Button, Input } from "component/common";
-import { validateEmail, validatePassword } from "utils";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Button, Input } from "component/common";
 import { TYPE_BUTTON } from "constants/common";
+import { PATHNAME_LIST } from "router/router";
+import { formLoginData, formRegisterData } from "data/common";
+import {
+  handleRegisterUser,
+  hanldeLoginUser,
+} from "redux/createAsyncThunk/userThunk";
 
 const MyAccount = () => {
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rePassword, setRePassword] = useState("");
-  const [message, setMessage] = useState("");
-
-  const [homePage, setHomePage] = useState("");
+  const { success } = useSelector((state) => state.userSlice);
+  const dispatch = useDispatch();
 
   const [tabIndex, setTabIndex] = useState(0);
+  const [login, setLogin] = useState({
+    Email: "",
+    Password: "",
+  });
+  const [register, setRegister] = useState({
+    Name: "",
+    Email: "",
+    Password: "",
+    RePassword: "",
+  });
+  const navigate = useNavigate();
 
-  const onClickButtonLogin = () => {
-    if (!validateEmail(email)) {
-      setMessage("email không hợp lệ");
-    }
+  // event
+  const loginSubmit = async (e) => {
+    e.preventDefault();
+    dispatch(hanldeLoginUser(login));
+  };
 
-    if (!validatePassword(password)) {
-      setMessage("password không hợp lệ");
-      return;
+  useEffect(() => {
+    if (success) navigate(PATHNAME_LIST.HOME);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [success]);
+
+  const registerSubmit = async (e) => {
+    e.preventDefault();
+    const result = await dispatch(handleRegisterUser(register)).unwrap();
+    if (result.errCode === 0) {
+      setTabIndex(0);
+      e.target.reset();
     }
   };
 
-  const onClickButtonRegister = () => {
-    setHomePage("#");
-
-    //full name
-    if (!fullName) {
-      setMessage("yêu cầu nhập full name");
-      return;
-    }
-
-    if (fullName.length > 50) {
-      setMessage("full name của bạn không được quá 50 kí tự");
-      return;
-    }
-
-    //email
-    if (!email) {
-      setMessage("yêu cầu nhập email");
-      return;
-    }
-
-    if (!email.includes("@")) {
-      setMessage("email phải có kí tự @");
-      return;
-    }
-    if (email.length > 50) {
-      setMessage("email của bạn không được quá 50 kí tự");
-      return;
-    }
-
-    //password
-    if (!password) {
-      setMessage("yêu cầu nhập password");
-      return;
-    }
-
-    if (email.length > 6 && email.length < 20) {
-      setMessage("password của bạn phải hơn 6 kí tự và nhỏ hơn 20 kí tự");
-      return;
-    }
-
-    if (!/[A-Z]/.test(password)) {
-      setMessage("yêu cầu password của bạn phải có chữ viết hoa");
-      return;
-    }
-
-    if (!/[0-9]/.test(password)) {
-      setMessage("yêu cầu password của bạn phải có số");
-      return;
-    }
-
-    if (!/[^a-zA-Z\d]/.test(password)) {
-      setMessage("yêu cầu password của bạn phải có kí tự đặc biệt");
-      return;
-    }
-
-    //re password
-    if (!rePassword) {
-      setMessage("yêu cầu nhập lại password");
-      return;
-    }
-
-    if (rePassword.length > 6 && rePassword.length < 20) {
-      setMessage("nhập lại password của bạn phải hơn 6 kí và nhỏ hơn 20 kí tự");
-      return;
-    }
-
-    if (!/[A-Z]/.test(rePassword)) {
-      setMessage("yêu cầu nhập lại password của bạn phải có chữ viết hoa");
-      return;
-    }
-
-    if (!/[0-9]/.test(rePassword)) {
-      setMessage("yêu cầu nhập lại password của bạn phải có số");
-      return;
-    }
-
-    if (!/[^a-zA-Z\d]/.test(rePassword)) {
-      setMessage("yêu cầu nhập lại password của bạn phải có kí tự đặc biệt");
-      return;
-    }
-  };
-
-  const tab = ["Login", "Register"];
-
+  const tabData = ["Login", "Register"];
   return (
     <section id="my-account">
       <div className="my-account__content">
         <p className="heading-01 mb-5">My account</p>
 
-        <Tabs selectedIndex={tabIndex} onSelect={(e) => setTabIndex(e)}>
+        <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
           <TabList className="my-account__content__switch heading-03 flex mb-8">
-            {tab?.map((item, index) => {
+            {tabData?.map((item, index) => {
               return (
                 <Tab
-                  className={tabIndex === index ? "tab-active" : ""}
                   key={index}
+                  className={tabIndex === index ? "tab-active" : ""}
                 >
                   <Link className="text-black-1">{item}</Link>
                 </Tab>
@@ -131,82 +69,82 @@ const MyAccount = () => {
             })}
           </TabList>
 
-          <TabPanel className="my-account__content__login flex flex-col ">
-            <p className="text-rusty-red">{message}</p>
+          <TabPanel className="my-account__content__login">
+            <form className="flex flex-col" onSubmit={loginSubmit}>
+              <div className="flex flex-col gap-3 mb-4">
+                {formLoginData?.map((item, index) => {
+                  return (
+                    <Fragment key={index}>
+                      <Input
+                        id="input"
+                        className="heading-05"
+                        name={item.name}
+                        type={item.type}
+                        placeholder={item.name}
+                        onChange={(e) =>
+                          setLogin({
+                            ...login,
+                            [e.target.name]: e.target.value,
+                          })
+                        }
+                      ></Input>
+                    </Fragment>
+                  );
+                })}
+              </div>
 
-            <Input
-              className="heading-05 mb-3"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            ></Input>
+              <div className="flex items-center mb-8">
+                <input className="heading-05 me-3" type="checkbox" />
+                Remember me
+              </div>
 
-            <Input
-              className="heading-05 mb-3"
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            ></Input>
+              <Button
+                id="button"
+                className="style-01 body-large mb-3"
+                type="submit"
+                typeButton={TYPE_BUTTON.BUTTON}
+              >
+                SIGN IN
+              </Button>
 
-            <span className="flex items-center mb-8">
-              <input className="heading-05 me-3" type="checkbox" />
-              Remember me
-            </span>
-
-            <Button
-              className="black body-large mb-3"
-              type={TYPE_BUTTON.LINK}
-              to={homePage}
-              onClick={onClickButtonLogin}
-            >
-              SIGN IN
-            </Button>
-
-            <Link className="heading-05">Have you forgotten your password</Link>
+              <Link className="heading-05 text-dark-silver hover:text-black-1">
+                Have you forgotten your password
+              </Link>
+            </form>
           </TabPanel>
 
-          <TabPanel className="my-account__content__register flex flex-col">
-            <p className="text-rusty-red">{message}</p>
+          <TabPanel className="my-account__content__register ">
+            <form className="flex flex-col" onSubmit={registerSubmit}>
+              {formRegisterData.map((item, index) => {
+                return (
+                  <div className="flex items-center" key={index}>
+                    <Input
+                      id="input"
+                      className="heading-05 mb-2 w-full"
+                      name={item.name}
+                      type={item.type}
+                      placeholder={item.placeholder}
+                      onChange={(e) =>
+                        setRegister({
+                          ...register,
+                          [e.target.name]: e.target.value,
+                        })
+                      }
+                    ></Input>
+                    (*)
+                  </div>
+                );
+              })}
 
-            <Input
-              className="heading-05 mb-2"
-              placeholder="Full name"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-            ></Input>
-
-            <Input
-              className="heading-05 mb-2"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            ></Input>
-
-            <Input
-              className="heading-05 mb-2"
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            ></Input>
-
-            <Input
-              className="heading-05 mb-8"
-              type="password"
-              placeholder="Enter the password"
-              value={rePassword}
-              onChange={(e) => setRePassword(e.target.value)}
-            ></Input>
-
-            <Button
-              className="black body-large"
-              type={TYPE_BUTTON.LINK}
-              to={homePage}
-              onClick={onClickButtonRegister}
-            >
-              SIGN UP
-            </Button>
+              <Button
+                id="button"
+                type="submit"
+                className="style-01 body-large mt-4"
+                typeButton={TYPE_BUTTON.BUTTON}
+              >
+                SIGN UP
+              </Button>
+            </form>
           </TabPanel>
         </Tabs>
       </div>

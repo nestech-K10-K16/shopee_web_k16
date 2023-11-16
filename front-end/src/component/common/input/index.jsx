@@ -4,10 +4,12 @@ import "./index.scss";
 const Input = (props) => {
   return (
     <input
-      className={`input ${props.className}`}
+      id={props.id}
+      className={props.className}
+      name={props.name}
       type={props.type}
-      placeholder={props.placeholder}
       value={props.value}
+      placeholder={props.placeholder}
       onChange={props.onChange}
       onKeyDown={props.onKeyDown}
     />

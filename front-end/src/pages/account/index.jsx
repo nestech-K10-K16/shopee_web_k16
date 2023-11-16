@@ -1,21 +1,64 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Link } from "react-router-dom";
-import { Button, Input } from "component/common";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getByIdUser,
+  hanldeLogoutUser,
+} from "redux/createAsyncThunk/userThunk";
+import {
+  getByIdUserBill,
+  getListDeviveryOptionsBill,
+  getListPaymentMothodsBill,
+  getListStatusBill,
+} from "redux/createAsyncThunk/billThunk";
+import { billSliceSelector, userSliceSelector } from "redux/selector";
 import { PATHNAME_LIST } from "router/router";
+import { formatDate } from "utils/common";
 
 const Account = () => {
+  const { userToken } = useSelector(userSliceSelector);
+  const {
+    billByIdCustomer,
+    statusBill,
+    paymentMethodsBill,
+    deliveryOptionsBill,
+  } = useSelector(billSliceSelector);
+  const dispatch = useDispatch();
+
   const [tabIndex, setTabIndex] = useState(0);
 
+  useEffect(() => {
+    const fetchIdCustomerBill = async () => {
+      const userById = await dispatch(
+        getByIdUser(userToken.data?.Email)
+      ).unwrap();
+      dispatch(getByIdUserBill(userById[0].IdCustomer));
+    };
+    fetchIdCustomerBill();
+  }, [dispatch, userToken.data?.Email]);
+
+  useEffect(() => {
+    dispatch(getListStatusBill());
+    dispatch(getListPaymentMothodsBill());
+    dispatch(getListDeviveryOptionsBill());
+  }, [dispatch]);
+
+  // data
   const tab = [
     { name: "Dashboard" },
     { name: "Orders" },
-    { name: "Downloads" },
-    { name: "Addresses" },
-    { name: "Account details" },
-    { name: "Logout", to: PATHNAME_LIST.MY_ACCOUNT },
+    {
+      name: userToken.data?.Role === 0 && "System",
+      to: PATHNAME_LIST.USER_MANAGE,
+    },
   ];
+
+  //event
+  const logoutAccount = () => {
+    dispatch(hanldeLogoutUser());
+  };
 
   return (
     <section id="account">
@@ -26,19 +69,25 @@ const Account = () => {
           <TabList className="account__content__tab-list heading-03 flex pb-4 mb-4">
             {tab?.map((item, index) => {
               return (
-                <Tab className={tabIndex === index ? "tab-active" : ""}>
+                <Tab
+                  key={index}
+                  className={tabIndex === index ? "tab-active" : ""}
+                >
                   <Link to={item.to}>{item.name}</Link>
                 </Tab>
               );
             })}
           </TabList>
 
-          <TabPanel className="heading-05">
+          <TabPanel className="account__content__dashboard heading-05">
             <div className="flex mb-2">
-              <p className="heading-05 mr-1">Hello Vitatheme (not Vitatheme?</p>
+              <p className="heading-05 mr-1">
+                Hello {userToken.data?.Name} (not {userToken.data?.Name}?
+              </p>
               <Link
                 className="heading-05 text-beaver hover:text-black-1"
                 to={PATHNAME_LIST.MY_ACCOUNT}
+                onClick={() => logoutAccount()}
               >
                 Log out)
               </Link>
@@ -50,74 +99,54 @@ const Account = () => {
             </p>
           </TabPanel>
 
-          <TabPanel></TabPanel>
+          <TabPanel className="account__content__order">
+            <table>
+              <thead>
+                <tr>
+                  <th>IdBill:</th>
+                  <th>OrderDate:</th>
+                  <th>Status:</th>
+                  <th>TotalMoney:</th>
+                  <th>PaymentMethods:</th>
+                  <th>DeliveryOptions:</th>
+                </tr>
+              </thead>
 
-          <TabPanel></TabPanel>
-
-          <TabPanel>
-            <p className="heading-05 mb-8">
-              The following addresses will be used on the checkout page by
-              default.
-            </p>
-
-            <div className="flex justify-between w-[60rem]">
-              <div className="flex flex-col gap-y-4">
-                <p className="heading-03">Billing address</p>
-                <button className="body-large flex text-beaver hover:text-black-1">
-                  ADD
-                </button>
-                <p className="body-medium text-dark-silver">
-                  You have not set up this type of address yet.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-y-4">
-                <p className="heading-03">Shipping address</p>
-                <button className="body-large flex text-beaver hover:text-black-1">
-                  ADD
-                </button>
-                <p className="body-medium text-dark-silver">
-                  You have not set up this type of address yet.
-                </p>
-              </div>
-            </div>
-          </TabPanel>
-
-          <TabPanel className="flex flex-col items-center">
-            <div className="w-[30rem]">
-              <p className="heading-01 text-center">Account details</p>
-
-              <form className="flex flex-col w-full gap-y-6">
-                <Input className="body-medium" placeholder="First name*" />
-                <Input className="body-medium" placeholder="Last name*" />
-                <div>
-                  <Input
-                    className="body-medium mb-4"
-                    placeholder="Display name*"
-                  />
-                  <p className="body-small text-dark-silver">
-                    This will be how your name will be displayed in the account
-                    section and in reviews.
-                  </p>
-                </div>
-                <Input className="body-medium" placeholder="Email address*" />
-                <p className="body-large">Password change</p>
-                <Input
-                  className="body-medium"
-                  placeholder="Current password (leave blank to leave unchanged)"
-                />
-                <Input
-                  className="body-medium"
-                  placeholder="New password (leave blank to leave unchanged)"
-                />
-                <Input
-                  className="body-medium"
-                  placeholder="Confirm new password"
-                />
-
-                <Button className="black text-center">SAVE CHANGES</Button>
-              </form>
-            </div>
+              {billByIdCustomer?.map((item) => {
+                return (
+                  <tbody key={item.IdBill}>
+                    <tr>
+                      <td>{item.IdBill}</td>
+                      <td className="w-32">{formatDate(item.OrderDate)}</td>
+                      <td>
+                        {
+                          statusBill.find(
+                            (value) => value.IdStatus === item.Status
+                          )?.Name
+                        }
+                      </td>
+                      <td>{item.TotalMoney}</td>
+                      <td>
+                        {
+                          paymentMethodsBill.find(
+                            (value) =>
+                              value.IdPaymentMethods === item.PaymentMethods
+                          )?.Name
+                        }
+                      </td>
+                      <td>
+                        {
+                          deliveryOptionsBill.find(
+                            (value) =>
+                              value.IdDeliveryOptions === item.DeliveryOptions
+                          )?.Name
+                        }
+                      </td>
+                    </tr>
+                  </tbody>
+                );
+              })}
+            </table>
           </TabPanel>
         </Tabs>
       </div>

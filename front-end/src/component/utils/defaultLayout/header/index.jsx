@@ -2,13 +2,16 @@ import React from "react";
 import "./index.scss";
 import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IMG_LOGO } from "assets";
 import { PATHNAME_LIST } from "router/router";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { cartSliceSelector, userSliceSelector } from "redux/selector";
 
 const Header = (props) => {
-  const { productCart } = useSelector((state) => state.productSlice);
   const { ShoppingBagOnClick } = props;
+
+  const { userToken } = useSelector(userSliceSelector);
+  const { cartByIdUser } = useSelector(cartSliceSelector);
 
   return (
     <header id="header">
@@ -21,14 +24,9 @@ const Header = (props) => {
         </Link>
 
         <div className="header__content__right-side">
-          <ul className="header__content__right-side__menu flex space-x-8">
+          <ul className="header__content__right-side__menu flex gap-x-8">
             <li>
-              <NavLink
-                className={({ isActive }) => (isActive ? "active" : "")}
-                to={PATHNAME_LIST.SHOP}
-              >
-                Shop
-              </NavLink>
+              <NavLink to={PATHNAME_LIST.SHOP}>Shop</NavLink>
             </li>
             <li>
               <NavLink to={PATHNAME_LIST.BLOG}>Blog</NavLink>
@@ -39,26 +37,31 @@ const Header = (props) => {
 
             <div className="border border-dark-silver -rotate-180"></div>
 
-            <div className="header__content__right-side__menu-icon flex space-x-8">
-              <li>
-                <NavLink>
-                  <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-                </NavLink>
-              </li>
-              <li>
-                <div className="flex">
-                  <NavLink onClick={ShoppingBagOnClick}>
-                    <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
+            <li>
+              <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+            </li>
+            <li
+              className="flex items-center cursor-pointer"
+              onClick={ShoppingBagOnClick}
+            >
+              <FontAwesomeIcon
+                className="mr-1"
+                icon="fa-solid fa-cart-shopping"
+              />
+              ({userToken.data ? cartByIdUser.length : 0})
+            </li>
+            <li className="flex">
+              {userToken.data?.Name ? (
+                <>
+                  <NavLink className="mr-2" to={PATHNAME_LIST.ACCOUNT}>
+                    <FontAwesomeIcon icon="fa-regular fa-user" />
                   </NavLink>
-                  <p className="ml-1">({productCart.length})</p>
-                </div>
-              </li>
-              <li>
-                <NavLink to={PATHNAME_LIST.ACCOUNT}>
-                  <FontAwesomeIcon icon="fa-regular fa-user" />
-                </NavLink>
-              </li>
-            </div>
+                  <p>{userToken.data?.Name}</p>
+                </>
+              ) : (
+                <NavLink to={PATHNAME_LIST.MY_ACCOUNT}>Login</NavLink>
+              )}
+            </li>
           </ul>
         </div>
       </nav>

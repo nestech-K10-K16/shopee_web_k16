@@ -1,129 +1,21 @@
 import React, { useState } from "react";
 import "./index.scss";
-import { Link } from "react-router-dom";
+import { Rating } from "@mui/material";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import { useSelector } from "react-redux";
+import { productSliceSelector } from "redux/selector";
+import { TYPE_BUTTON } from "constants/common";
 import {
   Input,
   Button,
-  AmountInput,
   TextArea,
   ListProduct,
-  SlideShowImage,
+  ProductDetail,
 } from "component/common";
-import Rating from "@mui/material/Rating";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import { useDispatch, useSelector } from "react-redux";
-import { addProductToCart } from "redux/reducers/productSlice";
-import { convertBufferToBase64 } from "utils/common";
 
 const Product = () => {
-  const { productDetail, product } = useSelector((state) => state.productSlice);
-  const dispatch = useDispatch();
-
-  const [heart, setHeart] = useState(false);
+  const { productList } = useSelector(productSliceSelector);
   const [tabIndex, setTabIndex] = useState(0);
-
-  const Items = () => {
-    return (
-      <div>
-        {productDetail?.map((item) => {
-          const base64 = convertBufferToBase64(item.Image);
-          const image = [
-            { src: base64 },
-            { src: base64 },
-            { src: base64 },
-            { src: base64 },
-          ];
-
-          const icon = [
-            "fa-regular fa-envelope",
-            "fa-brands fa-facebook-f",
-            "fa-brands fa-instagram",
-            "fa-brands fa-twitter",
-          ];
-
-          return (
-            <div className="flex mb-16" key={item.IdProduct}>
-              <div className="mr-6">
-                <SlideShowImage
-                  image={image}
-                  widthMainImg={"32rem"}
-                  heightMainImg={"32rem"}
-                  heightChildImg={"7.6rem"}
-                />
-              </div>
-
-              <div className="product__content__top__product-infomation">
-                <p className="heading-02 mb-6">{item.Name}</p>
-                <p className="heading-04 mb-14">$ {item.Price}</p>
-                <Rating
-                  className="mb-5"
-                  name="half-rating"
-                  defaultValue={2.5}
-                  precision={0.5}
-                />
-                <p className="heading-05 mb-11">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aliquam placerat, augue a volutpat hendrerit, sapien tortor
-                  faucibus augue, a maximus elit ex vitae libero. Sed quis
-                  mauris eget arcu facilisis consequat sed eu felis.
-                </p>
-
-                <div className="flex text-center mb-[4.6rem]">
-                  <AmountInput
-                    className="amount-input-01 mr-5"
-                    item={item}
-                    amount={item.Amount}
-                  />
-                  <Button
-                    className="white body-large w-full"
-                    onClick={() => dispatch(addProductToCart(item))}
-                  >
-                    ADD TO CART
-                  </Button>
-                </div>
-
-                <div className="flex mb-9 gap-x-8">
-                  <FontAwesomeIcon
-                    icon="fa-solid fa-heart"
-                    size="xl"
-                    style={{ color: heart ? "red" : "black" }}
-                    onClick={() => setHeart(!heart)}
-                  />
-
-                  <div className="border border-solid border-bright-gray"></div>
-
-                  <div className="flex gap-x-6">
-                    {icon?.map((item, index) => {
-                      return (
-                        <Link key={index}>
-                          <FontAwesomeIcon
-                            className="text-dark-silver hover:text-black-1"
-                            icon={item}
-                            size="xl"
-                          />
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="flex">
-                  <p className="heading-05 mr-4">SKU:</p>
-                  <p className="heading-05 text-dark-silver">12</p>
-                </div>
-
-                <div className="flex">
-                  <p className="heading-05 mr-4">Categories:</p>
-                  <p className="heading-05 text-dark-silver">Fashion, Style</p>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
 
   const tab = ["Description", "Aditional information", "Reviews(0)"];
 
@@ -137,7 +29,7 @@ const Product = () => {
   return (
     <section id="product">
       <div className="product__content">
-        <Items />
+        <ProductDetail />
 
         <Tabs
           className="product__content__information mb-24"
@@ -191,39 +83,44 @@ const Product = () => {
               </p>
 
               <form className="flex flex-col gap-y-4 mb-4">
-                <TextArea placeholder="Your Review*" />
-                <Input placeholder="Enter your name*" />
-                <Input placeholder="Enter your Email*" />
+                <TextArea placeholder="Your Review *" />
+                <Input id="input" placeholder="Enter your name* " />
+                <Input id="input" placeholder="Enter your Email *" />
+
+                <div className="flex mb-4">
+                  <input className="mr-3" type="checkbox" />
+                  <p className="heading-05 text-dark-silver">
+                    Save my name, email, and website in this browser for the
+                    next time I comment
+                  </p>
+                </div>
+
+                <div className="mb-6">
+                  <p className="body-medium text-dark-silver">Your Rating*</p>
+                  <Rating
+                    className="margin-bottom-2rem"
+                    name="half-rating"
+                    defaultValue={2.5}
+                    precision={0.5}
+                  />
+                </div>
+
+                <Button
+                  id="button"
+                  className="style-01 body-large py-4 px-6"
+                  type="submit"
+                  typeButton={TYPE_BUTTON.BUTTON}
+                >
+                  submit
+                </Button>
               </form>
-
-              <div className="flex mb-4">
-                <input className="mr-3" type="checkbox" />
-                <p className="heading-05 text-dark-silver">
-                  Save my name, email, and website in this browser for the next
-                  time I comment
-                </p>
-              </div>
-
-              <div className="mb-6">
-                <p className="body-medium text-dark-silver">Your Rating*</p>
-                <Rating
-                  className="margin-bottom-2rem"
-                  name="half-rating"
-                  defaultValue={2.5}
-                  precision={0.5}
-                />
-              </div>
-
-              <div>
-                <Button className="black body-large py-4 px-6">submit</Button>
-              </div>
             </div>
           </TabPanel>
         </Tabs>
 
         <div className="product__content__similar-items-list">
           <p className="heading-02 mb-12">Similar Items</p>
-          <ListProduct map={product} />
+          <ListProduct map={productList} />
         </div>
       </div>
     </section>

@@ -1,187 +1,248 @@
-import React, { useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "./index.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  billSliceSelector,
+  cartSliceSelector,
+  userSliceSelector,
+} from "redux/selector";
+import {
+  createBill,
+  getListPaymentMothodsBill,
+} from "redux/createAsyncThunk/billThunk";
+import { createBillDetail } from "redux/createAsyncThunk/billDetailThunk";
+import { getByIdCustomer } from "redux/createAsyncThunk/customerThunk";
+import { getByIdUser } from "redux/createAsyncThunk/userThunk";
+import { deleteByIdUserCart } from "redux/createAsyncThunk/cartThunk";
+import { Button, Input, YourOrderBill } from "component/common";
+import { formBillDetailsData } from "data/common";
+import { KEY_LOCAL_STORAGE, TYPE_BUTTON } from "constants/common";
 import { PATHNAME_LIST } from "router/router";
-import { Button, Input, Select } from "component/common";
 
 const CheckOut = () => {
-  const [email, setEmail] = useState("");
+  const { userToken } = useSelector(userSliceSelector);
+  const { cartByIdUser, totalMoneyCart } = useSelector(cartSliceSelector);
+  const { paymentMethodsBill } = useSelector(billSliceSelector);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const placeOrderOnClick = () => {
+  const customerData = {
+    Name: "",
+    CompanyName: "",
+    Country: "",
+    Address: "",
+    PostCode: "",
+    City: "",
+    Phone: 0,
+    Email: "",
   };
+  const [customer, setCustomer] = useState(customerData);
+  const [bill, setBill] = useState({
+    TotalMoney: 0,
+    PaymentMethods: 0,
+  });
+
+  // call api
+  useEffect(() => {
+    dispatch(getListPaymentMothodsBill());
+  }, [dispatch]);
+
+  useEffect(() => {
+    const fetchCustomer = async () => {
+      const user = await dispatch(getByIdUser(userToken.data?.Email)).unwrap();
+      const customer = await dispatch(
+        getByIdCustomer(user[0]?.IdCustomer)
+      ).unwrap();
+      if (customer[0]) {
+        setCustomer(customer[0]);
+      }
+    };
+    fetchCustomer();
+  }, [dispatch, userToken.data?.Email]);
+
+  // event
+  const placeOrderClick = async () => {
+    const createbill = await dispatch(
+      createBill({
+        customer: customer,
+        bill: {
+          ...bill,
+          TotalMoney: totalMoneyCart,
+        },
+      })
+    ).unwrap();
+
+    if (createbill.errCode === 0) {
+      const product = await cartByIdUser.map((item) => {
+        return [createbill.IdBill, item.IdProduct, item.Amount, item.IntoMoney];
+      });
+      dispatch(createBillDetail(product));
+      navigate(PATHNAME_LIST.ORDER);
+      localStorage.setItem(KEY_LOCAL_STORAGE.ID_BILL, createbill.IdBill);
+      dispatch(deleteByIdUserCart());
+    }
+  };
+
+  // data
+  const { Name, CompanyName, Country, Address, PostCode, City, Phone, Email } =
+    customer;
+  const newFormBillDetailsData = [...formBillDetailsData];
+  newFormBillDetailsData[0].value = Name;
+  newFormBillDetailsData[1].value = CompanyName;
+  newFormBillDetailsData[2].value = Country;
+  newFormBillDetailsData[3].value = Address;
+  newFormBillDetailsData[4].value = PostCode;
+  newFormBillDetailsData[5].value = City;
+  newFormBillDetailsData[6].value = Phone;
+  newFormBillDetailsData[7].value = Email;
 
   return (
     <section id="check-out">
       <div className="check-out__content">
         <p className="heading-01 text-center">Checkout</p>
 
-        <div className="check-out__content__title flex justify-start mb-16">
-          <div className="heading-05">
-            <div className="mb-4">
-              <span className="text-dark_silver">Returning customer? </span>
-              <span>
+        <div className="check-out__content__title flex flex-col mb-16">
+          <div className="mb-4">
+            <span className="text-dark-silver">Have a coupon? </span>
+            <button className="hover:text-beaver">
+              Click here to enter your code
+            </button>
+          </div>
+
+          <div className="border border-bright-gray w-[36rem] p-6">
+            <p className="text-dark-silver mb-8">
+              If you have a coupon code, please apply it below.
+            </p>
+
+            <div className="flex">
+              <Input
+                id="input"
+                className="body-small w-full mr-6"
+                placeholder="Coupon Code"
+              ></Input>
+              <Button
+                id="button"
+                className="style-01 body-large rounded-md w-48"
+                typeButton={TYPE_BUTTON.BUTTON}
+              >
+                APPLY COUPON
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-between">
+          <div className="check-out__content__billing-details heading-05 w-[35rem]">
+            <p className="heading-01 mb-6">Billing Details</p>
+            {userToken.data ? (
+              <form className="flex flex-col gap-y-4">
+                {newFormBillDetailsData?.map((item, index) => {
+                  return (
+                    <Fragment key={index}>
+                      <Input
+                        id="input"
+                        className="w-full"
+                        name={item.name}
+                        placeholder={item.placeholder}
+                        value={item.value || ""}
+                        onChange={(e) =>
+                          setCustomer({
+                            ...customer,
+                            [e.target.name]: e.target.value,
+                          })
+                        }
+                      />
+                    </Fragment>
+                  );
+                })}
+
+                <div className="flex items-center">
+                  <input className="mr-2" type="checkbox" />
+                  Ship to a different address?
+                </div>
+
+                <Input
+                  id="input"
+                  className="w-full"
+                  placeholder="Order notes"
+                ></Input>
+              </form>
+            ) : (
+              <>
+                <span className="text-dark-silver">Returning customer? </span>
                 <Link
                   className="hover:text-beaver"
                   to={PATHNAME_LIST.MY_ACCOUNT}
                 >
                   Click here to login
                 </Link>
-              </span>
-            </div>
-
-            <div className="mb-4">
-              <span className="text-dark_silver">Have a coupon? </span>
-              <span>
-                <Link className="hover:text-beaver">
-                  Click here to enter your code
-                </Link>
-              </span>
-            </div>
-
-            <div className="border border-bright_gray p-6">
-              <p className="text-dark_silver mb-8">
-                If you have a coupon code, please apply it below.
-              </p>
-
-              <div className="flex">
-                <Input
-                  className="body-small w-[21rem] mr-6"
-                  placeholder="Coupon Code"
-                ></Input>
-                <Button className="body-large rounded-md">APPLY COUPON</Button>
-              </div>
-            </div>
+              </>
+            )}
           </div>
 
-          <div className="check-out__content__right-side"></div>
-        </div>
+          {userToken.data && (
+            <div className="check-out__content__your-order w-[35rem]">
+              <p className="heading-01">YOUR ORDER</p>
+              <YourOrderBill map={cartByIdUser} totalMoney={totalMoneyCart}>
+                <div className="flex flex-col gap-y-4 mb-4">
+                  <span className="flex item-center">
+                    <input
+                      className="mr-2"
+                      name="pay"
+                      type="radio"
+                      defaultChecked
+                      value={paymentMethodsBill[0]?.IdPaymentMethods}
+                      onChange={(e) =>
+                        setBill({ ...bill, PaymentMethods: e.target.value })
+                      }
+                    />
+                    {paymentMethodsBill[0]?.Name}
+                  </span>
+                  <p className="body-small text-dark-silver">
+                    Make your payment directly into our bank account. Please use
+                    your Order ID as the payment reference. Your order will not
+                    be shipped until the funds have cleared in our account
+                  </p>
+                  {paymentMethodsBill.map((item) => {
+                    return (
+                      item.IdPaymentMethods !== 0 && (
+                        <span
+                          key={item.IdPaymentMethods}
+                          className="flex item-center"
+                        >
+                          <input
+                            className="mr-2"
+                            name="pay"
+                            type="radio"
+                            value={item.IdPaymentMethods}
+                            onChange={(e) =>
+                              setBill({
+                                ...bill,
+                                PaymentMethods: e.target.value,
+                              })
+                            }
+                          />
+                          {item.Name}
+                        </span>
+                      )
+                    );
+                  })}
+                </div>
 
-        <div className="check-out__content__bill flex justify-between">
-          <div className="check-out__content__bill__left-side heading-05 w-[35rem]">
-            <p className="heading-01 mb-6">Billing Details</p>
-
-            <form className="flex flex-col gap-y-4">
-              <div className="flex">
-                <Input
-                  className="w-full mr-4"
-                  placeholder="First name *"
-                ></Input>
-                <Input className="w-full" placeholder="last name *"></Input>
-              </div>
-
-              <Input className="w-full" placeholder="Company Name"></Input>
-              <Select className="select-secondary w-full ">
-                <option value="">Country *</option>
-              </Select>
-              <Input className="w-full" placeholder="Street Address *"></Input>
-              <Input className="w-full" placeholder="Postcode / ZIP *"></Input>
-              <Input className="w-full" placeholder="Town / City *"></Input>
-              <Input className="w-full" placeholder="Phone *"></Input>
-              <Input
-                className="w-full"
-                placeholder="Email *"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              ></Input>
-
-              <span className="flex items-center">
-                <input className="mr-2" type="checkbox" />
-                Create an acoount?
-              </span>
-
-              <span className="flex items-center">
-                <input className="mr-2" type="checkbox" />
-                Ship to a different address?
-              </span>
-
-              <Input className="w-full" placeholder="Order notes"></Input>
-            </form>
-          </div>
-
-          <div className="check-out__content__bill__right-side w-[35rem]">
-            <p className="heading-01">YOUR ORDER</p>
-
-            <div className="heading-05 flex flex-col gap-y-4 bg-bright_gray p-8">
-              <div className="flex justify-between">
-                <p>PRODUCT</p>
-                <p>TOTAL</p>
-              </div>
-
-              <div className="border border-light_sivler"></div>
-
-              <div className="flex justify-between text-dark_silver">
-                <p>Lira Earrings</p>
-                <p>$64</p>
-              </div>
-
-              <div className="flex justify-between text-dark_silver">
-                <p>Ollie Earrings</p>
-                <p>$10</p>
-              </div>
-
-              <div className="flex justify-between text-dark_silver">
-                <p>Kaede Hair Pin</p>
-                <p>$10</p>
-              </div>
-
-              <div className="border border-light_sivler"></div>
-
-              <div className="flex justify-between">
-                <p>SUBTOTAL</p>
-                <p className="text-dark_silver">$85</p>
-              </div>
-
-              <div className="border border-light_sivler"></div>
-
-              <div className="flex justify-between">
-                <p>SHIPPING</p>
-                <p className="text-dark_silver">Free shipping</p>
-              </div>
-
-              <div className="border border-light_sivler"></div>
-
-              <div className="flex justify-between">
-                <p>TOTAL</p>
-                <p>$85</p>
-              </div>
-
-              <div className="flex flex-col gap-y-4 mb-4">
-                <span className="flex item-center">
-                  <input className="mr-2" name="pay" type="radio" />
-                  Direct bank transfer
-                </span>
-
-                <p className="body-small text-dark_silver">
-                  Make your payment directly into our bank account. Please use
-                  your Order ID as the payment reference. Your order will not be
-                  shipped until the funds have cleared in our account
-                </p>
-
-                <span className="flex item-center">
-                  <input className="mr-2" name="pay" type="radio" />
-                  Check payments
-                </span>
-
-                <span className="flex item-center">
-                  <input className="mr-2" name="pay" type="radio" />
-                  Cash on delivery
-                </span>
-
-                <span className="flex item-center">
-                  <input className="mr-2" name="pay" type="radio" />
-                  PayPal
-                </span>
-              </div>
-
-              <Button
-                className="text-center"
-                to={PATHNAME_LIST.ORDER}
-                onClick={placeOrderOnClick}
-              >
-                PLACE ORDER
-              </Button>
+                {cartByIdUser[0] && (
+                  <Button
+                    id="button"
+                    className="style-01 text-center"
+                    typeButton={TYPE_BUTTON.BUTTON}
+                    onClick={() => placeOrderClick()}
+                  >
+                    PLACE ORDER
+                  </Button>
+                )}
+              </YourOrderBill>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

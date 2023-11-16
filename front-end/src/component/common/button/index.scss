@@ -1,19 +1,27 @@
-.black {
-  background-color: theme("colors.black.1");
-  color: theme("colors.white");
-
-  &:hover {
-    background-color: theme("colors.white");
-    color: theme("colors.black.1");
-  }
-}
-
-.white {
-  background-color: theme("colors.white");
-  color: theme("colors.black.1");
-
-  &:hover {
+#button {
+  &.style-01 {
     background-color: theme("colors.black.1");
     color: theme("colors.white");
+    border: 2px solid theme("colors.black.1");
+    border-radius: 10px;
+    padding: 0.4rem 0;
+
+    &:hover {
+      background-color: theme("colors.white");
+      color: theme("colors.black.1");
+    }
+  }
+
+  &.style-02 {
+    background-color: theme("colors.white");
+    color: theme("colors.black.1");
+    border: 2px solid theme("colors.black.1");
+    border-radius: 10px;
+    padding: 0.4rem 0;
+
+    &:hover {
+      background-color: theme("colors.black.1");
+      color: theme("colors.white");
+    }
   }
 }

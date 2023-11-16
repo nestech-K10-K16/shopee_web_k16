@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.scss";
 import { useEffect } from "react";
-import ProductApi from "api/productApi";
+import ProductApi from "api/common/productApi";
 
 const Test = () => {
   useEffect(() => {
