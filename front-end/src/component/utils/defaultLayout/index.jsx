@@ -13,7 +13,7 @@ const DefaultLayout = ({ children }) => {
   const dispatch = useDispatch();
   const [styleShoppingBag, setStyleShoppingBag] = useState("w-0");
   const [background, setBackground] = useState("");
-  const width = "w-[29rem]";
+  const widthOpenModel = "w-[29rem]";
 
   useEffect(() => {
     if (userToken.data) {
@@ -25,35 +25,36 @@ const DefaultLayout = ({ children }) => {
     dispatch(getListProduct());
   }, [dispatch]);
 
-  const OpenModel = () => {
-    setStyleShoppingBag(width);
+  // event
+  const openModel = () => {
+    setStyleShoppingBag(widthOpenModel);
     setBackground("opacity-50 bg-[rgb(0,0,0,0.1)]");
   };
 
-  const CloseModel = () => {
+  const closeModel = () => {
     setStyleShoppingBag("w-0");
     setBackground("");
   };
 
   const handleModel = (e) => {
     const { tagName } = e.target;
-    if (tagName && styleShoppingBag === width) {
-      CloseModel();
+    if (tagName && styleShoppingBag === widthOpenModel) {
+      closeModel();
     }
   };
 
   return (
     <>
       <div className={background} onClick={handleModel}>
-        <Header ShoppingBagOnClick={OpenModel} />
+        <Header ShoppingBagOnClick={openModel} />
         {children}
         <Footer />
       </div>
 
       <ShoppingBag
         className={styleShoppingBag}
-        backOnClick={CloseModel}
-        viewCartOnClick={CloseModel}
+        backOnClick={closeModel}
+        viewCartOnClick={closeModel}
       />
     </>
   );

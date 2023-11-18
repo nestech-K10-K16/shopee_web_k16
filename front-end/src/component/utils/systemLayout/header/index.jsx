@@ -2,11 +2,12 @@ import React from "react";
 import "./index.scss";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { PATHNAME_LIST } from "router/router";
 import { useSelector } from "react-redux";
+import { userSliceSelector } from "redux/selector";
+import { PATHNAME_LIST } from "router/router";
 
 const Header = () => {
-  const { userToken } = useSelector((state) => state.userSlice);
+  const { userToken } = useSelector(userSliceSelector);
 
   const navLinkData = [
     { text: "User", path: PATHNAME_LIST.USER_MANAGE },

@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactSlider from "react-slider";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -82,4 +82,4 @@ const RangeSlider = () => {
   );
 };
 
-export default memo(RangeSlider);
+export default RangeSlider;

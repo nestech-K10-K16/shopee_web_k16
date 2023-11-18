@@ -9,6 +9,14 @@ export const getListUser = createAsyncThunk(
   }
 );
 
+export const getLimitedListUser = createAsyncThunk(
+  "userSlice/getLimitedListUser",
+  async (data) => {
+    const response = await userApi.getListLimit(data);
+    return response;
+  }
+);
+
 export const getByIdUser = createAsyncThunk(
   "userSlice/getByIdUser",
   async (id) => {

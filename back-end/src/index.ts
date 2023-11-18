@@ -11,7 +11,7 @@ ConfigServer(app)
 Router(app)
 
 app.use((req, res) => {
-  res.send({ message: "404 not found" })
+  res.send({ errCode: 1, message: "404 not found" })
 })
 
 app.listen(process.env.PORT, () => {

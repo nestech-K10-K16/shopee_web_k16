@@ -18,6 +18,7 @@ module.exports = {
       },
       green: {
         400: "#4ade80",
+        500: "#22c55e",
       },
       "rusty-red": "#DC3545",
       beaver: "#a18a68",

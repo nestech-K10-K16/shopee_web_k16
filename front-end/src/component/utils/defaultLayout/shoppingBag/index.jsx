@@ -33,7 +33,11 @@ const ShoppingBag = (props) => {
               <p className="heading-05 mr-2">Delete all</p>
               <button
                 className="bg-body border-0"
-                onClick={() => dispatch(deleteByIdUserCart())}
+                onClick={() => {
+                  if (cartByIdUser.length > 0) {
+                    dispatch(deleteByIdUserCart());
+                  }
+                }}
               >
                 <FontAwesomeIcon icon="fa-solid fa-close" size="xl" />
               </button>

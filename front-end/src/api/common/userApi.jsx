@@ -5,6 +5,10 @@ const userApi = {
     return axiosClient.get("user");
   },
 
+  getListLimit: (data) => {
+    return axiosClient.get("user/limit", { params: data });
+  },
+
   getById: (id) => {
     return axiosClient.get(`user/id/${id}`);
   },

@@ -9,6 +9,14 @@ export const getListProduct = createAsyncThunk(
   }
 );
 
+export const getLimitedListProduct = createAsyncThunk(
+  "productSlice/getLimitedListProduct",
+  async (data) => {
+    const response = await ProductApi.getListLimit(data);
+    return response;
+  }
+);
+
 export const getByIdProduct = createAsyncThunk(
   "productSlice/getByIdProduct",
   async (id) => {

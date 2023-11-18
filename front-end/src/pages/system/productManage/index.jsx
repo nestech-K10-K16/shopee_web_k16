@@ -5,23 +5,27 @@ import EditProduct from "./EditProduct";
 import { useDispatch, useSelector } from "react-redux";
 import {
   deleteProduct,
-  getListProduct,
+  getLimitedListProduct,
 } from "redux/createAsyncThunk/productThunk";
 import { addProductToEdit } from "redux/reducers/productSlice";
 import { productSliceSelector } from "redux/selector";
+import { Paginate } from "component/common";
 import { convertBufferToBase64 } from "utils/common";
 import { CLASS_NAME } from "constants/common";
 
 const ProductManage = () => {
-  const { productList } = useSelector(productSliceSelector);
+  const { limitedProductList, totalPage } = useSelector(productSliceSelector);
   const dispatch = useDispatch();
   const [modelCreate, setModelCreate] = useState("hidden");
   const [modelEdit, setModelEdit] = useState("hidden");
+  const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
-    dispatch(getListProduct());
-  }, [dispatch]);
+    dispatch(getLimitedListProduct({ limit: 1, page: itemOffset }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [itemOffset]);
 
+  // event
   const handleModel = (e) => {
     const { tagName } = e.target;
     if (tagName && modelCreate === CLASS_NAME.OPEN_MODEL) {
@@ -30,6 +34,11 @@ const ProductManage = () => {
     if (tagName && modelEdit === CLASS_NAME.OPEN_MODEL) {
       setModelEdit(CLASS_NAME.CLOSE_MODEL);
     }
+  };
+
+  const handlePageClick = (e) => {
+    const newOffset = e.selected;
+    setItemOffset(newOffset);
   };
 
   return (
@@ -65,7 +74,7 @@ const ProductManage = () => {
             </tr>
           </thead>
 
-          {productList?.map((item) => {
+          {limitedProductList?.map((item) => {
             return (
               <tbody key={item.IdProduct}>
                 <tr>
@@ -102,6 +111,8 @@ const ProductManage = () => {
             );
           })}
         </table>
+
+        <Paginate totalPage={totalPage} handlePageClick={handlePageClick} />
       </section>
     </>
   );

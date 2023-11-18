@@ -13,6 +13,7 @@ export { default as SlideShowImage } from "./slideShowImage";
 export { default as ListProduct } from "./listProduct";
 export { default as ProductDetail } from "./productDetail";
 export { default as YourOrderBill } from "./yourOrderBill";
+export { default as Paginate } from "./paginate";
 
 export { default as ProductShoppingBag } from "./productCart/productShoppingBag";
 export { default as ProductShoppingCart } from "./productCart/productShoppingCart";

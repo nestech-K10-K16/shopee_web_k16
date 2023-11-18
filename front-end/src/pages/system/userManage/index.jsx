@@ -4,28 +4,42 @@ import CreateUser from "./createUser";
 import { useDispatch, useSelector } from "react-redux";
 import {
   deleteUser,
+  getLimitedListUser,
   getListRoleUser,
   getListUser,
 } from "redux/createAsyncThunk/userThunk";
 import { userSliceSelector } from "redux/selector";
 import { CLASS_NAME } from "constants/common";
+import { Paginate } from "component/common";
 
 const UserManage = () => {
-  const { userList, roleList } = useSelector(userSliceSelector);
+  const { limitUserList, totalPage, roleList } = useSelector(userSliceSelector);
   const dispatch = useDispatch();
 
   const [modelCreate, setModelCreate] = useState("hidden");
+  const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
     dispatch(getListUser());
     dispatch(getListRoleUser());
   }, [dispatch]);
 
+  useEffect(() => {
+    dispatch(getLimitedListUser({ limit: 1, page: itemOffset }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [itemOffset]);
+
+  // event
   const handleModel = (e) => {
     const { tagName } = e.target;
     if (tagName && modelCreate === CLASS_NAME.OPEN_MODEL) {
       setModelCreate(CLASS_NAME.CLOSE_MODEL);
     }
+  };
+
+  const handlePageClick = (e) => {
+    const newOffset = e.selected;
+    setItemOffset(newOffset);
   };
 
   return (
@@ -57,7 +71,7 @@ const UserManage = () => {
             </tr>
           </thead>
 
-          {userList?.map((item) => {
+          {limitUserList?.map((item) => {
             return (
               <tbody key={item.Email}>
                 <tr>
@@ -83,6 +97,8 @@ const UserManage = () => {
             );
           })}
         </table>
+
+        <Paginate totalPage={totalPage} handlePageClick={handlePageClick} />
       </section>
     </>
   );

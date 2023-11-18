@@ -5,6 +5,7 @@ import {
   faCartShopping,
   faSearch,
   faArrowRight,
+  faArrowLeft,
   faXmark,
   faChevronLeft,
   faChevronRight,
@@ -21,6 +22,7 @@ import {
 library.add(
   faHeart,
   faCartShopping,
+  faArrowLeft,
   faSearch,
   faArrowRight,
   faChevronLeft,

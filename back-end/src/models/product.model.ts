@@ -2,7 +2,13 @@ import Connection from "../config/database";
 import { typeProduct } from "../types/common";
 
 const getList = async () => {
-  const [result] = await Connection.execute("SELECT * FROM PRODUCT");
+  const [result] = await Connection.execute("SELECT * FROM PRODUCT ");
+  return result;
+}
+
+const getListLimit = async (data: { limit: number, offset: number }) => {
+  const { limit, offset } = data
+  const [result] = await Connection.query("SELECT * FROM PRODUCT LIMIT ? OFFSET ?", [limit, offset]);
   return result;
 }
 
@@ -30,5 +36,5 @@ const remove = async (id: string) => {
   return result
 }
 
-const ProductModel = { getList, getById, create, edit, remove }
+const ProductModel = { getList, getListLimit, getById, create, edit, remove }
 export default ProductModel

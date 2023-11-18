@@ -17,7 +17,6 @@ const CreateUser = (props) => {
   const createUserSumbit = async (e) => {
     e.preventDefault();
     const result = await dispatch(createUser(user)).unwrap();
-
     if (result.errCode === 0) {
       closeModel();
       setUser(dataUser);
@@ -53,10 +52,10 @@ const CreateUser = (props) => {
           <label className="w-24"> IdRole:</label>
           <select
             className="border border-dark-silver rounded-2xl w-full mr-1 p-2"
-            value={user.Role}
+            defaultValue={""}
             onChange={(e) => setUser({ ...user, Role: e.target.value })}
           >
-            <option value="" defaultChecked disabled hidden>
+            <option value={""} disabled hidden>
               Choose role
             </option>
             {roleList?.map((item) => {

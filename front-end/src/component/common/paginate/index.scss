@@ -1,0 +1,33 @@
+#paginate {
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: theme("colors.black.1");
+    cursor: pointer;
+    font-size: 14px;
+    height: 40px;
+    width: 40px;
+  }
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .pagination-page {
+    font-weight: 700;
+  }
+
+  .disabled-page {
+    color: theme("colors.dark-silver");
+  }
+
+  .active {
+    border: solid 1px theme("colors.black.1");
+    border-radius: 40px;
+    color: theme("colors.black.1");
+  }
+}

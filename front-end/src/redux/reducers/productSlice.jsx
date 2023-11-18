@@ -5,6 +5,7 @@ import {
   deleteProduct,
   editProduct,
   getByIdProduct,
+  getLimitedListProduct,
   getListProduct,
 } from "redux/createAsyncThunk/productThunk";
 import { convertBufferToBase64 } from "utils/common";
@@ -12,6 +13,8 @@ import { KEY_LOCAL_STORAGE } from "constants/common";
 
 const initialState = {
   productList: [],
+  limitedProductList: [],
+  totalPage: 0,
   productById: [],
   editProductValue: [],
   searchProduct: [],
@@ -62,9 +65,15 @@ const productSlice = createSlice({
   },
 
   extraReducers: (builder) => {
-    // get list product
+    // get list limit product
     builder.addCase(getListProduct.fulfilled, (state, action) => {
       state.productList = action.payload;
+    });
+
+    // get list limit product
+    builder.addCase(getLimitedListProduct.fulfilled, (state, action) => {
+      state.limitedProductList = action.payload.data?.result;
+      state.totalPage = action.payload.data?.totalPage;
     });
 
     // get by id product
@@ -80,7 +89,7 @@ const productSlice = createSlice({
       }
 
       toast.success(action.payload.message);
-      state.productList.unshift(action.meta.arg);
+      state.limitedProductList.unshift(action.meta.arg);
     });
 
     // edit product
@@ -91,7 +100,7 @@ const productSlice = createSlice({
       }
 
       toast.success(action.payload.message);
-      const objIndex = state.product.findIndex(
+      const objIndex = state.limitedProductList.findIndex(
         (item) => item.IdProduct === action.meta.arg.IdProduct
       );
       state.productList[objIndex] = action.meta.arg;
@@ -100,7 +109,7 @@ const productSlice = createSlice({
     // delete product
     builder.addCase(deleteProduct.fulfilled, (state, action) => {
       toast.success(action.payload.message);
-      state.productList = state.product.filter((item) => {
+      state.limitedProductList = state.limitedProductList.filter((item) => {
         return item.IdProduct !== action.meta.arg;
       });
     });

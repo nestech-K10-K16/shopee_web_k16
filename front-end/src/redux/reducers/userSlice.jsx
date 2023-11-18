@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import {
   createUser,
   deleteUser,
+  getLimitedListUser,
   getListRoleUser,
   getListUser,
   handleRegisterUser,
@@ -13,6 +14,8 @@ import {
 
 const initialState = {
   userList: [],
+  limitUserList: [],
+  totalPage: 0,
   roleList: [],
   userToken: {},
   success: false,
@@ -28,6 +31,12 @@ const userSlice = createSlice({
       state.userList = action.payload;
     });
 
+    // get limited list user
+    builder.addCase(getLimitedListUser.fulfilled, (state, action) => {
+      state.limitUserList = action.payload.data?.result;
+      state.totalPage = action.payload.data?.totalPage;
+    });
+
     // get list role user
     builder.addCase(getListRoleUser.fulfilled, (state, action) => {
       state.roleList = action.payload;
@@ -41,13 +50,13 @@ const userSlice = createSlice({
       }
 
       toast.success(action.payload.message);
-      state.userList.unshift(action.meta.arg);
+      state.limitUserList.unshift(action.meta.arg);
     });
 
     // delete user
     builder.addCase(deleteUser.fulfilled, (state, action) => {
       toast.success(action.payload.message);
-      state.userList = state.userList.filter((item) => {
+      state.limitUserList = state.limitUserList.filter((item) => {
         return item.Email !== action.meta.arg;
       });
     });

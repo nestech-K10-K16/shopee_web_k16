@@ -12,7 +12,7 @@ const checkCreate = async (req: Request<{}, {}, typeProduct>, res: Response, nex
     }
 
     const idProduct: RowDataPacket[0] = await ProductModel.getById(IdProduct)
-    if (idProduct) {
+    if (idProduct[0]) {
         res.send({ errCode: 1, message: "Id already exists in the system" });
         return
     }
@@ -23,7 +23,7 @@ const checkEdit = async (req: Request<{}, {}, typeProduct>, res: Response, next:
     const { IdProduct, Name, Amount, Price, Image } = req.body;
 
     const idProduct: RowDataPacket[0] = await ProductModel.getById(IdProduct)
-    if (!idProduct) {
+    if (!idProduct[0]) {
         res.send({ errCode: 1, message: "Id does not exist in the system" });
         return
     }

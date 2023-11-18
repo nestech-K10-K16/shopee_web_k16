@@ -12,7 +12,6 @@ const getById = async (id: string) => {
 }
 
 const getByIdUser = async (id: string) => {
-    console.log(id)
     const [result] = await Connection.execute("SELECT * FROM BILL WHERE IdCustomer = ?", [id]);
     return result;
 }

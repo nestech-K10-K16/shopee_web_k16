@@ -5,6 +5,7 @@ import JwtAcion from "../../middlewares/jwtAction.middleware";
 
 const UserRouter = Router();
 UserRouter.get("/user", UserController.getList);
+UserRouter.get("/user/limit", UserController.getListLimit);
 UserRouter.get("/user/id/:id", UserController.getById);
 UserRouter.get("/user/role", UserController.getListRole);
 UserRouter.post("/user/create", userMiddleware.checkCreate, UserController.create);

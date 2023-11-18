@@ -14,6 +14,25 @@ const getList = async (req: Request, res: Response) => {
     }
 }
 
+const getListLimit = async (req: Request<{}, {}, {}, { page: number, limit: number }>, res: Response) => {
+    try {
+        const { limit, page } = req.query
+        const userList: any = await UserModel.getList()
+        const userLimitList: any = await UserModel.getListLimit({
+            limit: limit * 1,
+            offset: page * limit
+        });
+        const data = {
+            totalPage: Math.ceil(userList.length / limit),
+            result: userLimitList
+        }
+        res.send({ data: data })
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
 const getById = async (req: Request<{ id: string }>, res: Response) => {
     try {
         const result = await UserModel.getById(req.params.id)
@@ -111,7 +130,7 @@ const hanldeRegister = async (req: Request<{}, {}, typeUser>, res: Response) => 
 }
 
 const UserController = {
-    getList, getListRole, getById,
+    getList, getListLimit, getListRole, getById,
     create, edit, remove,
     handleLogin, refreshLogin, hanldeLogout, hanldeRegister
 }

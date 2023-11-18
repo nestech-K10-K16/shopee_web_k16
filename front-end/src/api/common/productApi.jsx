@@ -5,6 +5,10 @@ const ProductApi = {
     return axiosClient.get("product");
   },
 
+  getListLimit: (data) => {
+    return axiosClient.get("product/list-limit", { params: data });
+  },
+
   getById: (id) => {
     return axiosClient.get(`product/id/${id}`);
   },

@@ -6,6 +6,12 @@ const getList = async () => {
     return result;
 }
 
+const getListLimit = async (data: { limit: number, offset: number }) => {
+    const { limit, offset } = data
+    const [result] = await Connection.query("SELECT * FROM USER LIMIT ? OFFSET ?", [limit, offset]);
+    return result;
+}
+
 const getListRole = () => {
     const role = [
         { IdRole: 0, Name: "Admin" },
@@ -45,5 +51,5 @@ const remove = async (id: string) => {
     return result
 }
 
-const UserModel = { getList, getListRole, getById, create, edit, editIdCustomer, remove }
+const UserModel = { getList, getListLimit, getListRole, getById, create, edit, editIdCustomer, remove }
 export default UserModel
