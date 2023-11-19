@@ -1,0 +1,22 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const user_controller_1 = __importDefault(require("../../controllers/user.controller"));
+const user_middleware_1 = __importDefault(require("../../middlewares/user.middleware"));
+const jwtAction_middleware_1 = __importDefault(require("../../middlewares/jwtAction.middleware"));
+const UserRouter = (0, express_1.Router)();
+UserRouter.get("/user", user_controller_1.default.getList);
+UserRouter.get("/user/limit", user_controller_1.default.getListLimit);
+UserRouter.get("/user/id/:id", user_controller_1.default.getById);
+UserRouter.get("/user/role", user_controller_1.default.getListRole);
+UserRouter.post("/user/create", user_middleware_1.default.checkCreate, user_controller_1.default.create);
+UserRouter.put("/user/update", user_middleware_1.default.checkEdit, user_controller_1.default.edit);
+UserRouter.delete("/user/delete/:id", user_controller_1.default.remove);
+UserRouter.post("/user/login", user_middleware_1.default.checkLogin, user_controller_1.default.handleLogin);
+UserRouter.get("/user/logout", user_controller_1.default.hanldeLogout);
+UserRouter.get("/user/refresh-login", jwtAction_middleware_1.default.checkTokenUser, user_controller_1.default.refreshLogin);
+UserRouter.post("/user/register", user_middleware_1.default.checkRegister, user_controller_1.default.hanldeRegister);
+exports.default = UserRouter;
