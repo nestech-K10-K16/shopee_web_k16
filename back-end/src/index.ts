@@ -10,12 +10,8 @@ ConfigServer(app)
 //router
 Router(app)
 
-app.use((req, res) => {
-  res.send({ errCode: 1, message: "404 not found" })
-})
-
 app.listen(parseInt(process.env.PORT as string), process.env.HOST as string, () => {
-  console.log(`Server is running on port ${process.env.PORT} and ${process.env.HOST}`);
+  console.log(`Server is running on port ${process.env.PORT}`);
 });
 
 

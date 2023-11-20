@@ -25,7 +25,7 @@ const UserManage = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getLimitedListUser({ limit: 1, page: itemOffset }));
+    dispatch(getLimitedListUser({ limit: 5, page: itemOffset }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [itemOffset]);
 

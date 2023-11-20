@@ -21,7 +21,7 @@ const ProductManage = () => {
   const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
-    dispatch(getLimitedListProduct({ limit: 1, page: itemOffset }));
+    dispatch(getLimitedListProduct({ limit: 5, page: itemOffset }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [itemOffset]);
 

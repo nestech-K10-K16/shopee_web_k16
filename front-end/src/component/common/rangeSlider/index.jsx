@@ -40,20 +40,22 @@ const RangeSlider = () => {
   const { productList } = useSelector(productSliceSelector);
   const dispatch = useDispatch();
 
-  const [slider, setSlider] = useState([]);
-  const [number, setNumber] = useState([]);
+  const [slider, setSlider] = useState([0, 0]);
+  const [number, setNumber] = useState([0, 0]);
 
   useEffect(() => {
     const fetchPriceProduct = async () => {
-      const priceProduct = await productList.map((item) => {
-        return item.Price;
-      });
+      if (productList.length > 0) {
+        const priceProduct = await productList.map((item) => {
+          return item.Price;
+        });
 
-      const min = Math.min(...priceProduct);
-      const max = Math.max(...priceProduct);
+        const min = Math.min(...priceProduct);
+        const max = Math.max(...priceProduct);
 
-      setSlider([min, max]);
-      setNumber([min, max]);
+        setSlider([min, max]);
+        setNumber([min, max]);
+      }
     };
     fetchPriceProduct();
   }, [productList]);

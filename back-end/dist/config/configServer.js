@@ -7,7 +7,7 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const ConfigServer = (app) => {
     app.use((req, res, next) => {
-        res.setHeader("Access-Control-Allow-Origin", "https://tranhoaihan01.web.app");
+        res.setHeader("Access-Control-Allow-Origin", process.env.ORIGIN);
         res.setHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
         res.setHeader("Access-Control-Allow-Headers", "Content-Type");
         res.setHeader("Access-Control-Allow-Credentials", "true");

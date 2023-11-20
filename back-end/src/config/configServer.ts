@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser'
 
 const ConfigServer = (app: Express) => {
   app.use((req: Request, res: Response, next: NextFunction) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://tranhoaihan01.web.app");
+    res.setHeader("Access-Control-Allow-Origin", process.env.ORIGIN as string);
     res.setHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     res.setHeader("Access-Control-Allow-Credentials", "true")

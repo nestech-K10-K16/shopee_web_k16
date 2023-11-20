@@ -12,9 +12,6 @@ const app = (0, express_1.default)();
 (0, configServer_1.default)(app);
 //router
 (0, routers_1.default)(app);
-app.use((req, res) => {
-    res.send({ errCode: 1, message: "404 not found" });
-});
 app.listen(parseInt(process.env.PORT), process.env.HOST, () => {
-    console.log(`Server is running on port ${process.env.PORT} and ${process.env.HOST}`);
+    console.log(`Server is running on port ${process.env.PORT}`);
 });
