@@ -34,7 +34,7 @@ const Account = () => {
       const userById = await dispatch(
         getByIdUser(userToken.data?.Email)
       ).unwrap();
-      dispatch(getByIdUserBill(userById[0].IdCustomer));
+      dispatch(getByIdUserBill(userById[0]?.IdCustomer));
     };
     fetchIdCustomerBill();
   }, [dispatch, userToken.data?.Email]);
