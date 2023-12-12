@@ -10,7 +10,7 @@ ConfigServer(app)
 //router
 Router(app)
 
-app.listen(parseInt(process.env.PORT as string), process.env.HOST as string, () => {
+app.listen(parseInt(process.env.PORT as string), () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
 

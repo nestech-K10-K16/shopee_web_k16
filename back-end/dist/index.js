@@ -12,6 +12,6 @@ const app = (0, express_1.default)();
 (0, configServer_1.default)(app);
 //router
 (0, routers_1.default)(app);
-app.listen(parseInt(process.env.PORT), process.env.HOST, () => {
+app.listen(parseInt(process.env.PORT), () => {
     console.log(`Server is running on port ${process.env.PORT}`);
 });
