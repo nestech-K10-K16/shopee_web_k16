@@ -95,7 +95,9 @@ const handleLogin = async (req: Request<{}, {}, typeUser>, res: Response) => {
         const createJwt = JwtAcion.createJWT(payload)
         const token = JwtAcion.verifyToken(createJwt)
 
-        res.cookie("user", createJwt, { httpOnly: true, maxAge: 60 * 60 * 1000 })
+        res.cookie("user", createJwt,
+            { sameSite: "none", domain: process.env.ORIGIN as string, httpOnly: true, maxAge: 60 * 60 * 1000, secure: true }
+        )
         res.send({ errCode: 0, message: "Login successfully", token: token })
     }
     catch (error) {
